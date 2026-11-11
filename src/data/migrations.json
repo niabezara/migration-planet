@@ -1,0 +1,987 @@
+{
+  "disclaimer": "Demonstration dataset. Route paths, waypoint years, group structure and pacing are ILLUSTRATIVE visual reconstructions. Site dates and the cited literature are the evidence layer; site coordinates are approximate. Citations should be reviewed by a domain specialist and the routes replaced with research-backed data before publication.",
+  "sources": [
+    {
+      "id": "hublin2017",
+      "citation": "Hublin, J.-J. et al. (2017). New fossils from Jebel Irhoud, Morocco and the pan-African origin of Homo sapiens. Nature 546, 289–292.",
+      "url": "https://doi.org/10.1038/nature22336"
+    },
+    {
+      "id": "richter2017",
+      "citation": "Richter, D. et al. (2017). The age of the hominin fossils from Jebel Irhoud, Morocco, and the origins of the Middle Stone Age. Nature 546, 293–296.",
+      "url": "https://doi.org/10.1038/nature22335"
+    },
+    {
+      "id": "mcdougall2005",
+      "citation": "McDougall, I., Brown, F. H. & Fleagle, J. G. (2005). Stratigraphic placement and age of modern humans from Kibish, Ethiopia. Nature 433, 733–736.",
+      "url": "https://doi.org/10.1038/nature03258"
+    },
+    {
+      "id": "vidal2022",
+      "citation": "Vidal, C. M. et al. (2022). Age of the oldest known Homo sapiens from eastern Africa. Nature 601, 579–583.",
+      "url": "https://doi.org/10.1038/s41586-021-04275-8"
+    },
+    {
+      "id": "white2003",
+      "citation": "White, T. D. et al. (2003). Pleistocene Homo sapiens from Middle Awash, Ethiopia. Nature 423, 742–747.",
+      "url": "https://doi.org/10.1038/nature01669"
+    },
+    {
+      "id": "hershkovitz2018",
+      "citation": "Hershkovitz, I. et al. (2018). The earliest modern humans outside Africa. Science 359, 456–459.",
+      "url": "https://doi.org/10.1126/science.aap8369"
+    },
+    {
+      "id": "grun2005",
+      "citation": "Grün, R. et al. (2005). U-series and ESR analyses of bones and teeth relating to the human burials from Skhul. Journal of Human Evolution 49, 316–334.",
+      "url": "https://doi.org/10.1016/j.jhevol.2005.04.006"
+    },
+    {
+      "id": "valladas1988",
+      "citation": "Valladas, H. et al. (1988). Thermoluminescence dating of Mousterian 'Proto-Cro-Magnon' remains from Israel and the origin of modern man. Nature 331, 614–616.",
+      "url": "https://doi.org/10.1038/331614a0"
+    },
+    {
+      "id": "lopez2015",
+      "citation": "López, S., van Dorp, L. & Hellenthal, G. (2015). Human dispersal out of Africa: a lasting debate. Evolutionary Bioinformatics 11(S2), 57–68.",
+      "url": "https://doi.org/10.4137/EBO.S33489"
+    },
+    {
+      "id": "mallick2016",
+      "citation": "Mallick, S. et al. (2016). The Simons Genome Diversity Project: 300 genomes from 142 diverse populations. Nature 538, 201–206.",
+      "url": "https://doi.org/10.1038/nature18964"
+    },
+    {
+      "id": "macaulay2005",
+      "citation": "Macaulay, V. et al. (2005). Single, rapid coastal settlement of Asia revealed by analysis of complete mitochondrial genomes. Science 308, 1034–1036.",
+      "url": "https://doi.org/10.1126/science.1109792"
+    },
+    {
+      "id": "fu2014",
+      "citation": "Fu, Q. et al. (2014). Genome sequence of a 45,000-year-old modern human from western Siberia. Nature 514, 445–449.",
+      "url": "https://doi.org/10.1038/nature13810"
+    },
+    {
+      "id": "mellars2006",
+      "citation": "Mellars, P. (2006). Why did modern human populations disperse from Africa ca. 60,000 years ago? A new model. PNAS 103, 9381–9386.",
+      "url": "https://doi.org/10.1073/pnas.0510792103"
+    },
+    {
+      "id": "petraglia2007",
+      "citation": "Petraglia, M. et al. (2007). Middle Paleolithic assemblages from the Indian subcontinent before and after the Toba super-eruption. Science 317, 114–116.",
+      "url": "https://doi.org/10.1126/science.1141564"
+    },
+    {
+      "id": "hublin2020",
+      "citation": "Hublin, J.-J. et al. (2020). Initial Upper Palaeolithic Homo sapiens from Bacho Kiro Cave, Bulgaria. Nature 581, 299–302.",
+      "url": "https://doi.org/10.1038/s41586-020-2259-z"
+    },
+    {
+      "id": "slimak2022",
+      "citation": "Slimak, L. et al. (2022). Modern human incursion into Neanderthal territories 54,000 years ago at Mandrin, France. Science Advances 8, eabj9496.",
+      "url": "https://doi.org/10.1126/sciadv.abj9496"
+    },
+    {
+      "id": "fu2016",
+      "citation": "Fu, Q. et al. (2016). The genetic history of Ice Age Europe. Nature 534, 200–205.",
+      "url": "https://doi.org/10.1038/nature17993"
+    },
+    {
+      "id": "adler2008",
+      "citation": "Adler, D. S. et al. (2008). Dating the demise: Neandertal extinction and the establishment of modern humans in the southern Caucasus. Journal of Human Evolution 55, 817–833.",
+      "url": "https://doi.org/10.1016/j.jhevol.2008.08.010"
+    },
+    {
+      "id": "lazaridis2018",
+      "citation": "Lazaridis, I. et al. (2018). Paleolithic DNA from the Caucasus reveals core of West Eurasian ancestry. bioRxiv preprint 423079.",
+      "url": "https://doi.org/10.1101/423079"
+    },
+    {
+      "id": "demeter2012",
+      "citation": "Demeter, F. et al. (2012). Anatomically modern human in Southeast Asia (Laos) by 46 ka. PNAS 109, 14375–14380.",
+      "url": "https://doi.org/10.1073/pnas.1208104109"
+    },
+    {
+      "id": "clarkson2017",
+      "citation": "Clarkson, C. et al. (2017). Human occupation of northern Australia by 65,000 years ago. Nature 547, 306–310.",
+      "url": "https://doi.org/10.1038/nature22968"
+    },
+    {
+      "id": "oconnell2018",
+      "citation": "O'Connell, J. F. et al. (2018). When did Homo sapiens first reach Southeast Asia and Sahul? PNAS 115, 8482–8490.",
+      "url": "https://doi.org/10.1073/pnas.1808385115"
+    },
+    {
+      "id": "bowler2003",
+      "citation": "Bowler, J. M. et al. (2003). New ages for human occupation and climatic change at Lake Mungo, Australia. Nature 421, 837–840.",
+      "url": "https://doi.org/10.1038/nature01383"
+    },
+    {
+      "id": "malaspinas2016",
+      "citation": "Malaspinas, A.-S. et al. (2016). A genomic history of Aboriginal Australia. Nature 538, 207–214.",
+      "url": "https://doi.org/10.1038/nature18299"
+    },
+    {
+      "id": "pitulko2004",
+      "citation": "Pitulko, V. V. et al. (2004). The Yana RHS site: humans in the Arctic before the Last Glacial Maximum. Science 303, 52–56.",
+      "url": "https://doi.org/10.1126/science.1085219"
+    },
+    {
+      "id": "tamm2007",
+      "citation": "Tamm, E. et al. (2007). Beringian standstill and spread of Native American founders. PLoS ONE 2, e829.",
+      "url": "https://doi.org/10.1371/journal.pone.0000829"
+    },
+    {
+      "id": "morenomayar2018",
+      "citation": "Moreno-Mayar, J. V. et al. (2018). Terminal Pleistocene Alaskan genome reveals first founding population of Native Americans. Nature 553, 203–207.",
+      "url": "https://doi.org/10.1038/nature25173"
+    },
+    {
+      "id": "bennett2021",
+      "citation": "Bennett, M. R. et al. (2021). Evidence of humans in North America during the Last Glacial Maximum. Science 373, 1528–1531.",
+      "url": "https://doi.org/10.1126/science.abg7586"
+    },
+    {
+      "id": "dillehay2008",
+      "citation": "Dillehay, T. D. et al. (2008). Monte Verde: seaweed, food, medicine, and the peopling of South America. Science 320, 784–786.",
+      "url": "https://doi.org/10.1126/science.1156533"
+    },
+    {
+      "id": "clark2009",
+      "citation": "Clark, P. U. et al. (2009). The Last Glacial Maximum. Science 325, 710–714.",
+      "url": "https://doi.org/10.1126/science.1172873"
+    }
+  ],
+  "routes": [
+    {
+      "id": "africa-levant",
+      "name": "Africa → Levant",
+      "category": "Early dispersal",
+      "path": [
+        {
+          "name": "East Africa",
+          "lat": 6.5,
+          "lng": 37.0,
+          "year": 135000
+        },
+        {
+          "name": "Middle Nile",
+          "lat": 15.6,
+          "lng": 32.6,
+          "year": 128000
+        },
+        {
+          "name": "Nubian Nile",
+          "lat": 20.5,
+          "lng": 30.9,
+          "year": 122000
+        },
+        {
+          "name": "Upper Egypt",
+          "lat": 25.7,
+          "lng": 32.6,
+          "year": 116000
+        },
+        {
+          "name": "Lower Nile",
+          "lat": 29.6,
+          "lng": 31.3,
+          "year": 111000
+        },
+        {
+          "name": "Sinai",
+          "lat": 30.4,
+          "lng": 33.7,
+          "year": 107000
+        },
+        {
+          "name": "Southern Levant",
+          "lat": 32.4,
+          "lng": 35.6,
+          "year": 100000
+        }
+      ],
+      "particleConfig": {
+        "count": 7600,
+        "clusterCount": 7,
+        "spreadKm": 120,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          110,
+          240
+        ],
+        "originSpreadKm": 260,
+        "speedVariation": 0.08,
+        "stagger": 0.35,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 240,
+          "east": 75
+        }
+      },
+      "confidence": "medium",
+      "dataStatus": "illustrative",
+      "uncertainty": "Homo sapiens was in the Levant by ~120,000–90,000 years ago, but the path out of Africa and the timing drawn here are illustrative. Whether these groups left lasting descendants is debated.",
+      "origin": "East Africa",
+      "destination": "Southern Levant",
+      "intermediateRegions": [
+        "Nile Valley",
+        "Sinai"
+      ],
+      "pathDescription": "Drawn northward along the Nile corridor and across Sinai. A southern crossing at Bab-el-Mandeb is also discussed in the literature.",
+      "description": "Fossils show Homo sapiens in the southern Levant long before the main out-of-Africa dispersal.",
+      "people": "Early Homo sapiens hunter-gatherers from northeast Africa. Nothing is known about their language or social identity.",
+      "historicalContext": "The Last Interglacial (~130,000–115,000 years ago) brought wetter phases that periodically made the Sahara and Sinai more passable.",
+      "significance": "Shows that leaving Africa was not a single event; our species ranged into Southwest Asia repeatedly, sometimes sharing the region with Neanderthals.",
+      "evidence": [
+        {
+          "type": "archaeological",
+          "description": "Homo sapiens burials at Skhul and Qafzeh (Israel), dated roughly 90,000–130,000 years ago.",
+          "sourceIds": [
+            "grun2005",
+            "valladas1988"
+          ]
+        },
+        {
+          "type": "archaeological",
+          "description": "The Misliya Cave maxilla (~177,000–194,000 years ago) hints at even earlier, possibly intermittent, presence.",
+          "sourceIds": [
+            "hershkovitz2018"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "Most non-African ancestry traces to a later dispersal, so the genetic legacy of these early groups is unclear.",
+          "sourceIds": [
+            "lopez2015"
+          ]
+        }
+      ],
+      "siteIds": [
+        "omo-kibish",
+        "herto",
+        "misliya",
+        "skhul",
+        "qafzeh"
+      ],
+      "camera": {
+        "lat": 17,
+        "lng": 33,
+        "distance": 2.3
+      }
+    },
+    {
+      "id": "out-of-africa-south",
+      "name": "Africa → South Asia",
+      "category": "Main out-of-Africa dispersal",
+      "path": [
+        {
+          "name": "Horn of Africa",
+          "lat": 9.5,
+          "lng": 41.0,
+          "year": 70000
+        },
+        {
+          "name": "Bab-el-Mandeb",
+          "lat": 12.7,
+          "lng": 43.3,
+          "year": 67000
+        },
+        {
+          "name": "Southern Arabia",
+          "lat": 14.3,
+          "lng": 48.5,
+          "year": 64000
+        },
+        {
+          "name": "Dhofar",
+          "lat": 17.0,
+          "lng": 54.0,
+          "year": 61500
+        },
+        {
+          "name": "Oman",
+          "lat": 22.5,
+          "lng": 58.8,
+          "year": 59500
+        },
+        {
+          "name": "Strait of Hormuz",
+          "lat": 26.2,
+          "lng": 56.4,
+          "year": 58000
+        },
+        {
+          "name": "Makran coast",
+          "lat": 25.3,
+          "lng": 61.5,
+          "year": 56500
+        },
+        {
+          "name": "Indus delta",
+          "lat": 24.8,
+          "lng": 67.5,
+          "year": 55000
+        },
+        {
+          "name": "Indian subcontinent",
+          "lat": 21.0,
+          "lng": 77.5,
+          "year": 52000
+        }
+      ],
+      "particleConfig": {
+        "count": 9000,
+        "clusterCount": 8,
+        "spreadKm": 130,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          120,
+          280
+        ],
+        "originSpreadKm": 220,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 2,
+        "splitAt": 0.55,
+        "dispersalKm": {
+          "north": 320,
+          "east": 280
+        }
+      },
+      "confidence": "medium",
+      "dataStatus": "illustrative",
+      "uncertainty": "Genetics strongly supports a major dispersal ~70,000–50,000 years ago, but its exact timing and whether it left via Bab-el-Mandeb or Sinai are debated. This coastal path is illustrative.",
+      "origin": "Horn of Africa",
+      "destination": "Indian subcontinent",
+      "intermediateRegions": [
+        "Bab-el-Mandeb",
+        "Southern Arabia",
+        "Persian Gulf coast",
+        "Makran"
+      ],
+      "pathDescription": "Drawn across the Bab-el-Mandeb strait and along the Arabian and Iranian coasts, following the 'southern route' hypothesis.",
+      "description": "The dispersal from which most present-day non-African populations descend.",
+      "people": "Homo sapiens hunter-gatherers from northeast Africa, probably in small, mobile groups. Their specific identity is unknown.",
+      "historicalContext": "A glacial world with sea levels well below today's, narrowing the Bab-el-Mandeb strait and exposing coastal shelves now under water.",
+      "significance": "Ancestors of most people outside Africa took part in this dispersal, and shortly after it they interbred with Neanderthals.",
+      "evidence": [
+        {
+          "type": "genetic",
+          "description": "Genome-wide data show most non-African populations derive from a dispersal roughly 50,000–70,000 years ago.",
+          "sourceIds": [
+            "mallick2016",
+            "macaulay2005"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "The 45,000-year-old Ust'-Ishim genome dates Neanderthal admixture to roughly 50,000–60,000 years ago.",
+          "sourceIds": [
+            "fu2014"
+          ]
+        },
+        {
+          "type": "archaeological",
+          "description": "Stone tools at Jwalapuram (India) bracket the ~74,000-year-old Toba eruption; whether their makers were Homo sapiens is debated.",
+          "sourceIds": [
+            "petraglia2007"
+          ]
+        },
+        {
+          "type": "palaeoenvironmental",
+          "description": "Models link the timing of dispersal to climatic and technological change in Africa.",
+          "sourceIds": [
+            "mellars2006"
+          ]
+        }
+      ],
+      "siteIds": [
+        "jwalapuram"
+      ],
+      "camera": {
+        "lat": 19,
+        "lng": 55,
+        "distance": 2.7
+      }
+    },
+    {
+      "id": "levant-europe",
+      "name": "Southwest Asia → Europe",
+      "category": "Into Europe",
+      "path": [
+        {
+          "name": "Northern Levant",
+          "lat": 34.5,
+          "lng": 36.5,
+          "year": 55000
+        },
+        {
+          "name": "Anatolia",
+          "lat": 38.5,
+          "lng": 33.5,
+          "year": 52000
+        },
+        {
+          "name": "Thrace",
+          "lat": 41.3,
+          "lng": 28.5,
+          "year": 49000
+        },
+        {
+          "name": "Lower Danube",
+          "lat": 43.3,
+          "lng": 25.0,
+          "year": 46000
+        },
+        {
+          "name": "Carpathian Basin",
+          "lat": 46.5,
+          "lng": 19.5,
+          "year": 44000
+        },
+        {
+          "name": "Upper Danube",
+          "lat": 48.3,
+          "lng": 13.5,
+          "year": 42500
+        },
+        {
+          "name": "Western Europe",
+          "lat": 46.8,
+          "lng": 4.5,
+          "year": 40000
+        }
+      ],
+      "particleConfig": {
+        "count": 7800,
+        "clusterCount": 7,
+        "spreadKm": 150,
+        "edgeShare": 0.32,
+        "groupLengthKm": [
+          110,
+          260
+        ],
+        "originSpreadKm": 180,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 2,
+        "splitAt": 0.6,
+        "dispersalKm": {
+          "north": 280,
+          "east": 420
+        }
+      },
+      "confidence": "high",
+      "dataStatus": "illustrative",
+      "uncertainty": "Homo sapiens is well attested in Europe by ~45,000 years ago. The Danube corridor drawn here is one plausible path; earlier incursions such as Grotte Mandrin (~54,000 years ago) are debated and not shown as a separate wave.",
+      "origin": "Southwest Asia",
+      "destination": "Western Europe",
+      "intermediateRegions": [
+        "Anatolia",
+        "Balkans",
+        "Danube corridor",
+        "Central Europe"
+      ],
+      "pathDescription": "Drawn across Anatolia and Thrace, then westward along the Danube corridor into central and western Europe.",
+      "description": "Homo sapiens spreads into a continent already occupied by Neanderthals.",
+      "people": "Homo sapiens hunter-gatherers carrying early Upper Palaeolithic technologies. Several early groups left little ancestry in later Europeans.",
+      "historicalContext": "A cold, climatically unstable phase of the last glacial period; Neanderthals disappear from the record over the following millennia.",
+      "significance": "Marks the overlap and eventual replacement of Neanderthals in Europe, and the start of Europe's Upper Palaeolithic.",
+      "evidence": [
+        {
+          "type": "archaeological",
+          "description": "Homo sapiens remains at Bacho Kiro Cave (Bulgaria), ~46,000–44,000 years ago.",
+          "sourceIds": [
+            "hublin2020"
+          ]
+        },
+        {
+          "type": "archaeological",
+          "description": "A modern-human tooth and tools at Grotte Mandrin (France) are dated ~54,000 years ago; the interpretation is debated.",
+          "sourceIds": [
+            "slimak2022"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "Ancient genomes show a complex history of early European populations, several with little lasting legacy.",
+          "sourceIds": [
+            "fu2016"
+          ]
+        }
+      ],
+      "siteIds": [
+        "bacho-kiro",
+        "grotte-mandrin"
+      ],
+      "camera": {
+        "lat": 43,
+        "lng": 22,
+        "distance": 2.5
+      }
+    },
+    {
+      "id": "levant-caucasus",
+      "name": "Southwest Asia → Caucasus",
+      "category": "Into the Caucasus",
+      "path": [
+        {
+          "name": "Northern Levant",
+          "lat": 36.2,
+          "lng": 37.2,
+          "year": 45000
+        },
+        {
+          "name": "Upper Tigris",
+          "lat": 37.6,
+          "lng": 41.0,
+          "year": 43000
+        },
+        {
+          "name": "Lake Van basin",
+          "lat": 38.7,
+          "lng": 43.0,
+          "year": 41000
+        },
+        {
+          "name": "Armenian Highlands",
+          "lat": 40.2,
+          "lng": 44.4,
+          "year": 39000
+        },
+        {
+          "name": "Southern Caucasus",
+          "lat": 42.2,
+          "lng": 43.1,
+          "year": 36000
+        }
+      ],
+      "particleConfig": {
+        "count": 4200,
+        "clusterCount": 5,
+        "spreadKm": 85,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          150
+        ],
+        "originSpreadKm": 130,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 110,
+          "east": 190
+        }
+      },
+      "confidence": "medium",
+      "dataStatus": "illustrative",
+      "uncertainty": "Upper Palaeolithic occupation of the southern Caucasus is dated to roughly 42,000–38,000 years ago; where these groups came from and the path drawn here are illustrative.",
+      "origin": "Northern Levant / Upper Mesopotamia",
+      "destination": "Southern Caucasus",
+      "intermediateRegions": [
+        "Upper Tigris",
+        "Eastern Anatolia",
+        "Armenian Highlands"
+      ],
+      "pathDescription": "Drawn north through the uplands of eastern Anatolia and the Armenian Highlands into the valleys of the southern Caucasus.",
+      "description": "Homo sapiens reaches the mountain valleys of the southern Caucasus, another former Neanderthal region.",
+      "people": "Upper Palaeolithic Homo sapiens hunter-gatherers. No specific identity can be assigned.",
+      "historicalContext": "Neanderthal occupation of the region ends around the same time Upper Palaeolithic sites appear.",
+      "significance": "The Caucasus links Southwest Asia with the steppe; later genomes from here help explain West Eurasian ancestry.",
+      "evidence": [
+        {
+          "type": "archaeological",
+          "description": "Ortvale Klde rockshelter (Georgia) records the shift to Upper Palaeolithic occupation ~42,000–38,000 years ago.",
+          "sourceIds": [
+            "adler2008"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "~26,000-year-old genomes from Dzudzuana Cave suggest deep links between Caucasus and Near Eastern populations (preprint).",
+          "sourceIds": [
+            "lazaridis2018"
+          ]
+        }
+      ],
+      "siteIds": [
+        "ortvale-klde",
+        "dzudzuana"
+      ],
+      "camera": {
+        "lat": 39.5,
+        "lng": 41.5,
+        "distance": 1.95
+      }
+    },
+    {
+      "id": "sunda-sahul",
+      "name": "Southeast Asia → Sahul",
+      "category": "Across Wallacea",
+      "path": [
+        {
+          "name": "Mainland Southeast Asia",
+          "lat": 18.5,
+          "lng": 102.5,
+          "year": 60000
+        },
+        {
+          "name": "Malay Peninsula",
+          "lat": 6.0,
+          "lng": 101.5,
+          "year": 57000
+        },
+        {
+          "name": "Sunda Shelf",
+          "lat": 0.0,
+          "lng": 106.5,
+          "year": 54500
+        },
+        {
+          "name": "Java",
+          "lat": -7.3,
+          "lng": 111.0,
+          "year": 52000
+        },
+        {
+          "name": "Lesser Sunda Islands",
+          "lat": -8.6,
+          "lng": 120.5,
+          "year": 49500
+        },
+        {
+          "name": "Timor",
+          "lat": -9.5,
+          "lng": 124.8,
+          "year": 48000
+        },
+        {
+          "name": "Sahul Shelf",
+          "lat": -11.5,
+          "lng": 129.5,
+          "year": 46500
+        },
+        {
+          "name": "Northern Australia",
+          "lat": -13.5,
+          "lng": 133.5,
+          "year": 45000
+        }
+      ],
+      "branches": [
+        {
+          "id": "northern-route",
+          "name": "Northern route (via Sulawesi)",
+          "fromWaypoint": 3,
+          "path": [
+            {
+              "name": "Borneo coast",
+              "lat": -3.0,
+              "lng": 116.0,
+              "year": 50500
+            },
+            {
+              "name": "Sulawesi",
+              "lat": -2.0,
+              "lng": 120.6,
+              "year": 49000
+            },
+            {
+              "name": "Maluku",
+              "lat": -3.3,
+              "lng": 128.5,
+              "year": 47500
+            },
+            {
+              "name": "New Guinea",
+              "lat": -5.5,
+              "lng": 140.5,
+              "year": 45000
+            }
+          ],
+          "share": 0.35,
+          "note": "Northern (Sulawesi–Maluku) and southern (Timor) crossings into Sahul are both proposed; neither is established."
+        }
+      ],
+      "particleConfig": {
+        "count": 8000,
+        "clusterCount": 7,
+        "spreadKm": 130,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          120,
+          280
+        ],
+        "originSpreadKm": 200,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 2,
+        "splitAt": 0.55,
+        "dispersalKm": {
+          "north": 380,
+          "east": 420
+        }
+      },
+      "confidence": "medium",
+      "dataStatus": "illustrative",
+      "uncertainty": "Arrival in Sahul is dated anywhere from ~65,000 to ~50,000 years ago depending on the site and method; this is actively debated. The island-hopping path is one of several proposed.",
+      "origin": "Mainland Southeast Asia",
+      "destination": "Northern Sahul (Australia)",
+      "intermediateRegions": [
+        "Sunda Shelf (now submerged)",
+        "Java",
+        "Wallacea",
+        "Timor"
+      ],
+      "pathDescription": "Drawn down the exposed Sunda Shelf and through the Lesser Sunda Islands, where open-sea crossings were unavoidable, to the Sahul Shelf.",
+      "description": "The first people to reach Australia and New Guinea, which required repeated sea crossings.",
+      "people": "Homo sapiens hunter-gatherers moving through island Southeast Asia, ancestral to Aboriginal Australians and Papuans.",
+      "historicalContext": "Low glacial sea levels joined western Indonesia into the continent of Sunda and Australia–New Guinea into Sahul; the Wallacean islands between them were never connected by land.",
+      "significance": "Among the earliest evidence of deliberate open-water voyaging by humans.",
+      "evidence": [
+        {
+          "type": "archaeological",
+          "description": "Madjedbebe (northern Australia) has been dated to ~65,000 years ago; others argue for ~50,000 or less.",
+          "sourceIds": [
+            "clarkson2017",
+            "oconnell2018"
+          ]
+        },
+        {
+          "type": "archaeological",
+          "description": "A modern human skull from Tam Pa Ling (Laos) is dated to at least ~46,000 years ago.",
+          "sourceIds": [
+            "demeter2012"
+          ]
+        },
+        {
+          "type": "archaeological",
+          "description": "Burials at Lake Mungo show people deep in the Australian interior by ~42,000 years ago.",
+          "sourceIds": [
+            "bowler2003"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "Aboriginal Australian genomes indicate a long, separate history after a shared out-of-Africa origin.",
+          "sourceIds": [
+            "malaspinas2016"
+          ]
+        },
+        {
+          "type": "palaeoenvironmental",
+          "description": "Reconstructed coastlines show Wallacea required multiple sea crossings even at low sea level.",
+          "sourceIds": [
+            "oconnell2018"
+          ]
+        }
+      ],
+      "siteIds": [
+        "tam-pa-ling",
+        "madjedbebe",
+        "lake-mungo"
+      ],
+      "camera": {
+        "lat": -5,
+        "lng": 117,
+        "distance": 2.7
+      }
+    },
+    {
+      "id": "beringia-americas",
+      "name": "Asia → Beringia → Americas",
+      "category": "Peopling of the Americas",
+      "path": [
+        {
+          "name": "Northeast Siberia",
+          "lat": 70.7,
+          "lng": 135.4,
+          "year": 32000
+        },
+        {
+          "name": "Western Beringia",
+          "lat": 66.5,
+          "lng": 172.0,
+          "year": 27000
+        },
+        {
+          "name": "Bering Land Bridge",
+          "lat": 65.6,
+          "lng": -170.0,
+          "year": 24000
+        },
+        {
+          "name": "Eastern Beringia",
+          "lat": 64.5,
+          "lng": -157.0,
+          "year": 18000
+        },
+        {
+          "name": "Gulf of Alaska",
+          "lat": 59.0,
+          "lng": -141.0,
+          "year": 16500
+        },
+        {
+          "name": "Pacific Northwest",
+          "lat": 49.5,
+          "lng": -126.0,
+          "year": 16000
+        },
+        {
+          "name": "California coast",
+          "lat": 36.0,
+          "lng": -121.5,
+          "year": 15700
+        },
+        {
+          "name": "Central America",
+          "lat": 14.0,
+          "lng": -90.5,
+          "year": 15300
+        },
+        {
+          "name": "Northern Andes",
+          "lat": 4.0,
+          "lng": -77.0,
+          "year": 15000
+        },
+        {
+          "name": "Southern South America",
+          "lat": -41.5,
+          "lng": -72.8,
+          "year": 14500
+        }
+      ],
+      "branches": [
+        {
+          "id": "interior",
+          "name": "Interior route (debated)",
+          "fromWaypoint": 3,
+          "path": [
+            {
+              "name": "Yukon",
+              "lat": 63.0,
+              "lng": -136.0,
+              "year": 16800
+            },
+            {
+              "name": "Mackenzie corridor",
+              "lat": 57.5,
+              "lng": -118.0,
+              "year": 15800
+            },
+            {
+              "name": "Northern Plains",
+              "lat": 50.5,
+              "lng": -110.0,
+              "year": 15200
+            },
+            {
+              "name": "Interior North America",
+              "lat": 40.0,
+              "lng": -97.0,
+              "year": 14500
+            }
+          ],
+          "share": 0.3,
+          "note": "An inland route east of the Rocky Mountains depended on when an ice-free corridor opened; its timing relative to the first arrivals is debated."
+        }
+      ],
+      "particleConfig": {
+        "count": 10400,
+        "clusterCount": 9,
+        "spreadKm": 150,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          160,
+          380
+        ],
+        "originSpreadKm": 260,
+        "speedVariation": 0.08,
+        "stagger": 0.25,
+        "splitGroups": 2,
+        "splitAt": 0.6,
+        "dispersalKm": {
+          "north": 650,
+          "east": 420
+        }
+      },
+      "confidence": "medium",
+      "dataStatus": "illustrative",
+      "uncertainty": "People were in South America by ~14,500 years ago. Earlier arrivals (e.g. White Sands footprints, ~23,000–21,000 years ago) and the coastal vs. ice-free-corridor route are debated. Pacing here is illustrative.",
+      "origin": "Northeast Siberia",
+      "destination": "South America",
+      "intermediateRegions": [
+        "Beringia",
+        "Alaska",
+        "Pacific coast",
+        "Central America",
+        "Andes"
+      ],
+      "pathDescription": "Drawn across the exposed Bering land bridge, slowing in Beringia (the 'standstill'), then down the Pacific coast to South America.",
+      "description": "The last continental landmasses settled by Homo sapiens before the Holocene.",
+      "people": "Homo sapiens from northeast Asia; the ancestors of Indigenous peoples of the Americas.",
+      "historicalContext": "The Last Glacial Maximum: ice sheets covered much of North America, and low sea level exposed a broad land bridge between Asia and Alaska.",
+      "significance": "Completes the dispersal of Homo sapiens across every continent except Antarctica.",
+      "evidence": [
+        {
+          "type": "archaeological",
+          "description": "Yana RHS shows people in Arctic Siberia ~32,000 years ago.",
+          "sourceIds": [
+            "pitulko2004"
+          ]
+        },
+        {
+          "type": "archaeological",
+          "description": "Monte Verde (Chile) is occupied by ~14,500 years ago.",
+          "sourceIds": [
+            "dillehay2008"
+          ]
+        },
+        {
+          "type": "archaeological",
+          "description": "Footprints at White Sands (New Mexico) dated ~23,000–21,000 years ago; the dating is debated.",
+          "sourceIds": [
+            "bennett2021"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "Mitochondrial lineages suggest a period of isolation in Beringia before rapid spread south.",
+          "sourceIds": [
+            "tamm2007"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "An ancient Alaskan genome reveals a founding 'Ancient Beringian' population.",
+          "sourceIds": [
+            "morenomayar2018"
+          ]
+        },
+        {
+          "type": "palaeoenvironmental",
+          "description": "Ice sheets peaked ~26,000–19,000 years ago, shaping when routes south were open.",
+          "sourceIds": [
+            "clark2009"
+          ]
+        }
+      ],
+      "siteIds": [
+        "yana-rhs",
+        "white-sands",
+        "monte-verde"
+      ],
+      "camera": {
+        "lat": 48,
+        "lng": -150,
+        "distance": 3.3
+      }
+    }
+  ]
+}

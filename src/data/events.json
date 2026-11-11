@@ -1,0 +1,360 @@
+{
+  "periods": [
+    {
+      "id": "emergence",
+      "name": "Emergence in Africa",
+      "shortName": "Emergence",
+      "startYear": 300000,
+      "endYear": 200000,
+      "description": "The oldest fossils attributed to Homo sapiens, from Jebel Irhoud in Morocco, date to roughly 300,000 years ago. Early sapiens remains are spread across Africa.",
+      "confidence": "high"
+    },
+    {
+      "id": "early-dispersals",
+      "name": "Early dispersals",
+      "shortName": "Early dispersals",
+      "startYear": 200000,
+      "endYear": 75000,
+      "description": "Fossils in the Levant show that Homo sapiens left Africa at least intermittently long before the main dispersal. How lasting these early groups were is debated.",
+      "confidence": "medium"
+    },
+    {
+      "id": "main-dispersal",
+      "name": "Main out-of-Africa dispersal",
+      "shortName": "Out of Africa",
+      "startYear": 75000,
+      "endYear": 40000,
+      "description": "Genetic evidence indicates that most present-day non-African populations descend from a dispersal roughly 50,000–70,000 years ago.",
+      "confidence": "high"
+    },
+    {
+      "id": "late-pleistocene",
+      "name": "Late Pleistocene",
+      "shortName": "Late Pleistocene",
+      "startYear": 40000,
+      "endYear": 11700,
+      "description": "Homo sapiens is present across Africa, Eurasia and Sahul. The Last Glacial Maximum peaks around 26,000–19,000 years ago.",
+      "confidence": "high"
+    },
+    {
+      "id": "holocene",
+      "name": "Holocene",
+      "shortName": "Holocene",
+      "startYear": 11700,
+      "endYear": 0,
+      "description": "The current geological epoch, beginning at the end of the last glacial period. Farming emerges independently in several regions.",
+      "confidence": "high"
+    }
+  ],
+  "sites": [
+    {
+      "id": "jebel-irhoud",
+      "name": "Jebel Irhoud",
+      "region": "Morocco",
+      "location": {
+        "lat": 31.86,
+        "lng": -8.87
+      },
+      "dateRange": [
+        350000,
+        280000
+      ],
+      "description": "Fossils dated ~315,000 years ago (±34,000), currently the earliest attributed to Homo sapiens.",
+      "confidence": "medium",
+      "sources": [
+        "hublin2017",
+        "richter2017"
+      ]
+    },
+    {
+      "id": "omo-kibish",
+      "name": "Omo Kibish",
+      "region": "Ethiopia",
+      "location": {
+        "lat": 5.4,
+        "lng": 35.9
+      },
+      "dateRange": [
+        233000,
+        195000
+      ],
+      "description": "Omo I. Age estimates range from ~195,000 to a minimum of ~233,000 years depending on the study.",
+      "confidence": "medium",
+      "sources": [
+        "mcdougall2005",
+        "vidal2022"
+      ]
+    },
+    {
+      "id": "misliya",
+      "name": "Misliya Cave",
+      "region": "Israel",
+      "location": {
+        "lat": 32.7,
+        "lng": 34.97
+      },
+      "dateRange": [
+        194000,
+        177000
+      ],
+      "description": "A modern-human maxilla dated ~177,000–194,000 years ago, among the earliest sapiens evidence outside Africa.",
+      "confidence": "medium",
+      "sources": [
+        "hershkovitz2018"
+      ]
+    },
+    {
+      "id": "herto",
+      "name": "Herto",
+      "region": "Ethiopia",
+      "location": {
+        "lat": 10.3,
+        "lng": 40.5
+      },
+      "dateRange": [
+        160000,
+        154000
+      ],
+      "description": "Crania from the Middle Awash dated ~154,000–160,000 years ago.",
+      "confidence": "high",
+      "sources": [
+        "white2003"
+      ]
+    },
+    {
+      "id": "skhul",
+      "name": "Skhul",
+      "region": "Israel",
+      "location": {
+        "lat": 32.67,
+        "lng": 34.97
+      },
+      "dateRange": [
+        135000,
+        100000
+      ],
+      "description": "Burials of early Homo sapiens at Mount Carmel, dated roughly 100,000–135,000 years ago.",
+      "confidence": "medium",
+      "sources": [
+        "grun2005"
+      ]
+    },
+    {
+      "id": "qafzeh",
+      "name": "Qafzeh",
+      "region": "Israel",
+      "location": {
+        "lat": 32.69,
+        "lng": 35.32
+      },
+      "dateRange": [
+        120000,
+        90000
+      ],
+      "description": "Early Homo sapiens burials near Nazareth, dated roughly 90,000–120,000 years ago.",
+      "confidence": "medium",
+      "sources": [
+        "valladas1988"
+      ]
+    },
+    {
+      "id": "jwalapuram",
+      "name": "Jwalapuram",
+      "region": "India",
+      "location": {
+        "lat": 15.33,
+        "lng": 78.13
+      },
+      "dateRange": [
+        80000,
+        70000
+      ],
+      "description": "Stone tools from before and after the ~74,000-year-old Toba eruption; whether their makers were Homo sapiens is debated.",
+      "confidence": "low",
+      "sources": [
+        "petraglia2007"
+      ]
+    },
+    {
+      "id": "tam-pa-ling",
+      "name": "Tam Pa Ling",
+      "region": "Laos",
+      "location": {
+        "lat": 20.21,
+        "lng": 103.41
+      },
+      "dateRange": [
+        63000,
+        46000
+      ],
+      "description": "Modern human skull dated to at least ~46,000 years ago.",
+      "confidence": "medium",
+      "sources": [
+        "demeter2012"
+      ]
+    },
+    {
+      "id": "grotte-mandrin",
+      "name": "Grotte Mandrin",
+      "region": "France",
+      "location": {
+        "lat": 44.48,
+        "lng": 4.77
+      },
+      "dateRange": [
+        56000,
+        52000
+      ],
+      "description": "Modern-human tooth and tools dated ~54,000 years ago; interpretation debated.",
+      "confidence": "medium",
+      "sources": [
+        "slimak2022"
+      ]
+    },
+    {
+      "id": "madjedbebe",
+      "name": "Madjedbebe",
+      "region": "Australia",
+      "location": {
+        "lat": -12.5,
+        "lng": 132.9
+      },
+      "dateRange": [
+        65000,
+        50000
+      ],
+      "description": "Occupation dated ~65,000 years ago by some, ~50,000 or less by others.",
+      "confidence": "low",
+      "sources": [
+        "clarkson2017",
+        "oconnell2018"
+      ]
+    },
+    {
+      "id": "bacho-kiro",
+      "name": "Bacho Kiro",
+      "region": "Bulgaria",
+      "location": {
+        "lat": 42.95,
+        "lng": 25.43
+      },
+      "dateRange": [
+        46000,
+        44000
+      ],
+      "description": "Among the earliest Homo sapiens in Europe, ~46,000–44,000 years ago.",
+      "confidence": "high",
+      "sources": [
+        "hublin2020"
+      ]
+    },
+    {
+      "id": "ortvale-klde",
+      "name": "Ortvale Klde",
+      "region": "Georgia",
+      "location": {
+        "lat": 42.28,
+        "lng": 43.22
+      },
+      "dateRange": [
+        42000,
+        38000
+      ],
+      "description": "Rockshelter recording Upper Palaeolithic occupation from ~42,000–38,000 years ago (approximate location).",
+      "confidence": "medium",
+      "sources": [
+        "adler2008"
+      ]
+    },
+    {
+      "id": "lake-mungo",
+      "name": "Lake Mungo",
+      "region": "Australia",
+      "location": {
+        "lat": -33.7,
+        "lng": 143.1
+      },
+      "dateRange": [
+        42000,
+        38000
+      ],
+      "description": "Burials showing people in the Australian interior by ~42,000 years ago.",
+      "confidence": "high",
+      "sources": [
+        "bowler2003"
+      ]
+    },
+    {
+      "id": "yana-rhs",
+      "name": "Yana RHS",
+      "region": "Siberia",
+      "location": {
+        "lat": 70.7,
+        "lng": 135.4
+      },
+      "dateRange": [
+        32000,
+        27000
+      ],
+      "description": "Arctic Siberian site occupied ~32,000 years ago.",
+      "confidence": "high",
+      "sources": [
+        "pitulko2004"
+      ]
+    },
+    {
+      "id": "dzudzuana",
+      "name": "Dzudzuana Cave",
+      "region": "Georgia",
+      "location": {
+        "lat": 42.31,
+        "lng": 43.27
+      },
+      "dateRange": [
+        27000,
+        24000
+      ],
+      "description": "Source of ~26,000-year-old Caucasus genomes (approximate location).",
+      "confidence": "medium",
+      "sources": [
+        "lazaridis2018"
+      ]
+    },
+    {
+      "id": "white-sands",
+      "name": "White Sands",
+      "region": "New Mexico",
+      "location": {
+        "lat": 32.84,
+        "lng": -106.35
+      },
+      "dateRange": [
+        23000,
+        21000
+      ],
+      "description": "Human footprints dated ~23,000–21,000 years ago; dating debated.",
+      "confidence": "low",
+      "sources": [
+        "bennett2021"
+      ]
+    },
+    {
+      "id": "monte-verde",
+      "name": "Monte Verde",
+      "region": "Chile",
+      "location": {
+        "lat": -41.5,
+        "lng": -73.2
+      },
+      "dateRange": [
+        14600,
+        14200
+      ],
+      "description": "Settlement occupied by ~14,500 years ago.",
+      "confidence": "high",
+      "sources": [
+        "dillehay2008"
+      ]
+    }
+  ]
+}

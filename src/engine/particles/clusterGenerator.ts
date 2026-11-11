@@ -45,6 +45,11 @@ export interface GeneratorOptions {
   /** Samples per path row. */
   pathSamples?: number;
   seed?: number;
+  /**
+   * Story-clock second at which each route's overview loop starts at its
+   * origin (intro awakening). Routes not listed start at 0.
+   */
+  awakenAt?: Record<string, number>;
 }
 
 export interface RowInfo {
@@ -123,7 +128,7 @@ interface ClusterPlan {
 
 export function generateParticleBuffers(
   routes: MigrationRoute[],
-  { particleScale, trailShare, glowShare, pathSamples = 160, seed = 1337 }: GeneratorOptions,
+  { particleScale, trailShare, glowShare, pathSamples = 160, seed = 1337, awakenAt = {} }: GeneratorOptions,
 ): ParticleBuffers {
   const rand = mulberry32(seed);
 
@@ -210,11 +215,11 @@ export function generateParticleBuffers(
     const G = Math.max(1, cfg.splitGroups);
     const lengthKm = routeLengthKm(route);
 
-    // Overview loop: longer routes get a longer (bounded) cycle; phases are
-    // choreographed so every route is mid-journey at the cue time.
+    // Overview loop: longer routes get a longer (bounded) cycle. The phase puts
+    // loop position 0 (crowd gathered at the origin) exactly at the route's
+    // awakening, so its first cycle is the intro burst out of the origin.
     const loopSeconds = clamp(14 + (lengthKm / 1000) * 1.2, 16, 32);
-    const cuePosition = 0.2 + ((route.index * 0.37) % 1) * 0.35;
-    const loopPhase = (((cuePosition - PARTICLE_CONSTANTS.overviewCueSeconds / loopSeconds) % 1) + 1) % 1;
+    const loopPhase = (((-(awakenAt[route.id] ?? 0) / loopSeconds) % 1) + 1) % 1;
     // Streak length: a fixed ground distance, converted to a time lag for this route.
     const trailLag = (PARTICLE_CONSTANTS.trailKm / Math.max(500, lengthKm)) * (1 - cfg.stagger);
 

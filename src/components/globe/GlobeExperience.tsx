@@ -8,8 +8,10 @@ import { DateHeader } from "@/components/information/DateHeader";
 import { RouteLegend } from "@/components/information/RouteLegend";
 import { RoutePanel } from "@/components/information/RoutePanel";
 import { routeById } from "@/data";
+import { IntroOverlay } from "@/components/intro/IntroOverlay";
+import { useIntroStore } from "@/components/intro/introState";
 import { Timeline } from "@/components/timeline/Timeline";
-import { timelineToYear, yearToTimeline } from "@/engine/timeline/timeEngine";
+import { fromSignedYear, timelineToYear, yearToTimeline } from "@/engine/timeline/timeEngine";
 import { useHistoryStore } from "@/stores/useHistoryStore";
 
 // WebGL must never render on the server.
@@ -18,25 +20,51 @@ const GlobeCanvas = dynamic(() => import("./GlobeCanvas"), { ssr: false });
 export function GlobeExperience() {
   const [ready, setReady] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
+  const introStage = useIntroStore((s) => s.stage);
+  const interactive = introStage === "done";
 
-  // UI entrance, timed against the camera's intro flight.
+  // The interface enters only after the cinematic, while the title fades.
   useEffect(() => {
-    if (!ready || !rootRef.current) return;
+    if (!interactive || !rootRef.current) return;
     const ctx = gsap.context(() => {
-      gsap.from(".ui-fade", { opacity: 0, y: 10, duration: 1.6, stagger: 0.12, ease: "power2.out", delay: 1.4 });
-      gsap.from(".ui-rise", { opacity: 0, y: 24, duration: 1.6, stagger: 0.15, ease: "power3.out", delay: 2.6 });
+      // Starts as the title finishes leaving (IntroOverlay: 1.5 s linger + 0.9 s fade).
+      gsap.from(".ui-fade", { opacity: 0, y: 10, duration: 1.6, stagger: 0.1, ease: "power2.out", delay: 2.2 });
+      gsap.from(".ui-rise", { opacity: 0, y: 24, duration: 1.6, stagger: 0.12, ease: "power3.out", delay: 2.5 });
     }, rootRef);
     return () => ctx.revert();
-  }, [ready]);
+  }, [interactive]);
+
+  // During the cinematic, any key or click skips it.
+  useEffect(() => {
+    if (interactive) return;
+    const skipNow = (e: Event) => {
+      const s = useIntroStore.getState().stage;
+      if (s !== "playing" && s !== "title") return;
+      if (e instanceof KeyboardEvent && ["Shift", "Control", "Alt", "Meta", "Tab"].includes(e.key)) return;
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      useIntroStore.getState().skip();
+    };
+    window.addEventListener("keydown", skipNow, { capture: true });
+    window.addEventListener("pointerdown", skipNow, { capture: true });
+    return () => {
+      window.removeEventListener("keydown", skipNow, { capture: true });
+      window.removeEventListener("pointerdown", skipNow, { capture: true });
+    };
+  }, [interactive]);
 
   // Deep links (shareable): ?year=45000 opens that moment, ?route=<id> opens a route.
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const s = useHistoryStore.getState();
-    const year = Number(params.get("year"));
-    if (params.has("year") && Number.isFinite(year)) s.selectYear(year);
+    const year = Number(params.get("year")); // signed: -45000 = 45,000 years ago
     const route = routeById[params.get("route") ?? ""];
-    if (route) s.selectRoute(route.id);
+    if (params.has("year") || route) {
+      // A deep link goes straight to the requested state: no cinematic.
+      useIntroStore.getState().disableAutoplay();
+      if (params.has("year") && Number.isFinite(year)) s.selectYear(fromSignedYear(year));
+      if (route) s.selectRoute(route.id);
+    }
   }, []);
 
   // Keyboard: space = play/pause, arrows = scrub.
@@ -80,7 +108,12 @@ export function GlobeExperience() {
       <div className="pointer-events-none absolute inset-x-0 top-0 h-56 bg-linear-to-b from-[#02040a]/80 to-transparent" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-56 bg-linear-to-t from-[#02040a]/90 to-transparent" />
 
-      <div className="pointer-events-none absolute inset-0 z-20 flex flex-col justify-between p-4 sm:p-8">
+      <IntroOverlay />
+
+      <div
+        className="hud pointer-events-none absolute inset-0 z-20 flex flex-col justify-between p-4 sm:p-8"
+        data-hidden={!interactive}
+      >
         <div className="flex flex-col items-start gap-7">
           <div className="pointer-events-auto">
             <DateHeader />

@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { AdditiveBlending, BackSide, ShaderMaterial } from "three";
 import { sceneRefs } from "./sceneRefs";
+import { introState } from "@/components/intro/introState";
 
 const ATMOSPHERE_RADIUS = 1.14;
 
@@ -25,6 +26,7 @@ const fragmentShader = /* glsl */ `
   uniform vec3 uSunDir;
   uniform float uOuter;
   uniform float uIntensity;
+  uniform float uExposure;
   varying vec3 vPosW;
 
   void main() {
@@ -43,7 +45,15 @@ const fragmentShader = /* glsl */ `
     vec3 col = mix(twilight * 0.7, day, smoothstep(-0.05, 0.35, sunSide));
     float lit = smoothstep(-0.3, 0.3, sunSide);
 
-    gl_FragColor = vec4(col * glow * lit * uIntensity, 1.0);
+    // Forward scattering: when the sun is behind the planet the whole rim
+    // ignites (the "sunrise from orbit" look used in the intro).
+    float forward = pow(max(dot(ray, normalize(uSunDir)), 0.0), 5.0);
+    // HDR on purpose: the back-lit rim is the one thing allowed to bloom hard.
+    vec3 rim = vec3(1.0, 0.86, 0.68) * forward * glow * 3.2;
+
+    // The atmosphere leads the reveal: the rim ignites before the surface.
+    float exposure = clamp(uExposure * 2.4, 0.0, 1.0);
+    gl_FragColor = vec4((col * glow * lit * uIntensity + rim) * exposure, 1.0);
   }
 `;
 
@@ -61,6 +71,7 @@ export function EarthAtmosphere({ intensity = 1.1 }: { intensity?: number }) {
           uSunDir: { value: sceneRefs.sunDirection },
           uOuter: { value: ATMOSPHERE_RADIUS },
           uIntensity: { value: intensity },
+          uExposure: { value: 0 },
         },
       }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -69,7 +80,9 @@ export function EarthAtmosphere({ intensity = 1.1 }: { intensity?: number }) {
 
   const ref = useRef<ShaderMaterial>(null);
   useFrame(() => {
-    if (ref.current) ref.current.uniforms.uIntensity.value = intensity;
+    if (!ref.current) return;
+    ref.current.uniforms.uIntensity.value = intensity;
+    ref.current.uniforms.uExposure.value = introState.exposure;
   });
 
   useEffect(() => () => material.dispose(), [material]);

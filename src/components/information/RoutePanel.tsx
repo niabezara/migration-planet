@@ -5,6 +5,7 @@ import type { Confidence, EvidenceType, MigrationRoute } from "@/types/migration
 import { datasetDisclaimer, routeById, siteById, sources } from "@/data";
 import { displayYear, formatYear, routeState } from "@/engine/timeline/timeEngine";
 import { useHistoryStore } from "@/stores/useHistoryStore";
+import { animateYearTo } from "@/stores/yearTween";
 
 const CONFIDENCE_LABEL: Record<Confidence, string> = { high: "High", medium: "Medium", low: "Low" };
 const EVIDENCE_LABEL: Record<EvidenceType, string> = {
@@ -20,13 +21,13 @@ function RouteStatusLine({ route }: { route: MigrationRoute }) {
   const mode = useHistoryStore((s) => s.mode);
   // Rounded year: re-renders only when the displayed date changes.
   const yearsBP = useHistoryStore((s) => displayYear(s.yearsBP));
-  const { selectYear, pause } = useHistoryStore.getState();
+  const { pause } = useHistoryStore.getState();
   const st = routeState(route, yearsBP);
   const when = `${formatYear(yearsBP).value} ${formatYear(yearsBP).unit}`.trim();
 
   const jumpIn = () => {
     pause();
-    selectYear(route.startYear - (route.startYear - route.endYear) * 0.35);
+    animateYearTo(route.startYear - (route.startYear - route.endYear) * 0.35);
   };
 
   if (mode === "overview") {

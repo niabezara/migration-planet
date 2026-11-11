@@ -8,6 +8,7 @@ import type { ArchaeologicalSite } from "@/types/migration";
 import { haversineKm, latLngToVector3 } from "@/engine/geo/coordinates";
 import { formatYearShort } from "@/engine/timeline/timeEngine";
 import { useHistoryStore } from "@/stores/useHistoryStore";
+import { useIntroStore } from "@/components/intro/introState";
 
 const _cam = new Vector3();
 const LABEL_STACK_KM = 150;
@@ -33,9 +34,13 @@ export function SiteMarkers({ sites }: { sites: ArchaeologicalSite[] }) {
   const groups = useRef<(Group | null)[]>([]);
   const rings = useRef<(Mesh | null)[]>([]);
   const labels = useRef<(HTMLDivElement | null)[]>([]);
+  const introFade = useRef(0);
 
   useFrame((state) => {
     const { yearsBP: years, mode } = useHistoryStore.getState();
+    // Sites stay out of the cinematic; they fade in with the interface.
+    const live = useIntroStore.getState().stage === "done";
+    introFade.current += ((live ? 1 : 0) - introFade.current) * Math.min(1, 0.03 + (live ? 0.02 : 0.3));
     _cam.copy(state.camera.position).normalize();
     const dist = state.camera.position.length();
     const t = state.clock.elapsedTime;
@@ -44,7 +49,8 @@ export function SiteMarkers({ sites }: { sites: ArchaeologicalSite[] }) {
       const [older] = site.dateRange;
       // Fade in over ~3% of the site's age.
       // Overview shows every site; historical mode only those already dated.
-      const appear = mode === "overview" ? 1 : Math.min(1, Math.max(0, (older - years) / (older * 0.03)));
+      const appear =
+        introFade.current * (mode === "overview" ? 1 : Math.min(1, Math.max(0, (older - years) / (older * 0.03))));
       // Labels only near the centre of view; rings stay visible to the limb.
       const facing = Math.min(1, Math.max(0, (normal.dot(_cam) - 0.8) / 0.1));
       const g = groups.current[i];

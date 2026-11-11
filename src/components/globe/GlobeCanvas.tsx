@@ -9,6 +9,9 @@ import { useControls } from "leva";
 import { routes, sites } from "@/data";
 import { generateParticleBuffers } from "@/engine/particles/clusterGenerator";
 import { detectQuality } from "@/engine/quality";
+import { INTRO, loopTime } from "@/config/intro";
+import { IntroSequence } from "@/components/intro/IntroSequence";
+import { OriginBeacon } from "./OriginBeacon";
 import { CameraController } from "./CameraController";
 import { Earth } from "./Earth";
 import { EarthAtmosphere } from "./EarthAtmosphere";
@@ -31,6 +34,8 @@ export default function GlobeCanvas({ onReady }: { onReady?: () => void }) {
         particleScale: quality.particleScale,
         trailShare: quality.trailShare,
         glowShare: quality.glowShare,
+        // Loop phases are defined in warped story time (see INTRO.warp).
+        awakenAt: Object.fromEntries(routes.map((r) => [r.id, loopTime(INTRO.routeAwakenAt[r.id] ?? INTRO.defaultAwakenAt)])),
       }),
     [quality],
   );
@@ -72,6 +77,9 @@ export default function GlobeCanvas({ onReady }: { onReady?: () => void }) {
         <RoutePath buffers={buffers} routes={routes} />
         <MigrationClusters buffers={buffers} routes={routes} density={density} />
         <SiteMarkers sites={sites} />
+        <OriginBeacon />
+        {/* Inside Suspense: the intro starts only once the Earth is ready. */}
+        <IntroSequence />
       </Suspense>
 
       <PlaybackDriver routes={routes} />

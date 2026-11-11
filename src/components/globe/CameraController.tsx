@@ -7,10 +7,11 @@ import type { OrbitControls as OrbitControlsImpl } from "three-stdlib";
 import gsap from "gsap";
 import type { CameraFocus, MigrationRoute } from "@/types/migration";
 import type { ParticleBuffers } from "@/engine/particles/clusterGenerator";
-import { latLngToVector3, vector3ToLatLng } from "@/engine/geo/coordinates";
+import { useIntroStore } from "@/components/intro/introState";
+import { applyCameraFocus, readCameraFocus, unwrapTarget, wrapDelta } from "./cameraRig";
 import { routeFocusPoint } from "@/engine/particles/particleSimulation";
 import { routeState } from "@/engine/timeline/timeEngine";
-import { INTRO_CAMERA, OVERVIEW_CAMERA } from "@/config/camera";
+import { OVERVIEW_CAMERA } from "@/config/camera";
 import { useHistoryStore } from "@/stores/useHistoryStore";
 
 const MIN_DISTANCE = 1.25;
@@ -18,8 +19,6 @@ const MIN_DISTANCE = 1.25;
 const IDLE_BEFORE_ROTATE_MS = 4000;
 const MAX_DISTANCE = 9;
 
-/** Shortest signed longitude delta, so flights never take the long way round. */
-const wrapDelta = (from: number, to: number) => ((((to - from) % 360) + 540) % 360) - 180;
 
 interface Props {
   routes: MigrationRoute[];
@@ -45,29 +44,23 @@ function directorTarget(routes: MigrationRoute[], yearsBP: number, selectedId: s
 export function CameraController({ routes, buffers }: Props) {
   const camera = useThree((s) => s.camera);
   const controls = useRef<OrbitControlsImpl>(null);
-  const proxy = useRef({ ...INTRO_CAMERA });
+  const proxy = useRef<CameraFocus>({ ...OVERVIEW_CAMERA });
+  // Re-renders only when the intro stage changes (a few times per page load).
+  const introStage = useIntroStore((s) => s.stage);
+  const interactive = introStage === "done";
   const tween = useRef<gsap.core.Tween | null>(null);
   const lastInteraction = useRef(0);
   const lastTarget = useRef<string | null>(null);
 
-  const apply = (f: CameraFocus) => {
-    latLngToVector3(f.lat, f.lng, f.distance, camera.position);
-    camera.lookAt(0, 0, 0);
-    controls.current?.update();
-  };
-
-  const readCamera = (): CameraFocus => {
-    const ll = vector3ToLatLng(camera.position);
-    return { ...ll, distance: camera.position.length() };
-  };
+  const apply = (f: CameraFocus) => applyCameraFocus(camera, controls.current, f);
+  const readCamera = () => readCameraFocus(camera);
 
   const flyTo = (to: CameraFocus, duration = 3.2, ease = "power2.inOut") => {
     tween.current?.kill();
     const from = readCamera();
     Object.assign(proxy.current, from);
-    const target = { lat: to.lat, lng: from.lng + wrapDelta(from.lng, to.lng), distance: to.distance };
     tween.current = gsap.to(proxy.current, {
-      ...target,
+      ...unwrapTarget(from, to),
       duration,
       ease,
       onUpdate: () => apply(proxy.current),
@@ -77,21 +70,23 @@ export function CameraController({ routes, buffers }: Props) {
     });
   };
 
-  // Intro flight
+  // The intro director (components/intro) owns the camera until the stage is "done".
   useEffect(() => {
-    apply(INTRO_CAMERA);
-    flyTo(OVERVIEW_CAMERA, 5.5, "power3.inOut");
+    if (!interactive) {
+      tween.current?.kill();
+      tween.current = null;
+    }
     return () => {
       tween.current?.kill();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [interactive]);
 
   // Explicit camera requests from the UI (jump to period / event)
   useEffect(
     () =>
       useHistoryStore.subscribe((state, prev) => {
-        if (state.cameraRequest && state.cameraRequest.nonce !== prev.cameraRequest?.nonce) {
+        const live = useIntroStore.getState().stage === "done";
+        if (live && state.cameraRequest && state.cameraRequest.nonce !== prev.cameraRequest?.nonce) {
           flyTo(state.cameraRequest.focus, state.cameraRequest.duration);
         }
       }),
@@ -122,6 +117,10 @@ export function CameraController({ routes, buffers }: Props) {
 
   useFrame((_, delta) => {
     const c = controls.current;
+    if (useIntroStore.getState().stage !== "done") {
+      if (c) c.autoRotate = false;
+      return;
+    }
     const { mode, yearsBP, playing, followCamera, selectedRouteId } = useHistoryStore.getState();
 
     // Overview: the Earth turns slowly unless the user is exploring or a route is open.
@@ -164,8 +163,10 @@ export function CameraController({ routes, buffers }: Props) {
       dampingFactor={0.06}
       rotateSpeed={0.35}
       zoomSpeed={0.6}
+      enabled={interactive}
       minDistance={MIN_DISTANCE}
-      maxDistance={MAX_DISTANCE}
+      // The intro starts deep in space; afterwards the user is kept in range.
+      maxDistance={interactive ? MAX_DISTANCE : 30}
       autoRotateSpeed={0.25}
     />
   );

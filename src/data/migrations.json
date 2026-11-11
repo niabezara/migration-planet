@@ -204,7 +204,7 @@
       "particleConfig": {
         "count": 7600,
         "clusterCount": 7,
-        "spreadKm": 120,
+        "spreadKm": 165,
         "edgeShare": 0.3,
         "groupLengthKm": [
           110,
@@ -334,7 +334,7 @@
       "particleConfig": {
         "count": 9000,
         "clusterCount": 8,
-        "spreadKm": 130,
+        "spreadKm": 160,
         "edgeShare": 0.3,
         "groupLengthKm": [
           120,

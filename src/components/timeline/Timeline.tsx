@@ -2,12 +2,14 @@
 
 import { useEffect, useRef } from "react";
 import {
-  formatYearShort,
+  formatSignedShort,
+  formatSignedYear,
   timelineToYear,
   yearToTimeline,
 } from "@/engine/timeline/timeEngine";
 import { useHistoryStore } from "@/stores/useHistoryStore";
 import { HistoricalEvents } from "./HistoricalEvents";
+import { animateYearTo, cancelYearTween } from "@/stores/yearTween";
 import { PlaybackControls } from "./PlaybackControls";
 
 const TICKS = [300000, 200000, 150000, 100000, 70000, 50000, 30000, 20000, 10000, 5000, 1000, 0];
@@ -30,7 +32,10 @@ export function Timeline() {
       if (fillRef.current) fillRef.current.style.width = `${s}%`;
       if (thumbRef.current) thumbRef.current.style.left = `${s}%`;
       sliderRef.current?.setAttribute("aria-valuenow", String(Math.round(yearsBP)));
-      sliderRef.current?.setAttribute("aria-valuetext", `${Math.round(yearsBP).toLocaleString("en-US")} years ago`);
+      sliderRef.current?.setAttribute(
+        "aria-valuetext",
+        `${Math.round(yearsBP).toLocaleString("en-US")} years ago (year ${formatSignedYear(yearsBP)})`,
+      );
     };
     render(useHistoryStore.getState().yearsBP);
     return useHistoryStore.subscribe((state, prev) => {
@@ -45,13 +50,14 @@ export function Timeline() {
 
   const onPointerDown = (e: React.PointerEvent) => {
     e.currentTarget.setPointerCapture(e.pointerId);
-    const { setScrubbing, selectYear } = useHistoryStore.getState();
-    setScrubbing(true);
-    selectYear(yearAt(e.clientX)); // touching the timeline enters historical mode
+    useHistoryStore.getState().setScrubbing(true);
+    // A click glides to the moment; a drag (below) takes over immediately.
+    animateYearTo(yearAt(e.clientX), 0.55);
   };
   const onPointerMove = (e: React.PointerEvent) => {
     if (!useHistoryStore.getState().scrubbing) return;
-    useHistoryStore.getState().setYear(yearAt(e.clientX));
+    cancelYearTween();
+    useHistoryStore.getState().selectYear(yearAt(e.clientX));
   };
   const onPointerUp = (e: React.PointerEvent) => {
     e.currentTarget.releasePointerCapture(e.pointerId);
@@ -64,8 +70,8 @@ export function Timeline() {
     const step = e.shiftKey ? 0.05 : 0.01;
     if (e.key === "ArrowRight") selectYear(timelineToYear(s + step));
     else if (e.key === "ArrowLeft") selectYear(timelineToYear(s - step));
-    else if (e.key === "Home") selectYear(300000);
-    else if (e.key === "End") selectYear(0);
+    else if (e.key === "Home") animateYearTo(300000);
+    else if (e.key === "End") animateYearTo(0);
     else return;
     e.preventDefault();
     e.stopPropagation();
@@ -114,7 +120,7 @@ export function Timeline() {
               className="absolute -translate-x-1/2 font-mono text-[10px] tracking-wider text-white/35"
               style={{ left: `${yearToTimeline(y) * 100}%` }}
             >
-              {formatYearShort(y)}
+              {formatSignedShort(y)}
             </span>
           ))}
         </div>

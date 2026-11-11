@@ -1,4 +1,4 @@
-# Human Migration: Cinematic 3D Globe
+# The Human Journey: Cinematic 3D Migration Explorer
 
 An interactive 3D explorer of the dispersal of *Homo sapiens*, from ~300,000 years ago to the present.
 It shows six illustrative migration routes, each in its own colour.
@@ -17,9 +17,29 @@ npm run build && npm start   # production
 npm run verify     # numerical checks of the particle engine (determinism, surface, arrival)
 ```
 
-URL parameters: `?year=45000` opens historical mode at that moment · `?route=levant-europe` opens a route · `?quality=low|medium|high` overrides device detection · `?scale=1.7` overrides the particle multiplier (≈80k at 1.7).
+URL parameters: `?year=-45000` opens historical mode at that moment (signed years: negative = years before present) · `?route=levant-europe` opens a route · `?quality=low|medium|high` overrides device detection · `?scale=1.7` overrides the particle multiplier (≈80k at 1.7).
 Keyboard: `Space` play/pause · `←/→` scrub (`Shift` for larger steps) · `Esc` closes the route panel.
 Leva dev controls appear in development only.
+
+## Opening sequence
+
+A real-time cinematic opening (~9 s, then the title hands over to the interface), played in the live scene:
+
+1. **Emergence (0–3 s):** black, then a back-lit crescent of atmosphere ignites; the camera approaches as the planet turns into the light.
+2. **The origin (3–4.6 s):** the camera settles on East Africa and a warm light rises over the terrain.
+3. **Awakening (4.3–6.8 s):** an amber stream bursts out of Africa; the other routes awaken in turn, each from its own origin.
+4. **Reveal (5–9 s):** the camera pulls back to the whole planet with every stream alive; "The Human Journey · 300,000 years. One species."
+
+Controls:
+- Skip with any key, a click, or the *Skip intro* button.
+- Replay with the *Intro* button next to the title.
+- `prefers-reduced-motion` and deep links (`?year=`, `?route=`) start directly in the interactive state.
+
+Code layout:
+- **Choreography data:** `src/config/intro.ts`.
+- **Director** (one GSAP timeline in the R3F scene): `src/components/intro/IntroSequence.tsx`.
+- **Title and skip:** `src/components/intro/IntroOverlay.tsx`.
+- **How the streams awaken:** the particle shader reads a shared *story clock*. Each route bursts out of its origin at its scheduled time; a smooth time warp makes the first loop surge and then settle to normal speed; an *emphasis* uniform adds extra glow during the climax. None of this adds per-frame CPU work.
 
 ## Architecture
 

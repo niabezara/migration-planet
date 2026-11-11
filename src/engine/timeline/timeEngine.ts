@@ -153,6 +153,25 @@ export function formatYear(yearsBP: number): { value: string; unit: string } {
   return { value: String(calendar), unit: "CE" };
 }
 
+/**
+ * Signed-year convention for display and URLs: negative = years before
+ * present (−45,000 = 45,000 years ago), 0 = present. Internally the engine
+ * uses positive years-before-present.
+ */
+export const toSignedYear = (yearsBP: number) => (yearsBP < 0.5 ? 0 : -Math.round(yearsBP));
+export const fromSignedYear = (year: number) => Math.abs(year);
+
+export function formatSignedYear(yearsBP: number): string {
+  const y = toSignedYear(yearsBP);
+  return y === 0 ? "0" : `−${Math.abs(y).toLocaleString("en-US")}`;
+}
+
+/** Compact signed label for timeline ticks: −300k … −5k, 0. */
+export function formatSignedShort(yearsBP: number): string {
+  if (yearsBP < 1) return "0";
+  return yearsBP >= 1000 ? `−${Math.round(yearsBP / 1000)}k` : `−${Math.round(yearsBP)}`;
+}
+
 export function formatYearShort(yearsBP: number): string {
   if (yearsBP < 1) return "Now";
   if (yearsBP >= 1000) return `${Math.round(yearsBP / 1000)}k`;

@@ -3,6 +3,7 @@
 import { periods, routes, sites } from "@/data";
 import { yearToTimeline } from "@/engine/timeline/timeEngine";
 import { useHistoryStore } from "@/stores/useHistoryStore";
+import { animateYearTo } from "@/stores/yearTween";
 
 const pct = (yearsBP: number) => `${yearToTimeline(yearsBP) * 100}%`;
 const width = (older: number, younger: number) =>
@@ -29,7 +30,7 @@ export const ROUTE_LANE_COUNT = Math.max(1, ...Object.values(routeLanes).map((l)
 /** Period bands, route intervals (in route colours) and site ticks on the timeline. */
 export function HistoricalEvents() {
   const selectedRouteId = useHistoryStore((s) => s.selectedRouteId);
-  const { selectYear, selectRoute, pause } = useHistoryStore.getState();
+  const { selectRoute, pause } = useHistoryStore.getState();
 
   return (
     <>
@@ -43,7 +44,7 @@ export function HistoricalEvents() {
             onClick={(e) => {
               e.stopPropagation();
               pause();
-              selectYear(p.startYear);
+              animateYearTo(p.startYear);
             }}
             title={`${p.name}: jump to ${p.startYear.toLocaleString("en-US")} years ago`}
           >
@@ -67,7 +68,7 @@ export function HistoricalEvents() {
           onPointerDown={(ev) => ev.stopPropagation()}
           onClick={() => {
             pause();
-            selectYear(r.startYear - (r.startYear - r.endYear) * 0.35);
+            animateYearTo(r.startYear - (r.startYear - r.endYear) * 0.35);
             selectRoute(r.id, r.camera);
           }}
           aria-label={`${r.name}: jump to this route`}
@@ -84,7 +85,7 @@ export function HistoricalEvents() {
           onPointerDown={(ev) => ev.stopPropagation()}
           onClick={() => {
             pause();
-            selectYear(s.dateRange[0] * 0.995);
+            animateYearTo(s.dateRange[0] * 0.995);
             useHistoryStore.getState().flyTo({ lat: s.location.lat, lng: s.location.lng, distance: 2.2 });
           }}
           aria-label={`${s.name} (${s.region})`}

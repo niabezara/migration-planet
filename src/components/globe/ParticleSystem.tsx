@@ -18,7 +18,9 @@ import { CORE_ATTRIBUTES, type AttributeName, type ParticleBuffers } from "@/eng
 import { useHistoryStore, type ViewMode } from "@/stores/useHistoryStore";
 import type { MigrationRoute } from "@/types/migration";
 import { routeState } from "@/engine/timeline/timeEngine";
-import { createParticleLayers } from "./ParticleShader";
+import { createParticleLayers, MAX_ROUTES } from "./ParticleShader";
+import { introState } from "@/components/intro/introState";
+import { INTRO, loopTime } from "@/config/intro";
 
 export interface ParticleLook {
   /** Core dot size. */
@@ -85,7 +87,13 @@ export function ParticleSystem({
     trail.setAttribute("aTrail", new BufferAttribute(buffers.trail.attributes.aTrail, 1));
 
     const layers = createParticleLayers({ pathTexture: texture, pathSamples: buffers.pathSamples });
+    const awaken = layers.uniforms.uAwakenAt.value as Float32Array;
+    if (routes.length > MAX_ROUTES) console.warn(`Only the first ${MAX_ROUTES} routes get intro awakening times.`);
+    for (const r of routes) {
+      if (r.index < MAX_ROUTES) awaken[r.index] = INTRO.routeAwakenAt[r.id] ?? INTRO.defaultAwakenAt;
+    }
     return { texture, geometries: { core, glow, trail }, layers };
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- routes are static data tied to buffers
   }, [buffers]);
 
   useEffect(
@@ -133,6 +141,10 @@ export function ParticleSystem({
     u.uSelectMix.value = a.selectMix;
     u.uYearBP.value = s.yearsBP;
     u.uClock.value = state.clock.elapsedTime;
+    const story = state.clock.elapsedTime - introState.storyStart;
+    u.uStoryClock.value = story;
+    u.uLoopClock.value = loopTime(story);
+    u.uHero.value = introState.hero;
     u.uCamDist.value = state.camera.position.length();
     u.uDensity.value = density;
     u.uPxScale.value = dpr * (state.size.height / 900);

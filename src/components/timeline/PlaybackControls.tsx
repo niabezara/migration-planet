@@ -2,6 +2,7 @@
 
 import { PLAYBACK_SPEEDS, timelineToYear, yearToTimeline } from "@/engine/timeline/timeEngine";
 import { useHistoryStore } from "@/stores/useHistoryStore";
+import { animateYearTo, cancelYearTween } from "@/stores/yearTween";
 import { OVERVIEW_CAMERA } from "@/config/camera";
 
 const STEP = 0.02; // timeline units per step click
@@ -35,14 +36,15 @@ export function PlaybackControls() {
   const speed = useHistoryStore((s) => s.speed);
   const follow = useHistoryStore((s) => s.followCamera);
   const mode = useHistoryStore((s) => s.mode);
-  const { play, pause, setSpeed, selectYear, setFollowCamera, enterOverview, flyTo } = useHistoryStore.getState();
+  const { play, pause, setSpeed, setFollowCamera, enterOverview, flyTo } = useHistoryStore.getState();
 
   const step = (delta: number) => {
     const y = useHistoryStore.getState().yearsBP;
-    selectYear(timelineToYear(yearToTimeline(y) + delta));
+    animateYearTo(timelineToYear(yearToTimeline(y) + delta), 0.45);
   };
 
   const toOverview = () => {
+    cancelYearTween();
     enterOverview();
     flyTo(OVERVIEW_CAMERA, 2.8);
   };

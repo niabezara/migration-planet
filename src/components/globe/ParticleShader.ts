@@ -3,6 +3,9 @@ import { PARTICLE_CONSTANTS } from "@/engine/particles/constants";
 
 export { PARTICLE_CONSTANTS };
 
+/** Upper bound on routes addressable by per-route uniforms (awakening times). */
+export const MAX_ROUTES = 16;
+
 /**
  * Three render layers share ONE position function:
  *
@@ -25,7 +28,10 @@ const common = /* glsl */ `
   uniform sampler2D uPath;
   uniform float uSamples;
   uniform float uYearBP;
-  uniform float uClock;
+  uniform float uClock;         // wall clock: cosmetic shimmer only
+  uniform float uStoryClock;    // seconds since the intro started: awakening
+  uniform float uLoopClock;     // warped story time (intro surge): overview loops
+  uniform float uAwakenAt[MAX_ROUTES]; // story time each route bursts out of its origin
   uniform float uMode;          // 0 overview, 1 historical
   uniform float uFade;          // mode transition fade
   uniform float uSelected;      // selected route index, -1 = none
@@ -38,6 +44,7 @@ const common = /* glsl */ `
   uniform float uCamDist;       // camera distance from globe centre (radii)
   uniform float uDensity;       // runtime LOD 0..1 (adaptive performance)
   uniform float uIntensity;
+  uniform float uHero;          // intro emphasis 0..1
 
   attribute float aRow;
   attribute float aRoute;
@@ -77,9 +84,10 @@ const common = /* glsl */ `
 
   struct State {
     vec3 pos;        // unit sphere
-    float vis;       // window visibility (mode-dependent)
+    float vis;       // window visibility (mode-dependent) × awakening
     float moving;    // 1 while travelling
     float settle;    // 0..1 arrival blend
+    float flash;     // 1 at the instant a route awakens, decaying
   };
 
   // Position of this particle \`lag\` (route-window fraction) in the past.
@@ -87,13 +95,18 @@ const common = /* glsl */ `
     float elapsed;
     float vis;
     if (uMode < 0.5) {
-      float c = fract(uClock / aLoop.x + aLoop.y);
+      float c = fract(uLoopClock / aLoop.x + aLoop.y);
       elapsed = mix(uOverviewRange.x, uOverviewRange.y, c) - lag;
       vis = ramp(c, 0.0, 0.04) * (1.0 - ramp(c, 0.9, 1.0));
     } else {
       elapsed = (aTiming.x - uYearBP) / (aTiming.x - aTiming.y) - lag;
       vis = ramp(elapsed, uWindow.x, uWindow.x + 0.04) * (1.0 - ramp(elapsed, uWindow.y, uWindow.z));
     }
+
+    // Awakening (intro Scene 3): dark until the route's moment, then a burst.
+    float since = uStoryClock - uAwakenAt[int(aRoute + 0.5)];
+    vis *= ramp(since, 0.0, 0.5);
+    float flash = since > 0.0 ? exp(-since * 1.1) : 0.0;
 
     float u = (elapsed - aTiming.z) / aTiming.w;
     float t = clamp(u, 0.0, 1.0);
@@ -109,7 +122,9 @@ const common = /* glsl */ `
     float wiggle = sin(t * 17.0 + seed * 6.2831) * 0.7 + sin(t * 43.0 + seed * 19.0) * 0.3;
     float split = aSplit.y * smoothstep(aSplit.x, aSplit.x + 0.2, t);
     vec2 travelOff = vec2(aShape.x * bulge + wiggle * aShape.z + split, aShape.y);
-    vec2 off = mix(aScatter, travelOff, smoothstep(0.0, uFormIn, t));
+    // Burst: the origin crowd starts as a concentrated point and blooms outward.
+    float burst = mix(0.12, 1.0, 1.0 - flash) + 1.1 * flash * (1.0 - flash);
+    vec2 off = mix(aScatter * burst, travelOff, smoothstep(0.0, uFormIn, t));
     vec3 pos = normalize(p + (side * off.x + fwd * off.y) / EARTH_KM);
 
     float settle = smoothstep(1.0, 1.0 + uSettle, u);
@@ -120,7 +135,7 @@ const common = /* glsl */ `
     pos = normalize(pos + (side * sh.x + fwd * sh.y) / EARTH_KM);
 
     float moving = smoothstep(0.0, 0.02, u) * (1.0 - smoothstep(1.0, 1.0 + uSettle * 0.6, u));
-    return State(pos, vis, moving, settle);
+    return State(pos, vis, moving, settle, flash);
   }
 
   float isSelected() { return 1.0 - step(0.5, abs(aRoute - uSelected)); }
@@ -149,11 +164,11 @@ const coreVertex = /* glsl */ `
     vAlpha = s.vis * uFade * selectionAlpha() * headAlpha * lodMask();
     float modeGain = 1.0;
     vColor = aColor * aLook.y * uIntensity * selectionGain() * modeGain
-      * mix(1.0, 1.2, s.moving) * mix(1.0, 0.8, far);
+      * mix(1.0, 1.2, s.moving) * mix(1.0, 0.8, far) * (1.0 + 1.8 * s.flash) * (1.0 + 0.45 * uHero);
 
     // Softer-than-perspective attenuation + floor: legible at any zoom.
     float px = uSize * aLook.x * uPxScale / pow(max(0.1, -mv.z), 0.65);
-    px *= mix(1.0, 1.15, isSelected() * uSelectMix);
+    px *= mix(1.0, 1.15, isSelected() * uSelectMix) * (1.0 + 0.6 * s.flash) * (1.0 + 0.3 * uHero);
     gl_PointSize = vAlpha < 0.002 ? 0.0 : max(px, uMinPx);
   }
 `;
@@ -185,7 +200,7 @@ const trailVertex = /* glsl */ `
     // Streaks matter most close-up; at full-globe scale the glow carries motion.
     float near = 1.0 - 0.65 * farFactor();
     vAlpha = s.vis * uFade * selectionAlpha() * s.moving * (1.0 - aTrail) * uTrailAlpha * near * lodMask();
-    vColor = aColor * aLook.y * uIntensity * selectionGain();
+    vColor = aColor * aLook.y * uIntensity * selectionGain() * (1.0 + 0.6 * uHero);
   }
 `;
 
@@ -208,9 +223,10 @@ const glowVertex = /* glsl */ `
     gl_Position = projectionMatrix * mv;
     float far = farFactor();
     // Glow carries the stream at full-globe distance, steps back close-up.
-    vAlpha = s.vis * uFade * selectionAlpha() * uGlowAlpha * mix(0.55, 1.3, far) * mix(1.0, 0.7, s.settle);
+    vAlpha = s.vis * uFade * selectionAlpha() * uGlowAlpha * mix(0.55, 1.3, far) * mix(1.0, 0.7, s.settle)
+      * (1.0 + 3.0 * s.flash) * (1.0 + 1.8 * uHero);
     vColor = aColor * selectionGain();
-    float px = (uGlowKm / EARTH_KM) * uProjScale / max(0.1, -mv.z);
+    float px = (uGlowKm / EARTH_KM) * (1.0 + 0.5 * uHero) * uProjScale / max(0.1, -mv.z);
     gl_PointSize = vAlpha < 0.001 ? 0.0 : clamp(px, uGlowPxRange.x, uGlowPxRange.y);
   }
 `;
@@ -249,6 +265,9 @@ export function createParticleLayers({
     uSamples: { value: pathSamples },
     uYearBP: { value: 300000 },
     uClock: { value: 0 },
+    uStoryClock: { value: 1e6 },
+    uLoopClock: { value: 1e6 },
+    uAwakenAt: { value: new Float32Array(MAX_ROUTES) },
     uMode: { value: 0 },
     uFade: { value: 1 },
     uSelected: { value: -1 },
@@ -261,6 +280,7 @@ export function createParticleLayers({
     uCamDist: { value: 4 },
     uDensity: { value: 1 },
     uIntensity: { value: 1.4 },
+    uHero: { value: 0 },
     uSize: { value: 2.6 },
     uPxScale: { value: 1 },
     uMinPx: { value: 1.5 },
@@ -277,10 +297,11 @@ export function createParticleLayers({
     depthTest: true,
     blending: AdditiveBlending,
   };
+  const defines = { MAX_ROUTES };
   return {
     uniforms,
-    core: new ShaderMaterial({ ...base, vertexShader: coreVertex, fragmentShader: coreFragment }),
-    trail: new ShaderMaterial({ ...base, vertexShader: trailVertex, fragmentShader: trailFragment }),
-    glow: new ShaderMaterial({ ...base, vertexShader: glowVertex, fragmentShader: glowFragment }),
+    core: new ShaderMaterial({ ...base, defines, vertexShader: coreVertex, fragmentShader: coreFragment }),
+    trail: new ShaderMaterial({ ...base, defines, vertexShader: trailVertex, fragmentShader: trailFragment }),
+    glow: new ShaderMaterial({ ...base, defines, vertexShader: glowVertex, fragmentShader: glowFragment }),
   };
 }

@@ -19,3 +19,9 @@ export const ROUTE_COLORS: Record<string, string> = {
 
 /** Fallback for routes added to the data without a palette entry. */
 export const FALLBACK_ROUTE_COLOR = "#e8e3d8";
+
+/**
+ * Long-standing source populations not tied to a single route (e.g. Africa).
+ * A pale warm ivory: reads as "people living here", never as a stream.
+ */
+export const ANCESTRAL_POPULATION_COLOR = "#ffc488";

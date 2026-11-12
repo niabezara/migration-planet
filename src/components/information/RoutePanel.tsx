@@ -2,14 +2,19 @@
 
 import { useState } from "react";
 import type { Confidence, EvidenceType, MigrationRoute } from "@/types/migration";
-import { datasetDisclaimer, routeById, siteById, sources } from "@/data";
+import { datasetDisclaimer, milestones, routeById, siteById, sources, speciesById, ROUTE_SPECIES_ID } from "@/data";
+import { milestonesForRoute } from "@/engine/milestones/milestoneQueries";
+import { MilestoneTimeline } from "@/components/milestones/MilestoneTimeline";
+import { openSpecies } from "./SpeciesList";
 import { displayYear, formatYear, routeState } from "@/engine/timeline/timeEngine";
 import { useHistoryStore } from "@/stores/useHistoryStore";
 import { animateYearTo } from "@/stores/yearTween";
+import { RoutePopulations } from "./RoutePopulations";
 
 const CONFIDENCE_LABEL: Record<Confidence, string> = { high: "High", medium: "Medium", low: "Low" };
 const EVIDENCE_LABEL: Record<EvidenceType, string> = {
   archaeological: "Archaeological",
+  fossil: "Fossil",
   genetic: "Genetic",
   palaeoenvironmental: "Palaeoenvironmental",
   chronological: "Chronological",
@@ -140,11 +145,27 @@ export function RoutePanel() {
       <div className="mt-5 space-y-5 text-[12.5px] leading-relaxed">
         <Section title="Geography">
           <dl>
+            <Field label="Species">
+              <button className="entity-link" onClick={() => openSpecies(speciesById[ROUTE_SPECIES_ID])}>
+                <em className="font-serif">Homo sapiens</em>
+              </button>
+            </Field>
             <Field label="Origin">{route.origin}</Field>
             <Field label="Destination">{route.destination}</Field>
             <Field label="Via">{route.intermediateRegions.join(" · ")}</Field>
           </dl>
           <p className="mt-2 text-white/50">{route.pathDescription}</p>
+        </Section>
+
+        <Section title="Populations">
+          <RoutePopulations route={route} />
+        </Section>
+
+        <Section title="Milestones">
+          {(() => {
+            const { items, tags } = milestonesForRoute(milestones, route);
+            return <MilestoneTimeline items={items} tags={tags} empty="No milestones recorded in this period." />;
+          })()}
         </Section>
 
         <Section title="History">

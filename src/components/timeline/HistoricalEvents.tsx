@@ -5,9 +5,10 @@ import { yearToTimeline } from "@/engine/timeline/timeEngine";
 import { useHistoryStore } from "@/stores/useHistoryStore";
 import { animateYearTo } from "@/stores/yearTween";
 
-const pct = (yearsBP: number) => `${yearToTimeline(yearsBP) * 100}%`;
+// Rounded: long floats serialise differently on server and client (hydration mismatch).
+const pct = (yearsBP: number) => `${(yearToTimeline(yearsBP) * 100).toFixed(3)}%`;
 const width = (older: number, younger: number) =>
-  `${(yearToTimeline(younger) - yearToTimeline(older)) * 100}%`;
+  `${((yearToTimeline(younger) - yearToTimeline(older)) * 100).toFixed(3)}%`;
 
 /** Greedy lane packing so overlapping route intervals stack instead of colliding. */
 const routeLanes: Record<string, number> = (() => {
@@ -30,6 +31,7 @@ export const ROUTE_LANE_COUNT = Math.max(1, ...Object.values(routeLanes).map((l)
 /** Period bands, route intervals (in route colours) and site ticks on the timeline. */
 export function HistoricalEvents() {
   const selectedRouteId = useHistoryStore((s) => s.selectedRouteId);
+  const filter = useHistoryStore((s) => s.speciesFilter);
   const { selectRoute, pause } = useHistoryStore.getState();
 
   return (
@@ -44,7 +46,9 @@ export function HistoricalEvents() {
             onClick={(e) => {
               e.stopPropagation();
               pause();
-              animateYearTo(p.startYear);
+              // Land just inside the period so the header names it too.
+              animateYearTo(p.startYear - (p.startYear - p.endYear) * 0.01);
+              useHistoryStore.getState().select({ kind: "period", id: p.id });
             }}
             title={`${p.name}: jump to ${p.startYear.toLocaleString("en-US")} years ago`}
           >
@@ -54,7 +58,7 @@ export function HistoricalEvents() {
       </div>
 
       {/* Route intervals, one lane per overlap level */}
-      {routes.map((r) => (
+      {filter !== "other" && routes.map((r) => (
         <button
           key={r.id}
           className="route-span"
@@ -86,7 +90,7 @@ export function HistoricalEvents() {
           onClick={() => {
             pause();
             animateYearTo(s.dateRange[0] * 0.995);
-            useHistoryStore.getState().flyTo({ lat: s.location.lat, lng: s.location.lng, distance: 2.2 });
+            useHistoryStore.getState().select({ kind: "site", id: s.id }, { lat: s.location.lat, lng: s.location.lng, distance: 2.2 });
           }}
           aria-label={`${s.name} (${s.region})`}
           title={`${s.name} (${s.region})`}

@@ -6,13 +6,14 @@ import { PerformanceMonitor, Stars } from "@react-three/drei";
 import { Bloom, EffectComposer, ToneMapping, Vignette } from "@react-three/postprocessing";
 import { ToneMappingMode } from "postprocessing";
 import { useControls } from "leva";
-import { routes, sites } from "@/data";
+import { populations, routes, sites, species } from "@/data";
 import { generateParticleBuffers } from "@/engine/particles/clusterGenerator";
 import { detectQuality } from "@/engine/quality";
 import { INTRO, loopTime } from "@/config/intro";
 import { IntroSequence } from "@/components/intro/IntroSequence";
 import { OriginBeacon } from "./OriginBeacon";
 import { CameraController } from "./CameraController";
+import { Comets } from "./Comets";
 import { Earth } from "./Earth";
 import { EarthAtmosphere } from "./EarthAtmosphere";
 import { MigrationClusters } from "./MigrationClusters";
@@ -20,6 +21,7 @@ import { PlaybackDriver } from "./PlaybackDriver";
 import { RoutePath } from "./RoutePath";
 import { RoutePicker } from "./RoutePicker";
 import { SiteMarkers } from "./SiteMarkers";
+import { MilestoneMarker } from "./MilestoneMarker";
 
 /** The single WebGL scene. Client-only (loaded with ssr: false). */
 export default function GlobeCanvas({ onReady }: { onReady?: () => void }) {
@@ -42,10 +44,13 @@ export default function GlobeCanvas({ onReady }: { onReady?: () => void }) {
 
   const scene = useControls("Scene", {
     sunAngle: { value: 0.85, min: 0, max: 1.6, step: 0.01 },
-    clouds: { value: 0.8, min: 0, max: 1, step: 0.01 },
-    atmosphere: { value: 1.1, min: 0, max: 3, step: 0.05 },
-    bloom: { value: 0.7, min: 0, max: 4, step: 0.05 },
-    bloomThreshold: { value: 0.95, min: 0, max: 2, step: 0.01 },
+    clouds: { value: 0.45, min: 0, max: 1, step: 0.01 },
+    atmosphere: { value: 0.95, min: 0, max: 3, step: 0.05 },
+    // Selective by luminance: the toned-down Earth stays below the threshold,
+    // stream cores (HDR) exceed it, population clusters stay beneath it.
+    bloom: { value: 0.85, min: 0, max: 4, step: 0.05 },
+    bloomThreshold: { value: 1.0, min: 0, max: 2, step: 0.01 },
+    comets: { value: 1, min: 0, max: 2, step: 0.05 },
   });
 
   return (
@@ -68,6 +73,7 @@ export default function GlobeCanvas({ onReady }: { onReady?: () => void }) {
       />
 
       <Stars radius={80} depth={40} count={quality.tier === "low" ? 2500 : 5000} factor={2.2} saturation={0} fade speed={0.2} />
+      <Comets intensity={scene.comets} />
 
       <Suspense fallback={null}>
         <RoutePicker buffers={buffers} routes={routes}>
@@ -75,8 +81,9 @@ export default function GlobeCanvas({ onReady }: { onReady?: () => void }) {
         </RoutePicker>
         <EarthAtmosphere intensity={scene.atmosphere} />
         <RoutePath buffers={buffers} routes={routes} />
-        <MigrationClusters buffers={buffers} routes={routes} density={density} />
+        <MigrationClusters buffers={buffers} routes={routes} clusters={populations} species={species} quality={quality} density={density} />
         <SiteMarkers sites={sites} />
+        <MilestoneMarker />
         <OriginBeacon />
         {/* Inside Suspense: the intro starts only once the Earth is ready. */}
         <IntroSequence />
@@ -90,8 +97,8 @@ export default function GlobeCanvas({ onReady }: { onReady?: () => void }) {
           mipmapBlur
           intensity={scene.bloom}
           luminanceThreshold={scene.bloomThreshold}
-          luminanceSmoothing={0.25}
-          radius={0.72}
+          luminanceSmoothing={0.2}
+          radius={0.6}
         />
         <ToneMapping mode={ToneMappingMode.ACES_FILMIC} />
         <Vignette offset={0.28} darkness={0.72} />

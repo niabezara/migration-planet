@@ -1,12 +1,26 @@
 import { create } from "zustand";
 import type { CameraFocus } from "@/types/migration";
-import { clampYear, type PlaybackSpeed } from "@/engine/timeline/timeEngine";
+import { clampYear, TIMELINE_START, type PlaybackSpeed } from "@/engine/timeline/timeEngine";
 
 /**
  * - overview:   all routes loop as a visual summary (no single moment in time)
  * - historical: the scene shows exactly the state at `yearsBP`
  */
 export type ViewMode = "overview" | "historical";
+
+/** Which hominins are drawn: everything, only Homo sapiens, or every other hominin. */
+export type SpeciesFilter = "all" | "sapiens" | "other";
+
+/**
+ * What the information panel shows. Exactly one entity at a time; a route
+ * selection also sets `selectedRouteId` (kept for the existing route code).
+ * "milestones" is the browsable milestone timeline (id unused).
+ */
+export type SelectionKind = "route" | "species" | "milestone" | "site" | "population" | "period" | "milestones";
+export interface Selection {
+  kind: SelectionKind;
+  id: string;
+}
 
 /** Where historical mode starts when entered without an explicit year. */
 export const DEFAULT_HISTORICAL_YEAR = 140_000;
@@ -25,6 +39,12 @@ interface HistoryState {
   /** User is dragging the timeline. Playback pauses advancing meanwhile. */
   scrubbing: boolean;
   selectedRouteId: string | null;
+  selection: Selection | null;
+  /** Panel to return to from a milestone opened inside another panel ("Back"). */
+  previousSelection: Selection | null;
+  speciesFilter: SpeciesFilter;
+  /** Milestone shown on the globe (selected, or expanded in a panel timeline). */
+  highlightMilestoneId: string | null;
 
   /** Camera: follow migrations while playing (historical mode). */
   followCamera: boolean;
@@ -43,6 +63,10 @@ interface HistoryState {
   setScrubbing: (scrubbing: boolean) => void;
   setFollowCamera: (follow: boolean) => void;
   selectRoute: (id: string | null, focus?: CameraFocus) => void;
+  /** Open any entity in the panel (null closes it). */
+  select: (selection: Selection | null, focus?: CameraFocus) => void;
+  setSpeciesFilter: (filter: SpeciesFilter) => void;
+  setHighlightMilestone: (id: string | null) => void;
   flyTo: (focus: CameraFocus, duration?: number) => void;
 }
 
@@ -54,6 +78,10 @@ export const useHistoryStore = create<HistoryState>((set, get) => ({
   speed: 1,
   scrubbing: false,
   selectedRouteId: null,
+  selection: null,
+  previousSelection: null,
+  speciesFilter: "sapiens",
+  highlightMilestoneId: null,
   followCamera: true,
   cameraRequest: null,
 
@@ -66,7 +94,7 @@ export const useHistoryStore = create<HistoryState>((set, get) => ({
     let { yearsBP } = get();
     // Restart from the relevant end if parked at the limit.
     if (dir === 1 && yearsBP <= 0) yearsBP = DEFAULT_HISTORICAL_YEAR;
-    if (dir === -1 && yearsBP >= 300_000) yearsBP = 0;
+    if (dir === -1 && yearsBP >= TIMELINE_START) yearsBP = 0;
     set({ playing: true, direction: dir, yearsBP, mode: "historical", followCamera: true });
   },
   pause: () => set({ playing: false }),
@@ -76,9 +104,23 @@ export const useHistoryStore = create<HistoryState>((set, get) => ({
   setFollowCamera: (followCamera) => set({ followCamera }),
 
   selectRoute: (id, focus) => {
-    set({ selectedRouteId: id });
+    set({ selectedRouteId: id, selection: id ? { kind: "route", id } : null, highlightMilestoneId: null });
     if (id && focus) get().flyTo(focus);
   },
+  select: (selection, focus) => {
+    const current = get().selection;
+    set({
+      selection,
+      // Opening a milestone from another panel remembers that panel.
+      previousSelection:
+        selection?.kind === "milestone" && current && current.kind !== "milestone" ? current : selection?.kind === "milestone" ? get().previousSelection : null,
+      selectedRouteId: selection?.kind === "route" ? selection.id : null,
+      highlightMilestoneId: selection?.kind === "milestone" ? selection.id : null,
+    });
+    if (selection && focus) get().flyTo(focus);
+  },
+  setSpeciesFilter: (speciesFilter) => set({ speciesFilter }),
+  setHighlightMilestone: (highlightMilestoneId) => set({ highlightMilestoneId }),
 
   flyTo: (focus, duration) =>
     set((s) => ({ cameraRequest: { focus, duration, nonce: (s.cameraRequest?.nonce ?? 0) + 1 } })),

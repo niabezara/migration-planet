@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import {
+  TIMELINE_START,
   formatSignedShort,
   formatSignedYear,
   timelineToYear,
@@ -11,8 +12,10 @@ import { useHistoryStore } from "@/stores/useHistoryStore";
 import { HistoricalEvents } from "./HistoricalEvents";
 import { animateYearTo, cancelYearTween } from "@/stores/yearTween";
 import { PlaybackControls } from "./PlaybackControls";
+import { SpeciesSpans } from "./SpeciesSpans";
+import { MilestoneTicks } from "./MilestoneTicks";
 
-const TICKS = [300000, 200000, 150000, 100000, 70000, 50000, 30000, 20000, 10000, 5000, 1000, 0];
+const TICKS = [3_500_000, 2_000_000, 1_000_000, 500_000, 300_000, 100_000, 50_000, 20_000, 10_000, 5000, 2000, 0];
 
 /**
  * Full-width, non-linear timeline. The thumb and fill are moved via a
@@ -70,7 +73,7 @@ export function Timeline() {
     const step = e.shiftKey ? 0.05 : 0.01;
     if (e.key === "ArrowRight") selectYear(timelineToYear(s + step));
     else if (e.key === "ArrowLeft") selectYear(timelineToYear(s - step));
-    else if (e.key === "Home") animateYearTo(300000);
+    else if (e.key === "Home") animateYearTo(TIMELINE_START);
     else if (e.key === "End") animateYearTo(0);
     else return;
     e.preventDefault();
@@ -84,11 +87,12 @@ export function Timeline() {
         <span className="hidden text-right text-[10px] uppercase tracking-[0.3em] text-white/35 md:block">
           {mode === "overview"
             ? "Overview · waves from different periods · pick a year to explore"
-            : "Non-linear scale · recent time expanded"}
+            : "Logarithmic scale · recent time expanded"}
         </span>
       </div>
 
       <div className="relative">
+        <MilestoneTicks />
         <HistoricalEvents />
         <div
           ref={(el) => {
@@ -100,8 +104,8 @@ export function Timeline() {
           tabIndex={0}
           aria-label="Historical time"
           aria-valuemin={0}
-          aria-valuemax={300000}
-          aria-valuenow={300000}
+          aria-valuemax={TIMELINE_START}
+          aria-valuenow={TIMELINE_START}
           onPointerDown={onPointerDown}
           onPointerMove={onPointerMove}
           onPointerUp={onPointerUp}
@@ -118,12 +122,13 @@ export function Timeline() {
             <span
               key={y}
               className="absolute -translate-x-1/2 font-mono text-[10px] tracking-wider text-white/35"
-              style={{ left: `${yearToTimeline(y) * 100}%` }}
+              style={{ left: `${(yearToTimeline(y) * 100).toFixed(3)}%` }}
             >
               {formatSignedShort(y)}
             </span>
           ))}
         </div>
+        <SpeciesSpans />
       </div>
     </div>
   );

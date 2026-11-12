@@ -244,12 +244,262 @@ button:focus-visible, [role="slider"]:focus-visible {
 .legend-item:hover { background: rgb(255 255 255 / 0.05); }
 .legend-item[data-selected="true"] { background: rgb(255 255 255 / 0.08); }
 .legend-item[data-inactive="true"] { opacity: 0.38; }
+.legend-item--compact { padding: 4px 8px; gap: 10px; }
+
+.species-span {
+  position: absolute;
+  height: 2px;
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--species-color) 70%, transparent);
+  transition: height 0.2s, box-shadow 0.2s;
+}
+.species-span::before { content: ""; position: absolute; inset: -2px 0; }
+.species-span[data-open-start="true"] { border-top-left-radius: 0; border-bottom-left-radius: 0; }
+.species-span:hover,
+.species-span[data-selected="true"] {
+  height: 3px;
+  background: var(--species-color);
+  box-shadow: 0 0 10px var(--species-color);
+}
+
+.legend-scroll {
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(255 255 255 / 0.12) transparent;
+  padding-right: 6px;
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 18px), transparent);
+}
+
+/* ---------- Milestone icons (restrained; paused unless featured/hovered) ---------- */
+.mi { display: inline-grid; place-items: center; flex-shrink: 0; color: rgb(243 230 207 / 0.85); }
+.mi svg { width: 100%; height: 100%; overflow: visible; }
+.mi * { transform-box: fill-box; }
+/* Not featured: no animation at all, so every icon shows its complete, still form. */
+.mi[data-animate="false"] * { animation: none !important; }
+.mi[data-animate="false"] .mi-sheen, .mi[data-animate="false"] .mi-spark { opacity: 0; }
+.mi[data-animate="false"] .mi-wave, .mi[data-animate="false"] .mi-window { opacity: 0.8; }
+.mi-turn { transform-origin: center; animation: mi-turn 7s ease-in-out infinite; }
+@keyframes mi-turn { 0%, 100% { transform: scaleX(1); } 50% { transform: scaleX(0.55); } }
+.mi-sheen { animation: mi-sheen 3.5s ease-in-out infinite; }
+@keyframes mi-sheen { 0%, 60%, 100% { opacity: 0; transform: translate(-4px, 8px); } 75% { opacity: 1; } 90% { opacity: 0; transform: translate(6px, -2px); } }
+.mi-flame { transform-origin: 50% 100%; }
+.mi-flame--a { animation: mi-flicker 1.9s ease-in-out infinite; }
+.mi-flame--b { animation: mi-flicker 1.3s ease-in-out infinite reverse; }
+@keyframes mi-flicker { 0%, 100% { transform: scale(1, 1); opacity: 0.95; } 30% { transform: scale(0.96, 1.05); } 55% { transform: scale(1.03, 0.95); opacity: 0.8; } 80% { transform: scale(0.98, 1.03); } }
+.mi-spark { animation: mi-spark 2.4s ease-out infinite; opacity: 0; }
+.mi-spark--2 { animation-delay: 0.8s; } .mi-spark--3 { animation-delay: 1.6s; }
+@keyframes mi-spark { 0% { opacity: 0; transform: translateY(6px); } 20% { opacity: 1; } 100% { opacity: 0; transform: translateY(-7px); } }
+.mi-draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: mi-draw 4.5s ease-in-out infinite; }
+.mi[data-animate="false"] .mi-draw { stroke-dashoffset: 0; }
+.mi-draw--late { animation-delay: 0.9s; }
+@keyframes mi-draw { 0% { stroke-dashoffset: 1; opacity: 1; } 45%, 85% { stroke-dashoffset: 0; opacity: 1; } 100% { stroke-dashoffset: 0; opacity: 0; } }
+.mi-spray { animation: mi-spray 5s ease-in-out infinite; }
+@keyframes mi-spray { 0% { opacity: 0; filter: blur(3px); } 45%, 85% { opacity: 1; filter: blur(0.3px); } 100% { opacity: 0.2; filter: blur(1px); } }
+.mi-wave { animation: mi-wave 2.6s ease-out infinite; opacity: 0; }
+.mi-wave--2 { animation-delay: 0.4s; } .mi-wave--3 { animation-delay: 0.8s; }
+@keyframes mi-wave { 0% { opacity: 0; } 30% { opacity: 0.9; } 100% { opacity: 0; } }
+.mi-bob { transform-origin: 50% 100%; animation: mi-bob 4s ease-in-out infinite; }
+@keyframes mi-bob { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(1.2px) rotate(2deg); } }
+.mi-swell { animation: mi-swell 4s linear infinite; }
+@keyframes mi-swell { from { transform: translateX(0); } to { transform: translateX(-12px); } }
+.mi-spin-bands { animation: mi-spin 6s linear infinite; }
+@keyframes mi-spin { from { transform: translateX(0); } to { transform: translateX(8px); } }
+.mi-glow { animation: mi-glow 3.4s ease-in-out infinite; }
+@keyframes mi-glow { 0%, 100% { opacity: 0.55; filter: drop-shadow(0 0 0 transparent); } 50% { opacity: 1; filter: drop-shadow(0 0 3px var(--mi-accent)); } }
+.mi-grow-stem { stroke-dasharray: 1; stroke-dashoffset: 1; animation: mi-stem 5s ease-out infinite; }
+.mi[data-animate="false"] .mi-grow-stem { stroke-dashoffset: 0; }
+@keyframes mi-stem { 0% { stroke-dashoffset: 1; } 40%, 100% { stroke-dashoffset: 0; } }
+.mi-leaf { transform-origin: 0% 100%; animation: mi-leaf 5s ease-out infinite; }
+.mi-leaf--l { transform-origin: 100% 100%; }
+@keyframes mi-leaf { 0%, 30% { transform: scale(0); opacity: 0; } 55%, 100% { transform: scale(1); opacity: 1; } }
+.mi-grape { transform-origin: center; animation: mi-grape 5s ease-out infinite; }
+@keyframes mi-grape { 0% { transform: scale(0); opacity: 0; } 20%, 90% { transform: scale(1); opacity: 1; } 100% { opacity: 0.6; } }
+.mi-liquid { animation: mi-liquid 3.2s ease-in-out infinite; }
+@keyframes mi-liquid { 0%, 100% { transform: translate(0, 1px); } 50% { transform: translate(-8px, -1px); } }
+.mi-window { animation: mi-window 4s ease-in-out infinite; opacity: 0.25; }
+@keyframes mi-window { 0%, 100% { opacity: 0.25; } 40%, 70% { opacity: 1; } }
+.mi-drip { animation: mi-drip 2.8s ease-in infinite; }
+@keyframes mi-drip { 0%, 40% { transform: translateY(0) scale(0.6); opacity: 0; } 55% { opacity: 1; transform: translateY(0) scale(1); } 100% { transform: translateY(16px) scale(0.8); opacity: 0; } }
+.mi-wedge { animation: mi-wedge 4.5s ease-out infinite; opacity: 0; }
+.mi[data-animate="false"] .mi-wedge, .mi[data-animate="false"] .mi-grape, .mi[data-animate="false"] .mi-spray, .mi[data-animate="false"] .mi-leaf { opacity: 1; transform: none; }
+@keyframes mi-wedge { 0% { opacity: 0; transform: scale(1.6); } 15%, 85% { opacity: 1; transform: scale(1); } 100% { opacity: 0.5; } }
+@media (prefers-reduced-motion: reduce) {
+  .mi * { animation: none !important; }
+  .mi .mi-draw, .mi .mi-grow-stem { stroke-dashoffset: 0; }
+  .mi .mi-wedge, .mi .mi-grape, .mi .mi-spray, .mi .mi-leaf, .mi .mi-wave, .mi .mi-window { opacity: 1; transform: none; }
+}
+
+/* ---------- Panel links & milestone timeline ---------- */
+.entity-link {
+  color: color-mix(in srgb, var(--link-color, #f3e6cf) 85%, white);
+  border-bottom: 1px solid color-mix(in srgb, var(--link-color, #f3e6cf) 35%, transparent);
+  text-align: left;
+  transition: border-color 0.2s, color 0.2s;
+}
+.entity-link:hover { color: #fff; border-color: var(--link-color, #f3e6cf); }
+.milestones-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgb(255 255 255 / 0.09);
+  background: rgb(10 14 22 / 0.5);
+  font-size: 11px;
+  color: rgb(255 255 255 / 0.6);
+  white-space: nowrap;
+  transition: color 0.2s, border-color 0.2s, background-color 0.2s;
+}
+.milestones-btn:hover, .milestones-btn[data-active="true"] { color: #ffd59a; border-color: rgb(255 213 154 / 0.35); }
+.milestone-hero {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  background: radial-gradient(circle at 50% 60%, color-mix(in srgb, var(--route-color) 22%, transparent), transparent 70%);
+  border: 1px solid rgb(255 255 255 / 0.07);
+}
+.milestone-timeline { position: relative; }
+.milestone-timeline::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 14px;
+  bottom: 14px;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgb(255 255 255 / 0.12) 8%, rgb(255 255 255 / 0.12) 92%, transparent);
+}
+.milestone-row { position: relative; border-radius: 12px; transition: background-color 0.25s; }
+.milestone-row[data-highlight="true"] { background: rgb(255 255 255 / 0.05); }
+.milestone-row__head { display: flex; width: 100%; gap: 12px; padding: 7px 6px; align-items: flex-start; }
+.milestone-row__icon {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  margin-top: 1px;
+  border-radius: 10px;
+  background: rgb(8 11 18 / 0.92);
+  border: 1px solid rgb(255 255 255 / 0.08);
+}
+.milestone-row__head:hover { background: rgb(255 255 255 / 0.04); border-radius: 12px; }
+.milestone-row[data-future="true"] .milestone-row__head { opacity: 0.55; }
+.milestone-row__chevron { align-self: center; padding: 0 4px; font-size: 16px; color: rgb(255 255 255 / 0.25); transition: color 0.2s, transform 0.2s; }
+.milestone-row__head:hover .milestone-row__chevron { color: rgb(255 255 255 / 0.7); transform: translateX(2px); }
+
+.milestone-marker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transform: translate(calc(50% - 15px), -26px);
+  padding: 4px 12px 4px 5px;
+  border-radius: 999px;
+  background: rgb(6 9 16 / 0.72);
+  border: 1px solid color-mix(in srgb, var(--mi-accent-c) 35%, transparent);
+  box-shadow: 0 0 24px color-mix(in srgb, var(--mi-accent-c) 22%, transparent);
+  backdrop-filter: blur(8px);
+  white-space: nowrap;
+  font-size: 11.5px;
+  color: rgb(255 255 255 / 0.85);
+  transition: opacity 0.2s linear;
+}
+
+.milestone-tick {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  margin-left: -3.5px;
+  transform: rotate(45deg);
+  border: 1px solid color-mix(in srgb, var(--tick-color) 70%, transparent);
+  background: transparent;
+  opacity: 0.45;
+  transition: opacity 0.3s, background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+.milestone-tick::before { content: ""; position: absolute; inset: -5px; } /* larger hit area */
+.milestone-tick[data-reached="true"] { opacity: 1; background: color-mix(in srgb, var(--tick-color) 55%, transparent); }
+.milestone-tick:hover, .milestone-tick[data-active="true"] {
+  opacity: 1;
+  background: var(--tick-color);
+  box-shadow: 0 0 10px var(--tick-color);
+  transform: rotate(45deg) scale(1.35);
+}
+
+/* ---------- Species filter ---------- */
+.species-filter {
+  display: inline-flex;
+  padding: 3px;
+  gap: 2px;
+  border-radius: 999px;
+  border: 1px solid rgb(255 255 255 / 0.09);
+  background: rgb(10 14 22 / 0.5);
+  backdrop-filter: blur(10px);
+}
+.species-filter button {
+  padding: 5px 11px;
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  color: rgb(255 255 255 / 0.55);
+  white-space: nowrap;
+  transition: color 0.2s, background-color 0.25s;
+}
+.species-filter button em { font-family: var(--font-serif), serif; font-size: 13px; }
+.species-filter button:hover { color: rgb(255 255 255 / 0.85); }
+.species-filter button[data-active="true"] { color: #f4eee2; background: rgb(255 255 255 / 0.1); }
+
 .legend-swatch {
   width: 8px;
   height: 8px;
   flex-shrink: 0;
   border-radius: 999px;
 }
+
+/* ---------- Visual key (streams vs populations) ---------- */
+.key-row { display: flex; align-items: center; gap: 11px; font-size: 11px; color: rgb(255 255 255 / 0.5); }
+.key-glyph { position: relative; width: 22px; height: 10px; flex-shrink: 0; }
+/* A bright streak with a hot head: migrating groups. */
+.key-glyph[data-kind="stream"]::before {
+  content: "";
+  position: absolute;
+  inset: 4px 0 4px 0;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, rgb(255 190 110 / 0.9));
+}
+.key-glyph[data-kind="stream"]::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 2px;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #fff3df;
+  box-shadow: 0 0 8px 2px rgb(255 190 110 / 0.9);
+}
+/* Soft specks: a population living in a region. */
+.key-glyph[data-kind="attested"],
+.key-glyph[data-kind="inferred"] {
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 25% 45%, rgb(255 196 136 / 0.95) 0 1.2px, transparent 1.6px),
+    radial-gradient(circle at 55% 30%, rgb(255 196 136 / 0.9) 0 1.2px, transparent 1.6px),
+    radial-gradient(circle at 75% 65%, rgb(255 196 136 / 0.9) 0 1.2px, transparent 1.6px),
+    radial-gradient(circle at 42% 75%, rgb(255 196 136 / 0.85) 0 1.1px, transparent 1.5px),
+    radial-gradient(ellipse at center, rgb(255 196 136 / 0.22), transparent 70%);
+}
+/* Inferred presence: fainter specks, more haze. */
+.key-glyph[data-kind="inferred"] { opacity: 0.6; filter: blur(0.4px); }
+
+.pop-row { padding: 7px 0; }
+.pop-row + .pop-row { border-top: 1px dashed rgb(255 255 255 / 0.06); }
+.pop-dot { width: 7px; height: 7px; border-radius: 999px; flex-shrink: 0; opacity: 0.85; }
+.pop-dot[data-basis="inferred"] { opacity: 0.45; box-shadow: none !important; }
 
 /* ---------- Route panel ---------- */
 .route-panel {

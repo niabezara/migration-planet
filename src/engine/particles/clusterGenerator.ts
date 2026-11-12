@@ -30,7 +30,7 @@ export const CORE_ATTRIBUTES = {
   aSplit: 2, // split start (progress), split lateral offset km
   aTarget: 3, // dispersal target (unit vector)
   aColor: 3, // linear RGB of the route colour
-  aLook: 3, // size, brightness, LOD rank (0..1)
+  aLook: 4, // size, brightness, LOD rank (0..1), softness (0 crisp core … 1 soft fringe)
   aLoop: 3, // overview loop period (s), phase (0..1), trail lag (window fraction)
 } as const;
 export type AttributeName = keyof typeof CORE_ATTRIBUTES;
@@ -81,7 +81,7 @@ export interface ParticleBuffers {
 }
 
 /** Deterministic PRNG so every load produces the same population. */
-function mulberry32(seed: number) {
+export function mulberry32(seed: number) {
   let a = seed >>> 0;
   return () => {
     a = (a + 0x6d2b79f5) >>> 0;
@@ -92,7 +92,7 @@ function mulberry32(seed: number) {
   };
 }
 
-function gaussian(rand: () => number): number {
+export function gaussian(rand: () => number): number {
   const u = Math.max(1e-9, rand());
   const v = rand();
   return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
@@ -267,12 +267,14 @@ export function generateParticleBuffers(
         const t = offsetLatLngKm(dest, dN, dE);
         latLngToVector3(t.lat, t.lng, 1, target);
 
-        // Look: bright dense centre, dimmer fringe; mostly small dots, rare beacons.
+        // Look: a dense, bright, crisp centre; smaller, dimmer, softer specks
+        // toward the edges (and for stragglers); rare bright beacons.
         const centre = 1 - Math.min(1, Math.abs(latNorm) / 1.2);
         const s = rand();
-        const size = (0.5 + s * s * s * 1.6) * (edge ? 0.85 : 1);
-        const beacon = rand() < 0.03 ? 1.8 : 1;
-        const brightness = (0.55 + 0.35 * rand()) * (0.7 + 0.55 * centre) * beacon;
+        const softness = edge || straggler ? 0.75 + 0.25 * rand() : clamp(1 - centre * 1.4, 0, 1) * 0.6;
+        const size = (0.55 + s * s * s * 1.5) * (0.7 + 0.45 * centre) * (edge ? 0.75 : 1);
+        const beacon = rand() < 0.03 ? 1.7 : 1;
+        const brightness = (0.55 + 0.35 * rand()) * (0.6 + 0.75 * centre) * beacon * (edge ? 0.8 : 1);
 
         aRow[p] = cluster.rows[option];
         aRoute[p] = route.index;
@@ -284,7 +286,7 @@ export function generateParticleBuffers(
         aSplit[p * 2 + 1] = subPos * cfg.spreadKm * 1.6;
         aTarget.set([target.x, target.y, target.z], p * 3);
         aColor.set([color.r, color.g, color.b], p * 3);
-        aLook.set([size, brightness, rand()], p * 3);
+        aLook.set([size, brightness, rand(), softness], p * 4);
         aLoop.set([loopSeconds, loopPhase, trailLag], p * 3);
       }
     });

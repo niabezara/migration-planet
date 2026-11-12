@@ -55,9 +55,16 @@ const earthFragment = /* glsl */ `
     float ndl = max(dot(n, sun), 0.0);
     float dayMix = smoothstep(-0.12, 0.3, geoNdl);
 
-    // Day side
+    // Day side. The surface is the stage, not the subject: slightly
+    // desaturated and compressed so the migration streams carry the frame,
+    // while continents, oceans and relief stay recognisable.
     vec3 day = texture2D(uDay, vUv).rgb;
-    vec3 lit = day * (0.04 + 1.15 * ndl);
+    float luma = dot(day, vec3(0.2126, 0.7152, 0.0722));
+    day = mix(vec3(luma), day, 0.8);
+    // Soft highlight compression: bright deserts and ice come down the most,
+    // dark forests barely change (lower contrast, same geography).
+    day *= 1.2 / (1.0 + 0.85 * luma);
+    vec3 lit = day * (0.05 + 0.74 * ndl);
 
     // Cloud shadows: same texture as the cloud shell, nudged away from the sun.
     vec2 shadowUv = vec2(vUv.x - uCloudOffset + sun.x * 0.002, vUv.y);
@@ -69,7 +76,7 @@ const earthFragment = /* glsl */ `
     vec3 h = normalize(sun + viewDir);
     // Tight, restrained glint: it must not compete with the streams.
     float spec = pow(max(dot(n, h), 0.0), 120.0) * ocean;
-    lit += vec3(1.0, 0.93, 0.82) * spec * 0.18 * ndl;
+    lit += vec3(1.0, 0.93, 0.82) * spec * 0.14 * ndl;
 
     // Night side: faint cool "moonlit" continents (still readable), city
     // lights only in the modern era.
@@ -92,7 +99,7 @@ const earthFragment = /* glsl */ `
     vec3 atmoDay = vec3(0.32, 0.58, 1.0);
     vec3 atmoTwilight = vec3(1.0, 0.5, 0.25);
     vec3 atmo = mix(atmoTwilight, atmoDay, smoothstep(-0.02, 0.3, geoNdl));
-    color += atmo * fres * smoothstep(-0.12, 0.35, geoNdl) * 0.85;
+    color += atmo * fres * smoothstep(-0.12, 0.35, geoNdl) * 0.65;
     // A thin blue haze over the whole lit face
     color = mix(color, atmoDay * 0.6, 0.06 * dayMix);
 
@@ -120,7 +127,8 @@ const cloudFragment = /* glsl */ `
     float ndl = dot(n, normalize(uSunDir));
     float light = smoothstep(-0.15, 0.35, ndl);
     vec3 twilight = vec3(1.0, 0.62, 0.42);
-    vec3 col = mix(twilight * 0.6, vec3(1.0), smoothstep(0.05, 0.5, ndl)) * (0.03 + light * 0.95);
+    // Clouds peak below the bloom threshold so they never compete with streams.
+    vec3 col = mix(twilight * 0.6, vec3(0.74, 0.76, 0.79), smoothstep(0.05, 0.5, ndl)) * (0.03 + light * 0.9);
     gl_FragColor = vec4(col * uExposure, c * uOpacity * (0.25 + 0.75 * light) * uExposure);
     #include <tonemapping_fragment>
     #include <colorspace_fragment>

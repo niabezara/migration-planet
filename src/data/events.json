@@ -1,6 +1,33 @@
 {
   "periods": [
     {
+      "id": "early-hominins",
+      "name": "Early hominins",
+      "shortName": "Early hominins",
+      "startYear": 3500000,
+      "endYear": 2580000,
+      "description": "Late Pliocene. Australopithecus afarensis lives in East Africa. The oldest known stone tools (Lomekwi 3, ~3.3 million years ago) are older than the earliest known fossils of the genus Homo, so who made them is unknown.",
+      "confidence": "medium"
+    },
+    {
+      "id": "early-pleistocene",
+      "name": "Early Pleistocene",
+      "shortName": "Early Pleistocene",
+      "startYear": 2580000,
+      "endYear": 774000,
+      "description": "The Pleistocene begins ~2.58 million years ago. Early Homo appears in Africa and coexists with Paranthropus. By ~1.8 million years ago Homo is at Dmanisi in Georgia, the oldest hominin fossils known outside Africa, and later in China and Java.",
+      "confidence": "high"
+    },
+    {
+      "id": "middle-pleistocene",
+      "name": "Middle Pleistocene",
+      "shortName": "Middle Pleistocene",
+      "startYear": 774000,
+      "endYear": 300000,
+      "description": "Geologically ~774,000–129,000 years ago. Lineages diverge: the Neanderthal lineage appears in Europe, Homo erectus persists in Asia, and small-bodied hominins live on Flores. Evolution here is branching, not a ladder.",
+      "confidence": "medium"
+    },
+    {
       "id": "emergence",
       "name": "Emergence in Africa",
       "shortName": "Emergence",
@@ -355,6 +382,266 @@
       "sources": [
         "dillehay2008"
       ]
+    },
+    {
+      "id": "hadar",
+      "name": "Hadar",
+      "region": "Afar, Ethiopia",
+      "location": {
+        "lat": 11.1,
+        "lng": 40.58
+      },
+      "dateRange": [
+        3400000,
+        2950000
+      ],
+      "description": "Australopithecus afarensis fossils, including 'Lucy' (~3.2 million years ago).",
+      "confidence": "high",
+      "sources": [
+        "johanson1979",
+        "kimbel2009"
+      ],
+      "speciesIds": [
+        "australopithecus-afarensis"
+      ],
+      "details": "One of the richest Pliocene hominin localities. Lucy (A.L. 288-1), found in 1974, preserves about 40% of a skeleton and shows upright walking combined with a small brain. A.L. 333 preserves remains of at least nine individuals."
+    },
+    {
+      "id": "olduvai",
+      "name": "Olduvai Gorge",
+      "region": "Tanzania",
+      "location": {
+        "lat": -2.99,
+        "lng": 35.35
+      },
+      "dateRange": [
+        2000000,
+        1200000
+      ],
+      "description": "Fossils of Paranthropus boisei and Homo habilis (both ~1.8 million years ago), plus Oldowan and Acheulean tools.",
+      "confidence": "high",
+      "sources": [
+        "leakey1959",
+        "leakey1964"
+      ],
+      "speciesIds": [
+        "paranthropus-boisei",
+        "homo-habilis",
+        "homo-erectus"
+      ],
+      "details": "Olduvai's layered deposits record nearly two million years. The type specimens of Paranthropus boisei (OH 5, 1959) and Homo habilis (OH 7, 1964) come from the same period, a classic case of different hominins living side by side."
+    },
+    {
+      "id": "kokiselei",
+      "name": "Kokiselei 4",
+      "region": "West Turkana, Kenya",
+      "location": {
+        "lat": 4.05,
+        "lng": 35.78
+      },
+      "dateRange": [
+        1780000,
+        1740000
+      ],
+      "description": "The oldest known Acheulean handaxes, ~1.76 million years ago. No hominin fossils at the site. Location approximate.",
+      "confidence": "high",
+      "sources": [
+        "lepre2011"
+      ],
+      "speciesIds": [],
+      "details": "Large cutting tools shaped on both faces mark the beginning of the Acheulean. They are usually linked to Homo erectus because of their age and region, but no fossils were found with them."
+    },
+    {
+      "id": "dmanisi",
+      "name": "Dmanisi",
+      "region": "Kvemo Kartli, Georgia",
+      "location": {
+        "lat": 41.338,
+        "lng": 44.344
+      },
+      "dateRange": [
+        1850000,
+        1770000
+      ],
+      "description": "The oldest hominin fossils known outside Africa (~1.85–1.78 million years ago): early Homo, not Homo sapiens.",
+      "confidence": "high",
+      "sources": [
+        "ferring2011",
+        "lordkipanidze2013"
+      ],
+      "speciesIds": [
+        "homo-erectus"
+      ],
+      "details": "Five skulls and other remains of early Homo, together with simple stone tools, lie beneath a medieval town in southern Georgia. They are usually assigned to Homo erectus in a broad sense. Their small brains (~550–775 cm³) and the large variation between individuals reshaped ideas about the first hominins to leave Africa. These people lived about 1.8 million years before Homo sapiens reached the Caucasus."
+    },
+    {
+      "id": "rising-star",
+      "name": "Rising Star Cave",
+      "region": "Gauteng, South Africa",
+      "location": {
+        "lat": -25.918,
+        "lng": 27.711
+      },
+      "dateRange": [
+        335000,
+        236000
+      ],
+      "description": "More than 1,500 fossil elements of Homo naledi, ~335,000–236,000 years old.",
+      "confidence": "high",
+      "sources": [
+        "berger2015",
+        "dirks2017"
+      ],
+      "speciesIds": [
+        "homo-naledi"
+      ]
+    },
+    {
+      "id": "kebara",
+      "name": "Kebara Cave",
+      "region": "Mount Carmel, Israel",
+      "location": {
+        "lat": 32.558,
+        "lng": 34.937
+      },
+      "dateRange": [
+        64000,
+        48000
+      ],
+      "description": "Neanderthal occupation; the Kebara 2 skeleton (~60,000 years ago) preserves a hyoid bone.",
+      "confidence": "high",
+      "sources": [
+        "arensburg1989"
+      ],
+      "speciesIds": [
+        "homo-neanderthalensis"
+      ]
+    },
+    {
+      "id": "denisova-cave",
+      "name": "Denisova Cave",
+      "region": "Altai Mountains, Russia",
+      "location": {
+        "lat": 51.397,
+        "lng": 84.676
+      },
+      "dateRange": [
+        200000,
+        50000
+      ],
+      "description": "Where Denisovans were identified from DNA; also occupied by Neanderthals, and later by Homo sapiens.",
+      "confidence": "high",
+      "sources": [
+        "krause2010",
+        "jacobs2019",
+        "slon2018"
+      ],
+      "speciesIds": [
+        "denisovans",
+        "homo-neanderthalensis"
+      ],
+      "details": "A finger bone sequenced in 2010 revealed a previously unknown hominin group. The cave also yielded Denisova 11, the daughter of a Neanderthal mother and a Denisovan father, direct proof that the two groups met."
+    },
+    {
+      "id": "baishiya-karst",
+      "name": "Baishiya Karst Cave",
+      "region": "Tibetan Plateau, China",
+      "location": {
+        "lat": 35.45,
+        "lng": 102.57
+      },
+      "dateRange": [
+        160000,
+        60000
+      ],
+      "description": "The Xiahe mandible (at least ~160,000 years old), identified as Denisovan by ancient proteins, at ~3,280 m altitude.",
+      "confidence": "medium",
+      "sources": [
+        "chen2019"
+      ],
+      "speciesIds": [
+        "denisovans"
+      ]
+    },
+    {
+      "id": "liang-bua",
+      "name": "Liang Bua",
+      "region": "Flores, Indonesia",
+      "location": {
+        "lat": -8.534,
+        "lng": 120.457
+      },
+      "dateRange": [
+        100000,
+        50000
+      ],
+      "description": "Skeletal remains of Homo floresiensis (~100,000–60,000 years ago) and stone tools to ~50,000 years ago.",
+      "confidence": "high",
+      "sources": [
+        "brown2004",
+        "sutikna2016"
+      ],
+      "speciesIds": [
+        "homo-floresiensis"
+      ]
+    },
+    {
+      "id": "satsurblia",
+      "name": "Satsurblia Cave",
+      "region": "Imereti, Georgia",
+      "location": {
+        "lat": 42.377,
+        "lng": 42.597
+      },
+      "dateRange": [
+        25500,
+        13000
+      ],
+      "description": "Upper Palaeolithic cave occupied before and after the Last Glacial Maximum; a ~13,300-year-old human genome. Location approximate.",
+      "confidence": "medium",
+      "sources": [
+        "pinhasi2014",
+        "jones2015"
+      ],
+      "details": "Satsurblia records hunter-gatherers in western Georgia around the coldest phase of the last Ice Age. The genome of a woman who lived ~13,300 years ago revealed a distinct 'Caucasus hunter-gatherer' ancestry that split from other West Eurasian groups tens of thousands of years earlier and later contributed to many populations of Western Eurasia."
+    },
+    {
+      "id": "kotias-klde",
+      "name": "Kotias Klde",
+      "region": "Imereti, Georgia",
+      "location": {
+        "lat": 42.29,
+        "lng": 43.21
+      },
+      "dateRange": [
+        10500,
+        9000
+      ],
+      "description": "Mesolithic rockshelter; a ~9,700-year-old human genome showing Caucasus hunter-gatherer ancestry. Location approximate.",
+      "confidence": "medium",
+      "sources": [
+        "jones2015"
+      ],
+      "details": "The Kotias Klde genome, together with Satsurblia, shows that the Caucasus hunter-gatherer population persisted in the region across several thousand years, from the late Ice Age into the Holocene."
+    },
+    {
+      "id": "gadachrili-gora",
+      "name": "Gadachrili Gora",
+      "region": "Kvemo Kartli, Georgia",
+      "location": {
+        "lat": 41.43,
+        "lng": 44.74
+      },
+      "dateRange": [
+        8000,
+        7800
+      ],
+      "description": "Early Neolithic village with chemical evidence of grape wine in pottery, ~6000–5800 BCE. Location approximate.",
+      "confidence": "high",
+      "sources": [
+        "mcgovern2017"
+      ],
+      "details": "Residue analysis of pottery from Gadachrili Gora and nearby Shulaveris Gora (Shulaveri–Shomutepe culture) detected tartaric acid and related compounds, the chemical signature of grape wine, ~8,000 years ago. It is the earliest known chemical evidence of grape wine."
     }
   ]
 }

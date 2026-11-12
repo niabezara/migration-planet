@@ -1,0 +1,226 @@
+{
+  "note": "Sources for species, sites and milestones added in the human-history expansion. Merged with the migration sources by the data loader.",
+  "sources": [
+    {
+      "id": "smithsonianHO",
+      "citation": "Smithsonian National Museum of Natural History. Human Origins Program: Human Fossils, Species.",
+      "url": "https://humanorigins.si.edu/evidence/human-fossils/species"
+    },
+    {
+      "id": "green2010",
+      "citation": "Green, R. E. et al. (2010). A draft sequence of the Neandertal genome. Science 328, 710–722."
+    },
+    {
+      "id": "reich2010",
+      "citation": "Reich, D. et al. (2010). Genetic history of an archaic hominin group from Denisova Cave in Siberia. Nature 468, 1053–1060."
+    },
+    {
+      "id": "krause2010",
+      "citation": "Krause, J. et al. (2010). The complete mitochondrial DNA genome of an unknown hominin from southern Siberia. Nature 464, 894–897."
+    },
+    {
+      "id": "meyer2016",
+      "citation": "Meyer, M. et al. (2016). Nuclear DNA sequences from the Middle Pleistocene Sima de los Huesos hominins. Nature 531, 504–507."
+    },
+    {
+      "id": "higham2014",
+      "citation": "Higham, T. et al. (2014). The timing and spatiotemporal patterning of Neanderthal disappearance. Nature 512, 306–309."
+    },
+    {
+      "id": "slon2018",
+      "citation": "Slon, V. et al. (2018). The genome of the offspring of a Neanderthal mother and a Denisovan father. Nature 561, 113–116."
+    },
+    {
+      "id": "jacobs2019",
+      "citation": "Jacobs, Z. et al. (2019). Timing of archaic hominin occupation of Denisova Cave in southern Siberia. Nature 565, 594–599."
+    },
+    {
+      "id": "chen2019",
+      "citation": "Chen, F. et al. (2019). A late Middle Pleistocene Denisovan mandible from the Tibetan Plateau. Nature 569, 409–412."
+    },
+    {
+      "id": "brown2004",
+      "citation": "Brown, P. et al. (2004). A new small-bodied hominin from the Late Pleistocene of Flores, Indonesia. Nature 431, 1055–1061."
+    },
+    {
+      "id": "sutikna2016",
+      "citation": "Sutikna, T. et al. (2016). Revised stratigraphy and chronology for Homo floresiensis at Liang Bua in Indonesia. Nature 532, 366–369."
+    },
+    {
+      "id": "vandenbergh2016",
+      "citation": "van den Bergh, G. D. et al. (2016). Homo floresiensis-like fossils from the early Middle Pleistocene of Flores. Nature 534, 245–248."
+    },
+    {
+      "id": "brumm2010",
+      "citation": "Brumm, A. et al. (2010). Hominins on Flores, Indonesia, by one million years ago. Nature 464, 748–752."
+    },
+    {
+      "id": "berger2015",
+      "citation": "Berger, L. R. et al. (2015). Homo naledi, a new species of the genus Homo from the Dinaledi Chamber, South Africa. eLife 4, e09560."
+    },
+    {
+      "id": "dirks2017",
+      "citation": "Dirks, P. H. G. M. et al. (2017). The age of Homo naledi and associated sediments in the Rising Star Cave, South Africa. eLife 6, e24231."
+    },
+    {
+      "id": "lordkipanidze2013",
+      "citation": "Lordkipanidze, D. et al. (2013). A complete skull from Dmanisi, Georgia, and the evolutionary biology of early Homo. Science 342, 326–331."
+    },
+    {
+      "id": "ferring2011",
+      "citation": "Ferring, R. et al. (2011). Earliest human occupations at Dmanisi (Georgian Caucasus) dated to 1.85–1.78 Ma. PNAS 108, 10432–10436."
+    },
+    {
+      "id": "rizal2020",
+      "citation": "Rizal, Y. et al. (2020). Last appearance of Homo erectus at Ngandong, Java, 117,000–108,000 years ago. Nature 577, 381–385."
+    },
+    {
+      "id": "lepre2011",
+      "citation": "Lepre, C. J. et al. (2011). An earlier origin for the Acheulian. Nature 477, 82–85."
+    },
+    {
+      "id": "zhu2018",
+      "citation": "Zhu, Z. et al. (2018). Hominin occupation of the Chinese Loess Plateau since about 2.1 million years ago. Nature 559, 608–612."
+    },
+    {
+      "id": "leakey1964",
+      "citation": "Leakey, L. S. B., Tobias, P. V. & Napier, J. R. (1964). A new species of the genus Homo from Olduvai Gorge. Nature 202, 7–9."
+    },
+    {
+      "id": "villmoare2015",
+      "citation": "Villmoare, B. et al. (2015). Early Homo at 2.8 Ma from Ledi-Geraru, Afar, Ethiopia. Science 347, 1352–1355."
+    },
+    {
+      "id": "plummer2023",
+      "citation": "Plummer, T. W. et al. (2023). Expanded geographic distribution and dietary strategies of the earliest Oldowan hominins and Paranthropus. Science 379, 561–566."
+    },
+    {
+      "id": "leakey1959",
+      "citation": "Leakey, L. S. B. (1959). A new fossil skull from Olduvai. Nature 184, 491–493."
+    },
+    {
+      "id": "johanson1979",
+      "citation": "Johanson, D. C. & White, T. D. (1979). A systematic assessment of early African hominids. Science 203, 321–330."
+    },
+    {
+      "id": "kimbel2009",
+      "citation": "Kimbel, W. H. & Delezene, L. K. (2009). 'Lucy' redux: a review of research on Australopithecus afarensis. American Journal of Physical Anthropology 140 (S49), 2–48."
+    },
+    {
+      "id": "harmand2015",
+      "citation": "Harmand, S. et al. (2015). 3.3-million-year-old stone tools from Lomekwi 3, West Turkana, Kenya. Nature 521, 310–315."
+    },
+    {
+      "id": "semaw1997",
+      "citation": "Semaw, S. et al. (1997). 2.5-million-year-old stone tools from Gona, Ethiopia. Nature 385, 333–336."
+    },
+    {
+      "id": "berna2012",
+      "citation": "Berna, F. et al. (2012). Microstratigraphic evidence of in situ fire in the Acheulean strata of Wonderwerk Cave, Northern Cape province, South Africa. PNAS 109, E1215–E1220."
+    },
+    {
+      "id": "gorenInbar2004",
+      "citation": "Goren-Inbar, N. et al. (2004). Evidence of hominin control of fire at Gesher Benot Ya'aqov, Israel. Science 304, 725–727."
+    },
+    {
+      "id": "thieme1997",
+      "citation": "Thieme, H. (1997). Lower Palaeolithic hunting spears from Germany. Nature 385, 807–810."
+    },
+    {
+      "id": "arensburg1989",
+      "citation": "Arensburg, B. et al. (1989). A Middle Palaeolithic human hyoid bone. Nature 338, 758–760."
+    },
+    {
+      "id": "henshilwood2002",
+      "citation": "Henshilwood, C. S. et al. (2002). Emergence of modern human behavior: Middle Stone Age engravings from South Africa. Science 295, 1278–1280."
+    },
+    {
+      "id": "henshilwood2018",
+      "citation": "Henshilwood, C. S. et al. (2018). An abstract drawing from the 73,000-year-old levels at Blombos Cave, South Africa. Nature 562, 115–118."
+    },
+    {
+      "id": "oktaviana2024",
+      "citation": "Oktaviana, A. A. et al. (2024). Narrative cave art in Indonesia by 51,200 years ago. Nature 631, 814–818."
+    },
+    {
+      "id": "hoffmann2018",
+      "citation": "Hoffmann, D. L. et al. (2018). U-Th dating of carbonate crusts reveals Neandertal origin of Iberian cave art. Science 359, 912–915."
+    },
+    {
+      "id": "white2020",
+      "citation": "White, R. et al. (2020). Still no archaeological evidence that Neanderthals created Iberian cave art. Journal of Human Evolution 144, 102640."
+    },
+    {
+      "id": "kvavadze2009",
+      "citation": "Kvavadze, E. et al. (2009). 30,000-year-old wild flax fibers. Science 325, 1359."
+    },
+    {
+      "id": "wu2012",
+      "citation": "Wu, X. et al. (2012). Early pottery at 20,000 years ago in Xianrendong Cave, China. Science 336, 1696–1700."
+    },
+    {
+      "id": "janssens2018",
+      "citation": "Janssens, L. et al. (2018). A new look at an old dog: Bonn-Oberkassel reconsidered. Journal of Archaeological Science 92, 126–138."
+    },
+    {
+      "id": "zeder2000",
+      "citation": "Zeder, M. A. & Hesse, B. (2000). The initial domestication of goats (Capra hircus) in the Zagros Mountains 10,000 years ago. Science 287, 2254–2257."
+    },
+    {
+      "id": "zeder2011",
+      "citation": "Zeder, M. A. (2011). The origins of agriculture in the Near East. Current Anthropology 52 (S4), S221–S235."
+    },
+    {
+      "id": "mcgovern2017",
+      "citation": "McGovern, P. et al. (2017). Early Neolithic wine of Georgia in the South Caucasus. PNAS 114, E10309–E10318."
+    },
+    {
+      "id": "hodder2006",
+      "citation": "Hodder, I. (2006). The Leopard's Tale: Revealing the Mysteries of Çatalhöyük. London: Thames & Hudson."
+    },
+    {
+      "id": "radivojevic2010",
+      "citation": "Radivojević, M. et al. (2010). On the origins of extractive metallurgy: new evidence from Europe. Journal of Archaeological Science 37, 2775–2787."
+    },
+    {
+      "id": "algaze2008",
+      "citation": "Algaze, G. (2008). Ancient Mesopotamia at the Dawn of Civilization: The Evolution of an Urban Landscape. University of Chicago Press."
+    },
+    {
+      "id": "woods2010",
+      "citation": "Woods, C. (ed.) (2010). Visible Language: Inventions of Writing in the Ancient Middle East and Beyond. Oriental Institute Museum Publications 32, University of Chicago."
+    },
+    {
+      "id": "joordens2015",
+      "citation": "Joordens, J. C. A. et al. (2015). Homo erectus at Trinil on Java used shells for tool production and engraving. Nature 518, 228–231."
+    },
+    {
+      "id": "jones2015",
+      "citation": "Jones, E. R. et al. (2015). Upper Palaeolithic genomes reveal deep roots of modern Eurasians. Nature Communications 6, 8912."
+    },
+    {
+      "id": "pinhasi2014",
+      "citation": "Pinhasi, R. et al. (2014). Satsurblia: new insights of human response and survival across the Last Glacial Maximum in the southern Caucasus. PLoS ONE 9 (10), e111271."
+    },
+    {
+      "id": "zohar2022",
+      "citation": "Zohar, I. et al. (2022). Evidence for the cooking of fish 780,000 years ago at Gesher Benot Ya'aqov, Israel. Nature Ecology & Evolution 6, 2016–2028."
+    },
+    {
+      "id": "vanhaeren2006",
+      "citation": "Vanhaeren, M. et al. (2006). Middle Paleolithic shell beads in Israel and Algeria. Science 312, 1785–1788."
+    },
+    {
+      "id": "bouzouggar2007",
+      "citation": "Bouzouggar, A. et al. (2007). 82,000-year-old shell beads from North Africa and implications for the origins of modern human behavior. PNAS 104, 9964–9969."
+    },
+    {
+      "id": "quiles2016",
+      "citation": "Quiles, A. et al. (2016). A high-precision chronological model for the decorated Upper Paleolithic cave of Chauvet-Pont d'Arc, Ardèche, France. PNAS 113, 4670–4675."
+    },
+    {
+      "id": "barYosef1998",
+      "citation": "Bar-Yosef, O. (1998). The Natufian culture in the Levant, threshold to the origins of agriculture. Evolutionary Anthropology 6, 159–177."
+    }
+  ]
+}

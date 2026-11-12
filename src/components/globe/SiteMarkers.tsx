@@ -9,6 +9,8 @@ import { haversineKm, latLngToVector3 } from "@/engine/geo/coordinates";
 import { formatYearShort } from "@/engine/timeline/timeEngine";
 import { useHistoryStore } from "@/stores/useHistoryStore";
 import { useIntroStore } from "@/components/intro/introState";
+import { speciesById } from "@/data";
+import { siteVisible } from "@/engine/species/speciesModel";
 
 const _cam = new Vector3();
 const LABEL_STACK_KM = 150;
@@ -35,9 +37,10 @@ export function SiteMarkers({ sites }: { sites: ArchaeologicalSite[] }) {
   const rings = useRef<(Mesh | null)[]>([]);
   const labels = useRef<(HTMLDivElement | null)[]>([]);
   const introFade = useRef(0);
+  const filterFade = useRef<number[]>([]);
 
   useFrame((state) => {
-    const { yearsBP: years, mode } = useHistoryStore.getState();
+    const { yearsBP: years, mode, speciesFilter, selection } = useHistoryStore.getState();
     // Sites stay out of the cinematic; they fade in with the interface.
     const live = useIntroStore.getState().stage === "done";
     introFade.current += ((live ? 1 : 0) - introFade.current) * Math.min(1, 0.03 + (live ? 0.02 : 0.3));
@@ -46,11 +49,19 @@ export function SiteMarkers({ sites }: { sites: ArchaeologicalSite[] }) {
     const t = state.clock.elapsedTime;
 
     items.forEach(({ site, normal }, i) => {
-      const [older] = site.dateRange;
+      const [older, younger] = site.dateRange;
+      // Species filter: sites fade with the species their evidence belongs to.
+      const ff = (filterFade.current[i] ??= 1);
+      filterFade.current[i] = ff + ((siteVisible(speciesFilter, site, speciesById) ? 1 : 0) - ff) * 0.12;
+      const selected = selection?.kind === "site" && selection.id === site.id;
       // Fade in over ~3% of the site's age.
       // Overview shows every site; historical mode only those already dated.
       const appear =
-        introFade.current * (mode === "overview" ? 1 : Math.min(1, Math.max(0, (older - years) / (older * 0.03))));
+        filterFade.current[i] *
+        introFade.current *
+        (mode === "overview" ? 1 : Math.min(1, Math.max(0, (older - years) / (older * 0.03))));
+      // Long after its period a site steps back (keeps 3.5 Myr of sites from cluttering the globe).
+      const recent = mode === "overview" ? 1 : years >= younger * 0.5 ? 1 : 0.45;
       // Labels only near the centre of view; rings stay visible to the limb.
       const facing = Math.min(1, Math.max(0, (normal.dot(_cam) - 0.8) / 0.1));
       const g = groups.current[i];
@@ -59,13 +70,13 @@ export function SiteMarkers({ sites }: { sites: ArchaeologicalSite[] }) {
       const ring = rings.current[i];
       if (ring) {
         const pulse = 1 + 0.35 * Math.sin(t * 1.6 + i);
-        ring.scale.setScalar(pulse * Math.min(1.8, dist / 2.2));
-        (ring.material as MeshBasicMaterial).opacity = 0.55 * appear;
+        ring.scale.setScalar(pulse * Math.min(1.8, dist / 2.2) * (selected ? 1.5 : 1));
+        (ring.material as MeshBasicMaterial).opacity = (selected ? 1 : 0.55 * recent) * appear;
       }
       const label = labels.current[i];
       if (label) {
         const near = Math.min(1, Math.max(0, (4.2 - dist) / 1.2));
-        label.style.opacity = String(appear * facing * near);
+        label.style.opacity = String(appear * facing * (selected ? 1 : near * recent));
       }
     });
   });

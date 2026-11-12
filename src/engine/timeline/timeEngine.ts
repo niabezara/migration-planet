@@ -9,25 +9,29 @@
 import type { HistoricalPeriod, MigrationRoute } from "@/types/migration";
 import { PARTICLE_CONSTANTS } from "@/engine/particles/constants";
 
-export const TIMELINE_START = 300_000;
+/** Earliest moment on the timeline: Australopithecus afarensis is already in East Africa. */
+export const TIMELINE_START = 3_500_000;
 export const TIMELINE_END = 0;
 
 /**
- * The timeline is non-linear: a linear 300k-year axis would squeeze the last
- * 50,000 years (most of the story) into a sliver. A power curve gives recent
- * time more room while staying monotonic and easy to invert.
- *   s = 0 -> 300,000 years ago,  s = 1 -> present.
+ * The timeline is logarithmic in "years before present + K": a linear axis
+ * over 3.5 million years would leave all of Homo sapiens history in a sliver.
+ * With K = 2,000 years the track splits roughly into thirds:
+ *   early hominins (3.5 Ma–300 ka) · sapiens dispersals (300–15 ka) · the
+ *   last 15,000 years (farming, metallurgy, writing).
+ *   s = 0 -> 3.5 million years ago,  s = 1 -> present. Monotonic and exactly invertible.
  */
-const TIMELINE_POWER = 2.2;
+const TIMELINE_K = 2000;
+const TIMELINE_LOG = Math.log(1 + TIMELINE_START / TIMELINE_K);
 
 export function timelineToYear(s: number): number {
   const c = Math.min(1, Math.max(0, s));
-  return TIMELINE_START * Math.pow(1 - c, TIMELINE_POWER);
+  return Math.min(TIMELINE_START, TIMELINE_K * (Math.exp((1 - c) * TIMELINE_LOG) - 1));
 }
 
 export function yearToTimeline(yearsBP: number): number {
   const y = Math.min(TIMELINE_START, Math.max(0, yearsBP));
-  return 1 - Math.pow(y / TIMELINE_START, 1 / TIMELINE_POWER);
+  return 1 - Math.log(1 + y / TIMELINE_K) / TIMELINE_LOG;
 }
 
 export function clampYear(yearsBP: number): number {
@@ -93,7 +97,7 @@ export function currentPeriod(periods: HistoricalPeriod[], yearsBP: number): His
 // Playback
 
 /** Wall-clock seconds to traverse the whole timeline at 1x. */
-export const BASE_TIMELINE_SECONDS = 110;
+export const BASE_TIMELINE_SECONDS = 160;
 export const PLAYBACK_SPEEDS = [0.25, 0.5, 1, 2, 4] as const;
 export type PlaybackSpeed = (typeof PLAYBACK_SPEEDS)[number];
 
@@ -135,11 +139,20 @@ export function advanceYear(
 
 /** Rounded the same way formatYear displays it (cheap selector key for React). */
 export function displayYear(yearsBP: number): number {
+  if (yearsBP >= 1_000_000) return Math.round(yearsBP / 10_000) * 10_000;
+  if (yearsBP >= 100_000) return Math.round(yearsBP / 1000) * 1000;
   return yearsBP >= 10_000 ? Math.round(yearsBP / 100) * 100 : Math.round(yearsBP);
+}
+
+/** "1.85 million" style for deep time (no false precision). */
+export function formatMillions(yearsBP: number): string {
+  return `${(Math.round(yearsBP / 10_000) / 100).toLocaleString("en-US", { maximumFractionDigits: 2 })} million`;
 }
 
 export function formatYear(yearsBP: number): { value: string; unit: string } {
   if (yearsBP < 1) return { value: "Present", unit: "" };
+  if (yearsBP >= 1_000_000) return { value: `${(Math.round(yearsBP / 10_000) / 100).toLocaleString("en-US", { maximumFractionDigits: 2 })}`, unit: "million years ago" };
+  if (yearsBP >= 100_000) return { value: (Math.round(yearsBP / 1000) * 1000).toLocaleString("en-US"), unit: "years ago" };
   if (yearsBP >= 10_000) {
     const rounded = Math.round(yearsBP / 100) * 100;
     return { value: rounded.toLocaleString("en-US"), unit: "years ago" };
@@ -169,11 +182,13 @@ export function formatSignedYear(yearsBP: number): string {
 /** Compact signed label for timeline ticks: −300k … −5k, 0. */
 export function formatSignedShort(yearsBP: number): string {
   if (yearsBP < 1) return "0";
+  if (yearsBP >= 1_000_000) return `−${Math.round(yearsBP / 100_000) / 10}M`;
   return yearsBP >= 1000 ? `−${Math.round(yearsBP / 1000)}k` : `−${Math.round(yearsBP)}`;
 }
 
 export function formatYearShort(yearsBP: number): string {
   if (yearsBP < 1) return "Now";
+  if (yearsBP >= 1_000_000) return `${Math.round(yearsBP / 100_000) / 10}M`;
   if (yearsBP >= 1000) return `${Math.round(yearsBP / 1000)}k`;
   return `${Math.round(yearsBP)}`;
 }

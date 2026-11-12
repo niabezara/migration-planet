@@ -6,7 +6,7 @@ import gsap from "gsap";
 import { Leva } from "leva";
 import { DateHeader } from "@/components/information/DateHeader";
 import { RouteLegend } from "@/components/information/RouteLegend";
-import { RoutePanel } from "@/components/information/RoutePanel";
+import { InfoPanel } from "@/components/information/InfoPanel";
 import { routeById } from "@/data";
 import { IntroOverlay } from "@/components/intro/IntroOverlay";
 import { useIntroStore } from "@/components/intro/introState";
@@ -114,22 +114,23 @@ export function GlobeExperience() {
         className="hud pointer-events-none absolute inset-0 z-20 flex flex-col justify-between p-4 sm:p-8"
         data-hidden={!interactive}
       >
-        <div className="flex flex-col items-start gap-7">
-          <div className="pointer-events-auto">
+        {/* The left column shrinks (and its legend scrolls) so the timeline never leaves the screen. */}
+        <div className="flex min-h-0 flex-1 flex-col items-start gap-6 pb-4">
+          <div className="pointer-events-auto shrink-0">
             <DateHeader />
           </div>
-          <div className="ui-rise pointer-events-auto hidden sm:block">
+          <div className="ui-rise legend-scroll pointer-events-auto hidden min-h-0 sm:block">
             <RouteLegend />
           </div>
         </div>
 
-        <div className="ui-rise pointer-events-auto">
+        <div className="ui-rise pointer-events-auto shrink-0">
           <Timeline />
         </div>
       </div>
 
       {/* Positioned against <main>; z-index set in .route-panel */}
-      <RoutePanel />
+      <InfoPanel />
 
       <Leva collapsed hidden={process.env.NODE_ENV === "production"} titleBar={{ title: "dev" }} />
     </main>

@@ -1,0 +1,685 @@
+{
+  "note": "Milestones date the earliest known evidence at a specific place. That is not the same as the origin of a practice, and developments did not happen everywhere at once. Species are linked only where the evidence supports it; routes only where the evidence itself connects them. Review with a domain specialist before publishing.",
+  "milestones": [
+    {
+      "id": "lomekwi-tools",
+      "title": "The oldest known stone tools",
+      "category": "stone-tools",
+      "approximateStartYear": 3300000,
+      "dateLabel": "~3.3 million years ago",
+      "geographicLocation": {
+        "lat": 3.95,
+        "lng": 35.85,
+        "label": "Lomekwi 3, West Turkana, Kenya",
+        "approximate": true
+      },
+      "relatedSpeciesIds": [],
+      "shortDescription": "Large stone cores and flakes, made before the earliest known fossils of the genus Homo.",
+      "detailedDescription": "At Lomekwi 3, flakes were struck from heavy cobbles by hammering them against an anvil or with a hand-held stone. The tools are about 700,000 years older than the previously known oldest tools.",
+      "evidence": "Stone cores, flakes and anvils excavated from sediments dated to ~3.3 million years ago.",
+      "originNote": "The maker is unknown: no hominin fossils were found with the tools, and they predate the earliest known Homo. Australopithecus and Kenyanthropus are candidates. Some researchers question the context of the finds.",
+      "significance": "Toolmaking did not begin with our genus. It shows that technology predates big brains.",
+      "evidenceType": "archaeological",
+      "confidence": "medium",
+      "sources": [
+        "harmand2015"
+      ],
+      "visualIcon": "stone-tool",
+      "animationType": "rotate"
+    },
+    {
+      "id": "oldowan",
+      "title": "Oldowan stone tools",
+      "category": "stone-tools",
+      "approximateStartYear": 2600000,
+      "dateLabel": "~2.6 million years ago",
+      "geographicLocation": {
+        "lat": 11.05,
+        "lng": 40.3,
+        "label": "Gona, Afar, Ethiopia",
+        "approximate": true
+      },
+      "relatedSpeciesIds": [],
+      "shortDescription": "Simple, sharp flakes struck from cobbles: a toolkit that lasted for more than a million years.",
+      "detailedDescription": "Oldowan tools, named after Olduvai Gorge, were used to cut meat from carcasses and process plants. The well-dated artefacts at Gona are among the earliest; Nyayanga in Kenya has Oldowan tools from ~3.0–2.6 million years ago.",
+      "evidence": "Cores and flakes from dated sediments at Gona; butchered animal bones at later sites.",
+      "originNote": "Often credited to early Homo, but Paranthropus teeth occur with some of the earliest Oldowan tools, so who made them is uncertain.",
+      "significance": "Opened up meat and marrow as food sources and set the pattern of tool dependence that defines later hominins.",
+      "evidenceType": "archaeological",
+      "confidence": "high",
+      "sources": [
+        "semaw1997",
+        "plummer2023"
+      ],
+      "visualIcon": "stone-tool",
+      "animationType": "rotate"
+    },
+    {
+      "id": "acheulean",
+      "title": "The first handaxes (Acheulean)",
+      "category": "stone-tools",
+      "approximateStartYear": 1760000,
+      "dateLabel": "~1.76 million years ago",
+      "geographicLocation": {
+        "lat": 4.05,
+        "lng": 35.78,
+        "label": "Kokiselei 4, West Turkana, Kenya",
+        "approximate": true
+      },
+      "relatedSpeciesIds": [
+        "homo-erectus"
+      ],
+      "relatedSiteIds": [
+        "kokiselei"
+      ],
+      "shortDescription": "Symmetrical tools shaped on both faces: the first designed standard form.",
+      "detailedDescription": "Acheulean handaxes and cleavers required planning a shape in advance. The tradition spread across Africa and western Eurasia and lasted for more than a million years.",
+      "evidence": "Handaxes and picks from sediments dated to ~1.76 million years ago.",
+      "originNote": "Generally linked to Homo erectus because of its age and distribution, but no fossils were found at Kokiselei itself.",
+      "significance": "A long-lived standard design suggests skills passed on by teaching or imitation across countless generations.",
+      "evidenceType": "archaeological",
+      "confidence": "high",
+      "sources": [
+        "lepre2011"
+      ],
+      "visualIcon": "handaxe",
+      "animationType": "rotate"
+    },
+    {
+      "id": "fire",
+      "title": "Earliest evidence of fire use",
+      "category": "fire",
+      "approximateStartYear": 1000000,
+      "dateLabel": "~1 million years ago",
+      "geographicLocation": {
+        "lat": -27.85,
+        "lng": 23.55,
+        "label": "Wonderwerk Cave, South Africa"
+      },
+      "relatedSpeciesIds": [],
+      "shortDescription": "Burned bone and plant ash in a cave, among the earliest secure traces of fire used by hominins.",
+      "detailedDescription": "Microscopic study of Acheulean layers at Wonderwerk Cave found ash and burned bone that were burned inside the cave, not carried in by wildfires. At Gesher Benot Ya'aqov in Israel (~780,000 years ago), burned seeds, wood and flint cluster in hearth-like patches.",
+      "evidence": "Ashed plant remains and burned bone in their original position (Wonderwerk); spatial clusters of burned material (Gesher Benot Ya'aqov).",
+      "originNote": "Earliest secure evidence, not the origin. Older claims (~1.5 million years ago in Kenya) are debated, and habitual, everyday fire use becomes clear only after ~400,000 years ago. No hominin fossils were found with the Wonderwerk ash.",
+      "significance": "Fire brought warmth, protection, light and cooking, which makes food easier to digest.",
+      "evidenceType": "archaeological",
+      "confidence": "medium",
+      "sources": [
+        "berna2012",
+        "gorenInbar2004"
+      ],
+      "visualIcon": "fire",
+      "animationType": "flicker"
+    },
+    {
+      "id": "schoningen-spears",
+      "title": "Wooden hunting spears",
+      "category": "hunting-gathering",
+      "approximateStartYear": 300000,
+      "approximateEndYear": 200000,
+      "dateLabel": "~300,000 years ago (age under revision)",
+      "geographicLocation": {
+        "lat": 52.14,
+        "lng": 10.98,
+        "label": "Schöningen, Germany"
+      },
+      "relatedSpeciesIds": [],
+      "shortDescription": "Carefully shaped spruce and pine spears found with the butchered remains of horses.",
+      "detailedDescription": "Waterlogged lake-shore sediments preserved complete wooden spears up to ~2.5 m long, balanced like modern javelins, together with the remains of more than 20 horses.",
+      "evidence": "Wooden spears and butchered horse bones from an ancient lake shore.",
+      "originNote": "No hominin fossils were found; the makers were probably populations on the Neanderthal lineage, but that is an inference. Some recent studies argue for a younger age (~200,000 years ago).",
+      "significance": "Clear evidence of planned, cooperative big-game hunting with weapons made from wood, a material that rarely survives.",
+      "evidenceType": "archaeological",
+      "confidence": "medium",
+      "sources": [
+        "thieme1997"
+      ],
+      "visualIcon": "spear",
+      "animationType": "draw"
+    },
+    {
+      "id": "blombos-engraving",
+      "title": "Abstract engravings and drawing",
+      "category": "symbolic",
+      "approximateStartYear": 75000,
+      "approximateEndYear": 73000,
+      "dateLabel": "~75,000–73,000 years ago",
+      "geographicLocation": {
+        "lat": -34.41,
+        "lng": 21.22,
+        "label": "Blombos Cave, South Africa"
+      },
+      "relatedSpeciesIds": [
+        "homo-sapiens"
+      ],
+      "shortDescription": "Ochre pieces engraved with cross-hatched lines, and a cross-hatched drawing made with an ochre crayon.",
+      "detailedDescription": "Middle Stone Age layers at Blombos contain engraved ochre (~75,000 years ago) and a stone flake with lines drawn in red ochre (~73,000 years ago), along with shell beads.",
+      "evidence": "Engraved ochre, a drawn pattern on silcrete and perforated shell beads in dated layers that also contain Homo sapiens teeth.",
+      "originNote": "Among the earliest well-dated examples, not the origin. A shell engraved ~500,000 years ago from Trinil (Java), attributed to Homo erectus, suggests that pattern-making may be much older.",
+      "significance": "Deliberate abstract patterns are widely read as evidence of symbolic thinking.",
+      "evidenceType": "archaeological",
+      "confidence": "high",
+      "sources": [
+        "henshilwood2002",
+        "henshilwood2018",
+        "joordens2015"
+      ],
+      "visualIcon": "engraving",
+      "animationType": "draw"
+    },
+    {
+      "id": "iberian-art-neanderthal",
+      "title": "Possible Neanderthal cave art (debated)",
+      "category": "symbolic",
+      "approximateStartYear": 64000,
+      "dateLabel": "≥64,000 years ago (contested)",
+      "geographicLocation": {
+        "lat": 43.28,
+        "lng": -3.97,
+        "label": "La Pasiega, Cantabria, Spain"
+      },
+      "relatedSpeciesIds": [
+        "homo-neanderthalensis"
+      ],
+      "shortDescription": "Red pigment marks dated to before Homo sapiens reached Iberia, which would make Neanderthals the artists.",
+      "detailedDescription": "Uranium–thorium dating of mineral crusts over red marks in three Spanish caves produced minimum ages of more than 64,000 years. If correct, Neanderthals made them.",
+      "evidence": "U–Th dates on carbonate crusts overlying pigment.",
+      "originNote": "Other researchers dispute the dating method and whether the marks are deliberate art. Treat as an open question.",
+      "significance": "If confirmed, it would show symbolic behaviour in a second human species.",
+      "evidenceType": "archaeological",
+      "confidence": "low",
+      "sources": [
+        "hoffmann2018",
+        "white2020"
+      ],
+      "visualIcon": "cave-art",
+      "animationType": "draw"
+    },
+    {
+      "id": "kebara-hyoid",
+      "title": "A Neanderthal hyoid bone",
+      "category": "language",
+      "approximateStartYear": 60000,
+      "dateLabel": "~60,000 years ago",
+      "geographicLocation": {
+        "lat": 32.558,
+        "lng": 34.937,
+        "label": "Kebara Cave, Israel"
+      },
+      "relatedSpeciesIds": [
+        "homo-neanderthalensis"
+      ],
+      "relatedSiteIds": [
+        "kebara"
+      ],
+      "shortDescription": "The small throat bone that anchors the tongue, closely resembling ours.",
+      "detailedDescription": "The Kebara 2 Neanderthal skeleton preserved a hyoid bone whose shape is very similar to that of modern humans.",
+      "evidence": "A fossil hyoid bone from a Neanderthal burial.",
+      "originNote": "Language leaves no direct trace. This shows that anatomy compatible with speech existed, not that Neanderthals had language like ours; the question remains open.",
+      "significance": "One of the few fossil clues bearing on when the capacity for speech evolved.",
+      "evidenceType": "fossil",
+      "confidence": "low",
+      "sources": [
+        "arensburg1989"
+      ],
+      "visualIcon": "voice",
+      "animationType": "glow"
+    },
+    {
+      "id": "sulawesi-cave-art",
+      "title": "The oldest known figurative cave art",
+      "category": "symbolic",
+      "approximateStartYear": 51200,
+      "dateLabel": "≥51,200 years ago (minimum age)",
+      "geographicLocation": {
+        "lat": -4.95,
+        "lng": 119.65,
+        "label": "Leang Karampuang, Sulawesi, Indonesia",
+        "approximate": true
+      },
+      "relatedSpeciesIds": [
+        "homo-sapiens"
+      ],
+      "shortDescription": "A painted scene of human-like figures interacting with a pig.",
+      "detailedDescription": "Laser-ablation uranium-series dating of mineral deposits over the paint gave a minimum age of 51,200 years for this narrative scene in a limestone cave of southern Sulawesi.",
+      "evidence": "Red pigment painting with dated mineral crusts above it.",
+      "originNote": "A minimum age: the painting is at least this old. Attributed to Homo sapiens on the basis of its date and region; no human remains were found with it.",
+      "significance": "Shows storytelling art in Southeast Asia earlier than the famous European caves, during the spread of Homo sapiens towards Sahul.",
+      "evidenceType": "archaeological",
+      "confidence": "medium",
+      "sources": [
+        "oktaviana2024"
+      ],
+      "visualIcon": "cave-art",
+      "animationType": "draw"
+    },
+    {
+      "id": "sahul-seafaring",
+      "title": "Open-sea crossings to Sahul",
+      "category": "seafaring",
+      "approximateStartYear": 50000,
+      "approximateEndYear": 47000,
+      "dateLabel": "by ~50,000–47,000 years ago",
+      "geographicLocation": {
+        "lat": -10.5,
+        "lng": 127.0,
+        "label": "Timor Sea crossing (Wallacea to Sahul)",
+        "approximate": true
+      },
+      "relatedSpeciesIds": [
+        "homo-sapiens"
+      ],
+      "relatedRouteIds": [
+        "sunda-sahul"
+      ],
+      "shortDescription": "Even at the lowest Ice Age sea levels, reaching Australia–New Guinea required crossing open water.",
+      "detailedDescription": "Sahul was never connected to mainland Asia. People arriving there had to cross a chain of sea gaps, some wide enough that land on the other side was not visible.",
+      "evidence": "Archaeological sites in Sahul from ~50,000–47,000 years ago (with a debated older date at Madjedbebe).",
+      "originNote": "No boats survive; seafaring is inferred from people arriving on islands. Earlier hominins reached Flores by ~1 million years ago, possibly by accident rather than deliberate voyaging.",
+      "significance": "Among the earliest evidence of deliberate sea crossings, and part of the Southeast Asia → Sahul route.",
+      "evidenceType": "archaeological",
+      "confidence": "high",
+      "sources": [
+        "clarkson2017",
+        "oconnell2018"
+      ],
+      "visualIcon": "boat",
+      "animationType": "drift"
+    },
+    {
+      "id": "dzudzuana-flax",
+      "title": "Dyed flax fibres in Georgia",
+      "category": "clothing",
+      "approximateStartYear": 36000,
+      "approximateEndYear": 26000,
+      "dateLabel": "~36,000–26,000 years ago (often cited as ~30,000)",
+      "geographicLocation": {
+        "lat": 42.31,
+        "lng": 43.27,
+        "label": "Dzudzuana Cave, Imereti, Georgia"
+      },
+      "relatedSpeciesIds": [
+        "homo-sapiens"
+      ],
+      "relatedSiteIds": [
+        "dzudzuana"
+      ],
+      "shortDescription": "Wild flax fibres, some twisted and dyed, preserved in an Upper Palaeolithic cave.",
+      "detailedDescription": "Microscopic analysis of cave sediments at Dzudzuana found hundreds of flax fibres. Some were twisted into threads and some were coloured (black, grey, turquoise and pink), suggesting cords, baskets or textiles.",
+      "evidence": "Microscopic wild flax fibres in Upper Palaeolithic layers of a Georgian cave.",
+      "originNote": "Fibres show the use of plant materials; the objects themselves do not survive. Sewing with needles is attested elsewhere in Eurasia in roughly the same era.",
+      "significance": "Among the oldest evidence of fibre technology in the world: a reminder that most early technology was perishable.",
+      "evidenceType": "archaeological",
+      "confidence": "medium",
+      "sources": [
+        "kvavadze2009"
+      ],
+      "visualIcon": "needle",
+      "animationType": "draw"
+    },
+    {
+      "id": "xianrendong-pottery",
+      "title": "The earliest known pottery",
+      "category": "pottery",
+      "approximateStartYear": 20000,
+      "dateLabel": "~20,000 years ago",
+      "geographicLocation": {
+        "lat": 28.72,
+        "lng": 117.17,
+        "label": "Xianrendong Cave, Jiangxi, China"
+      },
+      "relatedSpeciesIds": [
+        "homo-sapiens"
+      ],
+      "shortDescription": "Fragments of fired clay vessels made by hunter-gatherers during the last Ice Age.",
+      "detailedDescription": "Pottery sherds from Xianrendong are dated by radiocarbon to ~20,000 years ago, about 10,000 years before farming began in the region.",
+      "evidence": "Pottery sherds in dated cave layers.",
+      "originNote": "Pottery did not come with farming: it began among East Asian hunter-gatherers and arose independently in other regions later.",
+      "significance": "Cooking in containers, possibly to extract fat and nutrients from food in a cold climate.",
+      "evidenceType": "archaeological",
+      "confidence": "high",
+      "sources": [
+        "wu2012"
+      ],
+      "visualIcon": "pottery",
+      "animationType": "rotate"
+    },
+    {
+      "id": "bonn-oberkassel-dog",
+      "title": "Dogs: the first domestic animal",
+      "category": "domestication",
+      "approximateStartYear": 14200,
+      "dateLabel": "~14,200 years ago",
+      "geographicLocation": {
+        "lat": 50.71,
+        "lng": 7.17,
+        "label": "Bonn-Oberkassel, Germany"
+      },
+      "relatedSpeciesIds": [
+        "homo-sapiens"
+      ],
+      "shortDescription": "A young dog buried with two people, which had been cared for through a serious illness.",
+      "detailedDescription": "The Oberkassel dog had canine distemper and would probably have needed human care to survive for weeks, suggesting an emotional bond rather than just a working animal.",
+      "evidence": "A dog skeleton from a human burial dated to ~14,200 years ago.",
+      "originNote": "Among the earliest generally accepted domestic dogs; genetic studies suggest domestication from wolves began earlier, and where it happened is debated.",
+      "significance": "The first animal domesticated, by hunter-gatherers, thousands of years before farming.",
+      "evidenceType": "archaeological",
+      "confidence": "high",
+      "sources": [
+        "janssens2018"
+      ],
+      "visualIcon": "animal",
+      "animationType": "glow"
+    },
+    {
+      "id": "near-east-agriculture",
+      "title": "Farming in the Fertile Crescent",
+      "category": "agriculture",
+      "approximateStartYear": 11500,
+      "approximateEndYear": 10000,
+      "dateLabel": "~11,500–10,000 years ago (~9500–8000 BCE)",
+      "geographicLocation": {
+        "lat": 37.3,
+        "lng": 39.5,
+        "label": "Northern Fertile Crescent (southeastern Anatolia and the Levant)",
+        "approximate": true
+      },
+      "relatedSpeciesIds": [
+        "homo-sapiens"
+      ],
+      "shortDescription": "Wheat, barley, lentils and peas were cultivated and gradually domesticated.",
+      "detailedDescription": "Cultivation of wild cereals and legumes led, over centuries, to domesticated forms whose seeds no longer scatter naturally. Farming villages spread across the region and later into Europe, Africa and Asia.",
+      "evidence": "Plant remains showing domestication traits, and changes in settlement and tools.",
+      "originNote": "One of several independent origins: farming also arose in China, New Guinea, Mesoamerica, the Andes, eastern North America and Africa. Cultivation began before crops looked domesticated, so there is no single 'invention' moment.",
+      "significance": "Food production supported larger, settled communities and transformed landscapes, diets and societies.",
+      "evidenceType": "archaeological",
+      "confidence": "high",
+      "sources": [
+        "zeder2011"
+      ],
+      "visualIcon": "sprout",
+      "animationType": "grow"
+    },
+    {
+      "id": "zagros-goats",
+      "title": "Goat herding in the Zagros",
+      "category": "domestication",
+      "approximateStartYear": 10000,
+      "dateLabel": "~10,000 years ago (~8000 BCE)",
+      "geographicLocation": {
+        "lat": 34.3,
+        "lng": 47.5,
+        "label": "Ganj Dareh, Zagros Mountains, Iran",
+        "approximate": true
+      },
+      "relatedSpeciesIds": [
+        "homo-sapiens"
+      ],
+      "shortDescription": "Herd management of goats shows up in the age and sex of slaughtered animals.",
+      "detailedDescription": "At Ganj Dareh, young males were culled while females were kept to breed: a herding strategy that appears before goat bones change shape through domestication.",
+      "evidence": "Age and sex profiles of goat remains from a dated Neolithic village.",
+      "originNote": "Sheep, cattle and pigs were domesticated in the same broad region and period; other animals were domesticated independently elsewhere.",
+      "significance": "Livestock provided meat, milk, hides and later wool and traction.",
+      "evidenceType": "archaeological",
+      "confidence": "high",
+      "sources": [
+        "zeder2000"
+      ],
+      "visualIcon": "herd",
+      "animationType": "glow"
+    },
+    {
+      "id": "catalhoyuk",
+      "title": "A large Neolithic town: Çatalhöyük",
+      "category": "settlement",
+      "approximateStartYear": 9100,
+      "approximateEndYear": 8000,
+      "dateLabel": "~7100–6000 BCE (~9,100–8,000 years ago)",
+      "geographicLocation": {
+        "lat": 37.67,
+        "lng": 32.83,
+        "label": "Çatalhöyük, Konya Plain, Türkiye"
+      },
+      "relatedSpeciesIds": [
+        "homo-sapiens"
+      ],
+      "shortDescription": "Thousands of people living in tightly packed mud-brick houses entered through the roof.",
+      "detailedDescription": "Çatalhöyük had no streets: houses were built against each other and rebuilt over centuries. Wall paintings, plastered bulls' horns and burials under the floors fill its rooms.",
+      "evidence": "Excavated houses, art and burials spanning more than a thousand years.",
+      "originNote": "Not the first settlement (permanent villages are older in the Levant), but one of the largest and best studied of the Neolithic.",
+      "significance": "Shows how people organised life in large farming communities before cities with central institutions.",
+      "evidenceType": "archaeological",
+      "confidence": "high",
+      "sources": [
+        "hodder2006"
+      ],
+      "visualIcon": "settlement",
+      "animationType": "glow"
+    },
+    {
+      "id": "gadachrili-wine",
+      "title": "The earliest known grape wine",
+      "category": "wine",
+      "approximateStartYear": 8000,
+      "approximateEndYear": 7800,
+      "dateLabel": "~6000–5800 BCE (~8,000 years ago)",
+      "geographicLocation": {
+        "lat": 41.43,
+        "lng": 44.74,
+        "label": "Gadachrili Gora, Kvemo Kartli, Georgia",
+        "approximate": true
+      },
+      "relatedSpeciesIds": [
+        "homo-sapiens"
+      ],
+      "relatedSiteIds": [
+        "gadachrili-gora"
+      ],
+      "shortDescription": "Chemical traces of grape wine in Neolithic jars from southern Georgia.",
+      "detailedDescription": "Residue analysis of pottery from Gadachrili Gora and nearby Shulaveris Gora detected tartaric acid and related acids, the chemical fingerprint of grape wine. Grape pollen and starch from the site point to local grapevines.",
+      "evidence": "Organic residues in early Neolithic pottery (Shulaveri–Shomutepe culture) from two villages, with radiocarbon dates.",
+      "originNote": "Earliest chemical evidence of grape wine, not proof that wine was invented here. Older fermented drinks of other ingredients are known elsewhere (e.g. at Jiahu, China). This is a local Neolithic development, not a result of any migration shown on this globe.",
+      "significance": "A cornerstone of Georgia's cultural heritage: traditional winemaking in clay qvevri vessels is recognised by UNESCO as Intangible Cultural Heritage (2013).",
+      "evidenceType": "archaeological",
+      "confidence": "high",
+      "sources": [
+        "mcgovern2017"
+      ],
+      "visualIcon": "wine",
+      "animationType": "pour"
+    },
+    {
+      "id": "belovode-copper",
+      "title": "Copper smelting",
+      "category": "metallurgy",
+      "approximateStartYear": 7000,
+      "dateLabel": "~5000 BCE (~7,000 years ago)",
+      "geographicLocation": {
+        "lat": 44.27,
+        "lng": 21.53,
+        "label": "Belovode, Serbia"
+      },
+      "relatedSpeciesIds": [
+        "homo-sapiens"
+      ],
+      "shortDescription": "Copper extracted from ore with fire, rather than hammered from native metal.",
+      "detailedDescription": "Slag, ore and copper droplets at Belovode (Vinča culture) show that copper was smelted from minerals by ~5000 BCE.",
+      "evidence": "Smelting slag and metal droplets in dated layers.",
+      "originNote": "Earliest securely dated smelting; native copper had been hammered into small objects in Anatolia and the Near East thousands of years earlier, and metallurgy may have developed in more than one place.",
+      "significance": "The start of extractive metallurgy, leading to bronze and iron.",
+      "evidenceType": "archaeological",
+      "confidence": "high",
+      "sources": [
+        "radivojevic2010"
+      ],
+      "visualIcon": "metal",
+      "animationType": "glow"
+    },
+    {
+      "id": "uruk-city",
+      "title": "Early cities: Uruk",
+      "category": "settlement",
+      "approximateStartYear": 6000,
+      "approximateEndYear": 5000,
+      "dateLabel": "~4000–3000 BCE",
+      "geographicLocation": {
+        "lat": 31.32,
+        "lng": 45.64,
+        "label": "Uruk, southern Mesopotamia (Iraq)"
+      },
+      "relatedSpeciesIds": [
+        "homo-sapiens"
+      ],
+      "shortDescription": "One of the world's first cities, with monumental temples and tens of thousands of inhabitants.",
+      "detailedDescription": "During the 4th millennium BCE Uruk grew into a city covering several square kilometres, with specialised crafts, administration and long-distance exchange.",
+      "evidence": "Excavated monumental architecture, administrative objects and settlement surveys.",
+      "originNote": "Cities emerged independently in several regions over the following millennia, for example in Egypt, the Indus Valley, China and the Americas.",
+      "significance": "Urban life brought new forms of power, labour, record-keeping and inequality.",
+      "evidenceType": "archaeological",
+      "confidence": "high",
+      "sources": [
+        "algaze2008"
+      ],
+      "visualIcon": "settlement",
+      "animationType": "glow"
+    },
+    {
+      "id": "uruk-writing",
+      "title": "Writing",
+      "category": "writing",
+      "approximateStartYear": 5300,
+      "approximateEndYear": 5100,
+      "dateLabel": "~3300–3100 BCE (~5,200 years ago)",
+      "geographicLocation": {
+        "lat": 31.32,
+        "lng": 45.64,
+        "label": "Uruk, southern Mesopotamia (Iraq)"
+      },
+      "relatedSpeciesIds": [
+        "homo-sapiens"
+      ],
+      "shortDescription": "Proto-cuneiform signs pressed into clay tablets to record goods and labour.",
+      "detailedDescription": "The earliest Uruk tablets are administrative accounts. Over centuries the signs developed into cuneiform, which could record full language.",
+      "evidence": "Clay tablets from dated layers at Uruk.",
+      "originNote": "Writing was invented independently at least in Mesopotamia, Egypt (~3200 BCE), China (by ~1200 BCE) and Mesoamerica.",
+      "significance": "Information could now be stored outside human memory, making the historical record possible.",
+      "evidenceType": "archaeological",
+      "confidence": "high",
+      "sources": [
+        "woods2010"
+      ],
+      "visualIcon": "writing",
+      "animationType": "draw"
+    },
+    {
+      "id": "gby-cooking",
+      "title": "Earliest evidence of cooking",
+      "category": "fire",
+      "approximateStartYear": 780000,
+      "dateLabel": "~780,000 years ago",
+      "geographicLocation": {
+        "lat": 33.0,
+        "lng": 35.63,
+        "label": "Gesher Benot Ya'aqov, Jordan Valley, Israel"
+      },
+      "relatedSpeciesIds": [],
+      "shortDescription": "Fish teeth altered by moderate heat, clustered around ancient hearths.",
+      "detailedDescription": "Teeth of large carp from a lake-shore Acheulean site show changes in their crystal structure produced by heating at temperatures typical of cooking (below ~500 °C) rather than burning. They concentrate in areas where earlier studies identified hearths.",
+      "evidence": "Heat-altered fish teeth and burned material in the same layers as Acheulean tools.",
+      "originNote": "Among the earliest direct archaeological evidence of cooking, not its origin: it has been argued on biological grounds that cooking began earlier, but direct evidence is lacking. No hominin fossils were found at the site; the makers of its Acheulean tools are not identified.",
+      "significance": "Cooking makes food easier to chew and digest, and controlled fire made it possible.",
+      "evidenceType": "archaeological",
+      "confidence": "medium",
+      "sources": [
+        "zohar2022",
+        "gorenInbar2004"
+      ],
+      "visualIcon": "cooking",
+      "animationType": "glow"
+    },
+    {
+      "id": "shell-beads",
+      "title": "Shell beads: early ornaments",
+      "category": "symbolic",
+      "approximateStartYear": 82000,
+      "dateLabel": "~82,000 years ago (possibly older at Skhul)",
+      "geographicLocation": {
+        "lat": 34.81,
+        "lng": -2.41,
+        "label": "Grotte des Pigeons (Taforalt), Morocco"
+      },
+      "relatedSpeciesIds": [
+        "homo-sapiens"
+      ],
+      "shortDescription": "Perforated Nassarius shells, some stained with red ochre, worn as beads.",
+      "detailedDescription": "Small marine shells with deliberate perforations, use-wear from stringing and traces of ochre come from well-dated Middle Stone Age layers at Taforalt. Similar beads are known from Skhul (Israel) and Oued Djebbana (Algeria), and later from Blombos Cave.",
+      "evidence": "Perforated, ochre-stained shells carried tens of kilometres inland from the coast.",
+      "originNote": "Earliest well-dated examples, not the origin. Beads from Skhul may be older (~100,000–135,000 years), but their context is debated. Attribution to Homo sapiens rests on the fossils of the North African Middle Stone Age; no remains were found with these beads.",
+      "significance": "Personal ornaments signal identity and social relationships, a strong marker of symbolic behaviour.",
+      "evidenceType": "archaeological",
+      "confidence": "high",
+      "sources": [
+        "bouzouggar2007",
+        "vanhaeren2006"
+      ],
+      "visualIcon": "ornament",
+      "animationType": "drift"
+    },
+    {
+      "id": "chauvet",
+      "title": "Chauvet Cave paintings",
+      "category": "symbolic",
+      "approximateStartYear": 36500,
+      "approximateEndYear": 28000,
+      "dateLabel": "~37,000–33,500 and ~31,000–28,000 years ago (two phases)",
+      "geographicLocation": {
+        "lat": 44.389,
+        "lng": 4.416,
+        "label": "Chauvet-Pont d'Arc, Ardèche, France"
+      },
+      "relatedSpeciesIds": [
+        "homo-sapiens"
+      ],
+      "shortDescription": "Hundreds of animals painted and engraved with shading and perspective.",
+      "detailedDescription": "Lions, horses, rhinoceroses and mammoths cover the walls of a cave sealed by a rockfall. A model based on hundreds of radiocarbon dates places human activity in two phases, the first around 37,000–33,500 years ago.",
+      "evidence": "Radiocarbon dates on charcoal, bones and pigment, combined in a chronological model.",
+      "originNote": "Not the oldest art (Sulawesi and the Blombos engravings are older), but one of the oldest and most accomplished painted caves in Europe.",
+      "significance": "Shows sophisticated visual art by Upper Palaeolithic Homo sapiens soon after their arrival in western Europe.",
+      "evidenceType": "archaeological",
+      "confidence": "high",
+      "sources": [
+        "quiles2016"
+      ],
+      "visualIcon": "cave-art",
+      "animationType": "draw"
+    },
+    {
+      "id": "natufian-villages",
+      "title": "The first permanent villages",
+      "category": "settlement",
+      "approximateStartYear": 15000,
+      "approximateEndYear": 11700,
+      "dateLabel": "~15,000–11,700 years ago",
+      "geographicLocation": {
+        "lat": 33.08,
+        "lng": 35.59,
+        "label": "Ain Mallaha (Eynan), Hula Valley, Israel"
+      },
+      "relatedSpeciesIds": [
+        "homo-sapiens"
+      ],
+      "shortDescription": "Natufian hunter-gatherers built round stone houses and stayed year-round, before farming.",
+      "detailedDescription": "Natufian sites in the Levant have stone-built houses, cemeteries, storage and grinding tools for wild cereals. People lived in one place for long periods while still hunting and gathering.",
+      "evidence": "Architecture, burials and grinding equipment from excavated Natufian settlements.",
+      "originNote": "Sedentary life developed gradually and preceded farming; earlier sites (e.g. Ohalo II, ~23,000 years ago) show long stays. Permanent villages also arose independently elsewhere.",
+      "significance": "Living in one place changed social life and set the stage for cultivation in the same region.",
+      "evidenceType": "archaeological",
+      "confidence": "high",
+      "sources": [
+        "barYosef1998"
+      ],
+      "visualIcon": "settlement",
+      "animationType": "glow"
+    }
+  ]
+}

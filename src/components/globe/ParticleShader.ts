@@ -1,10 +1,15 @@
 import { AdditiveBlending, DataTexture, ShaderMaterial, Vector2, Vector4, type IUniform } from "three";
 import { PARTICLE_CONSTANTS } from "@/engine/particles/constants";
+import { POPULATION_CONSTANTS } from "@/engine/population/populationModel";
 
 export { PARTICLE_CONSTANTS };
 
 /** Upper bound on routes addressable by per-route uniforms (awakening times). */
 export const MAX_ROUTES = 16;
+/** Upper bound on population clusters addressable by the activity uniform. */
+export const MAX_CLUSTERS = 32;
+/** Upper bound on species addressable by the filter / focus uniforms. */
+export const MAX_SPECIES = 16;
 
 /**
  * Three render layers share ONE position function:
@@ -24,6 +29,21 @@ export const MAX_ROUTES = 16;
  * Year, mode, selection, zoom and runtime density are uniforms: nothing here
  * ever requires rebuilding geometry.
  */
+/**
+ * Globe occlusion helper. The Earth writes depth, so particles behind it are
+ * hidden per fragment, but a sprite centred just behind the limb would still
+ * spill its edge into space. Fade those out as they cross the horizon.
+ */
+const horizon = /* glsl */ `
+  float facing(vec3 unitPos) {
+    vec3 wp = (modelMatrix * vec4(unitPos, 1.0)).xyz;
+    return dot(normalize(wp), normalize(cameraPosition - wp));
+  }
+  float horizonFade(vec3 unitPos) { return smoothstep(-0.02, 0.1, facing(unitPos)); }
+  // Near the limb, foreshortening packs sprites together; thin km-sized glows there.
+  float limbThin(vec3 unitPos) { return mix(0.35, 1.0, smoothstep(0.0, 0.45, facing(unitPos))); }
+`;
+
 const common = /* glsl */ `
   uniform sampler2D uPath;
   uniform float uSamples;
@@ -45,6 +65,7 @@ const common = /* glsl */ `
   uniform float uDensity;       // runtime LOD 0..1 (adaptive performance)
   uniform float uIntensity;
   uniform float uHero;          // intro emphasis 0..1
+  uniform float uStreamVis;     // species filter: Homo sapiens streams shown 0..1
 
   attribute float aRow;
   attribute float aRoute;
@@ -54,7 +75,7 @@ const common = /* glsl */ `
   attribute vec2 aSplit;    // split start progress, split offset km
   attribute vec3 aTarget;   // dispersal target, unit vector
   attribute vec3 aColor;
-  attribute vec3 aLook;     // size, brightness, LOD rank
+  attribute vec4 aLook;     // size, brightness, LOD rank, softness (0 core … 1 fringe)
   attribute vec3 aLoop;     // overview period (s), phase, trail lag (window fraction)
 
   varying vec3 vColor;
@@ -140,10 +161,11 @@ const common = /* glsl */ `
 
   float isSelected() { return 1.0 - step(0.5, abs(aRoute - uSelected)); }
   // Selected route dominant, others dimmed but never hidden.
-  float selectionAlpha() { return mix(1.0, mix(0.16, 1.0, isSelected()), uSelectMix); }
+  float selectionAlpha() { return mix(1.0, mix(0.16, 1.0, isSelected()), uSelectMix) * uStreamVis; }
   float selectionGain() { return mix(1.0, mix(0.75, 1.3, isSelected()), uSelectMix); }
   // 0 close-up … 1 full globe.
   float farFactor() { return smoothstep(1.7, 4.3, uCamDist); }
+  ${horizon}
   // Detail particles thin out slightly with distance and under load; streams stay.
   float lodMask() { return step(aLook.z, uDensity * mix(1.0, 0.8, farFactor())); }
 `;
@@ -153,6 +175,8 @@ const coreVertex = /* glsl */ `
   uniform float uSize;
   uniform float uPxScale;   // device px scale for sizes
   uniform float uMinPx;     // device px: dots never shrink below this
+  varying float vSoft;
+  varying float vHot;
 
   void main() {
     State s = particleState(0.0);
@@ -160,31 +184,47 @@ const coreVertex = /* glsl */ `
     gl_Position = projectionMatrix * mv;
 
     float far = farFactor();
+    float soft = aLook.w;
     float headAlpha = mix(0.6, 1.0, s.moving) * mix(1.0, 0.8, s.settle);
-    vAlpha = s.vis * uFade * selectionAlpha() * headAlpha * lodMask();
-    float modeGain = 1.0;
-    vColor = aColor * aLook.y * uIntensity * selectionGain() * modeGain
-      * mix(1.0, 1.2, s.moving) * mix(1.0, 0.8, far) * (1.0 + 1.8 * s.flash) * (1.0 + 0.45 * uHero);
+    vAlpha = s.vis * uFade * selectionAlpha() * headAlpha * lodMask() * horizonFade(s.pos);
+    // Moving streams are the brightest thing on screen; at full-globe distance
+    // dots are tiny, so they gain energy rather than lose it.
+    // Before departure the whole group is packed into a small area; keep it
+    // from blowing out to white so it brightens as it separates and moves off.
+    float gathering = (1.0 - s.moving) * (1.0 - s.settle);
+    vColor = aColor * aLook.y * uIntensity * selectionGain() * mix(1.0, 0.5, gathering)
+      * mix(1.0, 1.3, s.moving) * mix(1.0, 1.15, far) * (1.0 + 1.8 * s.flash) * (1.0 + 0.45 * uHero);
+    vSoft = soft;
+    // Small white-hot centre on bright core particles: pushes them past the
+    // bloom threshold (selective bloom) without bleaching the route hue.
+    vHot = 0.32 * smoothstep(0.8, 1.25, aLook.y) * (1.0 - soft) * s.moving * uIntensity * selectionGain();
 
     // Softer-than-perspective attenuation + floor: legible at any zoom.
     float px = uSize * aLook.x * uPxScale / pow(max(0.1, -mv.z), 0.65);
     px *= mix(1.0, 1.15, isSelected() * uSelectMix) * (1.0 + 0.6 * s.flash) * (1.0 + 0.3 * uHero);
-    gl_PointSize = vAlpha < 0.002 ? 0.0 : max(px, uMinPx);
+    float minPx = uMinPx * mix(1.0, 1.2, far) * mix(1.0, 0.8, soft);
+    gl_PointSize = vAlpha < 0.002 ? 0.0 : max(px, minPx);
   }
 `;
 
 const coreFragment = /* glsl */ `
   varying vec3 vColor;
   varying float vAlpha;
+  varying float vSoft;
+  varying float vHot;
   void main() {
     float d = length(gl_PointCoord - 0.5);
     if (d > 0.5) discard;
-    float core = 1.0 - smoothstep(0.0, 0.24, d);
+    float crisp = 1.0 - smoothstep(0.0, 0.22, d);
     float halo = 1.0 - smoothstep(0.0, 0.5, d);
     halo = halo * halo * halo;
-    // Energy kept modest: thousands overlap additively, and the route hue must
-    // survive tone mapping instead of blowing out to white.
-    gl_FragColor = vec4(vColor * (core * 1.1 + halo * 0.3), vAlpha * clamp(core + halo * 0.6, 0.0, 1.0));
+    float soft = exp(-d * d * 16.0);
+    // Core particles: crisp, dense dot. Fringe particles: a soft, dim speck.
+    // Hue energy stays moderate (thousands overlap additively); only the tiny
+    // hot centre exceeds the bloom threshold.
+    float shape = mix(crisp * 1.35 + halo * 0.3, soft * 0.75, vSoft);
+    vec3 col = vColor * shape + vec3(vHot * crisp * crisp);
+    gl_FragColor = vec4(col, vAlpha * clamp(mix(crisp + halo * 0.6, soft, vSoft), 0.0, 1.0));
   }
 `;
 
@@ -198,9 +238,11 @@ const trailVertex = /* glsl */ `
     gl_Position = projectionMatrix * modelViewMatrix * vec4(s.pos * uRadius, 1.0);
     // Head opaque → tail transparent (interpolated along the segment).
     // Streaks matter most close-up; at full-globe scale the glow carries motion.
-    float near = 1.0 - 0.65 * farFactor();
-    vAlpha = s.vis * uFade * selectionAlpha() * s.moving * (1.0 - aTrail) * uTrailAlpha * near * lodMask();
-    vColor = aColor * aLook.y * uIntensity * selectionGain() * (1.0 + 0.6 * uHero);
+    // Streaks shorten on screen with distance; keep them readable as direction cues.
+    float near = 1.0 - 0.35 * farFactor();
+    vAlpha = s.vis * uFade * selectionAlpha() * s.moving * (1.0 - aTrail) * uTrailAlpha * near * lodMask()
+      * horizonFade(s.pos) * mix(1.0, 0.6, aLook.w);
+    vColor = aColor * aLook.y * uIntensity * selectionGain() * 1.25 * (1.0 + 0.6 * uHero);
   }
 `;
 
@@ -223,8 +265,9 @@ const glowVertex = /* glsl */ `
     gl_Position = projectionMatrix * mv;
     float far = farFactor();
     // Glow carries the stream at full-globe distance, steps back close-up.
-    vAlpha = s.vis * uFade * selectionAlpha() * uGlowAlpha * mix(0.55, 1.3, far) * mix(1.0, 0.7, s.settle)
-      * (1.0 + 3.0 * s.flash) * (1.0 + 1.8 * uHero);
+    float gathering = (1.0 - s.moving) * (1.0 - s.settle);
+    vAlpha = s.vis * uFade * selectionAlpha() * uGlowAlpha * mix(0.55, 1.3, far) * mix(1.0, 0.7, s.settle) * mix(1.0, 0.45, gathering)
+      * (1.0 + 3.0 * s.flash) * (1.0 + 1.8 * uHero) * horizonFade(s.pos) * limbThin(s.pos);
     vColor = aColor * selectionGain();
     float px = (uGlowKm / EARTH_KM) * (1.0 + 0.5 * uHero) * uProjScale / max(0.1, -mv.z);
     gl_PointSize = vAlpha < 0.001 ? 0.0 : clamp(px, uGlowPxRange.x, uGlowPxRange.y);
@@ -242,6 +285,165 @@ const glowFragment = /* glsl */ `
   }
 `;
 
+/**
+ * POPULATION CLUSTERS: stationary particles that show where people live at a
+ * given time. Deliberately the opposite of the streams: soft specks instead of
+ * crisp dots, no trails, low energy (never reaches the bloom threshold), a
+ * gentle haze. They share the stream uniforms (year, mode, selection, zoom).
+ *
+ *   presence  – per-particle formation / fade, staggered by formation rank
+ *               (mirrors particlePresence() in engine/population)
+ *   attested  – archaeological evidence vs inferred presence: inferred
+ *               presence is drawn dimmer and hazier
+ *   activity  – a source cluster brightens near the departure point while
+ *               a stream separates from it
+ */
+const popCommon = /* glsl */ `
+  uniform float uYearBP;
+  uniform float uClock;
+  uniform float uStoryClock;
+  uniform float uMode;
+  uniform float uFade;
+  uniform float uSelected;
+  uniform float uSelectMix;
+  uniform float uRadius;
+  uniform float uCamDist;
+  uniform float uDensity;
+  uniform float uPopWindow;
+  uniform float uPopActivity[MAX_CLUSTERS];
+  uniform float uSpeciesVis[MAX_SPECIES];   // species filter, eased 0..1
+  uniform float uSpeciesFocus[MAX_SPECIES]; // emphasised species (selection)
+  uniform float uFocusCluster;              // emphasised cluster index, -1 none
+  uniform float uFocusMix;                  // eased strength of the emphasis
+  attribute float aPopSpecies;
+
+  attribute vec4 aPopTime;   // startYear, establishedYear, fadeStartYear, endYear
+  attribute vec4 aPopLook;   // size, brightness, formation rank, LOD rank
+  attribute vec4 aPopMeta;   // attestedYear (-1 none), cluster index, overview awaken (s), seed
+  attribute vec3 aPopExtra;  // departure proximity, overview gain, related-route bitmask
+  attribute vec3 aColor;
+
+  varying vec3 vColor;
+  varying float vAlpha;
+
+  const float EARTH_KM = 6371.0;
+
+  float ramp(float x, float a, float b) { return clamp((x - a) / (b - a), 0.0, 1.0); }
+  float farFactor() { return smoothstep(1.7, 4.3, uCamDist); }
+  ${horizon}
+
+  float presence() {
+    if (uMode < 0.5) return ramp(uStoryClock - aPopMeta.z, 0.0, 2.5) * aPopExtra.y;
+    float r = aPopLook.z;
+    float w = uPopWindow;
+    float form = (aPopTime.x - uYearBP) / max(1.0, aPopTime.x - aPopTime.y);
+    float a = clamp((form - r * (1.0 - w)) / w, 0.0, 1.0);
+    float dissolve = (aPopTime.z - uYearBP) / max(1.0, aPopTime.z - aPopTime.w);
+    a *= 1.0 - clamp((dissolve - (1.0 - r) * (1.0 - w)) / w, 0.0, 1.0);
+    return a;
+  }
+  float attested() {
+    if (aPopMeta.x < 0.0) return 0.0;
+    if (uMode < 0.5) return 1.0;
+    return ramp(uYearBP, aPopMeta.x * 1.03, aPopMeta.x * 0.97);
+  }
+  float related() {
+    if (uSelected < 0.0) return 0.0;
+    return mod(floor(aPopExtra.z / exp2(uSelected) + 0.001), 2.0);
+  }
+  // Selected route's populations come forward; the rest stay as context.
+  // Species / cluster selections (and milestones) work the same way, and the
+  // species filter fades whole species in and out.
+  float popSelection() {
+    int sp = int(aPopSpecies + 0.5);
+    float focused = max(uSpeciesFocus[sp], 1.0 - step(0.5, abs(aPopMeta.y - uFocusCluster)));
+    return mix(1.0, mix(0.4, 1.3, related()), uSelectMix)
+      * mix(1.0, mix(0.3, 1.35, focused), uFocusMix)
+      * uSpeciesVis[sp];
+  }
+  float activity() {
+    if (uMode < 0.5) return 0.0;
+    return uPopActivity[int(aPopMeta.y + 0.5)] * aPopExtra.x;
+  }
+  // Nearly stationary: a slow drift of a few km, never a migration.
+  vec3 popPosition() {
+    vec3 p = normalize(position);
+    vec3 side = normalize(cross(vec3(0.0, 1.0, 0.0), p) + vec3(1e-4, 0.0, 0.0));
+    vec3 fwd = cross(p, side);
+    float seed = aPopMeta.w;
+    vec2 sh = vec2(sin(uClock * 0.21 + seed * 40.0), cos(uClock * 0.17 + seed * 23.0)) * 2.5;
+    return normalize(p + (side * sh.x + fwd * sh.y) / EARTH_KM);
+  }
+`;
+
+const popDotVertex = /* glsl */ `
+  ${popCommon}
+  uniform float uSize;
+  uniform float uPxScale;
+  uniform float uMinPx;
+  uniform float uPopIntensity;
+
+  void main() {
+    vec3 p = popPosition();
+    vec4 mv = modelViewMatrix * vec4(p * uRadius, 1.0);
+    gl_Position = projectionMatrix * mv;
+
+    float a = presence();
+    float att = attested();
+    float act = activity();
+    float far = farFactor();
+    // Newly forming populations: each particle glints briefly as it appears.
+    float glint = uMode > 0.5 ? 4.0 * a * (1.0 - a) : 0.0;
+    float twinkle = 0.86 + 0.14 * sin(uClock * (0.4 + aPopMeta.w * 0.5) + aPopMeta.w * 60.0);
+    float lod = step(aPopLook.w, uDensity * mix(1.0, 0.85, far));
+
+    vAlpha = a * uFade * popSelection() * horizonFade(p) * limbThin(p) * lod * mix(0.5, 1.0, att);
+    // Paler than the stream hue: "people living here", not "people moving".
+    vec3 hue = mix(aColor, vec3(dot(aColor, vec3(0.3, 0.55, 0.15))), 0.12);
+    vColor = hue * aPopLook.y * uPopIntensity * twinkle * mix(0.7, 1.0, att)
+      * (1.0 + 1.1 * glint + 1.3 * act) * mix(1.0, 1.15, far);
+
+    float px = uSize * 0.72 * aPopLook.x * uPxScale / pow(max(0.1, -mv.z), 0.65);
+    px *= mix(0.85, 1.0, att) * (1.0 + 0.35 * act);
+    gl_PointSize = vAlpha < 0.002 ? 0.0 : max(px, uMinPx * 0.85);
+  }
+`;
+
+const popDotFragment = /* glsl */ `
+  varying vec3 vColor;
+  varying float vAlpha;
+  void main() {
+    vec2 c = gl_PointCoord - 0.5;
+    float d2 = dot(c, c);
+    if (d2 > 0.25) discard;
+    float soft = exp(-d2 * 14.0);
+    gl_FragColor = vec4(vColor * soft, vAlpha * soft);
+  }
+`;
+
+const popGlowVertex = /* glsl */ `
+  ${popCommon}
+  uniform float uPopGlowKm;
+  uniform float uPopGlowAlpha;
+  uniform float uProjScale;
+  uniform vec2 uGlowPxRange;
+
+  void main() {
+    vec3 p = popPosition();
+    vec4 mv = modelViewMatrix * vec4(p * uRadius, 1.0);
+    gl_Position = projectionMatrix * mv;
+    float a = presence();
+    float att = attested();
+    float far = farFactor();
+    // Inferred presence leans on haze; attested presence on discrete specks.
+    vAlpha = a * uFade * popSelection() * horizonFade(p) * limbThin(p) * uPopGlowAlpha
+      * mix(1.3, 0.85, att) * mix(0.6, 1.15, far) * (1.0 + 1.5 * activity());
+    vColor = mix(aColor, vec3(dot(aColor, vec3(0.3, 0.55, 0.15))), 0.3);
+    float px = (uPopGlowKm / EARTH_KM) * uProjScale / max(0.1, -mv.z);
+    gl_PointSize = vAlpha < 0.0005 ? 0.0 : clamp(px, uGlowPxRange.x, uGlowPxRange.y);
+  }
+`;
+
 export type ParticleUniforms = Record<string, IUniform>;
 
 export interface ParticleLayers {
@@ -249,6 +451,8 @@ export interface ParticleLayers {
   core: ShaderMaterial;
   trail: ShaderMaterial;
   glow: ShaderMaterial;
+  popDots: ShaderMaterial;
+  popGlow: ShaderMaterial;
 }
 
 export function createParticleLayers({
@@ -289,6 +493,16 @@ export function createParticleLayers({
     uGlowAlpha: { value: 0.05 },
     uProjScale: { value: 1000 },
     uGlowPxRange: { value: new Vector2(8, 200) },
+    uPopWindow: { value: POPULATION_CONSTANTS.particleWindow },
+    uPopActivity: { value: new Float32Array(MAX_CLUSTERS) },
+    uPopIntensity: { value: 0.4 },
+    uPopGlowKm: { value: 170 },
+    uPopGlowAlpha: { value: 0.03 },
+    uStreamVis: { value: 1 },
+    uSpeciesVis: { value: new Float32Array(MAX_SPECIES).fill(1) },
+    uSpeciesFocus: { value: new Float32Array(MAX_SPECIES) },
+    uFocusCluster: { value: -1 },
+    uFocusMix: { value: 0 },
   };
   const base = {
     uniforms,
@@ -297,11 +511,13 @@ export function createParticleLayers({
     depthTest: true,
     blending: AdditiveBlending,
   };
-  const defines = { MAX_ROUTES };
+  const defines = { MAX_ROUTES, MAX_CLUSTERS, MAX_SPECIES };
   return {
     uniforms,
     core: new ShaderMaterial({ ...base, defines, vertexShader: coreVertex, fragmentShader: coreFragment }),
     trail: new ShaderMaterial({ ...base, defines, vertexShader: trailVertex, fragmentShader: trailFragment }),
     glow: new ShaderMaterial({ ...base, defines, vertexShader: glowVertex, fragmentShader: glowFragment }),
+    popDots: new ShaderMaterial({ ...base, defines, vertexShader: popDotVertex, fragmentShader: popDotFragment }),
+    popGlow: new ShaderMaterial({ ...base, defines, vertexShader: popGlowVertex, fragmentShader: glowFragment }),
   };
 }

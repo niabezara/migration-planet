@@ -1,0 +1,1645 @@
+{
+  "note": "Population clusters show approximate, modelled presence of Homo sapiens in a region; they are not population counts. 'visualDensity' is a rendering parameter only. Periods are approximate and the earliest-evidence years ('attestedYear') are conservative summaries for orientation; review with a domain specialist before publishing. Where no attestedYear is given, or before it, presence is inferred.",
+  "clusters": [
+    {
+      "id": "north-africa",
+      "speciesId": "homo-sapiens",
+      "region": "Northwest Africa",
+      "coordinates": {
+        "lat": 32.0,
+        "lng": -7.0
+      },
+      "lobes": [
+        {
+          "name": "Atlantic Morocco",
+          "lat": 32.0,
+          "lng": -7.5,
+          "radiusKm": {
+            "north": 230,
+            "east": 300
+          },
+          "weight": 1.0
+        },
+        {
+          "name": "Middle Atlas",
+          "lat": 34.0,
+          "lng": -3.0,
+          "radiusKm": {
+            "north": 160,
+            "east": 260
+          },
+          "weight": 0.6
+        },
+        {
+          "name": "Tell Atlas",
+          "lat": 35.6,
+          "lng": 3.5,
+          "radiusKm": {
+            "north": 110,
+            "east": 300
+          },
+          "weight": 0.4
+        }
+      ],
+      "startYear": 320000,
+      "establishedYear": 300000,
+      "colorFrom": "ancestral",
+      "visualDensity": 0.5,
+      "confidence": "medium",
+      "attestedYear": 300000,
+      "basisNote": "Jebel Irhoud fossils (~315,000 years ago, with a wide dating range) are among the earliest known Homo sapiens and support a pan-African origin. Continuous occupation of the region is a simplification.",
+      "relatedRouteIds": [],
+      "siteIds": [
+        "jebel-irhoud"
+      ]
+    },
+    {
+      "id": "east-africa",
+      "speciesId": "homo-sapiens",
+      "region": "East Africa",
+      "coordinates": {
+        "lat": 6.5,
+        "lng": 37.5
+      },
+      "lobes": [
+        {
+          "name": "Ethiopian highlands",
+          "lat": 8.0,
+          "lng": 38.5,
+          "radiusKm": {
+            "north": 330,
+            "east": 280
+          },
+          "weight": 1.0
+        },
+        {
+          "name": "Afar & Middle Awash",
+          "lat": 11.0,
+          "lng": 40.5,
+          "radiusKm": {
+            "north": 180,
+            "east": 160
+          },
+          "weight": 0.55
+        },
+        {
+          "name": "Omo basin",
+          "lat": 5.0,
+          "lng": 36.0,
+          "radiusKm": {
+            "north": 170,
+            "east": 150
+          },
+          "weight": 0.5
+        },
+        {
+          "name": "Kenyan Rift",
+          "lat": 0.5,
+          "lng": 36.5,
+          "radiusKm": {
+            "north": 300,
+            "east": 200
+          },
+          "weight": 0.8
+        },
+        {
+          "name": "Tanzania",
+          "lat": -4.5,
+          "lng": 35.5,
+          "radiusKm": {
+            "north": 280,
+            "east": 240
+          },
+          "weight": 0.6
+        },
+        {
+          "name": "Horn of Africa",
+          "lat": 9.5,
+          "lng": 43.5,
+          "radiusKm": {
+            "north": 180,
+            "east": 240
+          },
+          "weight": 0.45
+        }
+      ],
+      "startYear": 320000,
+      "establishedYear": 300000,
+      "colorFrom": "ancestral",
+      "visualDensity": 1.0,
+      "confidence": "medium",
+      "attestedYear": 233000,
+      "basisNote": "Fossils from Omo Kibish (at least ~233,000 years ago) and Herto (~160,000) attest Homo sapiens here; presence before that is inferred from pan-African origin models. Groups left this region repeatedly while its populations continued.",
+      "relatedRouteIds": [
+        "africa-levant",
+        "out-of-africa-south"
+      ],
+      "siteIds": [
+        "omo-kibish",
+        "herto"
+      ]
+    },
+    {
+      "id": "southern-africa",
+      "speciesId": "homo-sapiens",
+      "region": "Southern Africa",
+      "coordinates": {
+        "lat": -29.0,
+        "lng": 25.0
+      },
+      "lobes": [
+        {
+          "name": "Highveld",
+          "lat": -27.5,
+          "lng": 27.0,
+          "radiusKm": {
+            "north": 320,
+            "east": 360
+          },
+          "weight": 1.0
+        },
+        {
+          "name": "Southern Cape coast",
+          "lat": -33.6,
+          "lng": 22.0,
+          "radiusKm": {
+            "north": 120,
+            "east": 360
+          },
+          "weight": 0.8
+        },
+        {
+          "name": "Limpopo",
+          "lat": -23.5,
+          "lng": 29.5,
+          "radiusKm": {
+            "north": 220,
+            "east": 240
+          },
+          "weight": 0.45
+        }
+      ],
+      "startYear": 320000,
+      "establishedYear": 300000,
+      "colorFrom": "ancestral",
+      "visualDensity": 0.6,
+      "confidence": "medium",
+      "attestedYear": 110000,
+      "basisNote": "Human remains from Klasies River (roughly 110,000 years ago) and later sites such as Blombos are generally attributed to Homo sapiens; earlier presence is inferred and the status of older fossils (e.g. Florisbad) is debated.",
+      "relatedRouteIds": [],
+      "siteIds": []
+    },
+    {
+      "id": "levant-early",
+      "speciesId": "homo-sapiens",
+      "region": "Southern Levant (early presence)",
+      "coordinates": {
+        "lat": 32.6,
+        "lng": 35.2
+      },
+      "lobes": [
+        {
+          "name": "Mount Carmel & Galilee",
+          "lat": 32.7,
+          "lng": 35.2,
+          "radiusKm": {
+            "north": 140,
+            "east": 70
+          },
+          "weight": 1.0
+        },
+        {
+          "name": "Jordan valley",
+          "lat": 31.6,
+          "lng": 35.6,
+          "radiusKm": {
+            "north": 110,
+            "east": 60
+          },
+          "weight": 0.5
+        },
+        {
+          "name": "Lebanon",
+          "lat": 33.9,
+          "lng": 35.9,
+          "radiusKm": {
+            "north": 100,
+            "east": 60
+          },
+          "weight": 0.45
+        }
+      ],
+      "startYear": 104000,
+      "establishedYear": 90000,
+      "endYear": 66000,
+      "fadeYears": 14000,
+      "colorFrom": "africa-levant",
+      "visualDensity": 0.42,
+      "confidence": "medium",
+      "attestedYear": 100000,
+      "basisNote": "Skhul and Qafzeh fossils (~120,000–90,000 years ago) attest an early population. Whether it persisted is debated: the cluster fades because continuity is not demonstrated, not because a known extinction is modelled. Misliya (~180,000) shows an even earlier, probably short-lived presence that is not modelled.",
+      "relatedRouteIds": [
+        "africa-levant"
+      ],
+      "siteIds": [
+        "skhul",
+        "qafzeh",
+        "misliya"
+      ]
+    },
+    {
+      "id": "southwest-asia",
+      "speciesId": "homo-sapiens",
+      "region": "Levant & Southwest Asia",
+      "coordinates": {
+        "lat": 35.0,
+        "lng": 37.5
+      },
+      "lobes": [
+        {
+          "name": "Levant",
+          "lat": 33.5,
+          "lng": 36.0,
+          "radiusKm": {
+            "north": 200,
+            "east": 110
+          },
+          "weight": 1.0
+        },
+        {
+          "name": "Northern Levant & Upper Euphrates",
+          "lat": 36.4,
+          "lng": 38.3,
+          "radiusKm": {
+            "north": 150,
+            "east": 230
+          },
+          "weight": 0.8
+        },
+        {
+          "name": "Upper Tigris & Zagros foothills",
+          "lat": 36.8,
+          "lng": 43.0,
+          "radiusKm": {
+            "north": 140,
+            "east": 230
+          },
+          "weight": 0.5
+        },
+        {
+          "name": "Negev",
+          "lat": 30.8,
+          "lng": 34.9,
+          "radiusKm": {
+            "north": 110,
+            "east": 80
+          },
+          "weight": 0.35
+        }
+      ],
+      "startYear": 64000,
+      "establishedYear": 56000,
+      "colorFrom": "ancestral",
+      "visualDensity": 0.62,
+      "confidence": "medium",
+      "attestedYear": 54000,
+      "basisNote": "Manot Cave (~55,000 years ago) and Initial Upper Palaeolithic sites such as Boker Tachtit (~50,000) attest modern humans here. How this population relates to the southern dispersal is not modelled as a route; earlier presence in this phase is inferred.",
+      "relatedRouteIds": [
+        "levant-europe",
+        "levant-caucasus"
+      ],
+      "siteIds": []
+    },
+    {
+      "id": "south-asia",
+      "speciesId": "homo-sapiens",
+      "region": "Indian subcontinent",
+      "coordinates": {
+        "lat": 21.0,
+        "lng": 77.5
+      },
+      "lobes": [
+        {
+          "name": "Deccan",
+          "lat": 20.5,
+          "lng": 77.5,
+          "radiusKm": {
+            "north": 380,
+            "east": 360
+          },
+          "weight": 1.0
+        },
+        {
+          "name": "Gujarat & Thar margins",
+          "lat": 24.5,
+          "lng": 71.5,
+          "radiusKm": {
+            "north": 220,
+            "east": 280
+          },
+          "weight": 0.5
+        },
+        {
+          "name": "Southern India",
+          "lat": 13.0,
+          "lng": 78.0,
+          "radiusKm": {
+            "north": 280,
+            "east": 200
+          },
+          "weight": 0.6
+        },
+        {
+          "name": "Ganges plain",
+          "lat": 25.0,
+          "lng": 83.5,
+          "radiusKm": {
+            "north": 200,
+            "east": 380
+          },
+          "weight": 0.5
+        },
+        {
+          "name": "Sri Lanka",
+          "lat": 7.6,
+          "lng": 80.7,
+          "radiusKm": {
+            "north": 110,
+            "east": 70
+          },
+          "weight": 0.2
+        }
+      ],
+      "startYear": 54000,
+      "establishedYear": 45000,
+      "growthOrigin": {
+        "lat": 24.8,
+        "lng": 67.8
+      },
+      "colorFrom": "out-of-africa-south",
+      "visualDensity": 0.75,
+      "confidence": "medium",
+      "attestedYear": 45000,
+      "basisNote": "Microlithic assemblages from roughly 48,000–45,000 years ago are usually linked to modern humans; fossils are later (Sri Lanka, ~38,000). Older Middle Palaeolithic tools such as Jwalapuram (~74,000) cannot be attributed to Homo sapiens with confidence. Approximate.",
+      "relatedRouteIds": [
+        "out-of-africa-south"
+      ],
+      "siteIds": [
+        "jwalapuram"
+      ]
+    },
+    {
+      "id": "mainland-southeast-asia",
+      "speciesId": "homo-sapiens",
+      "region": "Mainland Southeast Asia",
+      "coordinates": {
+        "lat": 18.0,
+        "lng": 102.5
+      },
+      "lobes": [
+        {
+          "name": "Northern Laos & Thailand",
+          "lat": 19.0,
+          "lng": 102.5,
+          "radiusKm": {
+            "north": 320,
+            "east": 260
+          },
+          "weight": 1.0
+        },
+        {
+          "name": "Chao Phraya basin",
+          "lat": 14.5,
+          "lng": 100.8,
+          "radiusKm": {
+            "north": 240,
+            "east": 200
+          },
+          "weight": 0.6
+        },
+        {
+          "name": "Northern Vietnam",
+          "lat": 21.5,
+          "lng": 105.3,
+          "radiusKm": {
+            "north": 170,
+            "east": 180
+          },
+          "weight": 0.45
+        },
+        {
+          "name": "Mekong delta",
+          "lat": 11.5,
+          "lng": 105.5,
+          "radiusKm": {
+            "north": 160,
+            "east": 160
+          },
+          "weight": 0.3
+        }
+      ],
+      "startYear": 68000,
+      "establishedYear": 61000,
+      "colorFrom": "sunda-sahul",
+      "visualDensity": 0.55,
+      "confidence": "low",
+      "attestedYear": 46000,
+      "basisNote": "Tam Pa Ling (Laos) attests modern humans by at least ~46,000 years ago, with some estimates considerably older. Earlier presence, and how people reached the region, are inferred and not modelled as a route.",
+      "relatedRouteIds": [
+        "sunda-sahul"
+      ],
+      "siteIds": [
+        "tam-pa-ling"
+      ]
+    },
+    {
+      "id": "sahul",
+      "speciesId": "homo-sapiens",
+      "region": "Sahul (Australia & New Guinea)",
+      "coordinates": {
+        "lat": -13.5,
+        "lng": 133.5
+      },
+      "lobes": [
+        {
+          "name": "Arnhem Land",
+          "lat": -13.8,
+          "lng": 133.5,
+          "radiusKm": {
+            "north": 260,
+            "east": 420
+          },
+          "weight": 1.0
+        },
+        {
+          "name": "Kimberley",
+          "lat": -17.0,
+          "lng": 126.0,
+          "radiusKm": {
+            "north": 260,
+            "east": 260
+          },
+          "weight": 0.5
+        },
+        {
+          "name": "New Guinea",
+          "lat": -5.8,
+          "lng": 142.0,
+          "radiusKm": {
+            "north": 200,
+            "east": 450
+          },
+          "weight": 0.65
+        },
+        {
+          "name": "Cape York & interior",
+          "lat": -18.5,
+          "lng": 141.0,
+          "radiusKm": {
+            "north": 380,
+            "east": 300
+          },
+          "weight": 0.4
+        },
+        {
+          "name": "Willandra Lakes",
+          "lat": -33.5,
+          "lng": 143.5,
+          "radiusKm": {
+            "north": 220,
+            "east": 300
+          },
+          "weight": 0.25
+        }
+      ],
+      "startYear": 47500,
+      "establishedYear": 39000,
+      "growthOrigin": {
+        "lat": -10.5,
+        "lng": 134.0
+      },
+      "colorFrom": "sunda-sahul",
+      "visualDensity": 0.75,
+      "confidence": "medium",
+      "attestedYear": 47000,
+      "basisNote": "Occupation of Sahul by ~47,000–50,000 years ago is widely accepted; Madjedbebe's ~65,000-year date is debated. Lake Mungo attests people in the southeast by ~42,000–38,000.",
+      "relatedRouteIds": [
+        "sunda-sahul"
+      ],
+      "siteIds": [
+        "madjedbebe",
+        "lake-mungo"
+      ]
+    },
+    {
+      "id": "europe",
+      "speciesId": "homo-sapiens",
+      "region": "Europe",
+      "coordinates": {
+        "lat": 46.5,
+        "lng": 12.0
+      },
+      "lobes": [
+        {
+          "name": "Lower Danube & Balkans",
+          "lat": 43.3,
+          "lng": 24.5,
+          "radiusKm": {
+            "north": 220,
+            "east": 330
+          },
+          "weight": 0.6
+        },
+        {
+          "name": "Carpathian Basin",
+          "lat": 46.8,
+          "lng": 19.5,
+          "radiusKm": {
+            "north": 200,
+            "east": 300
+          },
+          "weight": 0.65
+        },
+        {
+          "name": "Upper Danube",
+          "lat": 48.4,
+          "lng": 12.5,
+          "radiusKm": {
+            "north": 180,
+            "east": 330
+          },
+          "weight": 0.6
+        },
+        {
+          "name": "France",
+          "lat": 46.0,
+          "lng": 2.5,
+          "radiusKm": {
+            "north": 330,
+            "east": 330
+          },
+          "weight": 0.9
+        },
+        {
+          "name": "Central European uplands",
+          "lat": 50.8,
+          "lng": 10.5,
+          "radiusKm": {
+            "north": 180,
+            "east": 380
+          },
+          "weight": 0.4
+        },
+        {
+          "name": "Italy",
+          "lat": 42.5,
+          "lng": 13.0,
+          "radiusKm": {
+            "north": 280,
+            "east": 110
+          },
+          "weight": 0.3
+        },
+        {
+          "name": "Iberia",
+          "lat": 40.5,
+          "lng": -4.0,
+          "radiusKm": {
+            "north": 260,
+            "east": 320
+          },
+          "weight": 0.35
+        }
+      ],
+      "startYear": 46000,
+      "establishedYear": 34000,
+      "growthOrigin": {
+        "lat": 43.3,
+        "lng": 25.0
+      },
+      "colorFrom": "levant-europe",
+      "visualDensity": 0.85,
+      "confidence": "high",
+      "attestedYear": 45000,
+      "basisNote": "Bacho Kiro (~46,000–44,000 years ago) attests early Homo sapiens in the Balkans; Upper Palaeolithic sites spread across Europe after that. Earlier incursions such as Grotte Mandrin (~54,000) are not shown as a persistent population.",
+      "relatedRouteIds": [
+        "levant-europe"
+      ],
+      "siteIds": [
+        "bacho-kiro",
+        "grotte-mandrin"
+      ]
+    },
+    {
+      "id": "caucasus",
+      "speciesId": "homo-sapiens",
+      "region": "Southern Caucasus",
+      "coordinates": {
+        "lat": 41.8,
+        "lng": 43.8
+      },
+      "lobes": [
+        {
+          "name": "Imereti & Kartli",
+          "lat": 42.2,
+          "lng": 43.2,
+          "radiusKm": {
+            "north": 90,
+            "east": 170
+          },
+          "weight": 1.0
+        },
+        {
+          "name": "Armenian Highlands",
+          "lat": 40.4,
+          "lng": 44.4,
+          "radiusKm": {
+            "north": 110,
+            "east": 150
+          },
+          "weight": 0.7
+        },
+        {
+          "name": "Kura valley",
+          "lat": 41.4,
+          "lng": 46.0,
+          "radiusKm": {
+            "north": 80,
+            "east": 140
+          },
+          "weight": 0.4
+        }
+      ],
+      "startYear": 40000,
+      "establishedYear": 32500,
+      "growthOrigin": {
+        "lat": 40.2,
+        "lng": 44.4
+      },
+      "colorFrom": "levant-caucasus",
+      "visualDensity": 0.5,
+      "confidence": "medium",
+      "attestedYear": 38000,
+      "basisNote": "Upper Palaeolithic layers at Ortvale Klde (~42,000–38,000 years ago) and later Dzudzuana Cave attest modern humans in the southern Caucasus. Approximate.",
+      "relatedRouteIds": [
+        "levant-caucasus"
+      ],
+      "siteIds": [
+        "ortvale-klde",
+        "dzudzuana"
+      ]
+    },
+    {
+      "id": "northeast-siberia",
+      "speciesId": "homo-sapiens",
+      "region": "Northeast Siberia",
+      "coordinates": {
+        "lat": 69.5,
+        "lng": 134.0
+      },
+      "lobes": [
+        {
+          "name": "Yana basin",
+          "lat": 70.4,
+          "lng": 135.0,
+          "radiusKm": {
+            "north": 170,
+            "east": 380
+          },
+          "weight": 1.0
+        },
+        {
+          "name": "Verkhoyansk foothills",
+          "lat": 67.5,
+          "lng": 131.0,
+          "radiusKm": {
+            "north": 220,
+            "east": 300
+          },
+          "weight": 0.5
+        }
+      ],
+      "startYear": 37000,
+      "establishedYear": 33000,
+      "colorFrom": "beringia-americas",
+      "visualDensity": 0.42,
+      "confidence": "medium",
+      "attestedYear": 32000,
+      "basisNote": "The Yana RHS site attests people in the Arctic by ~32,000 years ago. Earlier presence, and how people reached the region, are inferred and not modelled as a route.",
+      "relatedRouteIds": [
+        "beringia-americas"
+      ],
+      "siteIds": [
+        "yana-rhs"
+      ]
+    },
+    {
+      "id": "beringia",
+      "speciesId": "homo-sapiens",
+      "region": "Beringia",
+      "coordinates": {
+        "lat": 65.5,
+        "lng": -160.0
+      },
+      "lobes": [
+        {
+          "name": "Chukotka",
+          "lat": 66.0,
+          "lng": 173.0,
+          "radiusKm": {
+            "north": 220,
+            "east": 380
+          },
+          "weight": 0.6
+        },
+        {
+          "name": "Western Alaska",
+          "lat": 65.0,
+          "lng": -158.0,
+          "radiusKm": {
+            "north": 280,
+            "east": 450
+          },
+          "weight": 1.0
+        },
+        {
+          "name": "Yukon",
+          "lat": 64.5,
+          "lng": -140.0,
+          "radiusKm": {
+            "north": 220,
+            "east": 300
+          },
+          "weight": 0.4
+        }
+      ],
+      "startYear": 26000,
+      "establishedYear": 20000,
+      "colorFrom": "beringia-americas",
+      "visualDensity": 0.42,
+      "confidence": "low",
+      "basisNote": "Inferred mainly from genetic models (the 'Beringian standstill'); securely dated archaeology in eastern Beringia is younger (~14,000–15,000 years ago), and where the standstill population lived is debated. Much of the land bridge is now sea, so only present-day land is drawn.",
+      "relatedRouteIds": [
+        "beringia-americas"
+      ],
+      "siteIds": []
+    },
+    {
+      "id": "north-america",
+      "speciesId": "homo-sapiens",
+      "region": "North America",
+      "coordinates": {
+        "lat": 42.0,
+        "lng": -105.0
+      },
+      "lobes": [
+        {
+          "name": "Pacific Northwest",
+          "lat": 47.5,
+          "lng": -121.0,
+          "radiusKm": {
+            "north": 280,
+            "east": 220
+          },
+          "weight": 0.6
+        },
+        {
+          "name": "California",
+          "lat": 37.0,
+          "lng": -120.0,
+          "radiusKm": {
+            "north": 330,
+            "east": 160
+          },
+          "weight": 0.4
+        },
+        {
+          "name": "Great Basin & Southwest",
+          "lat": 37.0,
+          "lng": -110.0,
+          "radiusKm": {
+            "north": 330,
+            "east": 330
+          },
+          "weight": 0.45
+        },
+        {
+          "name": "Great Plains",
+          "lat": 41.0,
+          "lng": -98.0,
+          "radiusKm": {
+            "north": 500,
+            "east": 500
+          },
+          "weight": 0.8
+        },
+        {
+          "name": "Eastern woodlands",
+          "lat": 36.0,
+          "lng": -85.0,
+          "radiusKm": {
+            "north": 380,
+            "east": 420
+          },
+          "weight": 0.5
+        },
+        {
+          "name": "Mexico",
+          "lat": 21.0,
+          "lng": -101.0,
+          "radiusKm": {
+            "north": 300,
+            "east": 380
+          },
+          "weight": 0.4
+        }
+      ],
+      "startYear": 16500,
+      "establishedYear": 11000,
+      "growthOrigin": {
+        "lat": 52.0,
+        "lng": -127.0
+      },
+      "colorFrom": "beringia-americas",
+      "visualDensity": 0.85,
+      "confidence": "medium",
+      "attestedYear": 15000,
+      "basisNote": "Sites such as Cooper's Ferry and Paisley Caves attest people south of the ice sheets by roughly 16,000–14,000 years ago. The White Sands footprints (~23,000–21,000) would imply earlier presence but remain debated, so they are shown as a site only.",
+      "relatedRouteIds": [
+        "beringia-americas"
+      ],
+      "siteIds": [
+        "white-sands"
+      ]
+    },
+    {
+      "id": "south-america",
+      "speciesId": "homo-sapiens",
+      "region": "South America",
+      "coordinates": {
+        "lat": -15.0,
+        "lng": -65.0
+      },
+      "lobes": [
+        {
+          "name": "Northern Andes",
+          "lat": 4.0,
+          "lng": -74.5,
+          "radiusKm": {
+            "north": 380,
+            "east": 280
+          },
+          "weight": 0.6
+        },
+        {
+          "name": "Central Andes",
+          "lat": -11.0,
+          "lng": -75.5,
+          "radiusKm": {
+            "north": 550,
+            "east": 260
+          },
+          "weight": 0.5
+        },
+        {
+          "name": "Amazonia",
+          "lat": -5.0,
+          "lng": -60.0,
+          "radiusKm": {
+            "north": 500,
+            "east": 700
+          },
+          "weight": 0.4
+        },
+        {
+          "name": "Pampas",
+          "lat": -32.0,
+          "lng": -62.0,
+          "radiusKm": {
+            "north": 450,
+            "east": 400
+          },
+          "weight": 0.4
+        },
+        {
+          "name": "Southern Chile",
+          "lat": -40.5,
+          "lng": -72.5,
+          "radiusKm": {
+            "north": 400,
+            "east": 140
+          },
+          "weight": 0.55
+        }
+      ],
+      "startYear": 15200,
+      "establishedYear": 9000,
+      "growthOrigin": {
+        "lat": 8.5,
+        "lng": -77.5
+      },
+      "colorFrom": "beringia-americas",
+      "visualDensity": 0.8,
+      "confidence": "medium",
+      "attestedYear": 14500,
+      "basisNote": "Monte Verde (~14,500 years ago) attests people in southern South America; occupation spreads across the continent through the late Pleistocene and early Holocene.",
+      "relatedRouteIds": [
+        "beringia-americas"
+      ],
+      "siteIds": [
+        "monte-verde"
+      ]
+    },
+    {
+      "id": "afarensis-east-africa",
+      "speciesId": "australopithecus-afarensis",
+      "region": "East Africa (Australopithecus afarensis)",
+      "coordinates": {
+        "lat": 7,
+        "lng": 38.5
+      },
+      "lobes": [
+        {
+          "name": "Afar",
+          "lat": 11.1,
+          "lng": 40.6,
+          "radiusKm": {
+            "north": 180,
+            "east": 170
+          },
+          "weight": 1.0
+        },
+        {
+          "name": "Omo–Turkana",
+          "lat": 4.5,
+          "lng": 36.2,
+          "radiusKm": {
+            "north": 200,
+            "east": 150
+          },
+          "weight": 0.6
+        },
+        {
+          "name": "Laetoli",
+          "lat": -3.2,
+          "lng": 35.3,
+          "radiusKm": {
+            "north": 150,
+            "east": 150
+          },
+          "weight": 0.6
+        }
+      ],
+      "startYear": 3900000,
+      "establishedYear": 3800000,
+      "endYear": 2950000,
+      "fadeYears": 80000,
+      "colorFrom": "species",
+      "visualDensity": 0.45,
+      "confidence": "high",
+      "attestedYear": 3850000,
+      "basisNote": "Fossils from Hadar, Dikika and Laetoli span roughly 3.85–2.95 million years ago. Range drawn around the main fossil localities.",
+      "relatedRouteIds": [],
+      "siteIds": [
+        "hadar"
+      ]
+    },
+    {
+      "id": "boisei-east-africa",
+      "speciesId": "paranthropus-boisei",
+      "region": "East Africa (Paranthropus boisei)",
+      "coordinates": {
+        "lat": 2,
+        "lng": 36.5
+      },
+      "lobes": [
+        {
+          "name": "Lake Turkana",
+          "lat": 3.6,
+          "lng": 36.2,
+          "radiusKm": {
+            "north": 220,
+            "east": 140
+          },
+          "weight": 1.0
+        },
+        {
+          "name": "Konso",
+          "lat": 5.3,
+          "lng": 37.4,
+          "radiusKm": {
+            "north": 110,
+            "east": 110
+          },
+          "weight": 0.4
+        },
+        {
+          "name": "Olduvai",
+          "lat": -3.0,
+          "lng": 35.4,
+          "radiusKm": {
+            "north": 150,
+            "east": 150
+          },
+          "weight": 0.7
+        }
+      ],
+      "startYear": 2350000,
+      "establishedYear": 2270000,
+      "endYear": 1200000,
+      "fadeYears": 80000,
+      "colorFrom": "species",
+      "visualDensity": 0.42,
+      "confidence": "high",
+      "attestedYear": 2300000,
+      "basisNote": "Fossils from East African sites span roughly 2.3–1.2 million years ago.",
+      "relatedRouteIds": [],
+      "siteIds": [
+        "olduvai"
+      ]
+    },
+    {
+      "id": "habilis-east-africa",
+      "speciesId": "homo-habilis",
+      "region": "East Africa (Homo habilis)",
+      "coordinates": {
+        "lat": 1,
+        "lng": 36.5
+      },
+      "lobes": [
+        {
+          "name": "Koobi Fora",
+          "lat": 3.9,
+          "lng": 36.3,
+          "radiusKm": {
+            "north": 180,
+            "east": 130
+          },
+          "weight": 1.0
+        },
+        {
+          "name": "Olduvai",
+          "lat": -3.0,
+          "lng": 35.3,
+          "radiusKm": {
+            "north": 160,
+            "east": 160
+          },
+          "weight": 0.8
+        },
+        {
+          "name": "Afar",
+          "lat": 11.1,
+          "lng": 40.5,
+          "radiusKm": {
+            "north": 140,
+            "east": 140
+          },
+          "weight": 0.35
+        }
+      ],
+      "startYear": 2450000,
+      "establishedYear": 2350000,
+      "endYear": 1400000,
+      "fadeYears": 100000,
+      "colorFrom": "species",
+      "visualDensity": 0.42,
+      "confidence": "medium",
+      "attestedYear": 2350000,
+      "basisNote": "Fossils attributed to H. habilis span roughly 2.4–1.4 million years ago; which specimens belong to the species is debated.",
+      "relatedRouteIds": [],
+      "siteIds": [
+        "olduvai"
+      ]
+    },
+    {
+      "id": "erectus-africa",
+      "speciesId": "homo-erectus",
+      "region": "Africa (Homo erectus)",
+      "coordinates": {
+        "lat": 2,
+        "lng": 37
+      },
+      "lobes": [
+        {
+          "name": "Turkana basin",
+          "lat": 3.5,
+          "lng": 36.0,
+          "radiusKm": {
+            "north": 250,
+            "east": 170
+          },
+          "weight": 1.0
+        },
+        {
+          "name": "Ethiopian Rift",
+          "lat": 8.5,
+          "lng": 39.5,
+          "radiusKm": {
+            "north": 220,
+            "east": 180
+          },
+          "weight": 0.6
+        },
+        {
+          "name": "Olduvai",
+          "lat": -3.0,
+          "lng": 35.3,
+          "radiusKm": {
+            "north": 170,
+            "east": 170
+          },
+          "weight": 0.5
+        }
+      ],
+      "startYear": 1950000,
+      "establishedYear": 1850000,
+      "endYear": 800000,
+      "fadeYears": 150000,
+      "colorFrom": "species",
+      "visualDensity": 0.5,
+      "confidence": "medium",
+      "attestedYear": 1900000,
+      "basisNote": "Early African H. erectus (sometimes called H. ergaster) from ~1.9 million years ago. The fade reflects changing fossil attributions in the Middle Pleistocene, not a known extinction.",
+      "relatedRouteIds": [],
+      "siteIds": [
+        "kokiselei",
+        "olduvai"
+      ]
+    },
+    {
+      "id": "erectus-dmanisi",
+      "speciesId": "homo-erectus",
+      "region": "Dmanisi, Georgia (early Homo)",
+      "coordinates": {
+        "lat": 41.34,
+        "lng": 44.34
+      },
+      "lobes": [
+        {
+          "name": "Mashavera valley",
+          "lat": 41.34,
+          "lng": 44.34,
+          "radiusKm": {
+            "north": 70,
+            "east": 90
+          },
+          "weight": 1.0
+        },
+        {
+          "name": "Kvemo Kartli",
+          "lat": 41.45,
+          "lng": 44.6,
+          "radiusKm": {
+            "north": 60,
+            "east": 90
+          },
+          "weight": 0.4
+        }
+      ],
+      "startYear": 1870000,
+      "establishedYear": 1840000,
+      "endYear": 1760000,
+      "fadeYears": 30000,
+      "colorFrom": "species",
+      "visualDensity": 0.3,
+      "confidence": "high",
+      "attestedYear": 1850000,
+      "basisNote": "Fossils and tools at Dmanisi date to ~1.85–1.78 million years ago. Only this site is known, so the population is drawn small and brief. These are early Homo, not Homo sapiens.",
+      "relatedRouteIds": [],
+      "siteIds": [
+        "dmanisi"
+      ]
+    },
+    {
+      "id": "erectus-china",
+      "speciesId": "homo-erectus",
+      "region": "China (Homo erectus)",
+      "coordinates": {
+        "lat": 36,
+        "lng": 112
+      },
+      "lobes": [
+        {
+          "name": "Loess Plateau (Lantian)",
+          "lat": 34.2,
+          "lng": 109.5,
+          "radiusKm": {
+            "north": 220,
+            "east": 320
+          },
+          "weight": 1.0
+        },
+        {
+          "name": "Zhoukoudian",
+          "lat": 39.7,
+          "lng": 115.9,
+          "radiusKm": {
+            "north": 160,
+            "east": 220
+          },
+          "weight": 0.7
+        },
+        {
+          "name": "Han River",
+          "lat": 32.8,
+          "lng": 110.8,
+          "radiusKm": {
+            "north": 150,
+            "east": 200
+          },
+          "weight": 0.4
+        }
+      ],
+      "startYear": 1700000,
+      "establishedYear": 1600000,
+      "endYear": 350000,
+      "fadeYears": 80000,
+      "colorFrom": "species",
+      "visualDensity": 0.5,
+      "confidence": "medium",
+      "attestedYear": 1630000,
+      "basisNote": "Fossils from ~1.6 million years ago (Gongwangling) to roughly 400,000 years ago (e.g. Zhoukoudian, Hexian). Stone tools ~2.1 million years old show earlier hominins of unknown species.",
+      "relatedRouteIds": [],
+      "siteIds": []
+    },
+    {
+      "id": "erectus-java",
+      "speciesId": "homo-erectus",
+      "region": "Java (Homo erectus)",
+      "coordinates": {
+        "lat": -7.4,
+        "lng": 111.3
+      },
+      "lobes": [
+        {
+          "name": "Sangiran",
+          "lat": -7.45,
+          "lng": 110.83,
+          "radiusKm": {
+            "north": 90,
+            "east": 160
+          },
+          "weight": 1.0
+        },
+        {
+          "name": "Solo River (Trinil, Ngandong)",
+          "lat": -7.37,
+          "lng": 111.5,
+          "radiusKm": {
+            "north": 80,
+            "east": 180
+          },
+          "weight": 0.8
+        },
+        {
+          "name": "Mojokerto",
+          "lat": -7.4,
+          "lng": 112.4,
+          "radiusKm": {
+            "north": 70,
+            "east": 110
+          },
+          "weight": 0.35
+        }
+      ],
+      "startYear": 1500000,
+      "establishedYear": 1300000,
+      "endYear": 108000,
+      "fadeYears": 30000,
+      "colorFrom": "species",
+      "visualDensity": 0.42,
+      "confidence": "high",
+      "attestedYear": 1300000,
+      "basisNote": "From ~1.3 million years ago (Sangiran) to the youngest known H. erectus at Ngandong, ~117,000–108,000 years ago.",
+      "relatedRouteIds": [],
+      "siteIds": []
+    },
+    {
+      "id": "floresiensis-flores",
+      "speciesId": "homo-floresiensis",
+      "region": "Flores (Homo floresiensis)",
+      "coordinates": {
+        "lat": -8.6,
+        "lng": 120.8
+      },
+      "lobes": [
+        {
+          "name": "Liang Bua",
+          "lat": -8.53,
+          "lng": 120.46,
+          "radiusKm": {
+            "north": 40,
+            "east": 70
+          },
+          "weight": 1.0
+        },
+        {
+          "name": "So'a Basin (Mata Menge)",
+          "lat": -8.69,
+          "lng": 121.1,
+          "radiusKm": {
+            "north": 40,
+            "east": 70
+          },
+          "weight": 0.8
+        }
+      ],
+      "startYear": 720000,
+      "establishedYear": 700000,
+      "endYear": 50000,
+      "fadeYears": 10000,
+      "colorFrom": "species",
+      "visualDensity": 0.25,
+      "confidence": "medium",
+      "attestedYear": 700000,
+      "basisNote": "H. floresiensis-like fossils at Mata Menge (~700,000 years ago) and skeletons at Liang Bua (~100,000–60,000); continuity between them is inferred. Tools show hominins on Flores by ~1 million years ago.",
+      "relatedRouteIds": [],
+      "siteIds": [
+        "liang-bua"
+      ]
+    },
+    {
+      "id": "naledi-rising-star",
+      "speciesId": "homo-naledi",
+      "region": "Rising Star (Homo naledi)",
+      "coordinates": {
+        "lat": -25.92,
+        "lng": 27.71
+      },
+      "lobes": [
+        {
+          "name": "Cradle of Humankind",
+          "lat": -25.92,
+          "lng": 27.71,
+          "radiusKm": {
+            "north": 70,
+            "east": 90
+          },
+          "weight": 1.0
+        }
+      ],
+      "startYear": 345000,
+      "establishedYear": 335000,
+      "endYear": 236000,
+      "fadeYears": 10000,
+      "colorFrom": "species",
+      "visualDensity": 0.22,
+      "confidence": "medium",
+      "attestedYear": 335000,
+      "basisNote": "Known only from the Rising Star cave system (~335,000–236,000 years ago). The true range of the species is unknown; only the find area is drawn.",
+      "relatedRouteIds": [],
+      "siteIds": [
+        "rising-star"
+      ]
+    },
+    {
+      "id": "neanderthal-europe",
+      "speciesId": "homo-neanderthalensis",
+      "region": "Europe (Neanderthals)",
+      "coordinates": {
+        "lat": 45,
+        "lng": 8
+      },
+      "lobes": [
+        {
+          "name": "Iberia",
+          "lat": 40.5,
+          "lng": -4.0,
+          "radiusKm": {
+            "north": 250,
+            "east": 320
+          },
+          "weight": 0.6
+        },
+        {
+          "name": "France",
+          "lat": 45.5,
+          "lng": 2.0,
+          "radiusKm": {
+            "north": 280,
+            "east": 320
+          },
+          "weight": 1.0
+        },
+        {
+          "name": "Central Europe",
+          "lat": 49.5,
+          "lng": 11.0,
+          "radiusKm": {
+            "north": 200,
+            "east": 380
+          },
+          "weight": 0.7
+        },
+        {
+          "name": "Italy",
+          "lat": 42.5,
+          "lng": 13.0,
+          "radiusKm": {
+            "north": 250,
+            "east": 110
+          },
+          "weight": 0.4
+        },
+        {
+          "name": "Balkans",
+          "lat": 43.0,
+          "lng": 22.0,
+          "radiusKm": {
+            "north": 200,
+            "east": 260
+          },
+          "weight": 0.5
+        },
+        {
+          "name": "Crimea",
+          "lat": 44.9,
+          "lng": 34.2,
+          "radiusKm": {
+            "north": 80,
+            "east": 140
+          },
+          "weight": 0.2
+        }
+      ],
+      "startYear": 430000,
+      "establishedYear": 380000,
+      "endYear": 40000,
+      "fadeYears": 6000,
+      "colorFrom": "species",
+      "visualDensity": 0.75,
+      "confidence": "high",
+      "attestedYear": 430000,
+      "basisNote": "Neanderthal-lineage fossils from ~430,000 years ago (Sima de los Huesos); classic Neanderthals later. They disappear from the European record ~41,000–39,000 years ago.",
+      "relatedRouteIds": [],
+      "siteIds": []
+    },
+    {
+      "id": "neanderthal-west-asia",
+      "speciesId": "homo-neanderthalensis",
+      "region": "Western Asia & Caucasus (Neanderthals)",
+      "coordinates": {
+        "lat": 37,
+        "lng": 40
+      },
+      "lobes": [
+        {
+          "name": "Levant",
+          "lat": 32.8,
+          "lng": 35.3,
+          "radiusKm": {
+            "north": 150,
+            "east": 80
+          },
+          "weight": 0.7
+        },
+        {
+          "name": "Zagros (Shanidar)",
+          "lat": 36.8,
+          "lng": 44.2,
+          "radiusKm": {
+            "north": 160,
+            "east": 180
+          },
+          "weight": 0.6
+        },
+        {
+          "name": "Caucasus",
+          "lat": 43.0,
+          "lng": 42.5,
+          "radiusKm": {
+            "north": 120,
+            "east": 280
+          },
+          "weight": 0.6
+        }
+      ],
+      "startYear": 160000,
+      "establishedYear": 120000,
+      "endYear": 42000,
+      "fadeYears": 8000,
+      "colorFrom": "species",
+      "visualDensity": 0.5,
+      "confidence": "medium",
+      "attestedYear": 120000,
+      "basisNote": "Neanderthal fossils and Middle Palaeolithic sites in the Levant (e.g. Tabun, Kebara), the Zagros (Shanidar) and the Caucasus. In the southern Caucasus, Middle Palaeolithic occupation ends around 40,000 years ago, before Upper Palaeolithic Homo sapiens are established there.",
+      "relatedRouteIds": [],
+      "siteIds": [
+        "kebara"
+      ]
+    },
+    {
+      "id": "neanderthal-altai",
+      "speciesId": "homo-neanderthalensis",
+      "region": "Central Asia & Altai (Neanderthals)",
+      "coordinates": {
+        "lat": 48,
+        "lng": 78
+      },
+      "lobes": [
+        {
+          "name": "Altai",
+          "lat": 51.4,
+          "lng": 84.0,
+          "radiusKm": {
+            "north": 160,
+            "east": 280
+          },
+          "weight": 1.0
+        },
+        {
+          "name": "Teshik-Tash",
+          "lat": 38.3,
+          "lng": 67.1,
+          "radiusKm": {
+            "north": 120,
+            "east": 150
+          },
+          "weight": 0.4
+        }
+      ],
+      "startYear": 135000,
+      "establishedYear": 120000,
+      "endYear": 45000,
+      "fadeYears": 8000,
+      "colorFrom": "species",
+      "visualDensity": 0.35,
+      "confidence": "medium",
+      "attestedYear": 120000,
+      "basisNote": "Neanderthal remains and DNA from the Altai (Denisova, Okladnikov and Chagyrskaya caves) and Teshik-Tash (Uzbekistan).",
+      "relatedRouteIds": [],
+      "siteIds": [
+        "denisova-cave"
+      ]
+    },
+    {
+      "id": "denisovan-altai",
+      "speciesId": "denisovans",
+      "region": "Altai (Denisovans)",
+      "coordinates": {
+        "lat": 51.4,
+        "lng": 84.7
+      },
+      "lobes": [
+        {
+          "name": "Denisova Cave",
+          "lat": 51.4,
+          "lng": 84.7,
+          "radiusKm": {
+            "north": 90,
+            "east": 150
+          },
+          "weight": 1.0
+        }
+      ],
+      "startYear": 210000,
+      "establishedYear": 195000,
+      "endYear": 50000,
+      "fadeYears": 8000,
+      "colorFrom": "species",
+      "visualDensity": 0.28,
+      "confidence": "high",
+      "attestedYear": 195000,
+      "basisNote": "Denisovan fossils and sediment DNA at Denisova Cave span roughly 200,000–50,000 years ago.",
+      "relatedRouteIds": [],
+      "siteIds": [
+        "denisova-cave"
+      ]
+    },
+    {
+      "id": "denisovan-tibet",
+      "speciesId": "denisovans",
+      "region": "Tibetan Plateau (Denisovans)",
+      "coordinates": {
+        "lat": 35.45,
+        "lng": 102.57
+      },
+      "lobes": [
+        {
+          "name": "Baishiya Karst",
+          "lat": 35.45,
+          "lng": 102.57,
+          "radiusKm": {
+            "north": 110,
+            "east": 170
+          },
+          "weight": 1.0
+        }
+      ],
+      "startYear": 170000,
+      "establishedYear": 160000,
+      "endYear": 50000,
+      "fadeYears": 10000,
+      "colorFrom": "species",
+      "visualDensity": 0.25,
+      "confidence": "medium",
+      "attestedYear": 160000,
+      "basisNote": "The Xiahe mandible (≥160,000 years ago); sediment DNA suggests Denisovans used the cave much later as well. Genetic evidence implies a far wider, unmapped range across Asia, which is not drawn.",
+      "relatedRouteIds": [],
+      "siteIds": [
+        "baishiya-karst"
+      ]
+    }
+  ]
+}

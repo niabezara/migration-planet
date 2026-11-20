@@ -2,7 +2,7 @@
  * Species-level logic: filter membership and presence in time. Pure
  * functions of the data and the year (no state), like the rest of the engine.
  */
-import type { ArchaeologicalSite, Species, SpeciesGroup } from "@/types/migration";
+import type { ArchaeologicalSite, MigrationRoute, Species, SpeciesGroup } from "@/types/migration";
 import type { SpeciesFilter } from "@/stores/useHistoryStore";
 
 export const MAX_SPECIES = 16;
@@ -13,6 +13,16 @@ export function groupVisible(filter: SpeciesFilter, group: SpeciesGroup): boolea
 
 export function speciesVisible(filter: SpeciesFilter, sp: Pick<Species, "group">): boolean {
   return groupVisible(filter, sp.group);
+}
+
+/** A route is shown when the species that made it is. */
+export function routeVisible(
+  filter: SpeciesFilter,
+  route: Pick<MigrationRoute, "speciesId">,
+  speciesById: Record<string, Pick<Species, "group">>,
+): boolean {
+  const sp = speciesById[route.speciesId];
+  return sp ? speciesVisible(filter, sp) : true;
 }
 
 /**

@@ -1,4 +1,5 @@
 /* Numerical checks for the deterministic particle engine. Run: npm run verify */
+import "./useJsonDataset"; // installs src/data/*.json into @/data (must stay the first import)
 import { Color, Vector3 } from "three";
 import { milestones, populations, routes, sites, siteById, species, speciesById } from "@/data";
 import { speciesAt } from "@/engine/species/speciesModel";
@@ -51,12 +52,27 @@ consistent &&= b.glowIndex.every((i) => i < b.particleCount);
 check(consistent, "every core dot, trail streak and glow sprite uses exactly its route's colour");
 
 console.log("\nHistorical filtering (scenarios 7–8)");
-const names = (y: number) => visibleRoutes(routes, y).map((r) => r.id);
+// The scenario checks below concern the six core Pleistocene waves of Homo sapiens.
+const CORE_WAVES = ["africa-levant", "out-of-africa-south", "levant-europe", "levant-caucasus", "sunda-sahul", "beringia-americas"];
+const names = (y: number) => visibleRoutes(routes.filter((r) => CORE_WAVES.includes(r.id)), y).map((r) => r.id);
 for (const y of [100000, 70000, 45000, 20000, 0]) {
   const states = routes.map((r) => `${r.id}:${routeState(r, y).status}`).join("  ");
   console.log(`  ${String(y).padStart(6)} BP → visible [${names(y).join(", ")}]\n           ${states}`);
 }
 check(names(70000).join() === "out-of-africa-south", "70,000 years ago: only the main out-of-Africa dispersal");
+check(
+  routes.every((r) => speciesById[r.speciesId]),
+  `every route names a known species (${[...new Set(routes.map((r) => r.speciesId))].join(", ")})`,
+);
+{
+  // A route may describe the ancestors of a species before its fossil record starts,
+  // but a Homo sapiens route must lie within the record of Homo sapiens.
+  const sap = speciesById["homo-sapiens"];
+  const bad = routes.filter((r) => r.speciesId === "homo-sapiens" && r.startYear > sap.timeRange.older);
+  check(bad.length === 0, `Homo sapiens routes lie within its record${bad.length ? ` (${bad.map((r) => r.id)})` : ""}`);
+  const late = routes.filter((r) => r.speciesId !== "homo-sapiens" && r.endYear < speciesById[r.speciesId].timeRange.younger);
+  check(late.length === 0, `archaic routes end before their species disappears${late.length ? ` (${late.map((r) => r.id)})` : ""}`);
+}
 check(
   ["levant-europe", "levant-caucasus", "sunda-sahul"].every((id) => names(45000).includes(id)) &&
     !names(45000).includes("africa-levant") &&
@@ -147,7 +163,9 @@ console.log("\nPopulation clusters");
   const pres = (id: string, y: number) => populationState(populations.find((c) => c.id === id)!, y).presence;
   console.log(`  ${populations.length} clusters: ${populations.map((c) => c.id).join(", ")}`);
 
-  for (const r of routes) {
+  // Source/destination clusters model the first peopling of a region by the core waves.
+  // Added routes (archaic species, Holocene expansions into inhabited land) have no linked clusters yet.
+  for (const r of routes.filter((x) => CORE_WAVES.includes(x.id))) {
     // 1. Departure: a source population is established where the stream starts…
     const sources = populations.filter((c) => c.sourceOf.includes(r.id));
     const atDeparture = Math.max(0, ...sources.map((c) => pres(c.id, at(r, PARTICLE_CONSTANTS.visibleFrom))));

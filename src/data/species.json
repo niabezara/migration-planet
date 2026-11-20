@@ -82,6 +82,26 @@
       "focusYear": 80000
     },
     {
+      "id": "homo-luzonensis",
+      "name": "Homo luzonensis",
+      "scientificName": "Homo luzonensis",
+      "genus": "Homo",
+      "group": "other",
+      "classification": "Hominini · Homo · H. luzonensis",
+      "taxonomyNote": "Named in 2019 from teeth and hand and foot bones. Its ancestry is unknown; some features recall much older hominins.",
+      "timeRange": { "older": 67000, "younger": 50000 },
+      "timeNote": "The fossils have minimum ages of ~67,000 and ~50,000 years. Stone tools and a butchered rhinoceros show hominins on Luzon by ~709,000 years ago, but who made them is unknown.",
+      "distribution": "The island of Luzon, Philippines.",
+      "physical": "Small teeth with a mix of primitive and modern traits; curved finger and toe bones suggest climbing.",
+      "technology": "Unknown from the fossil site itself; stone tools are known on Luzon from ~709,000 years ago.",
+      "relationships": "Lived at the same time as Homo sapiens, Neanderthals, Denisovans and Homo floresiensis; its relationship to them is unknown.",
+      "siteIds": ["callao-cave", "kalinga"],
+      "confidence": "medium",
+      "sources": ["detroit2019", "mijares2010", "ingicco2018"],
+      "camera": { "lat": 17, "lng": 121.5, "distance": 2.2 },
+      "focusYear": 60000
+    },
+    {
       "id": "homo-naledi",
       "name": "Homo naledi",
       "scientificName": "Homo naledi",

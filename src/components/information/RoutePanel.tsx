@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import type { Confidence, EvidenceType, MigrationRoute } from "@/types/migration";
-import { datasetDisclaimer, milestones, routeById, siteById, sources, speciesById, ROUTE_SPECIES_ID } from "@/data";
+import { datasetDisclaimer, milestones, routeById, siteById, sources, speciesById } from "@/data";
 import { milestonesForRoute } from "@/engine/milestones/milestoneQueries";
 import { MilestoneTimeline } from "@/components/milestones/MilestoneTimeline";
 import { openSpecies } from "./SpeciesList";
@@ -19,7 +19,7 @@ const EVIDENCE_LABEL: Record<EvidenceType, string> = {
   palaeoenvironmental: "Palaeoenvironmental",
   chronological: "Chronological",
 };
-const kyr = (y: number) => `${Math.round(y / 1000).toLocaleString("en-US")},000`;
+const kyr = (y: number) => (y < 10_000 ? Math.round(y / 100) * 100 : Math.round(y / 1000) * 1000).toLocaleString("en-US");
 
 /** Status line: tells the truth about whether the route exists at the selected moment. */
 function RouteStatusLine({ route }: { route: MigrationRoute }) {
@@ -146,8 +146,8 @@ export function RoutePanel() {
         <Section title="Geography">
           <dl>
             <Field label="Species">
-              <button className="entity-link" onClick={() => openSpecies(speciesById[ROUTE_SPECIES_ID])}>
-                <em className="font-serif">Homo sapiens</em>
+              <button className="entity-link" onClick={() => openSpecies(speciesById[route.speciesId])}>
+                <em className="font-serif">{speciesById[route.speciesId].name}</em>
               </button>
             </Field>
             <Field label="Origin">{route.origin}</Field>

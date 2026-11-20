@@ -191,7 +191,7 @@ export function ParticleSystem({
     u.uPopGlowAlpha.value = look.popGlowAlpha;
     u.uPopGlowKm.value = look.popGlowKm;
 
-    // Species filter: each species fades in/out; streams follow Homo sapiens.
+    // Species filter: each species fades in/out; each stream follows its species.
     const k = 1 - Math.exp(-dt * 4);
     const vis = u.uSpeciesVis.value as Float32Array;
     const spFocus = u.uSpeciesFocus.value as Float32Array;
@@ -199,7 +199,12 @@ export function ParticleSystem({
       if (sp.index >= MAX_SPECIES) continue;
       vis[sp.index] += ((speciesVisible(s.speciesFilter, sp) ? 1 : 0) - vis[sp.index]) * k;
       spFocus[sp.index] = focus.speciesIds.includes(sp.id) ? 1 : 0;
-      if (sp.id === "homo-sapiens") u.uStreamVis.value = vis[sp.index];
+    }
+    const routeVis = u.uRouteVis.value as Float32Array;
+    for (const r of routes) {
+      if (r.index >= MAX_ROUTES) continue;
+      const sp = populations.species.find((x) => x.id === r.speciesId);
+      routeVis[r.index] = sp && sp.index < MAX_SPECIES ? vis[sp.index] : 1;
     }
     const focusCluster = focus.clusterId ? (populations.clusters.find((c) => c.id === focus.clusterId)?.index ?? -1) : -1;
     if (focusCluster >= 0) a.focusCluster = focusCluster;

@@ -14,7 +14,7 @@ const STATUS_LABEL: Record<PopulationStatus, string> = {
   ended: "No longer shown",
 };
 
-const kyr = (y: number) => `~${Math.round(y / 1000).toLocaleString("en-US")}k`;
+const kyr = (y: number) => (y < 10_000 ? `~${(Math.round(y / 100) * 100).toLocaleString("en-US")}` : `~${Math.round(y / 1000).toLocaleString("en-US")}k`);
 
 function role(c: PopulationCluster, route: MigrationRoute): string {
   const src = c.sourceOf.includes(route.id);

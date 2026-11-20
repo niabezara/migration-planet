@@ -202,8 +202,8 @@
         }
       ],
       "particleConfig": {
-        "count": 7600,
-        "clusterCount": 7,
+        "count": 4200,
+        "clusterCount": 6,
         "spreadKm": 165,
         "edgeShare": 0.3,
         "groupLengthKm": [
@@ -332,8 +332,8 @@
         }
       ],
       "particleConfig": {
-        "count": 9000,
-        "clusterCount": 8,
+        "count": 4950,
+        "clusterCount": 6,
         "spreadKm": 160,
         "edgeShare": 0.3,
         "groupLengthKm": [
@@ -455,8 +455,8 @@
         }
       ],
       "particleConfig": {
-        "count": 7800,
-        "clusterCount": 7,
+        "count": 4300,
+        "clusterCount": 6,
         "spreadKm": 150,
         "edgeShare": 0.32,
         "groupLengthKm": [
@@ -559,7 +559,7 @@
         }
       ],
       "particleConfig": {
-        "count": 4200,
+        "count": 2300,
         "clusterCount": 5,
         "spreadKm": 85,
         "edgeShare": 0.3,
@@ -708,8 +708,8 @@
         }
       ],
       "particleConfig": {
-        "count": 8000,
-        "clusterCount": 7,
+        "count": 4400,
+        "clusterCount": 6,
         "spreadKm": 130,
         "edgeShare": 0.3,
         "groupLengthKm": [
@@ -893,8 +893,8 @@
         }
       ],
       "particleConfig": {
-        "count": 10400,
-        "clusterCount": 9,
+        "count": 5700,
+        "clusterCount": 6,
         "spreadKm": 150,
         "edgeShare": 0.3,
         "groupLengthKm": [
@@ -981,6 +981,4483 @@
         "lat": 48,
         "lng": -150,
         "distance": 3.3
+      }
+    },
+    {
+      "id": "arabia-interior-early",
+      "name": "Into Arabia (early)",
+      "category": "Early dispersal",
+      "path": [
+        {
+          "name": "Bab-el-Mandeb",
+          "lat": 12.6,
+          "lng": 43.4,
+          "year": 130000
+        },
+        {
+          "name": "Southern Arabia",
+          "lat": 17.0,
+          "lng": 48.0,
+          "year": 128000
+        },
+        {
+          "name": "Jebel Faya",
+          "lat": 25.12,
+          "lng": 55.85,
+          "year": 125000
+        },
+        {
+          "name": "Rub' al Khali margin",
+          "lat": 23.5,
+          "lng": 50.0,
+          "year": 105000
+        },
+        {
+          "name": "Nefud (Al Wusta)",
+          "lat": 28.4,
+          "lng": 40.3,
+          "year": 88000
+        }
+      ],
+      "particleConfig": {
+        "count": 1300,
+        "clusterCount": 5,
+        "spreadKm": 90,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "medium",
+      "dataStatus": "illustrative",
+      "uncertainty": "Jebel Faya has stone tools only, so its makers are inferred. Al Wusta rests on one finger bone. These populations probably did not leave descendants among later Eurasians. The path between the sites is illustrative.",
+      "origin": "Horn of Africa",
+      "destination": "Northern Arabia (Nefud)",
+      "intermediateRegions": [
+        "Southern Arabia",
+        "Jebel Faya",
+        "Rub' al Khali margin"
+      ],
+      "pathDescription": "Drawn from the Bab-el-Mandeb across southern Arabia to Jebel Faya, then inland to the lakes of the Nefud.",
+      "description": "Humid phases turned Arabia green and let early Homo sapiens move into its interior well before the main out-of-Africa dispersal.",
+      "people": "Homo sapiens hunter-gatherers using Middle Stone Age–like tool kits; their specific identity is unknown.",
+      "historicalContext": "Interglacial and later humid phases created lakes and grasslands across what is now desert.",
+      "significance": "Shows that Homo sapiens left Africa more than once, and that early dispersals could fail or be absorbed.",
+      "evidence": [
+        {
+          "type": "archaeological",
+          "description": "Tools at Jebel Faya ~125,000–100,000 years ago.",
+          "sourceIds": [
+            "armitage2011"
+          ]
+        },
+        {
+          "type": "fossil",
+          "description": "A directly dated Homo sapiens finger bone at Al Wusta, ~88,000 years ago.",
+          "sourceIds": [
+            "groucutt2018"
+          ]
+        }
+      ],
+      "siteIds": [
+        "jebel-faya",
+        "al-wusta"
+      ],
+      "camera": {
+        "lat": 22,
+        "lng": 47,
+        "distance": 2.3
+      }
+    },
+    {
+      "id": "apidima-early-europe",
+      "name": "Apidima: an early foray into Europe",
+      "category": "Early dispersal (contested)",
+      "path": [
+        {
+          "name": "Southern Levant",
+          "lat": 32.7,
+          "lng": 35.0,
+          "year": 225000
+        },
+        {
+          "name": "Southwest Anatolia",
+          "lat": 37.0,
+          "lng": 28.0,
+          "year": 218000
+        },
+        {
+          "name": "Aegean coast",
+          "lat": 37.5,
+          "lng": 24.0,
+          "year": 214000
+        },
+        {
+          "name": "Apidima, Mani",
+          "lat": 36.63,
+          "lng": 22.38,
+          "year": 210000
+        }
+      ],
+      "particleConfig": {
+        "count": 700,
+        "clusterCount": 3,
+        "spreadKm": 90,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "low",
+      "dataStatus": "illustrative",
+      "uncertainty": "Apidima 1 is a distorted partial skull and its attribution to Homo sapiens is disputed; its age (>210,000 years) is a minimum. The route is entirely illustrative.",
+      "origin": "Levant",
+      "destination": "Southern Greece",
+      "intermediateRegions": [
+        "Anatolia",
+        "Aegean"
+      ],
+      "pathDescription": "An illustrative path from the Levant along the Anatolian coast to the Peloponnese.",
+      "description": "If Apidima 1 is Homo sapiens, our species reached southeastern Europe more than 200,000 years ago and was later replaced by Neanderthals.",
+      "people": "An early Homo sapiens population, if the attribution holds; nothing else is known about them.",
+      "historicalContext": "A Middle Pleistocene Europe occupied by Neanderthals and their ancestors.",
+      "significance": "A possible very early, unsuccessful dispersal of Homo sapiens.",
+      "evidence": [
+        {
+          "type": "fossil",
+          "description": "Apidima 1 (>210,000 years) has a rounded rear braincase described as Homo sapiens-like; Apidima 2 (>170,000) is Neanderthal-like.",
+          "sourceIds": [
+            "harvati2019"
+          ]
+        }
+      ],
+      "siteIds": [
+        "apidima"
+      ],
+      "camera": {
+        "lat": 36,
+        "lng": 27,
+        "distance": 2.0
+      }
+    },
+    {
+      "id": "early-mainland-sea",
+      "name": "Early Southeast Asia & Sumatra",
+      "category": "Early dispersal",
+      "path": [
+        {
+          "name": "Northeast India",
+          "lat": 25.5,
+          "lng": 91.0,
+          "year": 90000
+        },
+        {
+          "name": "Northern Myanmar",
+          "lat": 22.0,
+          "lng": 96.0,
+          "year": 88000
+        },
+        {
+          "name": "Tam Pà Ling, Laos",
+          "lat": 20.21,
+          "lng": 103.41,
+          "year": 86000
+        },
+        {
+          "name": "Malay Peninsula",
+          "lat": 4.5,
+          "lng": 101.5,
+          "year": 75000
+        },
+        {
+          "name": "Lida Ajer, Sumatra",
+          "lat": -0.3,
+          "lng": 100.4,
+          "year": 68000
+        }
+      ],
+      "particleConfig": {
+        "count": 1100,
+        "clusterCount": 5,
+        "spreadKm": 90,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "medium",
+      "dataStatus": "illustrative",
+      "uncertainty": "Both Tam Pà Ling (86,000–68,000) and Lida Ajer (73,000–63,000) are older than the main genetic out-of-Africa signal, so these people may have no living descendants. Claims of 80,000–120,000-year-old teeth at Fuyan Cave (China) were later re-dated to the Holocene and are not drawn.",
+      "origin": "South Asia",
+      "destination": "Sumatra",
+      "intermediateRegions": [
+        "Myanmar",
+        "Northern Laos",
+        "Malay Peninsula"
+      ],
+      "pathDescription": "Illustrative inland path from northeast India through northern Laos and down the Malay Peninsula to Sumatra.",
+      "description": "Fossils show Homo sapiens in Southeast Asia's rainforests earlier than the main dispersal.",
+      "people": "Homo sapiens hunter-gatherers adapted to forests; specific identity unknown.",
+      "historicalContext": "A cooler world with lower seas, joining Sumatra to the mainland as part of Sundaland.",
+      "significance": "Shows early modern humans could live in tropical rainforest, long thought a barrier.",
+      "evidence": [
+        {
+          "type": "fossil",
+          "description": "Tam Pà Ling fossils bracketed to 86,000–68,000 years ago.",
+          "sourceIds": [
+            "freidline2023"
+          ]
+        },
+        {
+          "type": "fossil",
+          "description": "Lida Ajer teeth re-dated to 73,000–63,000 years ago.",
+          "sourceIds": [
+            "westaway2017"
+          ]
+        },
+        {
+          "type": "chronological",
+          "description": "Direct dating and ancient DNA show the Fuyan teeth are Holocene, not 80,000+ years old.",
+          "sourceIds": [
+            "sun2021",
+            "liu2015"
+          ]
+        }
+      ],
+      "siteIds": [
+        "tam-pa-ling",
+        "lida-ajer"
+      ],
+      "camera": {
+        "lat": 14,
+        "lng": 100,
+        "distance": 2.4
+      }
+    },
+    {
+      "id": "north-eurasia-siberia",
+      "name": "Across northern Eurasia to the Arctic",
+      "category": "Upper Palaeolithic dispersal",
+      "path": [
+        {
+          "name": "Zagros",
+          "lat": 34.0,
+          "lng": 47.0,
+          "year": 50000
+        },
+        {
+          "name": "Central Asia",
+          "lat": 41.0,
+          "lng": 64.0,
+          "year": 47000
+        },
+        {
+          "name": "Ust'-Ishim",
+          "lat": 57.7,
+          "lng": 71.2,
+          "year": 45000
+        },
+        {
+          "name": "Altai",
+          "lat": 51.4,
+          "lng": 84.7,
+          "year": 43000
+        },
+        {
+          "name": "Lake Baikal",
+          "lat": 52.5,
+          "lng": 104.0,
+          "year": 35000
+        },
+        {
+          "name": "Yana River",
+          "lat": 70.7,
+          "lng": 135.4,
+          "year": 31600
+        }
+      ],
+      "particleConfig": {
+        "count": 1600,
+        "clusterCount": 7,
+        "spreadKm": 90,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "medium",
+      "dataStatus": "illustrative",
+      "uncertainty": "The sites and ages are secure; the path between them is interpolated. Ust'-Ishim has no living descendants, and the Yana people (Ancient North Siberians) were later largely replaced.",
+      "origin": "Iranian Plateau",
+      "destination": "Arctic Siberia",
+      "intermediateRegions": [
+        "Central Asia",
+        "Western Siberia",
+        "Altai",
+        "Lake Baikal"
+      ],
+      "pathDescription": "Drawn from the Zagros through Central Asia to the Irtysh, then east along the southern Siberian belt and north to the Yana River.",
+      "description": "Modern humans reached the steppes and taiga of Siberia by ~45,000 years ago and the Arctic Circle by ~32,000.",
+      "people": "Upper Palaeolithic hunters; genomes show several lineages, some with no living descendants.",
+      "historicalContext": "Cold, dry glacial steppe with mammoth, bison and horse.",
+      "significance": "Extreme cold adaptation; the Ancient North Siberians contributed ancestry to later Siberians and Native Americans.",
+      "evidence": [
+        {
+          "type": "genetic",
+          "description": "The 45,000-year-old Ust'-Ishim genome.",
+          "sourceIds": [
+            "fu2014"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "Yana RHS genomes (~31,600 years) define the Ancient North Siberians.",
+          "sourceIds": [
+            "sikora2019"
+          ]
+        }
+      ],
+      "siteIds": [
+        "ust-ishim",
+        "yana-rhs"
+      ],
+      "camera": {
+        "lat": 55,
+        "lng": 95,
+        "distance": 3.0
+      }
+    },
+    {
+      "id": "east-asia-japan",
+      "name": "East Asia to Japan",
+      "category": "Upper Palaeolithic dispersal",
+      "path": [
+        {
+          "name": "Southern China",
+          "lat": 25.0,
+          "lng": 110.0,
+          "year": 48000
+        },
+        {
+          "name": "North China Plain",
+          "lat": 35.0,
+          "lng": 114.0,
+          "year": 43000
+        },
+        {
+          "name": "Tianyuan Cave",
+          "lat": 39.65,
+          "lng": 115.87,
+          "year": 40000
+        },
+        {
+          "name": "Korean Peninsula",
+          "lat": 36.5,
+          "lng": 127.5,
+          "year": 39000
+        },
+        {
+          "name": "Kyushu",
+          "lat": 33.0,
+          "lng": 131.0,
+          "year": 38000
+        },
+        {
+          "name": "Honshu",
+          "lat": 36.0,
+          "lng": 138.0,
+          "year": 37000
+        }
+      ],
+      "particleConfig": {
+        "count": 1300,
+        "clusterCount": 5,
+        "spreadKm": 90,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "medium",
+      "dataStatus": "illustrative",
+      "uncertainty": "Tianyuan is securely dated. The Korea waypoint is geographic interpolation, and the ~38,000-year arrival in Japan rests on the archaeological record rather than fossils.",
+      "origin": "Southern China",
+      "destination": "Japanese archipelago",
+      "intermediateRegions": [
+        "North China",
+        "Korean Peninsula",
+        "Tsushima Strait"
+      ],
+      "pathDescription": "Drawn north through China to Tianyuan, then via the Korean Peninsula and Tsushima Strait to Kyushu and Honshu.",
+      "description": "Modern humans spread through East Asia and crossed the sea to Japan by ~38,000 years ago.",
+      "people": "Upper Palaeolithic hunter-gatherers; genomes link Tianyuan to present-day East Asians.",
+      "historicalContext": "Glacial seas were lower but Japan was never joined to Korea: reaching it needed a sea crossing.",
+      "significance": "Ancestors of the Jōmon, who form one of three ancestral layers of present-day Japanese.",
+      "evidence": [
+        {
+          "type": "genetic",
+          "description": "The 40,000-year-old Tianyuan genome.",
+          "sourceIds": [
+            "yang2017"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "Jōmon, Yayoi and Kofun ancestries in Japan.",
+          "sourceIds": [
+            "cooke2021"
+          ]
+        }
+      ],
+      "siteIds": [
+        "tianyuan"
+      ],
+      "camera": {
+        "lat": 36,
+        "lng": 124,
+        "distance": 2.4
+      }
+    },
+    {
+      "id": "ryukyu-seafaring",
+      "name": "Taiwan to the Ryukyus by sea",
+      "category": "Upper Palaeolithic seafaring",
+      "path": [
+        {
+          "name": "South China coast",
+          "lat": 24.5,
+          "lng": 118.5,
+          "year": 38000
+        },
+        {
+          "name": "Northern Taiwan",
+          "lat": 25.1,
+          "lng": 121.8,
+          "year": 36000
+        },
+        {
+          "name": "Yonaguni",
+          "lat": 24.45,
+          "lng": 123.0,
+          "year": 35000
+        },
+        {
+          "name": "Ishigaki & Miyako",
+          "lat": 24.5,
+          "lng": 125.0,
+          "year": 33500
+        },
+        {
+          "name": "Okinawa",
+          "lat": 26.5,
+          "lng": 128.0,
+          "year": 32000
+        }
+      ],
+      "particleConfig": {
+        "count": 700,
+        "clusterCount": 3,
+        "spreadKm": 90,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "medium",
+      "dataStatus": "illustrative",
+      "uncertainty": "The Ryukyu sites date to ~35,000–30,000 years ago; the exact crossing points are unknown. A 2019 dugout-canoe voyage showed the Kuroshio crossing was feasible, not that it happened that way.",
+      "origin": "South China coast",
+      "destination": "Okinawa",
+      "intermediateRegions": [
+        "Taiwan",
+        "Yonaguni",
+        "Ishigaki"
+      ],
+      "pathDescription": "Island-hopping from Taiwan across the Kuroshio current to the southern Ryukyus and Okinawa.",
+      "description": "Palaeolithic seafarers crossed one of the world's strongest ocean currents to reach the Ryukyu Islands.",
+      "people": "Upper Palaeolithic islanders; their identity is unknown.",
+      "historicalContext": "Even with lower sea levels, Yonaguni lay over 100 km from Taiwan across the Kuroshio.",
+      "significance": "Some of the earliest deliberate open-sea voyages known.",
+      "evidence": [
+        {
+          "type": "archaeological",
+          "description": "An experimental dugout voyage tests the Palaeolithic crossing from Taiwan to Yonaguni.",
+          "sourceIds": [
+            "kaifu2025"
+          ]
+        }
+      ],
+      "siteIds": [],
+      "camera": {
+        "lat": 25,
+        "lng": 124,
+        "distance": 1.9
+      }
+    },
+    {
+      "id": "tibetan-plateau",
+      "name": "Onto the Tibetan Plateau",
+      "category": "Upper Palaeolithic dispersal",
+      "path": [
+        {
+          "name": "Upper Yellow River",
+          "lat": 36.0,
+          "lng": 103.0,
+          "year": 45000
+        },
+        {
+          "name": "Qinghai Lake",
+          "lat": 36.9,
+          "lng": 100.2,
+          "year": 43500
+        },
+        {
+          "name": "Qaidam margin",
+          "lat": 36.5,
+          "lng": 96.0,
+          "year": 42000
+        },
+        {
+          "name": "Nwya Devu",
+          "lat": 31.6,
+          "lng": 90.0,
+          "year": 40000
+        }
+      ],
+      "particleConfig": {
+        "count": 600,
+        "clusterCount": 3,
+        "spreadKm": 90,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "medium",
+      "dataStatus": "illustrative",
+      "uncertainty": "Nwya Devu has stone tools but no fossils. Whether its makers were Homo sapiens or Denisovans is not settled; the route assumes Homo sapiens.",
+      "origin": "Upper Yellow River",
+      "destination": "Central Tibetan Plateau",
+      "intermediateRegions": [
+        "Qinghai Lake",
+        "Qaidam Basin"
+      ],
+      "pathDescription": "Illustrative ascent from the northeastern plateau margin to the high interior.",
+      "description": "Stone tools show people at 4,600 m on the Tibetan Plateau 40,000–30,000 years ago.",
+      "people": "Unknown toolmakers, probably Homo sapiens; Denisovans had been on the plateau earlier.",
+      "historicalContext": "Very high, cold and low in oxygen; Denisovans had lived at Baishiya Karst Cave on the plateau's edge.",
+      "significance": "The oldest evidence of humans living at very high altitude.",
+      "evidence": [
+        {
+          "type": "archaeological",
+          "description": "Blade tools at Nwya Devu dated by OSL to 40,000–30,000 years ago.",
+          "sourceIds": [
+            "zhang2018"
+          ]
+        }
+      ],
+      "siteIds": [
+        "nwya-devu",
+        "baishiya-karst"
+      ],
+      "camera": {
+        "lat": 34,
+        "lng": 96,
+        "distance": 2.0
+      }
+    },
+    {
+      "id": "north-africa-backflow",
+      "name": "Back to North Africa",
+      "category": "Late Pleistocene back-migration",
+      "path": [
+        {
+          "name": "Southern Levant",
+          "lat": 32.0,
+          "lng": 35.0,
+          "year": 25000
+        },
+        {
+          "name": "Sinai",
+          "lat": 30.0,
+          "lng": 33.5,
+          "year": 22500
+        },
+        {
+          "name": "Nile Delta",
+          "lat": 30.8,
+          "lng": 31.0,
+          "year": 21500
+        },
+        {
+          "name": "Cyrenaica",
+          "lat": 32.5,
+          "lng": 22.0,
+          "year": 20000
+        },
+        {
+          "name": "Tunisia",
+          "lat": 35.0,
+          "lng": 9.0,
+          "year": 18000
+        },
+        {
+          "name": "Taforalt",
+          "lat": 34.81,
+          "lng": -2.41,
+          "year": 15000
+        }
+      ],
+      "particleConfig": {
+        "count": 900,
+        "clusterCount": 4,
+        "spreadKm": 90,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "medium",
+      "dataStatus": "illustrative",
+      "uncertainty": "Genomes show Near Eastern ancestry at Taforalt by ~15,000 years ago, but the timing and route of the movement are inferred, not documented.",
+      "origin": "Levant",
+      "destination": "Morocco",
+      "intermediateRegions": [
+        "Sinai",
+        "Cyrenaica",
+        "Tunisia"
+      ],
+      "pathDescription": "Drawn along the Mediterranean coast of North Africa.",
+      "description": "Ancient DNA shows that people with Near Eastern ancestry moved back into North Africa before ~15,000 years ago.",
+      "people": "Ancestors of the Iberomaurusian makers of Taforalt; about two-thirds of their ancestry is Natufian-related.",
+      "historicalContext": "Around and after the Last Glacial Maximum.",
+      "significance": "Movement out of Africa was not one-way: Eurasian ancestry returned to Africa long before farming.",
+      "evidence": [
+        {
+          "type": "genetic",
+          "description": "Taforalt genomes combine Near Eastern and sub-Saharan African ancestry.",
+          "sourceIds": [
+            "vandeloosdrecht2018"
+          ]
+        }
+      ],
+      "siteIds": [
+        "taforalt"
+      ],
+      "camera": {
+        "lat": 31,
+        "lng": 15,
+        "distance": 2.4
+      }
+    },
+    {
+      "id": "eurasian-backflow-east-africa",
+      "name": "West Eurasian back-flow to East Africa",
+      "category": "Holocene back-migration",
+      "path": [
+        {
+          "name": "Levant",
+          "lat": 33.0,
+          "lng": 36.0,
+          "year": 5000
+        },
+        {
+          "name": "Sinai",
+          "lat": 29.5,
+          "lng": 33.5,
+          "year": 4700
+        },
+        {
+          "name": "Nile valley",
+          "lat": 25.0,
+          "lng": 32.8,
+          "year": 4300
+        },
+        {
+          "name": "Ethiopian Highlands",
+          "lat": 9.0,
+          "lng": 38.7,
+          "year": 3500
+        },
+        {
+          "name": "Kenyan Rift",
+          "lat": 0.5,
+          "lng": 36.0,
+          "year": 3000
+        }
+      ],
+      "particleConfig": {
+        "count": 800,
+        "clusterCount": 3,
+        "spreadKm": 90,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "medium",
+      "dataStatus": "illustrative",
+      "uncertainty": "Admixture dates cluster around ~3,000 years ago. The first estimates of Eurasian ancestry across all of Africa were corrected; the East African signal stands. The route is illustrative.",
+      "origin": "Levant",
+      "destination": "East Africa",
+      "intermediateRegions": [
+        "Sinai",
+        "Nile valley",
+        "Ethiopian Highlands"
+      ],
+      "pathDescription": "Illustrative path up the Nile into the Ethiopian Highlands and Rift.",
+      "description": "West Eurasian ancestry, with Near Eastern farmer components, entered East Africa in the last few thousand years.",
+      "people": "Groups carrying Levantine-farmer-related ancestry; their identity is unknown.",
+      "historicalContext": "The mid-to-late Holocene, as pastoralism spread across northeast Africa.",
+      "significance": "Explains West Eurasian ancestry in many present-day East Africans.",
+      "evidence": [
+        {
+          "type": "genetic",
+          "description": "The ~4,500-year-old Mota genome lacks this ancestry, giving a date bound.",
+          "sourceIds": [
+            "gallegollorente2015"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "Ancient African genomes track the back-flow.",
+          "sourceIds": [
+            "skoglund2017"
+          ]
+        }
+      ],
+      "siteIds": [
+        "mota-cave"
+      ],
+      "camera": {
+        "lat": 15,
+        "lng": 36,
+        "distance": 2.5
+      }
+    },
+    {
+      "id": "pastoralist-spread",
+      "name": "Herders into East & Southern Africa",
+      "category": "Holocene expansion",
+      "path": [
+        {
+          "name": "Sudanese Nile",
+          "lat": 15.6,
+          "lng": 32.5,
+          "year": 6000
+        },
+        {
+          "name": "Lake Turkana",
+          "lat": 3.5,
+          "lng": 36.0,
+          "year": 5000
+        },
+        {
+          "name": "Central Rift, Kenya",
+          "lat": -0.5,
+          "lng": 36.1,
+          "year": 3500
+        },
+        {
+          "name": "Northern Tanzania",
+          "lat": -3.4,
+          "lng": 35.5,
+          "year": 3000
+        },
+        {
+          "name": "Zambia–Botswana",
+          "lat": -18.0,
+          "lng": 24.0,
+          "year": 2000
+        },
+        {
+          "name": "Western Cape",
+          "lat": -33.0,
+          "lng": 18.5,
+          "year": 1300
+        }
+      ],
+      "particleConfig": {
+        "count": 1100,
+        "clusterCount": 5,
+        "spreadKm": 90,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "medium",
+      "dataStatus": "illustrative",
+      "uncertainty": "Ancient DNA documents the East African steps well. The arrival in southern Africa (~2,000–1,300 years ago) is inferred from East African ancestry in present-day Khoe groups.",
+      "origin": "Sudanese Nile",
+      "destination": "Southern Africa",
+      "intermediateRegions": [
+        "Lake Turkana",
+        "Kenyan Rift",
+        "Tanzania",
+        "Zambia–Botswana"
+      ],
+      "pathDescription": "Drawn south through the Rift Valley, then across the interior to the Western Cape.",
+      "description": "Cattle, sheep and goat herding spread from northeast Africa south in several steps, with people mixing with local foragers.",
+      "people": "Northeast African herders who mixed with local hunter-gatherers; later, ancestors of Khoe pastoralists.",
+      "historicalContext": "The end of the African Humid Period and drying of the Sahara.",
+      "significance": "Brought herding to East and Southern Africa before farming did.",
+      "evidence": [
+        {
+          "type": "genetic",
+          "description": "Multistep spread of herders in East Africa.",
+          "sourceIds": [
+            "prendergast2019"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "East African ancestry in southern African herders.",
+          "sourceIds": [
+            "schlebusch2017",
+            "skoglund2017"
+          ]
+        }
+      ],
+      "siteIds": [],
+      "camera": {
+        "lat": -5,
+        "lng": 32,
+        "distance": 3.0
+      }
+    },
+    {
+      "id": "bantu-expansion",
+      "name": "Bantu expansion",
+      "category": "Holocene farmer expansion",
+      "path": [
+        {
+          "name": "Grassfields, Cameroon–Nigeria",
+          "lat": 6.0,
+          "lng": 10.5,
+          "year": 5000
+        },
+        {
+          "name": "Southern Cameroon",
+          "lat": 3.0,
+          "lng": 12.0,
+          "year": 4000
+        },
+        {
+          "name": "Congo Basin",
+          "lat": -1.0,
+          "lng": 20.0,
+          "year": 3200
+        },
+        {
+          "name": "Great Lakes",
+          "lat": -1.5,
+          "lng": 30.5,
+          "year": 2500
+        },
+        {
+          "name": "Zambia",
+          "lat": -13.0,
+          "lng": 28.0,
+          "year": 1800
+        },
+        {
+          "name": "Limpopo",
+          "lat": -22.0,
+          "lng": 32.0,
+          "year": 1700
+        },
+        {
+          "name": "KwaZulu-Natal",
+          "lat": -29.0,
+          "lng": 30.5,
+          "year": 1500
+        }
+      ],
+      "branches": [
+        {
+          "id": "western",
+          "name": "Western branch (Angola)",
+          "fromWaypoint": 1,
+          "share": 0.35,
+          "path": [
+            {
+              "name": "Lower Congo",
+              "lat": -6.0,
+              "lng": 14.0,
+              "year": 2500
+            },
+            {
+              "name": "Angola",
+              "lat": -12.5,
+              "lng": 15.5,
+              "year": 2000
+            },
+            {
+              "name": "Northern Namibia",
+              "lat": -18.0,
+              "lng": 16.0,
+              "year": 1500
+            }
+          ],
+          "note": "A western stream through the rainforest to the Atlantic coast and Angola; genetics favours a late split around the Zambia–DRC region."
+        }
+      ],
+      "particleConfig": {
+        "count": 1800,
+        "clusterCount": 7,
+        "spreadKm": 90,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "high",
+      "dataStatus": "illustrative",
+      "uncertainty": "The expansion is well established, but its branching is debated. Pottery dates show a rainforest population collapse around 400–600 CE, so settlement was not continuous.",
+      "origin": "Cameroon–Nigeria borderlands",
+      "destination": "Eastern and Southern Africa",
+      "intermediateRegions": [
+        "Congo Basin",
+        "Great Lakes",
+        "Zambia",
+        "Limpopo"
+      ],
+      "pathDescription": "An eastern stream through the Great Lakes and a western stream to Angola.",
+      "description": "Farmers speaking Bantu languages spread from West-Central Africa across much of sub-Saharan Africa.",
+      "people": "Ancestors of present-day Bantu-speaking peoples, who mixed with local foragers and herders.",
+      "historicalContext": "Farming, pottery and later iron working; changing rainforest cover.",
+      "significance": "Shaped the languages, genetics and farming of most of sub-Saharan Africa.",
+      "evidence": [
+        {
+          "type": "genetic",
+          "description": "Genome-wide data from Bantu-speaking peoples trace the expansion.",
+          "sourceIds": [
+            "fortesLima2024"
+          ]
+        },
+        {
+          "type": "chronological",
+          "description": "Pottery dates show a rainforest population collapse from ~400 CE.",
+          "sourceIds": [
+            "seidensticker2021"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "Ancient genomes show replacement of foragers in places.",
+          "sourceIds": [
+            "skoglund2017"
+          ]
+        }
+      ],
+      "siteIds": [],
+      "camera": {
+        "lat": -10,
+        "lng": 24,
+        "distance": 3.0
+      }
+    },
+    {
+      "id": "neolithic-danubian",
+      "name": "First farmers: Danubian route",
+      "category": "Neolithic expansion",
+      "path": [
+        {
+          "name": "Çatalhöyük",
+          "lat": 37.67,
+          "lng": 32.83,
+          "year": 9500
+        },
+        {
+          "name": "Marmara",
+          "lat": 40.2,
+          "lng": 29.0,
+          "year": 8500
+        },
+        {
+          "name": "Thrace",
+          "lat": 42.0,
+          "lng": 25.0,
+          "year": 8200
+        },
+        {
+          "name": "Iron Gates",
+          "lat": 44.6,
+          "lng": 22.0,
+          "year": 8000
+        },
+        {
+          "name": "Carpathian Basin",
+          "lat": 47.0,
+          "lng": 19.0,
+          "year": 7600
+        },
+        {
+          "name": "Central Germany",
+          "lat": 51.0,
+          "lng": 11.0,
+          "year": 7400
+        },
+        {
+          "name": "Paris Basin",
+          "lat": 49.0,
+          "lng": 2.5,
+          "year": 7000
+        },
+        {
+          "name": "Britain",
+          "lat": 51.5,
+          "lng": -1.5,
+          "year": 6000
+        }
+      ],
+      "particleConfig": {
+        "count": 1500,
+        "clusterCount": 6,
+        "spreadKm": 90,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "high",
+      "dataStatus": "illustrative",
+      "uncertainty": "Arrival dates vary by region within a few centuries. Farmers mixed with local hunter-gatherers to different degrees.",
+      "origin": "Central Anatolia",
+      "destination": "Northwest Europe",
+      "intermediateRegions": [
+        "Thrace",
+        "Iron Gates",
+        "Carpathian Basin",
+        "Central Germany"
+      ],
+      "pathDescription": "Overland via the Balkans and up the Danube (Linearbandkeramik), then west to the Paris Basin and Britain.",
+      "description": "Farmers descended from Aegean and Anatolian populations brought agriculture into central and northern Europe.",
+      "people": "Neolithic farmers of Anatolian ancestry (Starčevo–Körös, then Linearbandkeramik).",
+      "historicalContext": "The early and middle Holocene, warm and stable.",
+      "significance": "Farmer ancestry forms a large share of present-day European ancestry.",
+      "evidence": [
+        {
+          "type": "genetic",
+          "description": "Early European farmers descend from Neolithic Aegeans.",
+          "sourceIds": [
+            "hofmanova2016"
+          ]
+        }
+      ],
+      "siteIds": [
+        "catalhoyuk"
+      ],
+      "camera": {
+        "lat": 46,
+        "lng": 15,
+        "distance": 2.6
+      }
+    },
+    {
+      "id": "neolithic-cardial",
+      "name": "First farmers: Mediterranean route",
+      "category": "Neolithic expansion",
+      "path": [
+        {
+          "name": "Çatalhöyük",
+          "lat": 37.67,
+          "lng": 32.83,
+          "year": 9500
+        },
+        {
+          "name": "Aegean",
+          "lat": 38.5,
+          "lng": 25.5,
+          "year": 8600
+        },
+        {
+          "name": "Thessaly",
+          "lat": 39.5,
+          "lng": 22.5,
+          "year": 8400
+        },
+        {
+          "name": "Adriatic",
+          "lat": 42.0,
+          "lng": 16.0,
+          "year": 8000
+        },
+        {
+          "name": "Southern Italy",
+          "lat": 40.5,
+          "lng": 17.0,
+          "year": 7800
+        },
+        {
+          "name": "Southern France",
+          "lat": 43.3,
+          "lng": 4.0,
+          "year": 7600
+        },
+        {
+          "name": "Valencia",
+          "lat": 39.0,
+          "lng": -0.5,
+          "year": 7500
+        },
+        {
+          "name": "Portugal",
+          "lat": 38.7,
+          "lng": -9.0,
+          "year": 7400
+        }
+      ],
+      "particleConfig": {
+        "count": 1300,
+        "clusterCount": 5,
+        "spreadKm": 90,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "high",
+      "dataStatus": "illustrative",
+      "uncertainty": "Spread by sea along the coasts is likely but the exact hops are unknown. Hunter-gatherer admixture was higher here than in central Europe.",
+      "origin": "Central Anatolia",
+      "destination": "Iberia",
+      "intermediateRegions": [
+        "Aegean",
+        "Thessaly",
+        "Adriatic",
+        "Southern France"
+      ],
+      "pathDescription": "Coastal, largely maritime spread associated with Impressa and Cardial pottery.",
+      "description": "A second stream of farmers spread along the northern Mediterranean coasts to Iberia.",
+      "people": "Neolithic farmers of Aegean ancestry who mixed with local hunter-gatherers.",
+      "historicalContext": "Rapid coastal colonisation by boat.",
+      "significance": "Brought farming to the western Mediterranean within a few centuries.",
+      "evidence": [
+        {
+          "type": "genetic",
+          "description": "Aegean origin of European farmers.",
+          "sourceIds": [
+            "hofmanova2016"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "Farmer–hunter-gatherer interactions in France.",
+          "sourceIds": [
+            "rivollat2020"
+          ]
+        }
+      ],
+      "siteIds": [
+        "catalhoyuk"
+      ],
+      "camera": {
+        "lat": 40,
+        "lng": 12,
+        "distance": 2.6
+      }
+    },
+    {
+      "id": "steppe-west",
+      "name": "Steppe herders into Europe",
+      "category": "Bronze Age expansion",
+      "path": [
+        {
+          "name": "Pontic–Caspian steppe",
+          "lat": 47.5,
+          "lng": 40.0,
+          "year": 5300
+        },
+        {
+          "name": "Lower Danube",
+          "lat": 44.5,
+          "lng": 27.0,
+          "year": 4900
+        },
+        {
+          "name": "Carpathian Basin",
+          "lat": 47.0,
+          "lng": 20.0,
+          "year": 4800
+        },
+        {
+          "name": "Central Germany",
+          "lat": 51.5,
+          "lng": 12.0,
+          "year": 4600
+        },
+        {
+          "name": "Rhineland",
+          "lat": 50.5,
+          "lng": 7.0,
+          "year": 4500
+        },
+        {
+          "name": "Britain",
+          "lat": 52.0,
+          "lng": -1.5,
+          "year": 4400
+        },
+        {
+          "name": "Iberia",
+          "lat": 40.5,
+          "lng": -4.0,
+          "year": 4300
+        }
+      ],
+      "particleConfig": {
+        "count": 1400,
+        "clusterCount": 6,
+        "spreadKm": 90,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "high",
+      "dataStatus": "illustrative",
+      "uncertainty": "Ancient DNA establishes the movement of people. That it carried Indo-European languages is an inference.",
+      "origin": "Pontic–Caspian steppe",
+      "destination": "Western Europe",
+      "intermediateRegions": [
+        "Lower Danube",
+        "Carpathian Basin",
+        "Central Europe",
+        "Rhineland",
+        "Britain"
+      ],
+      "pathDescription": "Drawn west from the steppe (Yamnaya) through Corded Ware and Bell Beaker regions.",
+      "description": "Herders with Yamnaya-related ancestry spread across Europe and transformed its population.",
+      "people": "Yamnaya-related herders and their descendants in the Corded Ware and Bell Beaker groups.",
+      "historicalContext": "Wheeled vehicles, horse use and herding economies on the steppe.",
+      "significance": "Steppe ancestry is a major part of present-day European ancestry.",
+      "evidence": [
+        {
+          "type": "genetic",
+          "description": "Massive migration from the steppe into Europe.",
+          "sourceIds": [
+            "haak2015",
+            "allentoft2015"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "Steppe movement into the Balkans and Armenia, little into Anatolia.",
+          "sourceIds": [
+            "lazaridis2022"
+          ]
+        }
+      ],
+      "siteIds": [],
+      "camera": {
+        "lat": 49,
+        "lng": 18,
+        "distance": 2.6
+      }
+    },
+    {
+      "id": "steppe-east-afanasievo",
+      "name": "Steppe herders east to the Altai",
+      "category": "Bronze Age expansion",
+      "path": [
+        {
+          "name": "Volga–Ural",
+          "lat": 52.0,
+          "lng": 50.0,
+          "year": 5300
+        },
+        {
+          "name": "Kazakh steppe",
+          "lat": 50.0,
+          "lng": 68.0,
+          "year": 5100
+        },
+        {
+          "name": "Altai",
+          "lat": 51.0,
+          "lng": 86.0,
+          "year": 5000
+        },
+        {
+          "name": "Minusinsk Basin",
+          "lat": 53.7,
+          "lng": 91.7,
+          "year": 4900
+        }
+      ],
+      "particleConfig": {
+        "count": 700,
+        "clusterCount": 3,
+        "spreadKm": 90,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "high",
+      "dataStatus": "illustrative",
+      "uncertainty": "The genetic match between Yamnaya and Afanasievo is close. A link to the Tocharian languages is speculative.",
+      "origin": "Volga–Ural steppe",
+      "destination": "Altai and Minusinsk Basin",
+      "intermediateRegions": [
+        "Kazakh steppe"
+      ],
+      "pathDescription": "Straight across the steppe belt, ~2,000 km in a few centuries.",
+      "description": "Yamnaya-related herders crossed the steppe to the Altai, founding the Afanasievo culture.",
+      "people": "Afanasievo herders, genetically almost identical to Yamnaya.",
+      "historicalContext": "Mobile pastoralism with wagons.",
+      "significance": "One of the fastest long-distance migrations in prehistory.",
+      "evidence": [
+        {
+          "type": "genetic",
+          "description": "Afanasievo genomes match Yamnaya.",
+          "sourceIds": [
+            "allentoft2015",
+            "narasimhan2019"
+          ]
+        }
+      ],
+      "siteIds": [],
+      "camera": {
+        "lat": 51,
+        "lng": 70,
+        "distance": 2.5
+      }
+    },
+    {
+      "id": "steppe-to-south-asia",
+      "name": "Steppe ancestry into South Asia",
+      "category": "Bronze Age expansion",
+      "path": [
+        {
+          "name": "Sintashta, Southern Urals",
+          "lat": 52.5,
+          "lng": 60.0,
+          "year": 4100
+        },
+        {
+          "name": "Kazakhstan (Andronovo)",
+          "lat": 48.0,
+          "lng": 70.0,
+          "year": 3800
+        },
+        {
+          "name": "Bactria–Margiana",
+          "lat": 37.5,
+          "lng": 62.0,
+          "year": 3700
+        },
+        {
+          "name": "Swat Valley",
+          "lat": 35.0,
+          "lng": 72.5,
+          "year": 3500
+        },
+        {
+          "name": "Punjab",
+          "lat": 30.0,
+          "lng": 75.0,
+          "year": 3300
+        }
+      ],
+      "particleConfig": {
+        "count": 800,
+        "clusterCount": 3,
+        "spreadKm": 90,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "high",
+      "dataStatus": "illustrative",
+      "uncertainty": "Genetic arrival in the first half of the 2nd millennium BCE is secure; the link to Indo-Aryan languages is an inference.",
+      "origin": "Southern Urals",
+      "destination": "Northwest South Asia",
+      "intermediateRegions": [
+        "Kazakh steppe",
+        "Bactria–Margiana",
+        "Swat Valley"
+      ],
+      "pathDescription": "South from the steppe through Central Asia and the northwestern passes.",
+      "description": "People with steppe ancestry moved into South Asia after the Indus civilisation declined.",
+      "people": "Descendants of Sintashta–Andronovo herders.",
+      "historicalContext": "The late Bronze Age, after the decline of the Harappan cities.",
+      "significance": "Steppe ancestry forms part of the ancestry of many present-day South Asians.",
+      "evidence": [
+        {
+          "type": "genetic",
+          "description": "Ancient genomes from Central and South Asia.",
+          "sourceIds": [
+            "narasimhan2019"
+          ]
+        }
+      ],
+      "siteIds": [],
+      "camera": {
+        "lat": 42,
+        "lng": 66,
+        "distance": 2.6
+      }
+    },
+    {
+      "id": "magdalenian-recolonisation",
+      "name": "Recolonising Europe after the Ice Age",
+      "category": "Late Glacial",
+      "path": [
+        {
+          "name": "Cantabria",
+          "lat": 43.3,
+          "lng": -4.0,
+          "year": 19000
+        },
+        {
+          "name": "Dordogne",
+          "lat": 45.0,
+          "lng": 1.0,
+          "year": 17000
+        },
+        {
+          "name": "Paris Basin",
+          "lat": 48.5,
+          "lng": 2.5,
+          "year": 15500
+        },
+        {
+          "name": "Rhineland",
+          "lat": 50.5,
+          "lng": 7.5,
+          "year": 15000
+        },
+        {
+          "name": "Central Germany",
+          "lat": 51.0,
+          "lng": 11.5,
+          "year": 14800
+        },
+        {
+          "name": "Southern Britain",
+          "lat": 51.28,
+          "lng": -2.77,
+          "year": 14700
+        }
+      ],
+      "particleConfig": {
+        "count": 900,
+        "clusterCount": 4,
+        "spreadKm": 90,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "high",
+      "dataStatus": "illustrative",
+      "uncertainty": "The genetic cluster and the sites are secure; the route between them is illustrative.",
+      "origin": "Franco-Cantabrian refuge",
+      "destination": "Northern Europe",
+      "intermediateRegions": [
+        "Dordogne",
+        "Paris Basin",
+        "Rhineland"
+      ],
+      "pathDescription": "North out of the Ice Age refuge of northern Spain and southwest France.",
+      "description": "Magdalenian hunters spread north from their refuge as the ice sheets retreated.",
+      "people": "Hunter-gatherers of the Magdalenian culture ('GoyetQ2' ancestry).",
+      "historicalContext": "Warming after the Last Glacial Maximum; reindeer and horse herds moved north.",
+      "significance": "Repopulated northern Europe after the coldest phase of the last ice age.",
+      "evidence": [
+        {
+          "type": "genetic",
+          "description": "Genetic history of Ice Age Europe.",
+          "sourceIds": [
+            "fu2016"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "Upper Palaeolithic hunter-gatherer genomes.",
+          "sourceIds": [
+            "posth2023"
+          ]
+        }
+      ],
+      "siteIds": [
+        "goughs-cave"
+      ],
+      "camera": {
+        "lat": 47,
+        "lng": 3,
+        "distance": 2.2
+      }
+    },
+    {
+      "id": "epigravettian-villabruna",
+      "name": "Villabruna hunters spread across Europe",
+      "category": "Late Glacial",
+      "path": [
+        {
+          "name": "Balkans",
+          "lat": 43.0,
+          "lng": 21.0,
+          "year": 16000
+        },
+        {
+          "name": "Northern Italy",
+          "lat": 46.1,
+          "lng": 11.9,
+          "year": 14000
+        },
+        {
+          "name": "Western Alps",
+          "lat": 45.5,
+          "lng": 5.0,
+          "year": 13500
+        },
+        {
+          "name": "Low Countries",
+          "lat": 51.0,
+          "lng": 4.5,
+          "year": 13000
+        },
+        {
+          "name": "Britain",
+          "lat": 52.0,
+          "lng": -1.0,
+          "year": 12000
+        }
+      ],
+      "particleConfig": {
+        "count": 900,
+        "clusterCount": 4,
+        "spreadKm": 90,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "high",
+      "dataStatus": "illustrative",
+      "uncertainty": "The genetic turnover is clear; its source in southeastern Europe and the route are approximate.",
+      "origin": "Balkans",
+      "destination": "Northwest Europe",
+      "intermediateRegions": [
+        "Northern Italy",
+        "Alps",
+        "Low Countries"
+      ],
+      "pathDescription": "From the Balkans along the southern Alps, then north.",
+      "description": "From ~14,000 years ago a new ancestry from southeastern Europe spread across the continent.",
+      "people": "Epigravettian hunter-gatherers ('Villabruna' ancestry).",
+      "historicalContext": "The warm Bølling–Allerød interval.",
+      "significance": "Largely replaced Magdalenian-associated ancestry; ancestors of later Western hunter-gatherers.",
+      "evidence": [
+        {
+          "type": "genetic",
+          "description": "Turnover to Villabruna ancestry from ~14,000 years ago.",
+          "sourceIds": [
+            "fu2016",
+            "posth2023"
+          ]
+        }
+      ],
+      "siteIds": [
+        "villabruna"
+      ],
+      "camera": {
+        "lat": 47,
+        "lng": 10,
+        "distance": 2.2
+      }
+    },
+    {
+      "id": "neolithic-mainland-sea",
+      "name": "Farmers into mainland Southeast Asia",
+      "category": "Neolithic expansion",
+      "path": [
+        {
+          "name": "Middle Yangtze",
+          "lat": 30.0,
+          "lng": 112.0,
+          "year": 6000
+        },
+        {
+          "name": "Lingnan",
+          "lat": 23.0,
+          "lng": 113.0,
+          "year": 5000
+        },
+        {
+          "name": "Northern Vietnam (Man Bac)",
+          "lat": 20.2,
+          "lng": 105.9,
+          "year": 4000
+        },
+        {
+          "name": "Northeast Thailand",
+          "lat": 17.4,
+          "lng": 103.2,
+          "year": 3800
+        },
+        {
+          "name": "Cambodia",
+          "lat": 12.5,
+          "lng": 104.5,
+          "year": 3500
+        },
+        {
+          "name": "Malay Peninsula",
+          "lat": 5.0,
+          "lng": 101.5,
+          "year": 3000
+        }
+      ],
+      "particleConfig": {
+        "count": 900,
+        "clusterCount": 4,
+        "spreadKm": 90,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "high",
+      "dataStatus": "illustrative",
+      "uncertainty": "There were several waves (Neolithic, then Bronze Age). Paths between sites are illustrative.",
+      "origin": "Yangtze basin",
+      "destination": "Malay Peninsula",
+      "intermediateRegions": [
+        "Lingnan",
+        "Northern Vietnam",
+        "Thailand",
+        "Cambodia"
+      ],
+      "pathDescription": "South from the rice-farming Yangtze region into mainland Southeast Asia.",
+      "description": "Farmers with southern Chinese ancestry spread rice and millet farming into Southeast Asia.",
+      "people": "Neolithic farmers who mixed with local Hòabìnhian hunter-gatherers.",
+      "historicalContext": "Rice and millet farming and pottery spreading south.",
+      "significance": "Shaped the ancestry of most present-day mainland Southeast Asians.",
+      "evidence": [
+        {
+          "type": "genetic",
+          "description": "Ancient genomes from Southeast Asia show farmer migration.",
+          "sourceIds": [
+            "mccoll2018",
+            "lipson2018"
+          ]
+        }
+      ],
+      "siteIds": [
+        "man-bac"
+      ],
+      "camera": {
+        "lat": 18,
+        "lng": 106,
+        "distance": 2.4
+      }
+    },
+    {
+      "id": "austronesian-near-oceania",
+      "name": "Out of Taiwan to Lapita",
+      "category": "Austronesian expansion",
+      "path": [
+        {
+          "name": "Taiwan",
+          "lat": 23.5,
+          "lng": 121.0,
+          "year": 5000
+        },
+        {
+          "name": "Batanes",
+          "lat": 20.45,
+          "lng": 121.97,
+          "year": 4200
+        },
+        {
+          "name": "Luzon",
+          "lat": 17.5,
+          "lng": 121.5,
+          "year": 4000
+        },
+        {
+          "name": "Sulawesi & Moluccas",
+          "lat": -1.0,
+          "lng": 124.0,
+          "year": 3500
+        },
+        {
+          "name": "Bismarck Archipelago",
+          "lat": -3.5,
+          "lng": 151.5,
+          "year": 3300
+        },
+        {
+          "name": "Vanuatu (Teouma)",
+          "lat": -17.75,
+          "lng": 168.4,
+          "year": 2900
+        },
+        {
+          "name": "Fiji",
+          "lat": -18.0,
+          "lng": 178.0,
+          "year": 2900
+        },
+        {
+          "name": "Tonga",
+          "lat": -21.2,
+          "lng": -175.2,
+          "year": 2850
+        },
+        {
+          "name": "Samoa",
+          "lat": -13.8,
+          "lng": -172.0,
+          "year": 2800
+        }
+      ],
+      "particleConfig": {
+        "count": 1500,
+        "clusterCount": 6,
+        "spreadKm": 90,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "high",
+      "dataStatus": "illustrative",
+      "uncertainty": "The Taiwan-to-Philippines dates are approximate. Some Philippine groups split earlier, which complicates a simple out-of-Taiwan model. The first Lapita people had almost no Papuan ancestry.",
+      "origin": "Taiwan",
+      "destination": "West Polynesia (Samoa)",
+      "intermediateRegions": [
+        "Philippines",
+        "Sulawesi",
+        "Bismarck Archipelago",
+        "Vanuatu",
+        "Fiji",
+        "Tonga"
+      ],
+      "pathDescription": "By sea from Taiwan through the Philippines and eastern Indonesia to the Bismarcks, then into Remote Oceania.",
+      "description": "Austronesian-speaking seafarers spread from Taiwan into the Pacific, reaching Remote Oceania ~3,000 years ago.",
+      "people": "Austronesian-speaking farmers and sailors; in Oceania, the makers of Lapita pottery.",
+      "historicalContext": "Outrigger canoes, pottery and domestic pigs, dogs and chickens.",
+      "significance": "The first people to settle Remote Oceania.",
+      "evidence": [
+        {
+          "type": "genetic",
+          "description": "First Lapita genomes from Vanuatu and Tonga.",
+          "sourceIds": [
+            "skoglund2016"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "Later Papuan influx with language continuity.",
+          "sourceIds": [
+            "posth2018oceania"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "Multiple migrations to the Philippines.",
+          "sourceIds": [
+            "larena2021"
+          ]
+        },
+        {
+          "type": "chronological",
+          "description": "Teouma chronology.",
+          "sourceIds": [
+            "petchey2015"
+          ]
+        }
+      ],
+      "siteIds": [
+        "teouma"
+      ],
+      "camera": {
+        "lat": 0,
+        "lng": 150,
+        "distance": 3.3
+      }
+    },
+    {
+      "id": "polynesia-remote",
+      "name": "East Polynesia: Hawai'i, Rapa Nui, Aotearoa",
+      "category": "Austronesian expansion",
+      "path": [
+        {
+          "name": "Samoa",
+          "lat": -13.8,
+          "lng": -172.0,
+          "year": 2800
+        },
+        {
+          "name": "Society Islands",
+          "lat": -17.5,
+          "lng": -149.5,
+          "year": 950
+        },
+        {
+          "name": "Marquesas",
+          "lat": -9.0,
+          "lng": -140.0,
+          "year": 850
+        },
+        {
+          "name": "Hawai'i",
+          "lat": 19.6,
+          "lng": -155.5,
+          "year": 750
+        }
+      ],
+      "branches": [
+        {
+          "id": "rapa-nui",
+          "name": "Rapa Nui",
+          "fromWaypoint": 1,
+          "share": 0.3,
+          "path": [
+            {
+              "name": "Mangareva",
+              "lat": -23.1,
+              "lng": -134.97,
+              "year": 825
+            },
+            {
+              "name": "Rapa Nui",
+              "lat": -27.1,
+              "lng": -109.35,
+              "year": 750
+            }
+          ],
+          "note": "Rapa Nui was settled ~AD 1200; its people met Native Americans between ~AD 1250 and 1430."
+        },
+        {
+          "id": "aotearoa",
+          "name": "Aotearoa New Zealand",
+          "fromWaypoint": 1,
+          "share": 0.3,
+          "path": [
+            {
+              "name": "Cook & Austral Islands",
+              "lat": -21.0,
+              "lng": -159.8,
+              "year": 850
+            },
+            {
+              "name": "Aotearoa",
+              "lat": -41.5,
+              "lng": 173.9,
+              "year": 750
+            }
+          ],
+          "note": "New Zealand was settled ~AD 1250–1300, the last major land mass reached by people."
+        }
+      ],
+      "particleConfig": {
+        "count": 1300,
+        "clusterCount": 5,
+        "spreadKm": 90,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "high",
+      "dataStatus": "illustrative",
+      "uncertainty": "A ~1,800-year pause in West Polynesia preceded rapid settlement of East Polynesia from ~AD 1025. All three branches are drawn arriving ~750 years ago; Hawai'i may be somewhat earlier and Aotearoa slightly later (~AD 1280).",
+      "origin": "Samoa",
+      "destination": "Hawai'i, Rapa Nui and Aotearoa",
+      "intermediateRegions": [
+        "Society Islands",
+        "Marquesas",
+        "Mangareva",
+        "Cook Islands"
+      ],
+      "pathDescription": "From West Polynesia to the Society Islands, then branching to the three corners of the Polynesian Triangle.",
+      "description": "After a long pause, Polynesian voyagers settled the remote islands of East Polynesia within a few centuries.",
+      "people": "Polynesian navigators, descended from Lapita settlers.",
+      "historicalContext": "Double-hulled voyaging canoes and non-instrument navigation.",
+      "significance": "The last great expansion of humans into unpopulated land.",
+      "evidence": [
+        {
+          "type": "chronological",
+          "description": "High-precision radiocarbon dating of East Polynesian settlement.",
+          "sourceIds": [
+            "wilmshurst2011"
+          ]
+        },
+        {
+          "type": "chronological",
+          "description": "Rat-bone dating of New Zealand settlement.",
+          "sourceIds": [
+            "wilmshurst2008"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "Genomic paths and timings of Polynesian settlement.",
+          "sourceIds": [
+            "ioannidis2021"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "Rapa Nui genomes show pre-European contact with the Americas.",
+          "sourceIds": [
+            "morenomayar2024"
+          ]
+        }
+      ],
+      "siteIds": [],
+      "camera": {
+        "lat": -15,
+        "lng": -150,
+        "distance": 3.6
+      }
+    },
+    {
+      "id": "austronesian-madagascar",
+      "name": "Across the Indian Ocean to Madagascar",
+      "category": "Austronesian expansion",
+      "path": [
+        {
+          "name": "Southeast Borneo",
+          "lat": -2.5,
+          "lng": 114.5,
+          "year": 1600
+        },
+        {
+          "name": "Java",
+          "lat": -6.5,
+          "lng": 106.5,
+          "year": 1550
+        },
+        {
+          "name": "Indian Ocean",
+          "lat": -5.0,
+          "lng": 80.0,
+          "year": 1480
+        },
+        {
+          "name": "Comoros",
+          "lat": -11.7,
+          "lng": 43.3,
+          "year": 1400
+        },
+        {
+          "name": "Northwest Madagascar",
+          "lat": -15.7,
+          "lng": 46.3,
+          "year": 1300
+        }
+      ],
+      "particleConfig": {
+        "count": 900,
+        "clusterCount": 4,
+        "spreadKm": 90,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "medium",
+      "dataStatus": "illustrative",
+      "uncertainty": "The ocean route is unknown: a direct crossing and a coastal route via South Asia and East Africa are both proposed. Settlement before the mid-1st millennium AD is not supported.",
+      "origin": "Southeast Borneo",
+      "destination": "Madagascar",
+      "intermediateRegions": [
+        "Java",
+        "Indian Ocean",
+        "Comoros"
+      ],
+      "pathDescription": "Drawn as a direct Indian Ocean crossing; the actual route is debated.",
+      "description": "Austronesian seafarers from Indonesia settled Madagascar, where they mixed with Bantu-speaking Africans.",
+      "people": "Austronesian-speaking voyagers from the Barito region of Borneo and their descendants.",
+      "historicalContext": "Monsoon-driven Indian Ocean trade networks.",
+      "significance": "The westernmost reach of the Austronesian expansion.",
+      "evidence": [
+        {
+          "type": "archaeological",
+          "description": "Asian crops in the Comoros and Madagascar.",
+          "sourceIds": [
+            "crowther2016"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "Malagasy genomes combine Austronesian and Bantu ancestry.",
+          "sourceIds": [
+            "pierron2017"
+          ]
+        },
+        {
+          "type": "chronological",
+          "description": "Review of Madagascar settlement dates.",
+          "sourceIds": [
+            "anderson2020"
+          ]
+        }
+      ],
+      "siteIds": [],
+      "camera": {
+        "lat": -10,
+        "lng": 75,
+        "distance": 3.4
+      }
+    },
+    {
+      "id": "paleo-inuit",
+      "name": "Paleo-Inuit across the Arctic",
+      "category": "Holocene Arctic dispersal",
+      "path": [
+        {
+          "name": "Chukotka",
+          "lat": 66.0,
+          "lng": -172.0,
+          "year": 5500
+        },
+        {
+          "name": "Western Alaska",
+          "lat": 64.5,
+          "lng": -162.0,
+          "year": 5000
+        },
+        {
+          "name": "Victoria Island",
+          "lat": 69.0,
+          "lng": -110.0,
+          "year": 4800
+        },
+        {
+          "name": "Ellesmere Island",
+          "lat": 78.0,
+          "lng": -80.0,
+          "year": 4600
+        },
+        {
+          "name": "Disko Bay, Greenland",
+          "lat": 68.8,
+          "lng": -51.5,
+          "year": 4400
+        }
+      ],
+      "particleConfig": {
+        "count": 900,
+        "clusterCount": 4,
+        "spreadKm": 90,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "high",
+      "dataStatus": "illustrative",
+      "uncertainty": "The genetic picture is clear; the exact path across the islands is illustrative.",
+      "origin": "Chukotka",
+      "destination": "Greenland",
+      "intermediateRegions": [
+        "Alaska",
+        "Canadian Arctic Archipelago",
+        "Ellesmere"
+      ],
+      "pathDescription": "East across the Arctic from Bering Strait to Greenland.",
+      "description": "Paleo-Inuit (Saqqaq, later Dorset) peoples crossed the North American Arctic to Greenland.",
+      "people": "Paleo-Inuit, one source population that persisted for over 4,000 years.",
+      "historicalContext": "The mid-Holocene Arctic, with musk ox, caribou and seals.",
+      "significance": "The first people in the eastern Arctic; their ancestry also contributes to Na-Dene speakers.",
+      "evidence": [
+        {
+          "type": "genetic",
+          "description": "Saqqaq genome from Greenland.",
+          "sourceIds": [
+            "rasmussen2010"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "Genetic prehistory of the New World Arctic.",
+          "sourceIds": [
+            "raghavan2014"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "Paleo-Inuit ancestry in Chukotka and North America.",
+          "sourceIds": [
+            "flegontov2019"
+          ]
+        }
+      ],
+      "siteIds": [
+        "qeqertasussuk"
+      ],
+      "camera": {
+        "lat": 70,
+        "lng": -110,
+        "distance": 3.0
+      }
+    },
+    {
+      "id": "thule-inuit",
+      "name": "Thule (Inuit) migration",
+      "category": "Late Holocene Arctic",
+      "path": [
+        {
+          "name": "Bering Strait",
+          "lat": 65.6,
+          "lng": -168.0,
+          "year": 800
+        },
+        {
+          "name": "Northern Alaska",
+          "lat": 71.0,
+          "lng": -156.0,
+          "year": 780
+        },
+        {
+          "name": "Amundsen Gulf",
+          "lat": 70.0,
+          "lng": -124.0,
+          "year": 750
+        },
+        {
+          "name": "Central Arctic",
+          "lat": 69.0,
+          "lng": -95.0,
+          "year": 740
+        },
+        {
+          "name": "Smith Sound",
+          "lat": 78.5,
+          "lng": -73.0,
+          "year": 720
+        },
+        {
+          "name": "Northwest Greenland",
+          "lat": 77.5,
+          "lng": -69.0,
+          "year": 700
+        }
+      ],
+      "particleConfig": {
+        "count": 800,
+        "clusterCount": 3,
+        "spreadKm": 90,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "high",
+      "dataStatus": "illustrative",
+      "uncertainty": "The migration was rapid in the 13th century AD; an older model of ~AD 1000 is rejected.",
+      "origin": "Bering Strait",
+      "destination": "Greenland",
+      "intermediateRegions": [
+        "Northern Alaska",
+        "Canadian Arctic",
+        "Smith Sound"
+      ],
+      "pathDescription": "Along the Arctic coast from Alaska to Greenland.",
+      "description": "The ancestors of today's Inuit moved rapidly from Alaska to Greenland, replacing the Paleo-Inuit.",
+      "people": "Thule culture, ancestors of present-day Inuit.",
+      "historicalContext": "Skin boats, dog sleds and whale hunting.",
+      "significance": "Established the Inuit across the Arctic.",
+      "evidence": [
+        {
+          "type": "chronological",
+          "description": "New dates for the Thule migration.",
+          "sourceIds": [
+            "friesen2008"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "Inuit genomes replace Paleo-Inuit.",
+          "sourceIds": [
+            "raghavan2014"
+          ]
+        }
+      ],
+      "siteIds": [],
+      "camera": {
+        "lat": 72,
+        "lng": -110,
+        "distance": 3.0
+      }
+    },
+    {
+      "id": "norse-north-atlantic",
+      "name": "Norse across the North Atlantic",
+      "category": "Historic",
+      "path": [
+        {
+          "name": "Western Norway",
+          "lat": 60.4,
+          "lng": 5.3,
+          "year": 1150
+        },
+        {
+          "name": "Faroe Islands",
+          "lat": 62.0,
+          "lng": -6.8,
+          "year": 1100
+        },
+        {
+          "name": "Iceland",
+          "lat": 64.1,
+          "lng": -21.9,
+          "year": 1075
+        },
+        {
+          "name": "Greenland (Eastern Settlement)",
+          "lat": 61.1,
+          "lng": -45.5,
+          "year": 1015
+        },
+        {
+          "name": "L'Anse aux Meadows",
+          "lat": 51.6,
+          "lng": -55.53,
+          "year": 979
+        }
+      ],
+      "particleConfig": {
+        "count": 600,
+        "clusterCount": 3,
+        "spreadKm": 90,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "high",
+      "dataStatus": "illustrative",
+      "uncertainty": "Iceland (~AD 870) and Greenland (~AD 985) come from written sources and archaeology; Newfoundland is fixed at AD 1021.",
+      "origin": "Norway",
+      "destination": "Newfoundland",
+      "intermediateRegions": [
+        "Faroes",
+        "Iceland",
+        "Greenland"
+      ],
+      "pathDescription": "Island by island across the North Atlantic.",
+      "description": "Norse seafarers settled Iceland and Greenland and briefly reached North America.",
+      "people": "Norse settlers from Scandinavia.",
+      "historicalContext": "The Medieval Warm Period.",
+      "significance": "The first documented Europeans in the Americas.",
+      "evidence": [
+        {
+          "type": "chronological",
+          "description": "Cut wood at L'Anse aux Meadows dated to AD 1021.",
+          "sourceIds": [
+            "kuitems2022"
+          ]
+        }
+      ],
+      "siteIds": [
+        "lanse-aux-meadows"
+      ],
+      "camera": {
+        "lat": 60,
+        "lng": -25,
+        "distance": 2.8
+      }
+    },
+    {
+      "id": "caribbean-archaic",
+      "name": "Caribbean: first settlers",
+      "category": "Holocene island colonisation",
+      "path": [
+        {
+          "name": "Northeast Venezuela",
+          "lat": 10.5,
+          "lng": -63.0,
+          "year": 7500
+        },
+        {
+          "name": "Trinidad",
+          "lat": 10.5,
+          "lng": -61.3,
+          "year": 7000
+        },
+        {
+          "name": "Cuba",
+          "lat": 22.0,
+          "lng": -79.5,
+          "year": 6000
+        },
+        {
+          "name": "Hispaniola",
+          "lat": 19.0,
+          "lng": -71.0,
+          "year": 5800
+        },
+        {
+          "name": "Puerto Rico",
+          "lat": 18.2,
+          "lng": -66.5,
+          "year": 5000
+        }
+      ],
+      "particleConfig": {
+        "count": 700,
+        "clusterCount": 3,
+        "spreadKm": 90,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "medium",
+      "dataStatus": "illustrative",
+      "uncertainty": "The Greater Antilles were reached before the southern islands. Whether the first settlers came from South or Central America is debated; the path is illustrative.",
+      "origin": "Northern South America",
+      "destination": "Greater Antilles",
+      "intermediateRegions": [
+        "Trinidad",
+        "Cuba",
+        "Hispaniola"
+      ],
+      "pathDescription": "Drawn as a direct open-water crossing to the Greater Antilles.",
+      "description": "Archaic-age foragers settled the larger Caribbean islands first.",
+      "people": "Archaic-age foragers from the American mainland.",
+      "historicalContext": "Mid-Holocene seas near present levels.",
+      "significance": "The first people in the Caribbean islands.",
+      "evidence": [
+        {
+          "type": "chronological",
+          "description": "Bayesian chronology of Caribbean settlement.",
+          "sourceIds": [
+            "napolitano2019"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "Early Caribbean genomes.",
+          "sourceIds": [
+            "nagele2020"
+          ]
+        }
+      ],
+      "siteIds": [],
+      "camera": {
+        "lat": 17,
+        "lng": -70,
+        "distance": 2.3
+      }
+    },
+    {
+      "id": "caribbean-ceramic",
+      "name": "Caribbean: Ceramic Age farmers",
+      "category": "Holocene island colonisation",
+      "path": [
+        {
+          "name": "Orinoco",
+          "lat": 8.5,
+          "lng": -63.5,
+          "year": 2700
+        },
+        {
+          "name": "Lesser Antilles",
+          "lat": 15.0,
+          "lng": -61.3,
+          "year": 2500
+        },
+        {
+          "name": "Puerto Rico",
+          "lat": 18.2,
+          "lng": -66.5,
+          "year": 2400
+        },
+        {
+          "name": "Hispaniola",
+          "lat": 19.0,
+          "lng": -71.0,
+          "year": 2000
+        },
+        {
+          "name": "Bahamas",
+          "lat": 24.0,
+          "lng": -76.0,
+          "year": 1200
+        }
+      ],
+      "particleConfig": {
+        "count": 700,
+        "clusterCount": 3,
+        "spreadKm": 90,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "medium",
+      "dataStatus": "illustrative",
+      "uncertainty": "Exact dates vary by island; the later Bahamas arrival is approximate.",
+      "origin": "Orinoco basin",
+      "destination": "Bahamas",
+      "intermediateRegions": [
+        "Lesser Antilles",
+        "Puerto Rico",
+        "Hispaniola"
+      ],
+      "pathDescription": "Up the island chain from South America.",
+      "description": "Pottery-making farmers from South America spread through the Caribbean, largely replacing earlier people.",
+      "people": "Ceramic Age farmers, ancestors of the Taíno.",
+      "historicalContext": "Manioc farming and pottery.",
+      "significance": "Ancestors of the people Columbus encountered in 1492.",
+      "evidence": [
+        {
+          "type": "genetic",
+          "description": "A genetic history of the pre-contact Caribbean.",
+          "sourceIds": [
+            "fernandes2021"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "Distinct Archaic and Ceramic Age ancestries.",
+          "sourceIds": [
+            "nagele2020"
+          ]
+        }
+      ],
+      "siteIds": [],
+      "camera": {
+        "lat": 17,
+        "lng": -68,
+        "distance": 2.3
+      }
+    },
+    {
+      "id": "south-america-interior",
+      "name": "Into the Andes and eastern South America",
+      "category": "Terminal Pleistocene",
+      "path": [
+        {
+          "name": "Isthmus of Panama",
+          "lat": 8.5,
+          "lng": -80.0,
+          "year": 15000
+        },
+        {
+          "name": "Colombia",
+          "lat": 4.5,
+          "lng": -74.0,
+          "year": 14000
+        },
+        {
+          "name": "Amazon margin",
+          "lat": -5.0,
+          "lng": -60.0,
+          "year": 12000
+        },
+        {
+          "name": "Lagoa Santa, Brazil",
+          "lat": -19.6,
+          "lng": -43.9,
+          "year": 10500
+        }
+      ],
+      "branches": [
+        {
+          "id": "andes",
+          "name": "Andes",
+          "fromWaypoint": 1,
+          "share": 0.45,
+          "path": [
+            {
+              "name": "Central Andes",
+              "lat": -13.5,
+              "lng": -72.0,
+              "year": 12000
+            },
+            {
+              "name": "Southern Andes",
+              "lat": -25.0,
+              "lng": -67.0,
+              "year": 10500
+            }
+          ],
+          "note": "Highland settlement; regional Andean structure emerges by ~5,800 years ago."
+        }
+      ],
+      "particleConfig": {
+        "count": 1000,
+        "clusterCount": 4,
+        "spreadKm": 90,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "medium",
+      "dataStatus": "illustrative",
+      "uncertainty": "Genomes show at least two early streams and a later turnover ~9,000 years ago; the paths are interpolated. This complements the Pacific coastal route.",
+      "origin": "Central America",
+      "destination": "Eastern Brazil and the Andes",
+      "intermediateRegions": [
+        "Colombia",
+        "Amazon margin",
+        "Central Andes"
+      ],
+      "pathDescription": "Inland branches from northern South America east to Brazil and south along the Andes.",
+      "description": "People spread through the interior of South America, into the Andes and the eastern highlands.",
+      "people": "Early South American hunter-gatherers, including a stream related to Clovis-associated ancestry.",
+      "historicalContext": "The end of the last ice age.",
+      "significance": "Shows the peopling of South America involved several streams, not one.",
+      "evidence": [
+        {
+          "type": "genetic",
+          "description": "Deep population history of Central and South America.",
+          "sourceIds": [
+            "posth2018americas"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "Population history of the Andes.",
+          "sourceIds": [
+            "nakatsuka2020"
+          ]
+        }
+      ],
+      "siteIds": [],
+      "camera": {
+        "lat": -10,
+        "lng": -62,
+        "distance": 3.0
+      }
+    },
+    {
+      "id": "erectus-out-of-africa",
+      "speciesId": "homo-erectus",
+      "name": "Out of Africa I: to the Caucasus",
+      "category": "Early Homo dispersal",
+      "path": [
+        {
+          "name": "West Turkana",
+          "lat": 4.0,
+          "lng": 35.8,
+          "year": 1900000
+        },
+        {
+          "name": "Nile valley",
+          "lat": 24.0,
+          "lng": 32.9,
+          "year": 1885000
+        },
+        {
+          "name": "Sinai",
+          "lat": 30.0,
+          "lng": 33.8,
+          "year": 1875000
+        },
+        {
+          "name": "Jordan Valley ('Ubeidiya)",
+          "lat": 32.69,
+          "lng": 35.56,
+          "year": 1870000
+        },
+        {
+          "name": "Eastern Anatolia",
+          "lat": 38.5,
+          "lng": 40.0,
+          "year": 1860000
+        },
+        {
+          "name": "Dmanisi",
+          "lat": 41.34,
+          "lng": 44.34,
+          "year": 1850000
+        }
+      ],
+      "particleConfig": {
+        "count": 900,
+        "clusterCount": 4,
+        "spreadKm": 110,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "high",
+      "dataStatus": "illustrative",
+      "uncertainty": "Dmanisi (1.85–1.78 million years) is secure. The corridor (Sinai or Bab-el-Mandeb) is unknown, and the age of 'Ubeidiya is contested. Stone tools at Shangchen, China (~2.1 million years) show some hominins had left Africa even earlier.",
+      "origin": "East Africa",
+      "destination": "Southern Caucasus (Dmanisi)",
+      "intermediateRegions": [
+        "Nile valley",
+        "Sinai",
+        "Levant",
+        "Eastern Anatolia"
+      ],
+      "pathDescription": "Drawn up the Nile and through the Levant to the Caucasus; the corridor is illustrative.",
+      "description": "Early Homo erectus left Africa and reached Dmanisi in Georgia ~1.85 million years ago.",
+      "people": "Small-brained early Homo erectus (sometimes called H. georgicus at Dmanisi), with simple Oldowan-like tools.",
+      "historicalContext": "Early Pleistocene grasslands and open woodland across Africa and western Asia.",
+      "significance": "The first well-dated hominins outside Africa.",
+      "evidence": [
+        {
+          "type": "chronological",
+          "description": "Dmanisi occupation dated to 1.85–1.78 million years ago.",
+          "sourceIds": [
+            "ferring2011"
+          ]
+        },
+        {
+          "type": "fossil",
+          "description": "Dmanisi Skull 5, a complete early Homo cranium.",
+          "sourceIds": [
+            "lordkipanidze2013"
+          ]
+        },
+        {
+          "type": "chronological",
+          "description": "A new burial-dating study suggests 'Ubeidiya may be ~1.9 million years old (contested).",
+          "sourceIds": [
+            "matmon2026"
+          ]
+        },
+        {
+          "type": "archaeological",
+          "description": "Earliest Acheulean tools at Kokiselei, West Turkana (~1.76 million years).",
+          "sourceIds": [
+            "lepre2011"
+          ]
+        }
+      ],
+      "siteIds": [
+        "kokiselei",
+        "ubeidiya",
+        "dmanisi"
+      ],
+      "camera": {
+        "lat": 30,
+        "lng": 38,
+        "distance": 2.6
+      }
+    },
+    {
+      "id": "erectus-east-asia",
+      "speciesId": "homo-erectus",
+      "name": "Early Homo to China",
+      "category": "Early Homo dispersal",
+      "path": [
+        {
+          "name": "Dmanisi",
+          "lat": 41.34,
+          "lng": 44.34,
+          "year": 1800000
+        },
+        {
+          "name": "Iranian Plateau",
+          "lat": 35.5,
+          "lng": 53.0,
+          "year": 1770000
+        },
+        {
+          "name": "Central Asia",
+          "lat": 39.5,
+          "lng": 66.0,
+          "year": 1740000
+        },
+        {
+          "name": "Hexi Corridor",
+          "lat": 38.5,
+          "lng": 101.0,
+          "year": 1680000
+        },
+        {
+          "name": "Gongwangling (Lantian)",
+          "lat": 34.2,
+          "lng": 109.5,
+          "year": 1630000
+        }
+      ],
+      "particleConfig": {
+        "count": 800,
+        "clusterCount": 3,
+        "spreadKm": 110,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "medium",
+      "dataStatus": "illustrative",
+      "uncertainty": "Site dates are secure; there are no sites along the Central Asian corridor, so the path is inferred. The older Shangchen tools (~2.1 million years) mean hominins reached China earlier than this route shows; their maker is unknown.",
+      "origin": "Caucasus",
+      "destination": "Loess Plateau, China",
+      "intermediateRegions": [
+        "Iranian Plateau",
+        "Central Asia",
+        "Hexi Corridor"
+      ],
+      "pathDescription": "Drawn across the interior of Asia; illustrative.",
+      "description": "Homo erectus spread across Asia and was on the Loess Plateau by ~1.63 million years ago.",
+      "people": "Homo erectus; later populations include 'Peking Man' at Zhoukoudian.",
+      "historicalContext": "Alternating glacial loess and warmer soils on the Loess Plateau.",
+      "significance": "Homo erectus lived in East Asia for well over a million years.",
+      "evidence": [
+        {
+          "type": "archaeological",
+          "description": "Tools at Shangchen from ~2.1 million years ago.",
+          "sourceIds": [
+            "zhu2018"
+          ]
+        },
+        {
+          "type": "chronological",
+          "description": "Gongwangling cranium dated to ~1.63 million years.",
+          "sourceIds": [
+            "zhu2015"
+          ]
+        },
+        {
+          "type": "chronological",
+          "description": "Zhoukoudian lower layers ~770,000 years old.",
+          "sourceIds": [
+            "shen2009"
+          ]
+        }
+      ],
+      "siteIds": [
+        "shangchen",
+        "gongwangling",
+        "zhoukoudian"
+      ],
+      "camera": {
+        "lat": 38,
+        "lng": 80,
+        "distance": 3.0
+      }
+    },
+    {
+      "id": "erectus-south-asia",
+      "speciesId": "homo-erectus",
+      "name": "Acheulean toolmakers to India",
+      "category": "Early Homo dispersal",
+      "path": [
+        {
+          "name": "Levant",
+          "lat": 32.7,
+          "lng": 35.5,
+          "year": 1800000
+        },
+        {
+          "name": "Arabian interior",
+          "lat": 24.0,
+          "lng": 46.0,
+          "year": 1700000
+        },
+        {
+          "name": "Makran & Indus",
+          "lat": 25.5,
+          "lng": 66.5,
+          "year": 1620000
+        },
+        {
+          "name": "Thar margin",
+          "lat": 24.5,
+          "lng": 73.5,
+          "year": 1560000
+        },
+        {
+          "name": "Attirampakkam",
+          "lat": 13.23,
+          "lng": 79.89,
+          "year": 1510000
+        }
+      ],
+      "particleConfig": {
+        "count": 700,
+        "clusterCount": 3,
+        "spreadKm": 110,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "medium",
+      "dataStatus": "illustrative",
+      "uncertainty": "Attirampakkam has a pooled age of ~1.51 million years but a minimum of ~1.07 million. There are no Early Pleistocene fossils in India. Older claims at Masol (~2.6 million) are contested and not drawn.",
+      "origin": "Levant",
+      "destination": "South India",
+      "intermediateRegions": [
+        "Arabia",
+        "Makran",
+        "Indus"
+      ],
+      "pathDescription": "Illustrative path across Arabia and along the Makran coast.",
+      "description": "Acheulean handaxe makers reached South India about 1.5 million years ago.",
+      "people": "Probably Homo erectus; no fossils are known.",
+      "historicalContext": "Humid phases opened corridors across Arabia.",
+      "significance": "Shows the Acheulean spread out of Africa early.",
+      "evidence": [
+        {
+          "type": "archaeological",
+          "description": "Acheulean tools at Attirampakkam dated to ~1.5 million years.",
+          "sourceIds": [
+            "pappu2011"
+          ]
+        }
+      ],
+      "siteIds": [
+        "attirampakkam"
+      ],
+      "camera": {
+        "lat": 23,
+        "lng": 62,
+        "distance": 2.7
+      }
+    },
+    {
+      "id": "erectus-sundaland",
+      "speciesId": "homo-erectus",
+      "name": "Homo erectus to Java",
+      "category": "Early Homo dispersal",
+      "path": [
+        {
+          "name": "Yuanmou",
+          "lat": 25.7,
+          "lng": 101.87,
+          "year": 1700000
+        },
+        {
+          "name": "Northern Vietnam & Laos",
+          "lat": 21.0,
+          "lng": 104.5,
+          "year": 1550000
+        },
+        {
+          "name": "Malay Peninsula",
+          "lat": 5.0,
+          "lng": 101.5,
+          "year": 1450000
+        },
+        {
+          "name": "Sunda Shelf",
+          "lat": -2.0,
+          "lng": 106.0,
+          "year": 1380000
+        },
+        {
+          "name": "Sangiran",
+          "lat": -7.45,
+          "lng": 110.83,
+          "year": 1300000
+        }
+      ],
+      "particleConfig": {
+        "count": 800,
+        "clusterCount": 3,
+        "spreadKm": 110,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "medium",
+      "dataStatus": "illustrative",
+      "uncertainty": "Java's dates are secure; there are no mainland sites to fix the path before ~0.8 million years. Homo erectus survived on Java until ~117,000–108,000 years ago (Ngandong).",
+      "origin": "Southwest China",
+      "destination": "Java",
+      "intermediateRegions": [
+        "Indochina",
+        "Malay Peninsula",
+        "Sunda Shelf"
+      ],
+      "pathDescription": "Drawn south over the exposed Sunda Shelf; illustrative.",
+      "description": "Homo erectus reached Java by ~1.3 million years ago, walking across land exposed by low seas.",
+      "people": "Homo erectus ('Java Man').",
+      "historicalContext": "Glacial low seas joined Java, Sumatra and Borneo to the mainland.",
+      "significance": "Java holds the longest record of Homo erectus, which lasted there until ~110,000 years ago.",
+      "evidence": [
+        {
+          "type": "chronological",
+          "description": "Yuanmou incisors ~1.7 million years.",
+          "sourceIds": [
+            "zhu2008"
+          ]
+        },
+        {
+          "type": "chronological",
+          "description": "First appearance at Sangiran ~1.3 million years.",
+          "sourceIds": [
+            "matsuura2020"
+          ]
+        },
+        {
+          "type": "archaeological",
+          "description": "Engraved shell at Trinil, ~0.5 million years.",
+          "sourceIds": [
+            "joordens2015"
+          ]
+        },
+        {
+          "type": "chronological",
+          "description": "Last appearance at Ngandong.",
+          "sourceIds": [
+            "rizal2020"
+          ]
+        }
+      ],
+      "siteIds": [
+        "yuanmou",
+        "sangiran",
+        "ngandong"
+      ],
+      "camera": {
+        "lat": 8,
+        "lng": 106,
+        "distance": 2.7
+      }
+    },
+    {
+      "id": "erectus-europe",
+      "speciesId": "homo-erectus",
+      "name": "Early Homo into Europe",
+      "category": "Early Homo dispersal",
+      "path": [
+        {
+          "name": "Dmanisi",
+          "lat": 41.34,
+          "lng": 44.34,
+          "year": 1800000
+        },
+        {
+          "name": "Northern Black Sea",
+          "lat": 46.5,
+          "lng": 32.0,
+          "year": 1500000
+        },
+        {
+          "name": "Korolevo",
+          "lat": 48.15,
+          "lng": 23.13,
+          "year": 1420000
+        },
+        {
+          "name": "Pirro Nord",
+          "lat": 41.8,
+          "lng": 15.4,
+          "year": 1400000
+        },
+        {
+          "name": "Barranco León (Orce)",
+          "lat": 37.72,
+          "lng": -2.48,
+          "year": 1380000
+        },
+        {
+          "name": "Sima del Elefante (Atapuerca)",
+          "lat": 42.35,
+          "lng": -3.52,
+          "year": 1150000
+        }
+      ],
+      "particleConfig": {
+        "count": 900,
+        "clusterCount": 4,
+        "spreadKm": 110,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "medium",
+      "dataStatus": "illustrative",
+      "uncertainty": "Korolevo supports an east-to-west entry, but whether people went north or south of the Black Sea is unknown. Pirro Nord's date is broad. The Atapuerca face is only tentatively assigned (Homo aff. erectus). Later Europeans at Gran Dolina (~850,000) are a separate species, Homo antecessor.",
+      "origin": "Caucasus",
+      "destination": "Iberia",
+      "intermediateRegions": [
+        "Northern Black Sea",
+        "Carpathians",
+        "Italy"
+      ],
+      "pathDescription": "Drawn east to west across southern Europe.",
+      "description": "Early Homo spread east to west across southern Europe from ~1.4 million years ago.",
+      "people": "Early Homo, probably related to Homo erectus; later Homo antecessor in Spain.",
+      "historicalContext": "Mild interglacials in southern Europe, with a fauna of African and Asian origin.",
+      "significance": "The first peopling of Europe.",
+      "evidence": [
+        {
+          "type": "chronological",
+          "description": "Korolevo tools dated to ~1.42 million years.",
+          "sourceIds": [
+            "garba2024"
+          ]
+        },
+        {
+          "type": "archaeological",
+          "description": "Pirro Nord tools.",
+          "sourceIds": [
+            "arzarello2007"
+          ]
+        },
+        {
+          "type": "fossil",
+          "description": "Barranco León tooth ~1.4 million years.",
+          "sourceIds": [
+            "toromoyano2013"
+          ]
+        },
+        {
+          "type": "fossil",
+          "description": "The earliest face in western Europe.",
+          "sourceIds": [
+            "huguet2025"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "Proteins place Homo antecessor as a sister lineage of later Homo.",
+          "sourceIds": [
+            "welker2020"
+          ]
+        },
+        {
+          "type": "archaeological",
+          "description": "Happisburgh: people in northern Europe >780,000 years ago.",
+          "sourceIds": [
+            "parfitt2010"
+          ]
+        }
+      ],
+      "siteIds": [
+        "korolevo",
+        "pirro-nord",
+        "barranco-leon",
+        "sima-del-elefante",
+        "happisburgh"
+      ],
+      "camera": {
+        "lat": 44,
+        "lng": 18,
+        "distance": 2.7
+      }
+    },
+    {
+      "id": "floresiensis-to-flores",
+      "speciesId": "homo-floresiensis",
+      "name": "Across the Wallace Line to Flores",
+      "category": "Island hominins",
+      "path": [
+        {
+          "name": "Sangiran",
+          "lat": -7.45,
+          "lng": 110.83,
+          "year": 1300000
+        },
+        {
+          "name": "Bali",
+          "lat": -8.4,
+          "lng": 115.2,
+          "year": 1150000
+        },
+        {
+          "name": "Lombok",
+          "lat": -8.6,
+          "lng": 116.3,
+          "year": 1100000
+        },
+        {
+          "name": "Sumbawa",
+          "lat": -8.6,
+          "lng": 118.0,
+          "year": 1050000
+        },
+        {
+          "name": "Wolo Sege",
+          "lat": -8.65,
+          "lng": 121.1,
+          "year": 1020000
+        }
+      ],
+      "particleConfig": {
+        "count": 600,
+        "clusterCount": 3,
+        "spreadKm": 110,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "medium",
+      "dataStatus": "illustrative",
+      "uncertainty": "Who reached Flores is debated: early Javanese Homo erectus that became small on the island, or an older lineage. A source on Sulawesi is also possible: tools there are at least 1.04 million years old. The route is illustrative and shows the ancestors of H. floresiensis, not the species itself.",
+      "origin": "Java",
+      "destination": "Flores",
+      "intermediateRegions": [
+        "Bali",
+        "Lombok",
+        "Sumbawa"
+      ],
+      "pathDescription": "Island hopping east across the Lesser Sunda Islands, crossing deep water east of Bali.",
+      "description": "Hominins crossed the sea to Flores ~1 million years ago; their descendants became Homo floresiensis.",
+      "people": "Ancestors of Homo floresiensis, possibly early Javanese Homo erectus.",
+      "historicalContext": "Even at low sea levels, Lombok and Flores were never joined to Asia.",
+      "significance": "Shows that early hominins crossed sea barriers and evolved in isolation on islands.",
+      "evidence": [
+        {
+          "type": "archaeological",
+          "description": "Tools at Wolo Sege ~1 million years old.",
+          "sourceIds": [
+            "brumm2010"
+          ]
+        },
+        {
+          "type": "fossil",
+          "description": "H. floresiensis-like fossils at Mata Menge ~700,000 years.",
+          "sourceIds": [
+            "vandenbergh2016",
+            "brumm2016"
+          ]
+        },
+        {
+          "type": "fossil",
+          "description": "Small body size evolved early.",
+          "sourceIds": [
+            "kaifu2024"
+          ]
+        },
+        {
+          "type": "fossil",
+          "description": "An alternative view: a pre-erectus lineage.",
+          "sourceIds": [
+            "argue2017"
+          ]
+        },
+        {
+          "type": "archaeological",
+          "description": "Tools on Sulawesi at least 1.04 million years old.",
+          "sourceIds": [
+            "hakim2025"
+          ]
+        },
+        {
+          "type": "chronological",
+          "description": "Liang Bua chronology.",
+          "sourceIds": [
+            "sutikna2016"
+          ]
+        }
+      ],
+      "siteIds": [
+        "sangiran",
+        "wolo-sege",
+        "calio",
+        "liang-bua"
+      ],
+      "camera": {
+        "lat": -8,
+        "lng": 117,
+        "distance": 2.0
+      }
+    },
+    {
+      "id": "luzonensis-to-luzon",
+      "speciesId": "homo-luzonensis",
+      "name": "Hominins reach Luzon",
+      "category": "Island hominins",
+      "path": [
+        {
+          "name": "Northern Borneo",
+          "lat": 6.0,
+          "lng": 116.5,
+          "year": 800000
+        },
+        {
+          "name": "Palawan",
+          "lat": 9.8,
+          "lng": 118.7,
+          "year": 780000
+        },
+        {
+          "name": "Mindoro",
+          "lat": 12.9,
+          "lng": 121.1,
+          "year": 750000
+        },
+        {
+          "name": "Kalinga site",
+          "lat": 17.5,
+          "lng": 121.4,
+          "year": 709000
+        }
+      ],
+      "particleConfig": {
+        "count": 500,
+        "clusterCount": 3,
+        "spreadKm": 110,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "low",
+      "dataStatus": "illustrative",
+      "uncertainty": "The source is unknown: from Borneo via Palawan (drawn), from Sulawesi via Mindanao, or from Taiwan. The 709,000-year-old Kalinga tools have no fossils, so their makers may or may not be ancestors of Homo luzonensis.",
+      "origin": "Borneo",
+      "destination": "Luzon",
+      "intermediateRegions": [
+        "Palawan",
+        "Mindoro"
+      ],
+      "pathDescription": "One of three proposed routes; drawn via Palawan and Mindoro.",
+      "description": "Hominins crossed the sea to Luzon by ~709,000 years ago; Homo luzonensis lived there ~67,000–50,000 years ago.",
+      "people": "Unknown toolmakers; later Homo luzonensis.",
+      "historicalContext": "Luzon was never joined to the Asian mainland.",
+      "significance": "A second case of an island hominin lineage in Southeast Asia.",
+      "evidence": [
+        {
+          "type": "archaeological",
+          "description": "Butchered rhinoceros and tools ~709,000 years old.",
+          "sourceIds": [
+            "ingicco2018"
+          ]
+        },
+        {
+          "type": "fossil",
+          "description": "Homo luzonensis described from Callao Cave.",
+          "sourceIds": [
+            "detroit2019",
+            "mijares2010"
+          ]
+        }
+      ],
+      "siteIds": [
+        "kalinga",
+        "callao-cave"
+      ],
+      "camera": {
+        "lat": 13,
+        "lng": 120,
+        "distance": 2.1
+      }
+    },
+    {
+      "id": "neanderthal-levant",
+      "speciesId": "homo-neanderthalensis",
+      "name": "Neanderthals into the Levant",
+      "category": "Neanderthal expansion",
+      "path": [
+        {
+          "name": "Balkans",
+          "lat": 42.5,
+          "lng": 22.0,
+          "year": 135000
+        },
+        {
+          "name": "Anatolia",
+          "lat": 38.5,
+          "lng": 33.0,
+          "year": 128000
+        },
+        {
+          "name": "Tabun",
+          "lat": 32.67,
+          "lng": 34.97,
+          "year": 122000
+        },
+        {
+          "name": "Amud",
+          "lat": 32.87,
+          "lng": 35.5,
+          "year": 60000
+        },
+        {
+          "name": "Kebara",
+          "lat": 32.56,
+          "lng": 34.94,
+          "year": 55000
+        }
+      ],
+      "particleConfig": {
+        "count": 700,
+        "clusterCount": 3,
+        "spreadKm": 110,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "medium",
+      "dataStatus": "illustrative",
+      "uncertainty": "The Tabun C1 age is uncertain (~143,000–112,000 years). Neanderthals may have arrived in more than one pulse; the path from Europe is illustrative.",
+      "origin": "Southeastern Europe",
+      "destination": "Southern Levant",
+      "intermediateRegions": [
+        "Anatolia"
+      ],
+      "pathDescription": "Through Anatolia into the Levant.",
+      "description": "Neanderthals expanded from Europe into the Levant, where they met Homo sapiens.",
+      "people": "Neanderthals.",
+      "historicalContext": "The Levant alternated between Homo sapiens and Neanderthal occupation.",
+      "significance": "The Levant is the likeliest region of the interbreeding found in all non-Africans.",
+      "evidence": [
+        {
+          "type": "chronological",
+          "description": "Kebara Neanderthal burial dated by thermoluminescence.",
+          "sourceIds": [
+            "valladas1987"
+          ]
+        }
+      ],
+      "siteIds": [
+        "tabun",
+        "amud",
+        "kebara"
+      ],
+      "camera": {
+        "lat": 36,
+        "lng": 32,
+        "distance": 2.1
+      }
+    },
+    {
+      "id": "neanderthal-central-asia",
+      "speciesId": "homo-neanderthalensis",
+      "name": "Neanderthals to the Zagros and Central Asia",
+      "category": "Neanderthal expansion",
+      "path": [
+        {
+          "name": "Eastern Anatolia",
+          "lat": 38.5,
+          "lng": 40.0,
+          "year": 80000
+        },
+        {
+          "name": "Shanidar",
+          "lat": 36.83,
+          "lng": 44.22,
+          "year": 70000
+        },
+        {
+          "name": "Kopet Dag",
+          "lat": 38.0,
+          "lng": 57.5,
+          "year": 65000
+        },
+        {
+          "name": "Teshik-Tash",
+          "lat": 38.2,
+          "lng": 67.0,
+          "year": 60000
+        },
+        {
+          "name": "Okladnikov",
+          "lat": 51.8,
+          "lng": 84.5,
+          "year": 45000
+        }
+      ],
+      "particleConfig": {
+        "count": 700,
+        "clusterCount": 3,
+        "spreadKm": 110,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "medium",
+      "dataStatus": "illustrative",
+      "uncertainty": "Teshik-Tash is poorly dated. mtDNA ties Teshik-Tash and Okladnikov to European Neanderthals, but the path between them is illustrative.",
+      "origin": "Anatolia",
+      "destination": "Altai",
+      "intermediateRegions": [
+        "Zagros",
+        "Kopet Dag",
+        "Uzbekistan"
+      ],
+      "pathDescription": "East through the Zagros and Central Asian foothills, then north to the Altai.",
+      "description": "Neanderthals lived as far east as Uzbekistan and the Altai.",
+      "people": "Neanderthals.",
+      "historicalContext": "Mountain foothills with rich game.",
+      "significance": "Neanderthals' range reached deep into Asia.",
+      "evidence": [
+        {
+          "type": "fossil",
+          "description": "New Neanderthal remains at Shanidar.",
+          "sourceIds": [
+            "pomeroy2020"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "mtDNA links Central Asian and Siberian Neanderthals to Europe.",
+          "sourceIds": [
+            "krause2007"
+          ]
+        }
+      ],
+      "siteIds": [
+        "shanidar",
+        "teshik-tash",
+        "okladnikov"
+      ],
+      "camera": {
+        "lat": 42,
+        "lng": 62,
+        "distance": 2.7
+      }
+    },
+    {
+      "id": "neanderthal-altai-first",
+      "speciesId": "homo-neanderthalensis",
+      "name": "First Neanderthals in the Altai",
+      "category": "Neanderthal expansion",
+      "path": [
+        {
+          "name": "Central Europe",
+          "lat": 48.5,
+          "lng": 15.0,
+          "year": 150000
+        },
+        {
+          "name": "Northern Black Sea",
+          "lat": 47.0,
+          "lng": 35.0,
+          "year": 140000
+        },
+        {
+          "name": "North Caucasus",
+          "lat": 45.0,
+          "lng": 45.0,
+          "year": 135000
+        },
+        {
+          "name": "Kazakh steppe",
+          "lat": 49.0,
+          "lng": 70.0,
+          "year": 128000
+        },
+        {
+          "name": "Denisova Cave",
+          "lat": 51.4,
+          "lng": 84.68,
+          "year": 120000
+        }
+      ],
+      "particleConfig": {
+        "count": 700,
+        "clusterCount": 3,
+        "spreadKm": 110,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "medium",
+      "dataStatus": "illustrative",
+      "uncertainty": "Inferred from genomes: the Altai lineage split from European Neanderthals before ~120,000 years ago. The route is entirely inferred. This eastern population was later replaced by a second wave.",
+      "origin": "Europe",
+      "destination": "Altai",
+      "intermediateRegions": [
+        "Black Sea steppe",
+        "North Caucasus",
+        "Kazakh steppe"
+      ],
+      "pathDescription": "An inferred path along the steppe belt.",
+      "description": "An early wave of Neanderthals reached the Altai by ~120,000 years ago, where they met Denisovans.",
+      "people": "Neanderthals (the population of Denisova 5).",
+      "historicalContext": "The last interglacial.",
+      "significance": "Explains Neanderthal–Denisovan contact; Denisova 11 had a Neanderthal mother and Denisovan father.",
+      "evidence": [
+        {
+          "type": "genetic",
+          "description": "The Altai Neanderthal genome.",
+          "sourceIds": [
+            "prufer2014"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "Early European Neanderthal genomes.",
+          "sourceIds": [
+            "peyregne2019"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "Altai Neanderthal population structure and replacement.",
+          "sourceIds": [
+            "massilani2026"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "A Neanderthal–Denisovan first-generation offspring.",
+          "sourceIds": [
+            "slon2018"
+          ]
+        },
+        {
+          "type": "chronological",
+          "description": "Ages of the Denisova Cave fossils.",
+          "sourceIds": [
+            "douka2019"
+          ]
+        }
+      ],
+      "siteIds": [
+        "denisova-cave"
+      ],
+      "camera": {
+        "lat": 48,
+        "lng": 55,
+        "distance": 3.0
+      }
+    },
+    {
+      "id": "neanderthal-altai-second",
+      "speciesId": "homo-neanderthalensis",
+      "name": "Second Neanderthal wave to Siberia",
+      "category": "Neanderthal expansion",
+      "path": [
+        {
+          "name": "Vindija",
+          "lat": 46.3,
+          "lng": 16.08,
+          "year": 100000
+        },
+        {
+          "name": "Crimea",
+          "lat": 45.0,
+          "lng": 34.3,
+          "year": 90000
+        },
+        {
+          "name": "Mezmaiskaya",
+          "lat": 44.17,
+          "lng": 40.0,
+          "year": 85000
+        },
+        {
+          "name": "Lower Volga",
+          "lat": 47.0,
+          "lng": 47.0,
+          "year": 82000
+        },
+        {
+          "name": "Kazakh steppe",
+          "lat": 50.0,
+          "lng": 72.0,
+          "year": 75000
+        },
+        {
+          "name": "Chagyrskaya",
+          "lat": 51.44,
+          "lng": 83.15,
+          "year": 59000
+        }
+      ],
+      "particleConfig": {
+        "count": 800,
+        "clusterCount": 3,
+        "spreadKm": 110,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "medium",
+      "dataStatus": "illustrative",
+      "uncertainty": "Genomes and Micoquian tools agree on a source in Central and Eastern Europe. Timing is uncertain: the Chagyrskaya layers are ~59,000–49,000 years old, while genetic estimates place Chagyrskaya 8 nearer ~80,000.",
+      "origin": "Central Europe",
+      "destination": "Altai (Chagyrskaya)",
+      "intermediateRegions": [
+        "Crimea",
+        "North Caucasus",
+        "Lower Volga",
+        "Kazakh steppe"
+      ],
+      "pathDescription": "Along the steppe from the Micoquian regions of Eastern Europe.",
+      "description": "A later Neanderthal population from Eastern Europe moved to Siberia and replaced the earlier Altai Neanderthals.",
+      "people": "Neanderthals with Micoquian tool kits.",
+      "historicalContext": "The early last glacial period.",
+      "significance": "Shows Neanderthals moved over thousands of kilometres more than once.",
+      "evidence": [
+        {
+          "type": "genetic",
+          "description": "Chagyrskaya 8 is closer to Vindija than to Denisova 5.",
+          "sourceIds": [
+            "mafessoni2020"
+          ]
+        },
+        {
+          "type": "archaeological",
+          "description": "Micoquian tools link Chagyrskaya to Eastern Europe.",
+          "sourceIds": [
+            "kolobova2020"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "Social organisation at Chagyrskaya.",
+          "sourceIds": [
+            "skov2022"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "Replacement without mixing.",
+          "sourceIds": [
+            "massilani2026"
+          ]
+        }
+      ],
+      "siteIds": [
+        "vindija",
+        "mezmaiskaya",
+        "chagyrskaya"
+      ],
+      "camera": {
+        "lat": 48,
+        "lng": 50,
+        "distance": 3.0
+      }
+    },
+    {
+      "id": "denisovan-tibet",
+      "speciesId": "denisovans",
+      "name": "Denisovans to the Tibetan Plateau",
+      "category": "Denisovan dispersal",
+      "path": [
+        {
+          "name": "Denisova Cave",
+          "lat": 51.4,
+          "lng": 84.68,
+          "year": 200000
+        },
+        {
+          "name": "Dzungarian Gate",
+          "lat": 45.2,
+          "lng": 82.5,
+          "year": 185000
+        },
+        {
+          "name": "Hexi Corridor",
+          "lat": 39.0,
+          "lng": 99.5,
+          "year": 172000
+        },
+        {
+          "name": "Baishiya Karst Cave",
+          "lat": 35.45,
+          "lng": 102.57,
+          "year": 160000
+        }
+      ],
+      "particleConfig": {
+        "count": 600,
+        "clusterCount": 3,
+        "spreadKm": 110,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "low",
+      "dataStatus": "illustrative",
+      "uncertainty": "Both sites are secure, but the direction could be the reverse: where Denisovans originated is unknown. Baishiya was used repeatedly, from ~160,000 to ~32,000 years ago.",
+      "origin": "Altai",
+      "destination": "Tibetan Plateau",
+      "intermediateRegions": [
+        "Dzungaria",
+        "Hexi Corridor"
+      ],
+      "pathDescription": "Drawn from the Altai to the northeastern Tibetan Plateau; direction and corridor are illustrative.",
+      "description": "Denisovans lived both in the Altai and at 3,280 m on the Tibetan Plateau.",
+      "people": "Denisovans.",
+      "historicalContext": "Middle and Late Pleistocene glacial cycles.",
+      "significance": "Denisovans adapted to high altitude; a variant of EPAS1 inherited from them helps present-day Tibetans.",
+      "evidence": [
+        {
+          "type": "fossil",
+          "description": "The Xiahe mandible identified as Denisovan by proteins.",
+          "sourceIds": [
+            "chen2019"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "Denisovan DNA in Baishiya cave sediments.",
+          "sourceIds": [
+            "zhang2020"
+          ]
+        },
+        {
+          "type": "fossil",
+          "description": "Denisovan rib and subsistence at Baishiya.",
+          "sourceIds": [
+            "xia2024"
+          ]
+        },
+        {
+          "type": "chronological",
+          "description": "Denisova Cave chronology.",
+          "sourceIds": [
+            "douka2019"
+          ]
+        }
+      ],
+      "siteIds": [
+        "denisova-cave",
+        "baishiya-karst"
+      ],
+      "camera": {
+        "lat": 43,
+        "lng": 92,
+        "distance": 2.6
+      }
+    },
+    {
+      "id": "denisovan-northeast-asia",
+      "speciesId": "denisovans",
+      "name": "Denisovans in Northeast Asia (Harbin)",
+      "category": "Denisovan dispersal",
+      "path": [
+        {
+          "name": "Denisova Cave",
+          "lat": 51.4,
+          "lng": 84.68,
+          "year": 200000
+        },
+        {
+          "name": "Mongolian Plateau",
+          "lat": 47.5,
+          "lng": 100.0,
+          "year": 180000
+        },
+        {
+          "name": "Inner Mongolia",
+          "lat": 46.5,
+          "lng": 115.0,
+          "year": 165000
+        },
+        {
+          "name": "Harbin",
+          "lat": 45.75,
+          "lng": 126.65,
+          "year": 146000
+        }
+      ],
+      "particleConfig": {
+        "count": 600,
+        "clusterCount": 3,
+        "spreadKm": 110,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "low",
+      "dataStatus": "illustrative",
+      "uncertainty": "Harbin's identification as Denisovan (2025) is strong; its age (at least ~146,000 years) and the route from the Altai are uncertain. The direction may be the reverse.",
+      "origin": "Altai",
+      "destination": "Northeast China",
+      "intermediateRegions": [
+        "Mongolian Plateau",
+        "Inner Mongolia"
+      ],
+      "pathDescription": "Illustrative path across Mongolia.",
+      "description": "Denisovans lived across northern Asia; the Harbin skull gives the first face of a Denisovan.",
+      "people": "Denisovans (Harbin was first named Homo longi).",
+      "historicalContext": "Cold Middle Pleistocene northern Asia.",
+      "significance": "Harbin shows what Denisovans looked like.",
+      "evidence": [
+        {
+          "type": "fossil",
+          "description": "The Harbin proteome is Denisovan.",
+          "sourceIds": [
+            "fu2025proteome"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "Denisovan mtDNA from the Harbin cranium.",
+          "sourceIds": [
+            "fu2025mtdna"
+          ]
+        },
+        {
+          "type": "fossil",
+          "description": "Harbin cranium description.",
+          "sourceIds": [
+            "ji2021"
+          ]
+        },
+        {
+          "type": "chronological",
+          "description": "Dating of the Harbin cranium.",
+          "sourceIds": [
+            "shao2021"
+          ]
+        }
+      ],
+      "siteIds": [
+        "harbin"
+      ],
+      "camera": {
+        "lat": 48,
+        "lng": 108,
+        "distance": 2.7
+      }
+    },
+    {
+      "id": "denisovan-southeast-asia",
+      "speciesId": "denisovans",
+      "name": "Denisovans to Laos and Taiwan",
+      "category": "Denisovan dispersal",
+      "path": [
+        {
+          "name": "Baishiya Karst Cave",
+          "lat": 35.45,
+          "lng": 102.57,
+          "year": 165000
+        },
+        {
+          "name": "Sichuan Basin",
+          "lat": 30.5,
+          "lng": 104.0,
+          "year": 158000
+        },
+        {
+          "name": "Yunnan",
+          "lat": 24.5,
+          "lng": 103.0,
+          "year": 150000
+        },
+        {
+          "name": "Tam Ngu Hao 2, Laos",
+          "lat": 20.2,
+          "lng": 103.4,
+          "year": 145000
+        },
+        {
+          "name": "Guangdong coast",
+          "lat": 22.5,
+          "lng": 113.5,
+          "year": 138000
+        },
+        {
+          "name": "Penghu Channel",
+          "lat": 23.5,
+          "lng": 119.8,
+          "year": 135000
+        }
+      ],
+      "particleConfig": {
+        "count": 600,
+        "clusterCount": 3,
+        "spreadKm": 110,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "low",
+      "dataStatus": "illustrative",
+      "uncertainty": "The Laos tooth (164,000–131,000) is dated; Penghu 1 may be ~190,000–130,000 or ~70,000–10,000 years old. The corridor is inferred.",
+      "origin": "Tibetan Plateau margin",
+      "destination": "Taiwan Strait",
+      "intermediateRegions": [
+        "Sichuan",
+        "Yunnan",
+        "Northern Laos",
+        "Guangdong"
+      ],
+      "pathDescription": "South through Yunnan to Laos, then east along the South China coast; illustrative.",
+      "description": "Denisovan fossils from Laos and the Taiwan Strait show they lived in tropical and coastal Asia too.",
+      "people": "Denisovans.",
+      "historicalContext": "The Penghu Channel was dry land when sea levels were low.",
+      "significance": "Denisovans occupied a wide range of environments, from Siberia to the tropics.",
+      "evidence": [
+        {
+          "type": "fossil",
+          "description": "Denisovan molar from Laos.",
+          "sourceIds": [
+            "demeter2022"
+          ]
+        },
+        {
+          "type": "fossil",
+          "description": "Penghu 1 mandible identified as Denisovan.",
+          "sourceIds": [
+            "tsutaya2025",
+            "chang2015"
+          ]
+        }
+      ],
+      "siteIds": [
+        "baishiya-karst",
+        "tam-ngu-hao",
+        "penghu"
+      ],
+      "camera": {
+        "lat": 26,
+        "lng": 110,
+        "distance": 2.6
+      }
+    },
+    {
+      "id": "denisovan-wallacea",
+      "speciesId": "denisovans",
+      "name": "Denisovans toward Wallacea and New Guinea",
+      "category": "Denisovan dispersal",
+      "path": [
+        {
+          "name": "Northern Laos",
+          "lat": 20.2,
+          "lng": 103.4,
+          "year": 130000
+        },
+        {
+          "name": "Malay Peninsula",
+          "lat": 5.0,
+          "lng": 101.5,
+          "year": 110000
+        },
+        {
+          "name": "Borneo",
+          "lat": 0.5,
+          "lng": 114.0,
+          "year": 90000
+        },
+        {
+          "name": "Sulawesi",
+          "lat": -2.0,
+          "lng": 120.5,
+          "year": 70000
+        },
+        {
+          "name": "Moluccas",
+          "lat": 0.5,
+          "lng": 128.0,
+          "year": 58000
+        },
+        {
+          "name": "New Guinea",
+          "lat": -5.5,
+          "lng": 141.0,
+          "year": 50000
+        }
+      ],
+      "branches": [
+        {
+          "id": "luzon",
+          "name": "Luzon (Ayta ancestry)",
+          "fromWaypoint": 2,
+          "share": 0.3,
+          "path": [
+            {
+              "name": "Palawan",
+              "lat": 9.8,
+              "lng": 118.7,
+              "year": 70000
+            },
+            {
+              "name": "Luzon",
+              "lat": 16.0,
+              "lng": 120.5,
+              "year": 50000
+            }
+          ],
+          "note": "The Philippine Ayta carry an independent pulse of Denisovan ancestry."
+        }
+      ],
+      "particleConfig": {
+        "count": 1400,
+        "clusterCount": 6,
+        "spreadKm": 110,
+        "edgeShare": 0.3,
+        "groupLengthKm": [
+          70,
+          170
+        ],
+        "originSpreadKm": 120,
+        "speedVariation": 0.08,
+        "stagger": 0.3,
+        "splitGroups": 1,
+        "splitAt": 0.5,
+        "dispersalKm": {
+          "north": 160,
+          "east": 160
+        }
+      },
+      "confidence": "low",
+      "dataStatus": "illustrative",
+      "uncertainty": "No Denisovan fossils are known south of Laos. The path is inferred from Denisovan ancestry in Papuans and Philippine groups, which came from at least two deeply divergent Denisovan populations. Timing and route are illustrative.",
+      "origin": "Mainland Southeast Asia",
+      "destination": "New Guinea",
+      "intermediateRegions": [
+        "Malay Peninsula",
+        "Borneo",
+        "Sulawesi",
+        "Moluccas"
+      ],
+      "pathDescription": "Drawn through Sundaland and Wallacea; based on genetics only.",
+      "description": "Genetic evidence shows Denisovan groups lived somewhere near Wallacea, where they met the ancestors of Papuans.",
+      "people": "At least two distinct Denisovan populations.",
+      "historicalContext": "Glacial low seas exposed Sundaland and narrowed Wallacean crossings.",
+      "significance": "Papuans and Philippine Ayta carry the highest Denisovan ancestry today.",
+      "evidence": [
+        {
+          "type": "genetic",
+          "description": "Multiple deeply divergent Denisovan ancestries in Papuans.",
+          "sourceIds": [
+            "jacobs2019papuans"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "Two pulses of Denisovan admixture.",
+          "sourceIds": [
+            "browning2018"
+          ]
+        },
+        {
+          "type": "genetic",
+          "description": "The Ayta have the highest Denisovan ancestry.",
+          "sourceIds": [
+            "larena2021ayta"
+          ]
+        }
+      ],
+      "siteIds": [],
+      "camera": {
+        "lat": 0,
+        "lng": 120,
+        "distance": 3.0
       }
     }
   ]

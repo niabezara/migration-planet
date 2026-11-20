@@ -5,9 +5,9 @@ import { POPULATION_CONSTANTS } from "@/engine/population/populationModel";
 export { PARTICLE_CONSTANTS };
 
 /** Upper bound on routes addressable by per-route uniforms (awakening times). */
-export const MAX_ROUTES = 16;
+export const MAX_ROUTES = 64;
 /** Upper bound on population clusters addressable by the activity uniform. */
-export const MAX_CLUSTERS = 32;
+export const MAX_CLUSTERS = 64;
 /** Upper bound on species addressable by the filter / focus uniforms. */
 export const MAX_SPECIES = 16;
 
@@ -65,7 +65,7 @@ const common = /* glsl */ `
   uniform float uDensity;       // runtime LOD 0..1 (adaptive performance)
   uniform float uIntensity;
   uniform float uHero;          // intro emphasis 0..1
-  uniform float uStreamVis;     // species filter: Homo sapiens streams shown 0..1
+  uniform float uRouteVis[MAX_ROUTES]; // species filter: each route's stream shown 0..1
 
   attribute float aRow;
   attribute float aRoute;
@@ -161,7 +161,7 @@ const common = /* glsl */ `
 
   float isSelected() { return 1.0 - step(0.5, abs(aRoute - uSelected)); }
   // Selected route dominant, others dimmed but never hidden.
-  float selectionAlpha() { return mix(1.0, mix(0.16, 1.0, isSelected()), uSelectMix) * uStreamVis; }
+  float selectionAlpha() { return mix(1.0, mix(0.16, 1.0, isSelected()), uSelectMix) * uRouteVis[int(aRoute + 0.5)]; }
   float selectionGain() { return mix(1.0, mix(0.75, 1.3, isSelected()), uSelectMix); }
   // 0 close-up … 1 full globe.
   float farFactor() { return smoothstep(1.7, 4.3, uCamDist); }
@@ -498,7 +498,7 @@ export function createParticleLayers({
     uPopIntensity: { value: 0.4 },
     uPopGlowKm: { value: 170 },
     uPopGlowAlpha: { value: 0.03 },
-    uStreamVis: { value: 1 },
+    uRouteVis: { value: new Float32Array(MAX_ROUTES).fill(1) },
     uSpeciesVis: { value: new Float32Array(MAX_SPECIES).fill(1) },
     uSpeciesFocus: { value: new Float32Array(MAX_SPECIES) },
     uFocusCluster: { value: -1 },

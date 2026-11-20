@@ -9,6 +9,8 @@ import type { MigrationRoute } from "@/types/migration";
 import type { ParticleBuffers } from "@/engine/particles/clusterGenerator";
 import { routeState } from "@/engine/timeline/timeEngine";
 import { useHistoryStore } from "@/stores/useHistoryStore";
+import { speciesById } from "@/data";
+import { routeVisible } from "@/engine/species/speciesModel";
 
 const LINE_RADIUS = 1.0012;
 
@@ -37,12 +39,13 @@ export function RoutePath({ buffers, routes }: { buffers: ParticleBuffers; route
   useFrame((_, delta) => {
     if (!route) return;
     const s = useHistoryStore.getState();
-    const visible = (s.mode === "overview" || routeState(route, s.yearsBP).visible) && s.speciesFilter !== "other";
+    const shown = routeVisible(s.speciesFilter, route, speciesById);
+    const visible = (s.mode === "overview" || routeState(route, s.yearsBP).visible) && shown;
     refs.current.forEach((line, i) => {
       if (!line) return;
       const m = line.material as LineMaterial;
       // Branches are drawn fainter: they are alternatives, not the main path.
-      const target = (visible ? 0.6 : s.speciesFilter === "other" ? 0 : 0.16) * (i === 0 ? 1 : 0.6);
+      const target = (visible ? 0.6 : shown ? 0.16 : 0) * (i === 0 ? 1 : 0.6);
       m.opacity += (target - m.opacity) * (1 - Math.exp(-Math.min(delta, 0.1) * 5));
       m.dashOffset -= delta * 0.015;
     });

@@ -642,6 +642,894 @@
         "mcgovern2017"
       ],
       "details": "Residue analysis of pottery from Gadachrili Gora and nearby Shulaveris Gora (Shulaveri–Shomutepe culture) detected tartaric acid and related compounds, the chemical signature of grape wine, ~8,000 years ago. It is the earliest known chemical evidence of grape wine."
+    },
+    {
+      "id": "jebel-faya",
+      "name": "Jebel Faya",
+      "region": "Sharjah, UAE",
+      "location": {
+        "lat": 25.12,
+        "lng": 55.85
+      },
+      "dateRange": [
+        125000,
+        100000
+      ],
+      "description": "Stone tools dated by luminescence to ~125,000–100,000 years ago. No fossils: the makers are inferred to be Homo sapiens.",
+      "confidence": "medium",
+      "sources": [
+        "armitage2011"
+      ]
+    },
+    {
+      "id": "al-wusta",
+      "name": "Al Wusta",
+      "region": "Nefud Desert, Saudi Arabia",
+      "location": {
+        "lat": 28.4,
+        "lng": 40.3
+      },
+      "dateRange": [
+        95000,
+        86000
+      ],
+      "description": "A Homo sapiens finger bone directly dated to ~88,000 years ago, beside an ancient lake.",
+      "confidence": "high",
+      "sources": [
+        "groucutt2018"
+      ]
+    },
+    {
+      "id": "apidima",
+      "name": "Apidima Cave",
+      "region": "Mani, Greece",
+      "location": {
+        "lat": 36.63,
+        "lng": 22.38
+      },
+      "dateRange": [
+        210000,
+        170000
+      ],
+      "description": "Apidima 1 (>210,000 years) has been described as early Homo sapiens; Apidima 2 (>170,000) is Neanderthal-like. The attribution of Apidima 1 is disputed.",
+      "confidence": "low",
+      "sources": [
+        "harvati2019"
+      ],
+      "speciesIds": [
+        "homo-sapiens",
+        "homo-neanderthalensis"
+      ]
+    },
+    {
+      "id": "lida-ajer",
+      "name": "Lida Ajer",
+      "region": "Padang Highlands, Sumatra",
+      "location": {
+        "lat": -0.3,
+        "lng": 100.4
+      },
+      "dateRange": [
+        73000,
+        63000
+      ],
+      "description": "Modern human teeth from a cave excavated in the 1880s, re-dated to ~73,000–63,000 years ago.",
+      "confidence": "medium",
+      "sources": [
+        "westaway2017"
+      ]
+    },
+    {
+      "id": "ust-ishim",
+      "name": "Ust'-Ishim",
+      "region": "Irtysh River, western Siberia",
+      "location": {
+        "lat": 57.7,
+        "lng": 71.2
+      },
+      "dateRange": [
+        46000,
+        44000
+      ],
+      "description": "A femur directly radiocarbon-dated to ~45,000 years ago; its genome belongs to a lineage with no living descendants.",
+      "confidence": "high",
+      "sources": [
+        "fu2014"
+      ]
+    },
+    {
+      "id": "tianyuan",
+      "name": "Tianyuan Cave",
+      "region": "Beijing, China",
+      "location": {
+        "lat": 39.65,
+        "lng": 115.87
+      },
+      "dateRange": [
+        42000,
+        39000
+      ],
+      "description": "A ~40,000-year-old individual whose genome is related to present-day East Asians and Native Americans.",
+      "confidence": "high",
+      "sources": [
+        "yang2017"
+      ]
+    },
+    {
+      "id": "nwya-devu",
+      "name": "Nwya Devu",
+      "region": "Central Tibetan Plateau",
+      "location": {
+        "lat": 31.6,
+        "lng": 90.0
+      },
+      "dateRange": [
+        40000,
+        30000
+      ],
+      "description": "Stone tools at ~4,600 m altitude dated by OSL to 40,000–30,000 years ago. No fossils; the makers are not identified.",
+      "confidence": "medium",
+      "sources": [
+        "zhang2018"
+      ],
+      "speciesIds": []
+    },
+    {
+      "id": "taforalt",
+      "name": "Taforalt (Grotte des Pigeons)",
+      "region": "Morocco",
+      "location": {
+        "lat": 34.81,
+        "lng": -2.41
+      },
+      "dateRange": [
+        15100,
+        13900
+      ],
+      "description": "Iberomaurusian burials whose genomes are about two-thirds Near Eastern (Natufian-related) and one-third sub-Saharan African.",
+      "confidence": "high",
+      "sources": [
+        "vandeloosdrecht2018"
+      ]
+    },
+    {
+      "id": "mota-cave",
+      "name": "Mota Cave",
+      "region": "Ethiopian Highlands",
+      "location": {
+        "lat": 6.6,
+        "lng": 37.2
+      },
+      "dateRange": [
+        4600,
+        4400
+      ],
+      "description": "A ~4,500-year-old genome that predates the West Eurasian back-flow into East Africa.",
+      "confidence": "high",
+      "sources": [
+        "gallegollorente2015",
+        "skoglund2017"
+      ]
+    },
+    {
+      "id": "catalhoyuk",
+      "name": "Çatalhöyük",
+      "region": "Konya Plain, Türkiye",
+      "location": {
+        "lat": 37.67,
+        "lng": 32.83
+      },
+      "dateRange": [
+        9400,
+        8000
+      ],
+      "description": "Large Neolithic settlement on the Anatolian plateau, close to the source of Europe's first farmers.",
+      "confidence": "high",
+      "sources": [
+        "hofmanova2016"
+      ]
+    },
+    {
+      "id": "goughs-cave",
+      "name": "Gough's Cave",
+      "region": "Cheddar, England",
+      "location": {
+        "lat": 51.28,
+        "lng": -2.77
+      },
+      "dateRange": [
+        14900,
+        14600
+      ],
+      "description": "Magdalenian-associated humans recolonising Britain after the Last Glacial Maximum.",
+      "confidence": "high",
+      "sources": [
+        "fu2016",
+        "posth2023"
+      ]
+    },
+    {
+      "id": "villabruna",
+      "name": "Riparo Villabruna",
+      "region": "Dolomites, Italy",
+      "location": {
+        "lat": 46.1,
+        "lng": 11.9
+      },
+      "dateRange": [
+        14200,
+        13900
+      ],
+      "description": "Epigravettian burial whose genome names the 'Villabruna' ancestry that spread across Europe from ~14,000 years ago.",
+      "confidence": "high",
+      "sources": [
+        "fu2016",
+        "posth2023"
+      ]
+    },
+    {
+      "id": "man-bac",
+      "name": "Man Bac",
+      "region": "Ninh Bình, Vietnam",
+      "location": {
+        "lat": 20.2,
+        "lng": 105.9
+      },
+      "dateRange": [
+        4000,
+        3500
+      ],
+      "description": "Neolithic cemetery where ancient genomes show farmers with southern Chinese ancestry mixed with local hunter-gatherers.",
+      "confidence": "high",
+      "sources": [
+        "mccoll2018",
+        "lipson2018"
+      ]
+    },
+    {
+      "id": "teouma",
+      "name": "Teouma",
+      "region": "Efate, Vanuatu",
+      "location": {
+        "lat": -17.75,
+        "lng": 168.4
+      },
+      "dateRange": [
+        3000,
+        2560
+      ],
+      "description": "Lapita cemetery; the first settlers of Remote Oceania had almost no Papuan ancestry.",
+      "confidence": "high",
+      "sources": [
+        "petchey2015",
+        "skoglund2016"
+      ]
+    },
+    {
+      "id": "qeqertasussuk",
+      "name": "Qeqertasussuk",
+      "region": "Disko Bay, Greenland",
+      "location": {
+        "lat": 68.8,
+        "lng": -51.5
+      },
+      "dateRange": [
+        4400,
+        3900
+      ],
+      "description": "Saqqaq (Paleo-Inuit) site; a ~4,000-year-old hair tuft gave the first ancient human genome.",
+      "confidence": "high",
+      "sources": [
+        "rasmussen2010"
+      ]
+    },
+    {
+      "id": "lanse-aux-meadows",
+      "name": "L'Anse aux Meadows",
+      "region": "Newfoundland, Canada",
+      "location": {
+        "lat": 51.6,
+        "lng": -55.53
+      },
+      "dateRange": [
+        979,
+        979
+      ],
+      "description": "Norse site where wood cut with metal tools is dated to exactly AD 1021 by the cosmic-ray event of AD 993.",
+      "confidence": "high",
+      "sources": [
+        "kuitems2022"
+      ]
+    },
+    {
+      "id": "ubeidiya",
+      "name": "'Ubeidiya",
+      "region": "Jordan Valley, Israel",
+      "location": {
+        "lat": 32.69,
+        "lng": 35.56
+      },
+      "dateRange": [
+        1900000,
+        1200000
+      ],
+      "description": "Acheulean site. Long dated to ~1.6–1.2 million years ago; a 2026 burial-dating study suggests ~1.9 million years, which is contested.",
+      "confidence": "medium",
+      "sources": [
+        "matmon2026"
+      ],
+      "speciesIds": [
+        "homo-erectus"
+      ]
+    },
+    {
+      "id": "shangchen",
+      "name": "Shangchen",
+      "region": "Loess Plateau, China",
+      "location": {
+        "lat": 34.2,
+        "lng": 109.5
+      },
+      "dateRange": [
+        2100000,
+        1260000
+      ],
+      "description": "Stone tools in loess layers from ~2.1 million years ago, the oldest hominin evidence outside Africa. The makers are unidentified.",
+      "confidence": "high",
+      "sources": [
+        "zhu2018"
+      ],
+      "speciesIds": []
+    },
+    {
+      "id": "gongwangling",
+      "name": "Gongwangling (Lantian)",
+      "region": "Shaanxi, China",
+      "location": {
+        "lat": 34.2,
+        "lng": 109.5
+      },
+      "dateRange": [
+        1650000,
+        1540000
+      ],
+      "description": "Homo erectus cranium dated to ~1.63 million years ago.",
+      "confidence": "high",
+      "sources": [
+        "zhu2015"
+      ],
+      "speciesIds": [
+        "homo-erectus"
+      ]
+    },
+    {
+      "id": "zhoukoudian",
+      "name": "Zhoukoudian",
+      "region": "Beijing, China",
+      "location": {
+        "lat": 39.69,
+        "lng": 115.93
+      },
+      "dateRange": [
+        850000,
+        400000
+      ],
+      "description": "The 'Peking Man' cave; the lower layers are dated by burial dating to ~770,000 years ago.",
+      "confidence": "high",
+      "sources": [
+        "shen2009"
+      ],
+      "speciesIds": [
+        "homo-erectus"
+      ]
+    },
+    {
+      "id": "yuanmou",
+      "name": "Yuanmou",
+      "region": "Yunnan, China",
+      "location": {
+        "lat": 25.7,
+        "lng": 101.87
+      },
+      "dateRange": [
+        1750000,
+        1650000
+      ],
+      "description": "Two hominin incisors dated to ~1.7 million years ago.",
+      "confidence": "medium",
+      "sources": [
+        "zhu2008"
+      ],
+      "speciesIds": [
+        "homo-erectus"
+      ]
+    },
+    {
+      "id": "attirampakkam",
+      "name": "Attirampakkam",
+      "region": "Tamil Nadu, India",
+      "location": {
+        "lat": 13.23,
+        "lng": 79.89
+      },
+      "dateRange": [
+        1580000,
+        1070000
+      ],
+      "description": "Acheulean tools dated to ~1.5 million years ago; no fossils.",
+      "confidence": "medium",
+      "sources": [
+        "pappu2011"
+      ],
+      "speciesIds": [
+        "homo-erectus"
+      ]
+    },
+    {
+      "id": "sangiran",
+      "name": "Sangiran",
+      "region": "Central Java, Indonesia",
+      "location": {
+        "lat": -7.45,
+        "lng": 110.83
+      },
+      "dateRange": [
+        1500000,
+        800000
+      ],
+      "description": "Rich Homo erectus fossil area; first appearance ~1.3 million years ago.",
+      "confidence": "high",
+      "sources": [
+        "matsuura2020"
+      ],
+      "speciesIds": [
+        "homo-erectus"
+      ]
+    },
+    {
+      "id": "ngandong",
+      "name": "Ngandong",
+      "region": "Solo River, Java",
+      "location": {
+        "lat": -7.18,
+        "lng": 111.36
+      },
+      "dateRange": [
+        117000,
+        108000
+      ],
+      "description": "The last known Homo erectus, 117,000–108,000 years ago.",
+      "confidence": "high",
+      "sources": [
+        "rizal2020"
+      ],
+      "speciesIds": [
+        "homo-erectus"
+      ]
+    },
+    {
+      "id": "korolevo",
+      "name": "Korolevo",
+      "region": "Transcarpathia, Ukraine",
+      "location": {
+        "lat": 48.15,
+        "lng": 23.13
+      },
+      "dateRange": [
+        1520000,
+        1320000
+      ],
+      "description": "Stone tools dated by burial dating to ~1.42 million years ago, the oldest dated evidence of hominins in Europe.",
+      "confidence": "medium",
+      "sources": [
+        "garba2024"
+      ],
+      "speciesIds": [
+        "homo-erectus"
+      ]
+    },
+    {
+      "id": "pirro-nord",
+      "name": "Pirro Nord",
+      "region": "Apulia, Italy",
+      "location": {
+        "lat": 41.8,
+        "lng": 15.4
+      },
+      "dateRange": [
+        1700000,
+        1300000
+      ],
+      "description": "Stone tools with a fauna dated by biochronology to ~1.7–1.3 million years ago.",
+      "confidence": "medium",
+      "sources": [
+        "arzarello2007"
+      ],
+      "speciesIds": [
+        "homo-erectus"
+      ]
+    },
+    {
+      "id": "barranco-leon",
+      "name": "Barranco León (Orce)",
+      "region": "Granada, Spain",
+      "location": {
+        "lat": 37.72,
+        "lng": -2.48
+      },
+      "dateRange": [
+        1500000,
+        1300000
+      ],
+      "description": "A ~1.4-million-year-old hominin tooth with stone tools.",
+      "confidence": "medium",
+      "sources": [
+        "toromoyano2013"
+      ],
+      "speciesIds": [
+        "homo-erectus"
+      ]
+    },
+    {
+      "id": "sima-del-elefante",
+      "name": "Sima del Elefante (Atapuerca)",
+      "region": "Burgos, Spain",
+      "location": {
+        "lat": 42.35,
+        "lng": -3.52
+      },
+      "dateRange": [
+        1400000,
+        1100000
+      ],
+      "description": "A partial face (ATE7-1, 'Pink'), tentatively Homo aff. erectus, 1.4–1.1 million years old.",
+      "confidence": "medium",
+      "sources": [
+        "huguet2025"
+      ],
+      "speciesIds": [
+        "homo-erectus"
+      ]
+    },
+    {
+      "id": "happisburgh",
+      "name": "Happisburgh",
+      "region": "Norfolk, England",
+      "location": {
+        "lat": 52.83,
+        "lng": 1.53
+      },
+      "dateRange": [
+        950000,
+        780000
+      ],
+      "description": "Tools and footprints over 780,000 years old, the earliest people in northern Europe; makers unidentified.",
+      "confidence": "medium",
+      "sources": [
+        "parfitt2010"
+      ],
+      "speciesIds": []
+    },
+    {
+      "id": "wolo-sege",
+      "name": "Wolo Sege & Mata Menge",
+      "region": "So'a Basin, Flores",
+      "location": {
+        "lat": -8.67,
+        "lng": 121.1
+      },
+      "dateRange": [
+        1020000,
+        700000
+      ],
+      "description": "Stone tools from ~1.02 million years ago (Wolo Sege) and small H. floresiensis-like fossils from ~700,000 (Mata Menge).",
+      "confidence": "high",
+      "sources": [
+        "brumm2010",
+        "brumm2016",
+        "vandenbergh2016"
+      ],
+      "speciesIds": [
+        "homo-floresiensis"
+      ]
+    },
+    {
+      "id": "calio",
+      "name": "Calio & Talepu",
+      "region": "Walanae Basin, Sulawesi",
+      "location": {
+        "lat": -4.2,
+        "lng": 120.0
+      },
+      "dateRange": [
+        1480000,
+        118000
+      ],
+      "description": "Stone tools at least 1.04 million years old (Calio) and 194,000–118,000 years old (Talepu). No hominin fossils: the makers are unknown.",
+      "confidence": "medium",
+      "sources": [
+        "hakim2025",
+        "vandenbergh2016sulawesi"
+      ],
+      "speciesIds": []
+    },
+    {
+      "id": "kalinga",
+      "name": "Kalinga site",
+      "region": "Cagayan Valley, Luzon",
+      "location": {
+        "lat": 17.5,
+        "lng": 121.4
+      },
+      "dateRange": [
+        777000,
+        631000
+      ],
+      "description": "A butchered rhinoceros with stone tools ~709,000 years old. No hominin fossils.",
+      "confidence": "medium",
+      "sources": [
+        "ingicco2018"
+      ],
+      "speciesIds": []
+    },
+    {
+      "id": "callao-cave",
+      "name": "Callao Cave",
+      "region": "Cagayan, Luzon",
+      "location": {
+        "lat": 17.7,
+        "lng": 121.82
+      },
+      "dateRange": [
+        67000,
+        50000
+      ],
+      "description": "Fossils of Homo luzonensis with minimum ages of ~67,000 and ~50,000 years.",
+      "confidence": "high",
+      "sources": [
+        "detroit2019",
+        "mijares2010"
+      ],
+      "speciesIds": [
+        "homo-luzonensis"
+      ]
+    },
+    {
+      "id": "tabun",
+      "name": "Tabun Cave",
+      "region": "Mount Carmel, Israel",
+      "location": {
+        "lat": 32.67,
+        "lng": 34.97
+      },
+      "dateRange": [
+        143000,
+        112000
+      ],
+      "description": "Neanderthal burial (Tabun C1); age estimates span ~143,000–112,000 years.",
+      "confidence": "medium",
+      "sources": [
+        "smithsonianHO"
+      ],
+      "speciesIds": [
+        "homo-neanderthalensis"
+      ]
+    },
+    {
+      "id": "amud",
+      "name": "Amud Cave",
+      "region": "Galilee, Israel",
+      "location": {
+        "lat": 32.87,
+        "lng": 35.5
+      },
+      "dateRange": [
+        70000,
+        50000
+      ],
+      "description": "Neanderthal remains including an infant burial, ~70,000–50,000 years old.",
+      "confidence": "medium",
+      "sources": [
+        "smithsonianHO"
+      ],
+      "speciesIds": [
+        "homo-neanderthalensis"
+      ]
+    },
+    {
+      "id": "shanidar",
+      "name": "Shanidar Cave",
+      "region": "Iraqi Kurdistan",
+      "location": {
+        "lat": 36.83,
+        "lng": 44.22
+      },
+      "dateRange": [
+        75000,
+        60000
+      ],
+      "description": "Multiple Neanderthal individuals, including the 'flower burial' context.",
+      "confidence": "high",
+      "sources": [
+        "pomeroy2020"
+      ],
+      "speciesIds": [
+        "homo-neanderthalensis"
+      ]
+    },
+    {
+      "id": "teshik-tash",
+      "name": "Teshik-Tash",
+      "region": "Uzbekistan",
+      "location": {
+        "lat": 38.2,
+        "lng": 67.0
+      },
+      "dateRange": [
+        70000,
+        40000
+      ],
+      "description": "Neanderthal child; its mtDNA links it to European Neanderthals.",
+      "confidence": "medium",
+      "sources": [
+        "krause2007"
+      ],
+      "speciesIds": [
+        "homo-neanderthalensis"
+      ]
+    },
+    {
+      "id": "okladnikov",
+      "name": "Okladnikov Cave",
+      "region": "Altai, Russia",
+      "location": {
+        "lat": 51.8,
+        "lng": 84.5
+      },
+      "dateRange": [
+        50000,
+        40000
+      ],
+      "description": "Neanderthal remains with mtDNA close to European Neanderthals.",
+      "confidence": "medium",
+      "sources": [
+        "krause2007"
+      ],
+      "speciesIds": [
+        "homo-neanderthalensis"
+      ]
+    },
+    {
+      "id": "chagyrskaya",
+      "name": "Chagyrskaya Cave",
+      "region": "Altai, Russia",
+      "location": {
+        "lat": 51.44,
+        "lng": 83.15
+      },
+      "dateRange": [
+        59000,
+        49000
+      ],
+      "description": "Neanderthals with Micoquian tools linked to Central and Eastern Europe; a high-coverage genome (Chagyrskaya 8).",
+      "confidence": "high",
+      "sources": [
+        "kolobova2020",
+        "mafessoni2020",
+        "skov2022"
+      ],
+      "speciesIds": [
+        "homo-neanderthalensis"
+      ]
+    },
+    {
+      "id": "mezmaiskaya",
+      "name": "Mezmaiskaya Cave",
+      "region": "North Caucasus, Russia",
+      "location": {
+        "lat": 44.17,
+        "lng": 40.0
+      },
+      "dateRange": [
+        100000,
+        40000
+      ],
+      "description": "Neanderthal remains whose genomes record a late population turnover.",
+      "confidence": "medium",
+      "sources": [
+        "hajdinjak2018"
+      ],
+      "speciesIds": [
+        "homo-neanderthalensis"
+      ]
+    },
+    {
+      "id": "vindija",
+      "name": "Vindija Cave",
+      "region": "Croatia",
+      "location": {
+        "lat": 46.3,
+        "lng": 16.08
+      },
+      "dateRange": [
+        55000,
+        40000
+      ],
+      "description": "Late Neanderthals; the Vindija genome is close to the Chagyrskaya Neanderthals of Siberia.",
+      "confidence": "high",
+      "sources": [
+        "mafessoni2020"
+      ],
+      "speciesIds": [
+        "homo-neanderthalensis"
+      ]
+    },
+    {
+      "id": "harbin",
+      "name": "Harbin",
+      "region": "Heilongjiang, China",
+      "location": {
+        "lat": 45.75,
+        "lng": 126.65
+      },
+      "dateRange": [
+        309000,
+        146000
+      ],
+      "description": "A nearly complete cranium ('Dragon Man') at least ~146,000 years old, identified as Denisovan by proteins and mtDNA in 2025.",
+      "confidence": "high",
+      "sources": [
+        "ji2021",
+        "shao2021",
+        "fu2025proteome",
+        "fu2025mtdna"
+      ],
+      "speciesIds": [
+        "denisovans"
+      ]
+    },
+    {
+      "id": "tam-ngu-hao",
+      "name": "Tam Ngu Hao 2 (Cobra Cave)",
+      "region": "Annamite Chain, Laos",
+      "location": {
+        "lat": 20.2,
+        "lng": 103.4
+      },
+      "dateRange": [
+        164000,
+        131000
+      ],
+      "description": "A Denisovan child's molar, 164,000–131,000 years old.",
+      "confidence": "medium",
+      "sources": [
+        "demeter2022"
+      ],
+      "speciesIds": [
+        "denisovans"
+      ]
+    },
+    {
+      "id": "penghu",
+      "name": "Penghu Channel",
+      "region": "Taiwan Strait",
+      "location": {
+        "lat": 23.5,
+        "lng": 119.8
+      },
+      "dateRange": [
+        190000,
+        10000
+      ],
+      "description": "A mandible dredged from the sea floor, identified as a male Denisovan by proteins (2025). Its age is uncertain (~190,000–130,000 or ~70,000–10,000 years).",
+      "confidence": "medium",
+      "sources": [
+        "chang2015",
+        "tsutaya2025"
+      ],
+      "speciesIds": [
+        "denisovans"
+      ]
     }
   ]
 }

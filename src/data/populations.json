@@ -1640,6 +1640,40 @@
       "siteIds": [
         "baishiya-karst"
       ]
+    },
+    {
+      "id": "luzonensis-luzon",
+      "speciesId": "homo-luzonensis",
+      "region": "Luzon (Homo luzonensis)",
+      "coordinates": {
+        "lat": 17.7,
+        "lng": 121.8
+      },
+      "lobes": [
+        {
+          "name": "Callao Cave",
+          "lat": 17.7,
+          "lng": 121.82,
+          "radiusKm": {
+            "north": 60,
+            "east": 40
+          },
+          "weight": 1.0
+        }
+      ],
+      "startYear": 70000,
+      "establishedYear": 67000,
+      "endYear": 50000,
+      "fadeYears": 3000,
+      "colorFrom": "species",
+      "visualDensity": 0.15,
+      "confidence": "medium",
+      "attestedYear": 67000,
+      "basisNote": "Homo luzonensis fossils at Callao Cave have minimum ages of ~67,000 and ~50,000 years. Earlier tools on Luzon (~709,000 years) have no fossils.",
+      "relatedRouteIds": [],
+      "siteIds": [
+        "callao-cave"
+      ]
     }
   ]
 }

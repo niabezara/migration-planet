@@ -1,6 +1,7 @@
 "use client";
 
-import { routes } from "@/data";
+import { routes, species, speciesById } from "@/data";
+import { routeVisible } from "@/engine/species/speciesModel";
 import { routeState, type RouteStatus } from "@/engine/timeline/timeEngine";
 import { useHistoryStore } from "@/stores/useHistoryStore";
 import { useState } from "react";
@@ -15,7 +16,7 @@ const STATUS_LABEL: Record<RouteStatus, string> = {
   completed: "Ended",
 };
 
-const kyr = (y: number) => `${Math.round(y / 1000)}k`;
+const kyr = (y: number) => (y >= 1_000_000 ? `${Math.round(y / 100_000) / 10}M` : y >= 10_000 ? `${Math.round(y / 1000)}k` : `${Math.round(y / 100) / 10}k`);
 
 /**
  * Compact route legend: colour, name, interval, and (historical mode)
@@ -31,9 +32,14 @@ export function RouteLegend() {
   const { selectRoute } = useHistoryStore.getState();
   const filter = useHistoryStore((s) => s.speciesFilter);
   const selectionKind = useHistoryStore((s) => s.selection?.kind);
-  // In "All", the wave list folds away so the species list stays readable.
+  // Outside the Homo sapiens view, the route list folds away so the species list stays readable.
   const [wavesOpen, setWavesOpen] = useState(false);
-  const showWaves = filter === "sapiens" || (filter === "all" && wavesOpen);
+  const showWaves = filter === "sapiens" || wavesOpen;
+  const shownRoutes = routes.filter((r) => routeVisible(filter, r, speciesById));
+  // Species order follows species.json; each group keeps the data order.
+  const groups = species
+    .map((sp) => ({ sp, items: shownRoutes.filter((r) => r.speciesId === sp.id) }))
+    .filter((g) => g.items.length > 0);
 
   return (
     <nav aria-label="Species and migration routes" className="w-[min(380px,calc(100vw-2rem))] [&>*:not(:first-child)]:max-w-[270px]">
@@ -58,16 +64,24 @@ export function RouteLegend() {
           <SpeciesList />
         </div>
       )}
-      {filter === "all" && (
+      {filter !== "sapiens" && shownRoutes.length > 0 && (
         <button className="label mt-3 block text-left transition-colors hover:text-white/80" onClick={() => setWavesOpen((v) => !v)} aria-expanded={wavesOpen}>
-          Homo sapiens migration waves ({routes.length}) {wavesOpen ? "–" : "+"}
+          Migration routes ({shownRoutes.length}) {wavesOpen ? "–" : "+"}
         </button>
       )}
       {filter === "sapiens" && <div className="label mb-2.5 mt-4">Migration waves</div>}
       {showWaves && (
+      <div className="legend-scroll max-h-[46vh] overflow-y-auto pr-1">
+      {groups.map(({ sp, items }) => (
+      <div key={sp.id}>
+      {groups.length > 1 && (
+        <div className="mt-2.5 text-[10px] uppercase tracking-[0.22em] text-white/40">
+          <em className="font-serif normal-case tracking-normal text-[12px] text-white/60">{sp.name}</em>
+        </div>
+      )}
       <ul className="mt-1 space-y-0.5">
-        {routes.map((r, i) => {
-          const status = statuses[i];
+        {items.map((r) => {
+          const status = statuses[r.index];
           const inactive = mode === "historical" && (status === "upcoming" || status === "completed");
           const selected = selectedId === r.id;
           return (
@@ -96,12 +110,15 @@ export function RouteLegend() {
           );
         })}
       </ul>
+      </div>
+      ))}
+      </div>
       )}
       <div className="mt-4 space-y-1.5 border-t border-white/[0.07] pt-3" aria-label="Visual key">
-        {filter !== "other" && (
+        {shownRoutes.length > 0 && (
           <div className="key-row">
             <span className="key-glyph" data-kind="stream" aria-hidden />
-            Homo sapiens groups migrating
+            {filter === "sapiens" ? "Homo sapiens groups migrating" : "Groups migrating"}
           </div>
         )}
         <div className="key-row">

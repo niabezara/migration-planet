@@ -11,6 +11,7 @@ export const SPECIES_COLORS: Record<string, string> = {
   "homo-neanderthalensis": "#a9c47e", // sage
   denisovans: "#7fb8c4", // slate cyan
   "homo-floresiensis": "#d8c27a", // straw
+  "homo-luzonensis": "#c7b48a", // khaki
   "homo-naledi": "#c9a0a0", // dusty rose
   "homo-erectus": "#d69a62", // ochre
   "homo-habilis": "#b9946f", // umber

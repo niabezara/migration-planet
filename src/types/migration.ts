@@ -123,6 +123,8 @@ export interface EvidenceItem {
 export interface MigrationRouteData {
   id: string;
   name: string;
+  /** Species that made the dispersal (see species.json). Defaults to Homo sapiens. */
+  speciesId?: string;
   /** Wave / category label, e.g. "Early dispersal". */
   category: string;
   path: RouteWaypoint[];
@@ -154,6 +156,7 @@ export interface MigrationRouteData {
 }
 
 export interface MigrationRoute extends MigrationRouteData {
+  speciesId: string;
   /** From the central palette (src/config/routeColors.ts). */
   color: string;
   /** Derived: year of the first waypoint. */

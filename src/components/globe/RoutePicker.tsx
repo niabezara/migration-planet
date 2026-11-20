@@ -9,6 +9,7 @@ import { visibleRoutes } from "@/engine/timeline/timeEngine";
 import { useHistoryStore } from "@/stores/useHistoryStore";
 import { populations, sites, speciesById } from "@/data";
 import { pickPopulation, pickSite } from "@/engine/picking";
+import { routeVisible } from "@/engine/species/speciesModel";
 
 /** Pixels the pointer may move between down and up and still count as a click. */
 const CLICK_TOLERANCE_PX = 5;
@@ -42,8 +43,10 @@ export function RoutePicker({
     const zoom = Math.max(0, camera.position.length() - 1);
     const site = pickSite(sites, speciesById, e.point, 45 + 110 * zoom, ctx);
     if (site) return { kind: "site" as const, id: site.id };
-    // Routes are Homo sapiens dispersals: not pickable when the filter hides them.
-    const candidates = s.speciesFilter === "other" ? [] : s.mode === "overview" ? routes : visibleRoutes(routes, s.yearsBP);
+    // Routes are pickable only when the filter shows their species.
+    const candidates = (s.mode === "overview" ? routes : visibleRoutes(routes, s.yearsBP)).filter((r) =>
+      routeVisible(s.speciesFilter, r, speciesById),
+    );
     // Tolerance grows with distance so routes stay clickable when zoomed out.
     const route = pickRoute(buffers, candidates, e.point, 120 + 300 * zoom);
     if (route) return { kind: "route" as const, id: route.id };

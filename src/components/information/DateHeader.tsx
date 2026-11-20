@@ -10,7 +10,7 @@ const OVERVIEW_TEXT = {
   sapiens: { tagline: "300,000 years. One species.", text: "" },
   other: {
     tagline: "3.5 million years. Many lineages.",
-    text: "Other human species and earlier hominins, from Australopithecus to the last Neanderthals and Denisovans. They lived at different times, and are shown together here as a summary. Pick a year on the timeline to see who existed when.",
+    text: "Other human species and earlier hominins, from Australopithecus to the last Neanderthals and Denisovans, and the routes by which they spread. They lived at different times, and are shown together here as a summary. Pick a year on the timeline to see who existed when.",
   },
   all: {
     tagline: "3.5 million years. Many lineages, one survivor.",
@@ -58,7 +58,7 @@ export function DateHeader() {
             <p className="mt-3 text-[13px] leading-relaxed text-white/55">
               How <em className="font-serif text-[15px] not-italic text-white/75">Homo sapiens</em> spread from
               Africa across the world. These waves happened at <span className="text-white/80">different times</span>,
-              from ~135,000 to ~15,000 years ago. They are looped together here as a summary. Pick a year on
+              over more than 100,000 years, up to the last thousand. They are looped together here as a summary. Pick a year on
               the timeline to see one moment.
             </p>
           ) : (

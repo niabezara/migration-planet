@@ -55,26 +55,27 @@ export function datasetVersion(): string | null {
 /** Installs a validated dataset. Idempotent per version. */
 export function installDataset(ds: Dataset, version: string): void {
   if (installedVersion === version) return;
-  ({
-    datasetDisclaimer,
-    routes,
-    routeById,
-    sources,
-    periods,
-    sites,
-    siteById,
-    speciesNote,
-    species,
-    speciesById,
-    routesBySpecies,
-    populationNote,
-    populations,
-    populationById,
-    populationsByRoute,
-    populationsBySpecies,
-    milestoneNote,
-    milestones,
-    milestoneById,
-  } = ds);
+  // Plain assignments, not a destructuring assignment: Turbopack's production
+  // build only keeps an export live when it sees it reassigned directly, so a
+  // destructured `({ routes } = ds)` left every import frozen at its empty value.
+  datasetDisclaimer = ds.datasetDisclaimer;
+  routes = ds.routes;
+  routeById = ds.routeById;
+  sources = ds.sources;
+  periods = ds.periods;
+  sites = ds.sites;
+  siteById = ds.siteById;
+  speciesNote = ds.speciesNote;
+  species = ds.species;
+  speciesById = ds.speciesById;
+  routesBySpecies = ds.routesBySpecies;
+  populationNote = ds.populationNote;
+  populations = ds.populations;
+  populationById = ds.populationById;
+  populationsByRoute = ds.populationsByRoute;
+  populationsBySpecies = ds.populationsBySpecies;
+  milestoneNote = ds.milestoneNote;
+  milestones = ds.milestones;
+  milestoneById = ds.milestoneById;
   installedVersion = version;
 }
